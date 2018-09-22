@@ -49,6 +49,39 @@ header {
   border-bottom: 1px solid #e0e0e0;
 }
 
+#search-bar {
+  padding: 0.54rem;
+  left: 17rem;
+  height: 31px;
+  position: relative;
+  display: table;
+}
+
+#search-left-half {
+  border-radius: 20px 0 0 20px;
+  height: 31px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ccc!important;
+}
+
+#search-icon {
+  padding: 7px;
+  position: absolute;
+}
+
+#search-right-half {
+  height: 31px;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #ccc!important;
+  border-left: 0!important;
+  padding: 0 2px;
+  font-size: 15px;
+  position: relative;
+  bottom: 33px;
+  left: 2rem;
+}
+
 #sidebar-container {
   background: #2d373c;
   width: 12.5rem;
@@ -83,6 +116,8 @@ a {
 svg {
   margin-left: 3px;
   margin-right: 3px;
+  height: 15px;
+  width: 15px;
 }
 
 .nav {
@@ -103,7 +138,6 @@ svg {
     
     svg {
       fill: #d9d9d9;
-      height: 15px;
       position: relative;
       bottom: -2px;
     }
