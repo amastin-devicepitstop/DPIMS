@@ -92,6 +92,8 @@ svg {
     a {
       color: #d9d9d9;
       user-select: none;
+      position: relative;
+      bottom: 2px;
     }
     
     a:hover, a:focus {
@@ -102,6 +104,8 @@ svg {
     svg {
       fill: #d9d9d9;
       height: 15px;
+      position: relative;
+      bottom: -2px;
     }
     
   }
