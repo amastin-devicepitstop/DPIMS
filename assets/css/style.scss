@@ -89,14 +89,25 @@ svg {
   
   li {
     
-    a, svg {
+    a {
       color: #d9d9d9;
     }
     
+    a:hover {
+      font-weight: inherit; 
+    }
+    
     svg {
+      fill: #d9d9d9;
       height: 15px;
     }
     
+  }
+  
+  li:hover {
+    background-color: #2fa3e6;
+    border-left-color: #2fa3e6;
+    color: #fff;
   }
   
 }
