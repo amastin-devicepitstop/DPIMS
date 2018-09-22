@@ -6,27 +6,46 @@
 html, body {
   height: 100%;
   width: 100%;
+  
 }
 
 #header {
   top: 0;
-  height: 50px;
+  height: 3.1rem;
+  width: 12.5rem;
+  background-color: #ededed;
+  z-index: 2;
+}
+
+#site-logo {
+  background: url(https://www.devicepitstop.com/wp-content/themes/devicepitstop/images/site-logo.png) no-repeat 0 0;
+  width: inherit;
+  height: inherit;
+  display: block;
+}
+
+#topbar {
+  top: 0;
+  height: 3.1rem;
   width: 100%;
-  padding: 9px;
   background-color: #f8f7f7;
+}
+
+#topbar, .ui {
+  border-bottom: 1px solid #e0e0e0;
 }
 
 #sidebar-container {
   background: #2d373c;
-  width: 200px;
+  width: 12.5rem;
   border-right: 1px solid #e2e2e2;
 }
 
 #sidebar {
   padding-top: 12px;
-  width: 200px;
+  width: 12.5rem;
   top:0;
-  bottom: 50px;
+  bottom: 3.1rem;
   overflow-y: auto;
 }
 
