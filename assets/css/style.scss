@@ -91,6 +91,7 @@ header {
 #sidebar {
   padding-top: 12px;
   width: 12.5rem;
+  height: -webkit-fill-available;
   top:0;
   bottom: 3.1rem;
   overflow-y: auto;
