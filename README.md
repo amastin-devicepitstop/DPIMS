@@ -1,1 +1,1 @@
-# Store-Stock-Tracker
+# Store Stock Tracker
