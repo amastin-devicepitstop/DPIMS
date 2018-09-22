@@ -6,7 +6,13 @@
 html, body {
   height: 100%;
   width: 100%;
-  
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  position: unset;
 }
 
 #header {
@@ -15,6 +21,7 @@ html, body {
   width: 12.5rem;
   background-color: #ededed;
   z-index: 2;
+  position: absolute;
 }
 
 #site-logo {
@@ -22,12 +29,15 @@ html, body {
   width: inherit;
   height: inherit;
   display: block;
+  background-size: 70%;
+  background-color: #ededed;
+  background-position: center;
 }
 
 #topbar {
   top: 0;
+  left: 12.5rem;
   height: 3.1rem;
-  width: 100%;
   background-color: #f8f7f7;
 }
 
@@ -59,4 +69,20 @@ html, body {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  
+  li {
+    
+    a {
+      color: #d9d9d9;
+    }
+    
+  }
+  
 }
