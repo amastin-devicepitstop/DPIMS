@@ -107,7 +107,10 @@ svg {
   li:hover {
     background-color: #2fa3e6;
     border-left-color: #2fa3e6;
-    color: #fff;
+    
+    a {
+      color: #fff;
+    }
   }
   
 }
