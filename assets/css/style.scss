@@ -121,6 +121,14 @@ svg {
   width: 15px;
 }
 
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
 .nav {
   
   li {
