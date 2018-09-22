@@ -1,1 +1,1 @@
-# Store Stock Tracker
+# Inventory Management System
