@@ -10,6 +10,10 @@ html, body {
   padding: 0;
 }
 
+body {
+  line-height: 1.42857143;
+}
+
 header {
   width: 100%;
   position: unset;
@@ -73,14 +77,24 @@ header {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+svg {
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .nav {
   
   li {
     
-    a {
+    a, svg {
       color: #d9d9d9;
+    }
+    
+    svg {
+      height: 15px;
     }
     
   }
