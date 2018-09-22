@@ -5,3 +5,17 @@
   padding: 9px;
   background-color: #f8f7f7;
 }
+
+#sidebar-container {
+  background: #2d373c;
+  width: 200px;
+  border-right: 1px solid #e2e2e2;
+}
+
+#sidebar {
+  padding-top: 12px;
+  width: 200px;
+  top:0;
+  bottom: 50px;
+  overflow-y: auto;
+}
