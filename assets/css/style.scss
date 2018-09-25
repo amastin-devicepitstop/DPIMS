@@ -140,15 +140,6 @@ a {
   padding: 30px 35px 15px 40px;
 }
 
-dashboard {
-  .dashboard-section:first-child {
-    margin-top: 0;
-    padding: 0;
-    background-color: #F5FAFF;
-    border-bottom: 1px solid #DDE5E8;
-  }
-}
-
 .bottom-space {
   padding-bottom: 10px!important;
 }
@@ -177,6 +168,13 @@ dashboard {
     border: 1px solid #DAE1E4;
     border-radius: 7px;
     background-color: #fff;
+  }
+  
+  .dashboard-section:first-child {
+    margin-top: 0;
+    padding: 0;
+    background-color: #F5FAFF;
+    border-bottom: 1px solid #DDE5E8;
   }
 }
 
