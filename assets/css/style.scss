@@ -123,13 +123,55 @@ a {
 }
 
 .dashboard-section {
-  margin: 40px 0 0;
-  padding: 0 20px;
+  left: 12.5rem;
+  position: relative;
+}
+
+#activity {
+  width: 68%;
+  float: left;
+}
+
+#inventory {
+  width: 32%;
+  float: right;
 }
 
 #activity, #inventory {
   background-color: #F5FAFF;
   border-bottom: 1px solid #DDE5E8;
+  padding: 30px 0 24px 35px;
+}
+
+.bottom-space {
+  padding-bottom: 10px!important;
+}
+
+.font-lg {
+  font-size: 20px;
+}
+
+.activity-panel {
+  width: 22%;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 28px 5px 7px;
+  height: 123px;
+  vertical-align: top;
+}
+
+.inventory-panel {
+  margin-bottom: 15px;
+  padding: 15px 18px 9px;
+  height: 51px;
+}
+
+#dashboard-content {
+  .activity-panel, .inventory-panel {
+    border: 1px solid #DAE1E4;
+    border-radius: 7px;
+    background-color: #fff;
+  }
 }
 
 svg {
