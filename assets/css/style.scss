@@ -3,12 +3,6 @@
 
 @import "{{ site.theme }}";
 
-@font-face {
-  font-family: "Proxima Nova Light";
-  src: url("../IMS/assets/fonts/Proxima-Nova-Regular.ttf") format('truetype');
-  
-}
-
 html, body {
   height: 100%;
   width: 100%;
@@ -125,10 +119,6 @@ svg {
   margin-right: 3px;
   height: 15px;
   width: 15px;
-}
-
-* {
-  font-family: 'Proxima Nova Light'!important, serif;
 }
 
 *, :after, :before {
