@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url('https://github.com/ethereum/ethdev-site/blob/master/public/fonts/Proxima%20Nova%20Light.ttf?raw=true') format('truetype');
+}
+
 html, body {
   height: 100%;
   width: 100%;
