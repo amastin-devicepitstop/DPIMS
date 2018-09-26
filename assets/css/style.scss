@@ -203,6 +203,7 @@ a {
 
 .lds-dual-ring {
   display: inline-block;
+  position: relative;
   top: 40%;
   left: 50%;
 }
@@ -214,7 +215,7 @@ a {
   margin: 1px;
   border-radius: 50%;
   border: 5px solid #8dc63f;
-  border-color: #fff transparent #fff transparent;
+  border-color: #8dc63f transparent #8dc63f transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -225,8 +226,6 @@ a {
     transform: rotate(360deg);
   }
 }
-
-
 
 svg {
   margin-left: 3px;
