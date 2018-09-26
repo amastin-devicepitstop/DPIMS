@@ -398,8 +398,11 @@ svg {
     background-color: #1f282d;
     border-left-color: #2FA3E6;
     
-    a{
+    a {
       color: #2FA3E6;
+    }
+    
+    a svg {
       fill: #2FA3E6;
     }
     
