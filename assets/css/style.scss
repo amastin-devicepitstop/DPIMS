@@ -383,6 +383,17 @@ svg {
     
   }
   
+  li.active {
+    
+    a{
+      background-color: #1f282d;
+      border-left-color: #2FA3E6;
+      color: #2FA3E6;
+      fill: #2FA3E6;
+    }
+    
+  }
+  
   li:hover {
     background-color: #2fa3e6;
     border-left-color: #2fa3e6;
