@@ -115,7 +115,7 @@ a {
 }
 
 #dashboard-content {
-  width: -webkit-fill-available;
+  width: 64.6%;
   float: right;
   position: absolute;
   top: 3.1rem;
@@ -128,13 +128,13 @@ a {
 }
 
 #activity {
-  width: 60.4%;
+  width: 68%;
   float: left;
   padding: 30px 0 24px 35px;
 }
 
 #inventory {
-  width: 28.4%;
+  width: 32%;
   border-left: 1px solid #ECF1F3;
   padding: 30px 35px 15px 40px;
   display: inline-block;
@@ -142,7 +142,7 @@ a {
 
 .bottom-space {
   display: inline-block;
-  padding-bottom: 10px!important;
+  padding-bottom: 14px!important;
 }
 
 .font-lg {
@@ -177,6 +177,19 @@ a {
     background-color: #F5FAFF;
     border-bottom: 1px solid #DDE5E8;
   }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E0E0E0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F3F3F3;
 }
 
 svg {
