@@ -1,4 +1,4 @@
 window.onload = function(){
-  let cover = document.getElementById("cover");
-  cover.style.display = "none";
+  let animation = document.getElementById("load-screen");
+  animation.style.display = "none";
 } 
