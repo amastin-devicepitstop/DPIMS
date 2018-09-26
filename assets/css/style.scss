@@ -227,6 +227,12 @@ a {
   }
 }
 
+#column {
+  top: 3.1rem;
+  left: 12.5rem;
+  position: absolute;
+}
+
 #store-stock-tracker {
   border-bottom: 1px solid #ededed;
   table-layout: fixed; 
