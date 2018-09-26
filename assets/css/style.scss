@@ -325,10 +325,20 @@ right {
   user-select: none;
 }
 
+.btn:focus {
+  outline: 0; 
+}
+
 .btn-primary {
   color: #fff;
   background-color: #2FA3E6;
   border-color: #1E95DA;
+}
+
+.btn-primary:hover {
+  border-color: #1E95DA;
+  background-color: #30A8EE;
+  box-shadow: 0 1px 1px rgba(0,0,0,.2);
 }
 
 .btn-small {
