@@ -395,7 +395,7 @@ svg {
     
   }
   
-  li:hover {
+  li:hover:not(.active) {
     background-color: #2fa3e6;
     border-left-color: #2fa3e6;
         
