@@ -297,6 +297,30 @@ right {
   float: right!important; 
 }
 
+
+.btn-toolbar {
+  .btn {
+    margin-left: 5px;
+  }
+}
+
+.btn {
+  border-radius: 3px; 
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2FA3E6;
+  border-color: #1E95DA;
+}
+
+.btn-small {
+  padding: 5px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 3px; 
+}
+
 svg {
   margin-left: 3px;
   margin-right: 3px;
