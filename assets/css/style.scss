@@ -227,6 +227,46 @@ a {
   }
 }
 
+#store-stock-tracker {
+  border-bottom: 1px solid #ededed;
+  table-layout: fixed; 
+  
+  thead {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  
+  thead:first-child tr:first-child th {
+    border-top: 1px solid #e6e6e6;
+  }
+  
+  thead tr th {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    color: #263035;
+    background-color: #f7f7f7;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: bottom;
+    padding: 8px;
+  }
+}
+
+.overflow {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+left {
+  float: left!important;  
+}
+
+right {
+  float: right!important; 
+}
+
 svg {
   margin-left: 3px;
   margin-right: 3px;
