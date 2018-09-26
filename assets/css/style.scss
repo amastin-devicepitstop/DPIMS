@@ -229,8 +229,9 @@ a {
 
 #column {
   top: 3.1rem;
-  left: 12.5rem;
+  left: 12.4rem;
   position: absolute;
+  z-index: -1;
 }
 
 #store-stock-tracker {
@@ -396,7 +397,6 @@ svg {
   li.active {
     background-color: #1f282d;
     border-left-color: #2FA3E6;
-    border-right: 1px solid #e2e2e2;
     
     a{
       color: #2FA3E6;
