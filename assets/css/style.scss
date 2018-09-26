@@ -246,6 +246,38 @@ a {
     border-top: 1px solid #e6e6e6;
   }
   
+  thead:first-child {
+    
+    tr:first-child {
+      width: 10%;
+    }
+    
+    tr:second-child {
+      width: 25%;
+    }
+    
+    tr:third-child {
+      width: 10%;
+    }
+    
+    tr:fourth-child {
+      width: 15%;
+    }
+    
+    tr:fifth-child {
+      width: 25%;
+    }
+    
+    tr:sixth-child {
+      width: 10%;  
+    }
+    
+    tr:seventh-child {
+      width: 5%;
+    }
+    
+  }
+  
   thead tr th {
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
