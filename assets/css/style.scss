@@ -338,11 +338,17 @@ right {
   border-radius: 3px; 
 }
 
+
 svg {
   margin-left: 3px;
   margin-right: 3px;
   height: 15px;
   width: 15px;
+}
+
+.sub-white {
+  vertical-align: sub;
+  fill: white;
 }
 
 *, :after, :before {
