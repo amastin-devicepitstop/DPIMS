@@ -1,4 +1,4 @@
 window.onload = function(){
   let cover = document.getElementById("cover");
-  cover.style.display = none;
+  cover.style.display = "none";
 }
