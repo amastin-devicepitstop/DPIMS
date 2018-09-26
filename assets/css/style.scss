@@ -297,8 +297,13 @@ right {
   float: right!important; 
 }
 
+#action-row {
+  padding: 16px 10px 15px 18px;
+}
 
 .btn-toolbar {
+  float: right; 
+  
   .btn {
     margin-left: 5px;
   }
