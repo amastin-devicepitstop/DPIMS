@@ -3,6 +3,17 @@
 
 @import "{{ site.theme }}";
 
+@media (max-width: 1280px) {
+  
+  .nav {
+    width: 40px;
+    overflow: hidden;
+    z-index: 99;
+    transition: width .3s ease-in-out;
+  }
+  
+}
+
 html, body {
   height: 100%;
   width: 100%;
