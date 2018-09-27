@@ -343,6 +343,10 @@ right {
   user-select: none;
 }
 
+.btn-transparent {
+  background-color: rgba(0,0,0,0);  
+}
+
 .btn:focus {
   outline: 0; 
 }
@@ -366,6 +370,10 @@ right {
   border-radius: 3px; 
 }
 
+.return {
+  display: block;
+  margin: 0 auto;
+}
 
 svg {
   margin-left: 3px;
