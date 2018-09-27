@@ -375,6 +375,23 @@ right {
   margin: 0 auto;
 }
 
+.product-form {
+  padding: 0 20px 50px;
+}
+
+.form-group {
+  
+  div {
+    display: inline-block;
+  }
+  
+  label {
+    display: inline-block;
+    padding-right: 15px;
+  }
+  
+}
+
 svg {
   margin-left: 3px;
   margin-right: 3px;
