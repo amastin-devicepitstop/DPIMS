@@ -87,6 +87,8 @@ header {
   background: #2d373c;
   width: 12.5rem;
   border-right: 1px solid #e2e2e2;
+  position: relative;
+  z-index: 1;
 }
 
 #sidebar {
@@ -231,7 +233,7 @@ a {
   top: 3.1rem;
   left: 12.4rem;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
 
 #store-stock-tracker {
