@@ -442,10 +442,6 @@ svg {
   width: 15%;  
 }
 
-.input-16 {
-  width: 16.666666666666666%;  
-}
-
 .input-25 {
   width: 20.8%; 
 }
@@ -456,6 +452,11 @@ svg {
 
 .input-50 {
   width: 42%;  
+}
+
+.input-15, .input-25, .input-346, .input-50 {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 *, :after, :before {
