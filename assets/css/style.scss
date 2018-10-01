@@ -337,8 +337,12 @@ right {
   }
 }
 
-.btn-toolbar {
-
+.btn-toolbar-left {
+  padding-left: 15px;
+  
+  .btn {
+    margin-left: 0.5rem;
+  }
 }
 
 .btn {
@@ -355,6 +359,7 @@ right {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-size: 15pt;
 }
 
 .btn-transparent {
