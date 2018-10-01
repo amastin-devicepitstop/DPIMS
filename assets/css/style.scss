@@ -338,9 +338,7 @@ right {
 }
 
 .btn-toolbar {
-  .btn {
-    margin-right: 1rem;  
-  }
+
 }
 
 .btn {
@@ -377,6 +375,18 @@ right {
   border-color: #1E95DA;
   background-color: #30A8EE;
   box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;  
+}
+
+.btn-default:hover, .btn-default:focus {
+  background-color: #fff;
+  border-color: #bfbfbf;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
 .btn-small {
