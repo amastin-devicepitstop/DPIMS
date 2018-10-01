@@ -381,6 +381,8 @@ right {
 
 .form-group {
   
+  margin-bottom: 15px;
+  
   div {
     display: inline-block;
   }
@@ -390,6 +392,10 @@ right {
     padding-right: 15px;
   }
   
+}
+
+.form-column {
+  width: 65.5%;  
 }
 
 svg {
@@ -402,6 +408,12 @@ svg {
 .sub-white {
   vertical-align: sub;
   fill: white;
+}
+
+#column-content {
+  max-width: 1040px;
+  margin-top: 25px;
+  margin-right: 32px;
 }
 
 .form-control {
