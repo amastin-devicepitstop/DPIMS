@@ -255,6 +255,12 @@ a {
   z-index: 0;
 }
 
+.header-btm-border {
+  border-bottom: 1px solid #ededed;
+  height: 65px;
+  overflow: visible;
+}
+
 #store-stock-tracker {
   border-bottom: 1px solid #ededed;
   table-layout: fixed; 
