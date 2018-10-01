@@ -329,11 +329,17 @@ right {
   padding: 16px 10px 15px 18px;
 }
 
-.btn-toolbar {
+.btn-toolbar-right {
   float: right; 
   
   .btn {
     margin-right: 1rem;
+  }
+}
+
+.btn-toolbar {
+  .btn {
+    margin-right: 1rem;  
   }
 }
 
