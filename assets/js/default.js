@@ -19,3 +19,26 @@ window.onload = function(){
   database = firebase.firestore();
   database.settings(settings);
 }
+
+function save(collection, doc, subCollection, subDoc, json) {
+    database.collection(collection).doc(doc).collection(subCollection).doc(subDoc).set(json)
+    .then(function(){
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+}
+
+function get(collection, doc) {
+    database.collection(collection).doc(doc).get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
