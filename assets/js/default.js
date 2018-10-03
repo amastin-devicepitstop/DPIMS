@@ -32,7 +32,7 @@ function hideAnimation() {
 
 function preventFormSubmit() {
   if (window.location.href.indexOf("new") !== -1){
-    $("#date").val(new Date());
+    $("#date").val(new Date().toLocaleDateString());
     
     $("form").submit(function (e) {  
       e.preventDefault();
