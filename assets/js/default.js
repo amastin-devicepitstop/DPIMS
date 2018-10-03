@@ -1,6 +1,9 @@
 let database;
 
 window.onload = function(){
+  console.log($(window).width());
+  console.log($(window).height());
+  
   let animation = document.getElementById("load-screen");
   animation.style.display = "none";
   
