@@ -43,11 +43,12 @@ function save(collection, doc, subCollection, subDoc, json) {
     database.collection(collection).doc(doc).collection(subCollection).doc(subDoc).set(json)
     .then(function(){
         console.log("Document successfully written!");
+        setURL("/IMS/storestock.html");
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
+        alert("An error occurred while processing your request. Please try again.");
     });
-    setURL("/IMS/storestock.html");
 }
 
 function get(collection, doc) {
