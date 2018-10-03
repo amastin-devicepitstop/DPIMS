@@ -62,6 +62,10 @@ function get(collection, doc) {
     });
 }
 
+function setURL(url) {
+  document.location.href = url;
+}
+
 function addStoreStock() {
   let name = document.getElementById("first-name").value + " " + document.getElementById("last-name").value;
   let manufacturer = document.getElementById("manufacturer").value;
@@ -71,4 +75,5 @@ function addStoreStock() {
   let date = document.getElementById("date").value;
   
   save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date});
+  setURL("/IMS/storestock.html");
 }
