@@ -47,6 +47,7 @@ function save(collection, doc, subCollection, subDoc, json) {
     .catch(function(error) {
         console.error("Error writing document: ", error);
     });
+    setURL("/IMS/storestock.html");
 }
 
 function get(collection, doc) {
@@ -74,8 +75,5 @@ function addStoreStock() {
   let sku = document.getElementById("sku").value;
   let date = document.getElementById("date").value;
   
-  save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date})
-    .then(function(){
-        setURL("/IMS/storestock.html");
-    })
+  save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date});
 }
