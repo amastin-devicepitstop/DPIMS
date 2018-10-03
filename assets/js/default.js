@@ -14,7 +14,7 @@ window.onload = function(){
   };
   const app = firebase.initializeApp(config);
   const settings = {
-    timestampesInSnapshots: true  
+    timestampsInSnapshots: true  
   };
   database = firebase.firestore();
   database.settings(settings);
