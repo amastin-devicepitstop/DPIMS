@@ -16,14 +16,15 @@ function initDatabase(){
       storageBucket: "devicepitstop-imsdb.appspot.com",
       messagingSenderId: "658605927128"
     };
+  
     const app = firebase.initializeApp(config);
     const settings = {
       timestampsInSnapshots: true  
     };
-    database = firebase.firestore();
-    database.settings(settings);
-  }  
-}
+  database = firebase.firestore();
+  database.settings(settings);
+}  
+
 
 function hideAnimation() {
   document.getElementById("load-screen").style.display = "none";
