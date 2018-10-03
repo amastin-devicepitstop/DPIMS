@@ -74,6 +74,8 @@ function addStoreStock() {
   let sku = document.getElementById("sku").value;
   let date = document.getElementById("date").value;
   
-  save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date});
-  setURL("/IMS/storestock.html");
+  save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date})
+    .then(function(){
+        setURL("/IMS/storestock.html");
+    })
 }
