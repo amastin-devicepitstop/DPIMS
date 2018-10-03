@@ -32,6 +32,8 @@ function hideAnimation() {
 
 function preventFormSubmit() {
   if (window.location.href.indexOf("new") !== -1){
+    $("#date").val(new Date());
+    
     $("form").submit(function (e) {  
       e.preventDefault();
       addStoreStock();
