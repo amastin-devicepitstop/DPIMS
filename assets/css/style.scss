@@ -11,7 +11,12 @@
     z-index: 99;
     transition: width .3s ease-in-out;
   }
+}
   
+@media (min-width: 2000px) {
+  #column-content {
+      max-width:1650px
+  }
 }
 
 html, body {
