@@ -7,6 +7,10 @@ window.onload = function(){
 
 }
 
+// ====================
+// ===== FIREBASE =====
+// ====================
+
 function initDatabase(){
   const config = {
       apiKey: "AIzaSyAchMHl30dBGYZHfVJR3ch12jFCpReQSdM",
@@ -24,22 +28,6 @@ function initDatabase(){
   database = firebase.firestore();
   database.settings(settings);
 }  
-
-
-function hideAnimation() {
-  document.getElementById("load-screen").style.display = "none";
-}
-
-function preventFormSubmit() {
-  if (window.location.href.indexOf("new") !== -1){
-    $("#date").val(new Date().toLocaleDateString());
-    
-    $("form").submit(function (e) {  
-      e.preventDefault();
-      addStoreStock();
-    });	
-  }
-}
 
 function save(collection, doc, subCollection, subDoc, json) {
     database.collection(collection).doc(doc).collection(subCollection).doc(subDoc).set(json)
@@ -66,8 +54,35 @@ function get(collection, doc) {
     });
 }
 
+// ===============
+// === GENERAL ===
+// ===============
+
+
+function hideAnimation() {
+  document.getElementById("load-screen").style.display = "none";
+}
+
 function setURL(url) {
   document.location.href = url;
+}
+
+// ===============
+// = STORE STOCK =
+// ===============
+
+function preventFormSubmit() {
+  // Check that the current page is the "New Store Stock" page
+  if (window.location.href.indexOf("new") !== -1){
+    // Autofill current date
+    $("#date").val(new Date().toLocaleDateString());
+    
+    // Prevent form submission
+    $("form").submit(function (e) {  
+      e.preventDefault();
+      addStoreStock();
+    });	
+  }
 }
 
 function addStoreStock() {
@@ -80,3 +95,9 @@ function addStoreStock() {
   
   save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date});
 }
+
+
+
+
+
+
