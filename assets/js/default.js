@@ -72,8 +72,6 @@ function getAll(collection) {
     snapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
     });
 });
 }
