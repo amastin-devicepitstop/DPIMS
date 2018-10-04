@@ -68,7 +68,7 @@ function getWhere(collection) {
 }
 
 function getAll(collection) {
-  db.collection("cities").get().then(function(snapshot) {
+  database.collection("cities").get().then(function(snapshot) {
     snapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
