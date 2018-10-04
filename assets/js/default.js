@@ -29,6 +29,10 @@ function initDatabase(){
   database.settings(settings);
 }  
 
+function save(collection, doc) {
+  
+}
+
 function save(collection, doc, subCollection, subDoc, json) {
     database.collection(collection).doc(doc).collection(subCollection).doc(subDoc).set(json)
     .then(function(){
@@ -55,16 +59,13 @@ function get(collection, doc) {
 }
 
 function getWhere(collection) {
-  database.collection(collection).where("Apple", "==", "iPhone 6").get()
+  database.collection(collection).where("actions", "==", "Cellbie").get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
         });
     })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
 }
 
 function getAll(collection) {
