@@ -29,18 +29,6 @@ function initDatabase(){
   database.settings(settings);
 }  
 
-function save(collection, doc, subCollection, subDoc, json) {
-    database.collection(collection).doc(doc).collection(subCollection).doc(subDoc).set(json)
-    .then(function(){
-        console.log("Document successfully written!");
-        setURL("/IMS/storestock.html");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-        alert("An error occurred while processing your request. Please try again.");
-    });
-}
-
 function save(collection, doc, json) {
   database.collection(collection).doc(doc).set(json)
   .then(function(){
