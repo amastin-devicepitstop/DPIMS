@@ -68,16 +68,11 @@ function getWhere(collection) {
 }
 
 function getAll(collection) {
-  database.collection("cities").get().then(snapshot => {
-
-  snapshot.forEach(doc => {
-
-    console.log( doc.data().name );    
-    console.log( doc.data().mail );
-
-  });
-
-});
+  database.collection("cities").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+    });
 }
 
 // ===============
