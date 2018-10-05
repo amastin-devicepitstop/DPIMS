@@ -1,5 +1,10 @@
 let database;
 
+window.onload = function(){
+  hideAnimation();
+  initDatabase();
+}
+
 // ===============
 // === GENERAL ===
 // ===============
