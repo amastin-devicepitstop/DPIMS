@@ -11,7 +11,7 @@ window.onload = function(){
 
 function getStoreStock() {
   let results = getWhere("devices", "month", "==", "10");
-  console.log(results.pop());
+  console.log(results[0]);
 //   console.log(results);
 //   console.log("got results");
 //   console.log(results.length);
