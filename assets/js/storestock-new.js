@@ -34,6 +34,7 @@ function addStoreStock() {
                         model: model,
                         actions: actions,
                         sku: sku,
+                        date: date,
                         month: month,
                         day: day,
                         year: year
