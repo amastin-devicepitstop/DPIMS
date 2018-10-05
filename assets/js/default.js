@@ -4,7 +4,7 @@ window.onload = function(){
   hideAnimation();
   initDatabase();
   preventFormSubmit();
-  getURL();
+  getPage();
 
 }
 
