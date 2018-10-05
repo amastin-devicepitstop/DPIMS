@@ -87,7 +87,7 @@ function setURL(url) {
 }
 
 function getPage(){
-  alert(location.pathname);
+  alert(location.pathname.split("/").pop());
 }
 
 function urlContains(string) {
