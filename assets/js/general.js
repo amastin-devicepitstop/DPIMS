@@ -73,8 +73,8 @@ function get(collection, doc) {
     });
 }
 
-function getWhere(collection) {
-  database.collection(collection).where("actions", "==", "Cellbie").get()
+function getWhere(collection, field, operator, expected) {
+  database.collection(collection).where(field, operator, expected).get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
