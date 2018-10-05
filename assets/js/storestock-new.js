@@ -1,3 +1,9 @@
+window.onload = function(){
+  hideAnimation();
+  initDatabase();
+  preventFormSubmit();
+}
+
 function preventFormSubmit() {
   // Check that the current page is the "New Store Stock" page
   
