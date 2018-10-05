@@ -3,6 +3,7 @@ window.onload = function(){
   initDatabase();
   query = getStoreStock();
   addRows(query);
+  console.log(query[0]);
 }
 
 // ===================
