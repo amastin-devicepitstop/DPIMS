@@ -1,5 +1,7 @@
 window.onload = function(){
   hideAnimation();
+  initDatabase();
+  getStoreStock();
 }
 
 // ===================
@@ -7,5 +9,5 @@ window.onload = function(){
 // ===================
 
 function getStoreStock() {
-  
+  getWhere("devices", "month", "==", "10");
 }
