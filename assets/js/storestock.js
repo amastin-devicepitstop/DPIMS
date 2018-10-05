@@ -3,7 +3,6 @@ window.onload = function(){
   initDatabase();
   query = getStoreStock();
   addRows(query);
-  console.log(query[0]);
 }
 
 // ===================
@@ -11,7 +10,8 @@ window.onload = function(){
 // ===================
 
 function getStoreStock() {
-  return getWhere("devices", "month", "==", "10");
+  let results = getWhere("devices", "month", "==", "10");
+  console.log(results.pop());
 //   console.log(results);
 //   console.log("got results");
 //   console.log(results.length);
