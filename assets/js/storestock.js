@@ -18,32 +18,32 @@ function getStoreStock() {
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
-  $("#store-stock-tracker > tbody").append("<tr> +
-                                      "<td> +
-                                        "<input type='checkbox'> +
-                                      "</td> +
-                                      "<td class='overflow'> + 
+  $("#store-stock-tracker > tbody").append("<tr>" +
+                                      "<td>" +
+                                        "<input type='checkbox'>" +
+                                      "</td>" +
+                                      "<td class='overflow'>" + 
                                         tech + 
-                                      "</td> +
+                                      "</td>" +
                                      
-                                      "<td class='overflow'> + 
+                                      "<td class='overflow'>" + 
                                         manufacturer + 
-                                      "</td> +
+                                      "</td>" +
                                      
-                                      "<td class='overflow'> + 
+                                      "<td class='overflow'>" + 
                                         model + 
-                                      "</td> +
+                                      "</td>" +
                                      
-                                      "<td class='overflow'> + 
+                                      "<td class='overflow'>" + 
                                         actions + 
-                                      "</td> +
+                                      "</td>" +
                                      
-                                      "<td class='overflow'> + 
+                                      "<td class='overflow'>" + 
                                         sku + 
-                                      "</td> +
+                                      "</td>" +
                                      
-                                      "<td class='overflow'> + 
+                                      "<td class='overflow'>" + 
                                         date + 
-                                      "</td> +
-                                     </tr>");
+                                      "</td>" +
+                                     "</tr>");
 }
