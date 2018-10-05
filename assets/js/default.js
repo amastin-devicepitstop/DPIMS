@@ -4,6 +4,7 @@ window.onload = function(){
   hideAnimation();
   initDatabase();
   preventFormSubmit();
+  getURL();
 
 }
 
@@ -85,14 +86,22 @@ function setURL(url) {
   document.location.href = url;
 }
 
-// ===============
-// = STORE STOCK =
-// ===============
+function getPage(){
+  alert(location.pathname);
+}
+
+function urlContains(string) {
+  return window.location.href.indexOf(string) !== -1
+}
+
+// ===================
+// = NEW STORE STOCK =
+// ===================
 
 function preventFormSubmit() {
   // Check that the current page is the "New Store Stock" page
-  if (window.location.href.indexOf("new") !== -1){
-    // Autofill current date
+  
+  if (urlContains("new")) {
     $("#date").val(new Date().toLocaleDateString());
     
     // Prevent form submission
