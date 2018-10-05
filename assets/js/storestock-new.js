@@ -24,7 +24,19 @@ function addStoreStock() {
   let sku = document.getElementById("sku").value;
   let date = document.getElementById("date").value;
   
+  let month = getMonth(date);
+  let day = getDay(date);
+  let year = getYear(date);
+  
   //save("devices", manufacturer, model, sku, {tech: name, actions: actions, date: date});
-  save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date});
+  save("devices", sku, {tech: name,
+                        manufacturer: manufacturer,
+                        model: model,
+                        actions: actions,
+                        sku: sku,
+                        month: month,
+                        day: day,
+                        year: year
+                       });
 }
 
