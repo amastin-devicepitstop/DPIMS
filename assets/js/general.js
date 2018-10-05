@@ -26,6 +26,18 @@ function urlContains(string) {
   return window.location.href.indexOf(string) !== -1
 }
 
+function getMonth(date) {
+  return date.split("/")[0];  
+}
+
+function getDay(date) {
+  return date.split("/")[1];  
+}
+
+function getYear(date) {
+  return date.split("/")[2];  
+}
+
 // ====================
 // ===== FIREBASE =====
 // ====================
