@@ -13,6 +13,7 @@ function getStoreStock() {
   
   for (let i = 0; i < results.length; i++){
     let product = results[i];
+    console.log(product);
     addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
   }
 }
