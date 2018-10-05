@@ -9,5 +9,6 @@ window.onload = function(){
 // ===================
 
 function getStoreStock() {
-  getWhere("devices", "month", "==", "10");
+  results = getWhere("devices", "month", "==", "10");
+  print(results);
 }
