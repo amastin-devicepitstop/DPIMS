@@ -86,13 +86,16 @@ function get(collection, doc) {
 }
 
 function getWhere(collection, field, operator, expected) {
+  let array = [];
   database.collection(collection).where(field, operator, expected).get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
+            //console.log(doc.id, " => ", doc.data());
+          array.push(doc.data());
         });
     })
+  return array;
 }
 
 function getAll(collection) {
