@@ -1,22 +1,4 @@
-let database;
-
-
-
-
-
-
-// ===================
-// = storestock.html =
-// ===================
-
-
-// =======================
-// = storestock-new.html =
-// =======================
-
-
-
-
-
-
-
+window.onload = function(){
+  hideAnimation();
+  initDatabase();
+}
