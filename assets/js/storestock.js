@@ -18,32 +18,13 @@ function getStoreStock() {
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
-  $("#store-stock-tracker > tbody").append("<tr>" +
-                                      "<td>" +
-                                        "<input type='checkbox'>" +
-                                      "</td>" +
-                                      "<td class='overflow'>" + 
-                                        tech + 
-                                      "</td>" +
-                                     
-                                      "<td class='overflow'>" + 
-                                        manufacturer + 
-                                      "</td>" +
-                                     
-                                      "<td class='overflow'>" + 
-                                        model + 
-                                      "</td>" +
-                                     
-                                      "<td class='overflow'>" + 
-                                        actions + 
-                                      "</td>" +
-                                     
-                                      "<td class='overflow'>" + 
-                                        sku + 
-                                      "</td>" +
-                                     
-                                      "<td class='overflow'>" + 
-                                        date + 
-                                      "</td>" +
-                                     "</tr>");
+  let checkboxCell = "<td><input type='checkbox'></td>";
+  let techCell = "<td class='overflow'>" + tech + "</td>";
+  let manufacturerCell = "<td class='overflow'>" + manufacturer + "</td>";
+  let modelCell = "<td class='overflow'>" + model + "</td>";
+  let actionsCell = "<td class='overflow'>" + actions + "</td>";
+  let skuCell = "<td class='overflow'>" + sku + "</td>";
+  let dateCell = "<td class='overflow'>" + date + "</td>";
+  
+   $("#store-stock-tracker > tbody").append(checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell);
 }
