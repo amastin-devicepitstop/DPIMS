@@ -87,7 +87,7 @@ function setURL(url) {
 }
 
 function getPage(){
-  alert(location.pathname.split("/").pop());
+  return location.pathname.split("/").pop();
 }
 
 function urlContains(string) {
@@ -95,8 +95,13 @@ function urlContains(string) {
 }
 
 // ===================
-// = NEW STORE STOCK =
+// = storestock.html =
 // ===================
+
+
+// =======================
+// = storestock-new.html =
+// =======================
 
 function preventFormSubmit() {
   // Check that the current page is the "New Store Stock" page
