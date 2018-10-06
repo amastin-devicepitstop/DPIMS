@@ -9,10 +9,8 @@ window.onload = function(){
 // ===================
 
 function getStoreStock() {
-  let results = getWhere("devices", "month", "==", "10");
-  console.log(results);
-  console.log("got results");
-  console.log(results[0].tech);
+  let query = getWhere("devices", "month", "==", "10");
+  console.log(query);
 //   for (let i = 0; i < results.length; i++){
 //     console.log("About to set product");
 //     let product = results[i];
