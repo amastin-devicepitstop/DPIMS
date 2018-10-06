@@ -92,7 +92,7 @@ function getWhere(collection, field, operator, expected) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
             //console.log(doc.id, " => ", doc.data());
-          array.push(doc.data());
+          console.log(doc.data().tech);
         });
     })
   return array;
