@@ -11,6 +11,9 @@ window.onload = function(){
 function getStoreStock() {
   let query = getWhere("devices", "month", "==", "10");
   console.log(query);
+  setTimeout(function(){
+    console.log(query.length);
+  }, 2000);
 //   for (let i = 0; i < results.length; i++){
 //     console.log("About to set product");
 //     let product = results[i];
