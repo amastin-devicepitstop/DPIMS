@@ -33,3 +33,20 @@ function addStoreStock() {
   save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year});
 }
 
+function addAction() {
+  let actions = $("#actions").val();
+  let selectedOption = $("#actions:selected").text();
+  
+  // If input is empty...
+  if (actions == "") {
+    // Add the selected option to its contents
+    $("#actions").text(selectedOption)
+  }
+  
+  // If input is not empty...
+  else {
+    // Append the (lowercase) selected option to its contents, separated by a comma
+    selectedOption = selectedOption.toLowerCase();
+    $("#actions").text(actions + ", " + selectedOption);
+  }
+}
