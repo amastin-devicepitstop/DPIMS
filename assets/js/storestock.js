@@ -34,8 +34,14 @@ function addRows(dbData) {
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
-  let table = document.getElementById("store-stock-tracker");
-  let row = table.insertRow(0);
-  let techCell = row.insertCell(0).innerHTML("Hello");
+  let checkboxCell = "<td><input type='checkbox'></td>";
+  let techCell = "<td class='overflow'>" + tech + "</td>";
+  let manufacturerCell = "<td class='overflow'>" + manufacturer + "</td>";
+  let modelCell = "<td class='overflow'>" + model + "</td>";
+  let actionsCell = "<td class='overflow'>" + actions + "</td>";
+  let skuCell = "<td class='overflow'>" + sku + "</td>";
+  let dateCell = "<td class='overflow'>" + date + "</td>";
+  
+   $("#store-stock-tracker > tbody").append(checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell);
 }
 
