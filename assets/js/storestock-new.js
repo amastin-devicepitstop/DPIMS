@@ -35,7 +35,7 @@ function addStoreStock() {
 
 function addAction() {
   let actions = document.getElementById("actions");
-  let selectedOption = actions.options[actions.selectedIndex].text
+  let selectedOption = document.getElementById("actions-performed").value;
   
   console.log(actions);
   console.log(document.getElementById("actions"));
