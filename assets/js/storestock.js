@@ -16,7 +16,7 @@ function getStoreStock() {
   setTimeout(function(){ // works
     console.log(query.length);
     addStoreStockRow(query.tech, query.manufacturer, query.model, query.actions, query.sku, query.date);
-  }, 100);
+  }, 500);
   
   
   for (let i = 0; i < query.length; i++){
