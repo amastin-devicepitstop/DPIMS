@@ -34,22 +34,22 @@ function addStoreStock() {
 }
 
 function addAction() {
-  let actions = $("#actions").val();
-  let selectedOption = $("#actions:selected").text();
+  let actions = document.getElementById("actions");
+  let selectedOption = actions.options[actions.selectedIndex].text
   
   console.log(actions);
   console.log(document.getElementById("actions"));
   
   // If input is empty...
-  if (actions == "") {
+  if (actions.text == "") {
     // Add the selected option to its contents
-    $("#actions").text(selectedOption)
+    actions.text = selectedOption;
   }
   
   // If input is not empty...
   else {
     // Append the (lowercase) selected option to its contents, separated by a comma
     selectedOption = selectedOption.toLowerCase();
-    $("#actions").text(actions + ", " + selectedOption);
+    actions.text += ", " + selectedOption;
   }
 }
