@@ -43,7 +43,7 @@ function addAction() {
   console.log(actions.innerHTML);
   
   // If input is empty...
-  if (actions.text == "") {
+  if (actions.value == "") {
     // Add the selected option to its contents
     actions.text = selectedOption;
   }
@@ -52,6 +52,6 @@ function addAction() {
   else {
     // Append the (lowercase) selected option to its contents, separated by a comma
     selectedOption = selectedOption.toLowerCase();
-    actions.text += ", " + selectedOption;
+    actions.value += ", " + selectedOption;
   }
 }
