@@ -45,7 +45,7 @@ function addAction() {
   // If input is empty...
   if (actions.value == "") {
     // Add the selected option to its contents
-    actions.text = selectedOption;
+    actions.value = selectedOption;
   }
   
   // If input is not empty...
