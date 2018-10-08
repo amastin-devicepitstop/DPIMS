@@ -32,7 +32,7 @@ function addRows(dbData) {
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
   let checkboxCell = "<td><input type='checkbox'></td>";
-  let techCell = "<td class='overflow'>" + tech + "</td>";
+  let techCell = "<td class='overflow'><a>" + tech + "</a></td>";
   let manufacturerCell = "<td class='overflow'>" + manufacturer + "</td>";
   let modelCell = "<td class='overflow'>" + model + "</td>";
   let actionsCell = "<td class='overflow'>" + actions + "</td>";
