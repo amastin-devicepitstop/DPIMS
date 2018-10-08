@@ -9,7 +9,9 @@ window.onload = function(){
 // ===================
 
 function getStoreStock() {
-  let query = getWhere("devices", "month", "==", "10");
+  let date = new Date();
+  let month = date.getMonth() + 1;
+  let query = getWhere("devices", "month", "==", month);
   
   console.log(query); // works
   
