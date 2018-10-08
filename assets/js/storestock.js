@@ -15,15 +15,15 @@ function getStoreStock() {
   
   setTimeout(function(){ // works
     console.log(query.length);
-    addStoreStockRow(query.tech, query.manufacturer, query.model, query.actions, query.sku, query.date);
+    for (let i = 0; i < query.length; i++){
+      let product = query[i];
+      console.log(product);
+      addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
+    }
   }, 500);
   
   
-  for (let i = 0; i < query.length; i++){
-    let product = query[i];
-    console.log(product);
-    addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
-  }
+
 }
 
 function addRows(dbData) {
