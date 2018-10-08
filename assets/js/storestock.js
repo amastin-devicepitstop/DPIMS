@@ -22,14 +22,7 @@ function getStoreStock() {
       console.log(product);
       addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
     }
-  }, 500);
-  
-  
-
-}
-
-function addRows(dbData) {
-  console.log(dbData.length);  
+  }, 500); 
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
