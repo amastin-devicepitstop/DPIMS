@@ -12,10 +12,11 @@ function getStoreStock() {
   let query = getWhere("devices", "month", "==", "10");
   
   console.log(query); // works
+  console.log(query.length);
   
-  setTimeout(function(){ // works
-    console.log(query.length);
-  }, 2000);
+//   setTimeout(function(){ // works
+//     console.log(query.length);
+//   }, 2000);
   
   //console.log(query.length); // doesn't work
   
