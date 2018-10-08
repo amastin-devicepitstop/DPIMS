@@ -37,6 +37,9 @@ function addAction() {
   let actions = $("#actions").val();
   let selectedOption = $("#actions:selected").text();
   
+  console.log(actions);
+  console.log(document.getElementById("actions"));
+  
   // If input is empty...
   if (actions == "") {
     // Add the selected option to its contents
