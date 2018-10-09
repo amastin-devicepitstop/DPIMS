@@ -593,6 +593,12 @@ svg {
 //   width: inherit;
 // }
 
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .ui-menu {
   list-style: none;
   padding: 10px;
