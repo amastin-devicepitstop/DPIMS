@@ -27,6 +27,7 @@ function getStoreStock() {
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
   console.log("Processing product data...");
+  let rowStart = "<tr>";
   let checkboxCell = "<td><input type='checkbox'></td>";
   let techCell = "<td class='overflow'><a>" + tech + "</a></td>";
   let manufacturerCell = "<td class='overflow'>" + manufacturer + "</td>";
@@ -34,8 +35,9 @@ function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
   let actionsCell = "<td class='overflow'>" + actions + "</td>";
   let skuCell = "<td class='overflow'>" + sku + "</td>";
   let dateCell = "<td class='overflow'>" + date + "</td>";
+  let rowEnd = "</tr>";
   
-  $("#store-stock-tracker > tbody").append(checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell);
+  $("#store-stock-tracker > tbody").append(rowStart + checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell + rowEnd);
   console.log("Successfully added " + model + " to the table.");
 }
 
