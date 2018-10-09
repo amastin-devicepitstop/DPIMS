@@ -632,3 +632,14 @@ svg {
 .ui-menu .ui-menu-item a.ui-state-active {
   margin: -1px;
 }
+
+select {
+  border: 1px solid #cccccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 5px 5px -5px rgba(204, 204, 204, 0.6);
+}
+
+option:hover {
+  background-color: #206ec5;
+}
