@@ -73,7 +73,7 @@ function autocomplete() {
   $("#manufacturer").autocomplete({
     
     maxResults: 10,
-    source: manufacturers
+    //source: manufacturers
     source: function(request, response) {
         var results = $.ui.autocomplete.filter(manufacturers, request.term);
         response(results.slice(0, this.options.maxResults));
