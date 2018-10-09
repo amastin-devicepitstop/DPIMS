@@ -2,6 +2,7 @@ window.onload = function(){
   hideAnimation();
   preventFormSubmit();
   initDatabase();
+  autocomplete();
 }
 
 function preventFormSubmit() {
@@ -49,4 +50,35 @@ function addAction() {
     selectedOption = selectedOption.toLowerCase();
     actions.value += ", " + selectedOption;
   }
+}
+
+function autocomplete() {
+  let manufacturers = ["Acer",
+                       "Alienware",
+                       "Apple",
+                       "ASUS",
+                       "BenQ",
+                       "Compaq",
+                       "CyberPowerPC",
+                       "Dell",
+                       "Gateway",
+                       "HP",
+                       "HTC",
+                       "Intel",
+                       "Lenovo",
+                       "LG",
+                       "Microsoft",
+                       "MSI",
+                       "Motorola",
+                       "Origin PC",
+                       "Panasonic",
+                       "Razer",
+                       "Samsung",
+                       "Toshiba",
+                       "Vizio"
+                      ];
+  
+  $("#manufacturer").autocomplete({
+    source: manufacturers
+  });
 }
