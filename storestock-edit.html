@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/IMS/assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/IMS/assets/js/general.js"></script>
+    <script src="/IMS/assets/js/storestock-new.js"></script>
+  </head>
+  <body>
+
+    <div id="load-screen">
+      <div class="lds-dual-ring"></div>
+    </div>
+    <header role="banner">
+      <div id="header">
+        <div id="site-logo"></div>
+      </div>
+      <div id="topbar">
+        <div id="search-bar">
+          <div id="search-left-half">
+              <span id="search-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                      <path d="M511.256 466.306L371.179 326.229a2.542 2.542 0 0 0-3.595 0l-11.513 11.512c31.591-35.855 50.786-82.878 50.786-134.312C406.856 91.26 315.6.001 203.428.001 91.257.001 0 91.26 0 203.43s91.257 203.426 203.428 203.426c51.432 0 98.457-19.196 134.314-50.783l-11.513 11.512a2.543 2.543 0 0 0 0 3.595l140.076 140.074a2.545 2.545 0 0 0 3.596 0l41.353-41.352a2.541 2.541 0 0 0 .002-3.596zm-307.828-92.508c-93.942 0-170.371-76.428-170.371-170.369s76.428-170.37 170.371-170.37c93.942 0 170.371 76.428 170.371 170.37S297.37 373.798 203.428 373.798z"></path>
+                  </svg>
+              </span>
+          </div>
+          <div>
+              <input id="search-right-half" placeholder="Search" maxlength="100" type="text">
+          </div>
+        </div>
+      </div>
+    </header>
+   
+    <main id="content" class="main-content" role="main">
+      <div id="sidebar-container">
+        <ul class="nav" id="sidebar">
+          <li class="tab">
+            <a href="https://amastin-devicepitstop.github.io/IMS">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M422 496H304V384c0-8.8-7.2-16-16-16h-64c-8.8 0-16 7.2-16 16v112H90c-5.5 0-10-4.5-10-10V272H32.6c-5.5 0-10.8-2.6-13.8-7.2-4.3-6.5-3.2-14.9 2.1-20.1L244.7 21.6c6.2-6.2 16.3-6.2 22.6 0l223.9 223.1c4.6 4.6 6 11.5 3.5 17.4s-8.3 9.9-14.8 9.9H432v214c0 5.5-4.5 10-10 10zm-86-32h59c2.8 0 5-2.2 5-5V272c0-17.6 14.4-32 32-32h9.2L256 55.5 70.8 240H80c17.6 0 32 14.4 32 32v187c0 2.8 2.2 5 5 5h59v-80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v80z"></path><circle cx="256" cy="224" r="32"></circle></svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="tab active">
+            <a href="storestock.html">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.7 25.7"><path d="M19.8 11.2l-6.3-7.7c-.4-.6-.8-.6-1.3 0L6 11.2H-.2v1.6h1.6l3.3 9.8H21l3.3-9.8h1.6v-1.6h-6.1zm-7-5.9l4.8 5.9H8.1l4.7-5.9zM19.9 21h-14l-2.7-8.1h19.5L19.9 21z"></path><path d="M8.3 16.2h9v1.1h-9z"></path></svg>
+              Store Stock
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="column" class="form-column">
+        <div id="column-header" class="header-btm-border">
+          <div id="action-row">
+            <div class="btn-toolbar-right">
+              <button class="btn btn-transparent btn-small return" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/storestock.html')">
+                <svg class="text-top svg-18" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z"></path></svg>
+              </button>
+            </div>
+            <div class="font-xlg">
+              New Store Stock
+            </div>
+          </div>
+        </div>
+        <div id="column-content-form">
+          <div id="column-container">
+            <div class="row product-form">
+              <div class="row-container">
+                <form action="storestock.html">
+                  <div class="form-group">
+                    <label class="input-15">Technician</label>
+                    <div class="input-25">
+                      <input id="first-name" placeholder="First Name" type="text" class="form-control " required>
+                    </div>
+                    <div class="input-25">
+                      <input id="last-name" placeholder="Last Name" type="text" class="form-control " required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15">Manufacturer</label>
+                    <div class="input-50">
+                      <input id="manufacturer" type="text" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15">Product Model</label>
+                    <div class="input-50">
+                      <input id="model" type="text" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15">Actions Performed</label>
+                    <div class="input-25">
+                      <select id="actions-performed" class="form-control" onchange="addAction()" required>
+                        <option value="" disabled selected hidden>Select an option...</option>
+                        <option id="opt-cellbie" value="Cellbie">Cellbie</option>
+                        <option id="opt-screen" value="Replaced screen">Replaced screen</option>
+                        <option id="opt-battery" value="Replaced battery">Replaced battery</option>
+                        <option id="opt-dock-port" value="Replaced dock port">Replaced dock port</option>
+                        <option id="cleaned" value="Cleaned">Cleaned</option>
+                        <option id="windows" value="Windows activation">Windows activation</option>
+                        <option id="dpos" value="DPOS">DPOS</option>
+                      </select>
+                    </div>
+                    <div class="input-25">
+                      <input id="actions" type="text" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15">Product SKU</label>
+                    <div class="input-50">
+                      <input id="sku" type="text" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15">Current Date</label>
+                    <div class="input-50">
+                      <input id="date" type="text" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="border-light">
+              <div class="row">
+                <div class="btn-toolbar-left">
+                  <button class="btn btn-33 btn-primary" type="submit">Save</button>
+                  <button class="btn btn-33 btn-default" type="button" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/storestock.html')">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
