@@ -579,6 +579,7 @@ svg {
 
 .ui-menu .ui-menu-item {
   color: black;
+  list-style: none;
 //   border-radius: 0px;
 //   border: 1px solid #454545;
 }
@@ -587,4 +588,5 @@ svg {
 .ui-menu {
   background-color: white;
   border: 1px solid black;
+  width: inherit;
 }
