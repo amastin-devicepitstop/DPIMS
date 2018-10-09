@@ -59,7 +59,7 @@
         <div id="column-header" class="header-btm-border">
           <div id="action-row">
             <div class="btn-toolbar-right">
-              <button class="btn btn-transparent btn-small return ">
+              <button class="btn btn-transparent btn-small return" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/storestock.html')">
                 <svg class="text-top svg-18" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z"></path></svg>
               </button>
             </div>
@@ -72,65 +72,65 @@
           <div id="column-container">
             <div class="row product-form">
               <div class="row-container">
-                <div class="form-group">
-                  <label class="input-15">Technician</label>
-                  <div class="input-25">
-                    <input id="first-name" placeholder="First Name" type="text" class="form-control " required>
+                <form action="storestock.html">
+                  <div class="form-group">
+                    <label class="input-15">Technician</label>
+                    <div class="input-25">
+                      <input id="first-name" placeholder="First Name" type="text" class="form-control " required>
+                    </div>
+                    <div class="input-25">
+                      <input id="last-name" placeholder="Last Name" type="text" class="form-control " required>
+                    </div>
                   </div>
-                  <div class="input-25">
-                    <input id="last-name" placeholder="Last Name" type="text" class="form-control " required>
+                  <div class="form-group">
+                    <label class="input-15">Manufacturer</label>
+                    <div class="input-50">
+                      <input id="manufacturer" type="text" class="form-control" required>
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="input-15">Manufacturer</label>
-                  <div class="input-50">
-                    <input id="manufacturer" type="text" class="form-control" required>
+                  <div class="form-group">
+                    <label class="input-15">Product Model</label>
+                    <div class="input-50">
+                      <input id="model" type="text" class="form-control" required>
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="input-15">Product Model</label>
-                  <div class="input-50">
-                    <input id="model" type="text" class="form-control" required>
+                  <div class="form-group">
+                    <label class="input-15">Actions Performed</label>
+                    <div class="input-25">
+                      <select id="actions-performed" class="form-control" onchange="addAction()" required>
+                        <option value="" disabled selected hidden>Select an option...</option>
+                        <option id="opt-cellbie" value="Cellbie">Cellbie</option>
+                        <option id="opt-screen" value="Replaced screen">Replaced screen</option>
+                        <option id="opt-battery" value="Replaced battery">Replaced battery</option>
+                        <option id="opt-dock-port" value="Replaced dock port">Replaced dock port</option>
+                        <option id="cleaned" value="Cleaned">Cleaned</option>
+                        <option id="windows" value="Windows activation">Windows activation</option>
+                        <option id="dpos" value="DPOS">DPOS</option>
+                      </select>
+                    </div>
+                    <div class="input-25">
+                      <input id="actions" type="text" class="form-control" required>
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="input-15">Actions Performed</label>
-                  <div class="input-25">
-                    <select id="actions-performed" class="form-control" onchange="addAction()" required>
-                      <option value="" disabled selected hidden>Select an option...</option>
-                      <option id="opt-cellbie" value="Cellbie">Cellbie</option>
-                      <option id="opt-screen" value="Replaced screen">Replaced screen</option>
-                      <option id="opt-battery" value="Replaced battery">Replaced battery</option>
-                      <option id="opt-dock-port" value="Replaced dock port">Replaced dock port</option>
-                      <option id="cleaned" value="Cleaned">Cleaned</option>
-                      <option id="windows" value="Windows activation">Windows activation</option>
-                      <option id="dpos" value="DPOS">DPOS</option>
-                    </select>
+                  <div class="form-group">
+                    <label class="input-15">Product SKU</label>
+                    <div class="input-50">
+                      <input id="sku" type="text" class="form-control" required>
+                    </div>
                   </div>
-                  <div class="input-25">
-                    <input id="actions" type="text" class="form-control" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="input-15">Product SKU</label>
-                  <div class="input-50">
-                    <input id="sku" type="text" class="form-control" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="input-15">Current Date</label>
-                  <div class="input-50">
-                    <input id="date" type="text" class="form-control" required>
+                  <div class="form-group">
+                    <label class="input-15">Current Date</label>
+                    <div class="input-50">
+                      <input id="date" type="text" class="form-control" required>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <hr class="border-light">
-            <div class="row">
-              <div class="btn-toolbar-left">
-                <form action="storestock.html">
+              <hr class="border-light">
+              <div class="row">
+                <div class="btn-toolbar-left">
                   <button class="btn btn-33 btn-primary" type="submit">Save</button>
-                  <button class="btn btn-33 btn-default" type="button" onclick="getWhere('devices')">Cancel</button>
+                  <button class="btn btn-33 btn-default" type="button" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/storestock.html')">Cancel</button>
                 </form>
               </div>
             </div>
