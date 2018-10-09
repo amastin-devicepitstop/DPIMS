@@ -577,18 +577,45 @@ svg {
   
 }
 
-.ui-menu .ui-menu-item {
-  color: black;
-  list-style: none;
-  left: 1rem;
-  position: relative;
-//   border-radius: 0px;
-//   border: 1px solid #454545;
-}
+// .ui-menu .ui-menu-item {
+//   color: black;
+//   list-style: none;
+//   left: 1rem;
+//   position: relative;
+// //   border-radius: 0px;
+// //   border: 1px solid #454545;
+// }
 
+
+// .ui-menu {
+//   background-color: white;
+//   border: 1px solid black;
+//   width: inherit;
+// }
 
 .ui-menu {
-  background-color: white;
-  border: 1px solid black;
-  width: inherit;
+        list-style:none;
+        padding: 10px;
+        margin: 0;
+        display:block;
+        width:227px;
+}
+.ui-menu .ui-menu {
+        margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+        margin:0;
+        padding: 0;
+        width: 200px;
+}
+.ui-menu .ui-menu-item a {
+        text-decoration:none;
+        display:block;
+        padding:.2em .4em;
+        line-height:1.5;
+        zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+        margin: -1px;
 }
