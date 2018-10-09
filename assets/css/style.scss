@@ -295,8 +295,11 @@ a {
     -webkit-font-smoothing: antialiased;
     vertical-align: bottom;
     padding: 8px;
-    transition: opacity 1s linear;
   }
+}
+
+tr {
+  transition: opacity 1s linear;  
 }
 
 .width-5 {
