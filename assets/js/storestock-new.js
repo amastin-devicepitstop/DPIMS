@@ -37,11 +37,6 @@ function addAction() {
   let actions = document.getElementById("actions");
   let selectedOption = document.getElementById("actions-performed").value;
   
-  console.log(actions.text);
-  console.log(actions.value);
-  console.log(actions.innerText);
-  console.log(actions.innerHTML);
-  
   // If input is empty...
   if (actions.value == "") {
     // Add the selected option to its contents
