@@ -578,7 +578,13 @@ svg {
 }
 
 .ui-menu .ui-menu-item {
-  color: #96f226;
-  border-radius: 0px;
-  border: 1px solid #454545;
+  color: black;
+//   border-radius: 0px;
+//   border: 1px solid #454545;
+}
+
+
+.ui-menu {
+  background-color: white;
+  border: 1px solid black;
 }
