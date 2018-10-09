@@ -80,7 +80,7 @@ function autocomplete() {
     }
   });
   
-  let models = ["Elitebook",
+  let models = ["Elitebook ",
                 "Galaxy S4", "Galaxy S4 Active",
                 "Galaxy S5", "Galaxy S5 Active",
                 "Galaxy S6", "Galaxy S6 Active", "Galaxy S6 Edge", "Galaxy S6 Edge+",
@@ -103,8 +103,8 @@ function autocomplete() {
                 "iPhone 7", "iPhone 7 Plus",
                 "iPhone 8", "iPhone 8 Plus",
                 "iPhone X", "iPhone XR", "iPhone XS", "iPhone XS Max",
-                "Thinkpad",
-                "XPS"
+                "Thinkpad ",
+                "XPS "
                ];
   
   $("#model").autocomplete({
