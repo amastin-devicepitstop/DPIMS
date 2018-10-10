@@ -577,22 +577,6 @@ svg {
   
 }
 
-// .ui-menu .ui-menu-item {
-//   color: black;
-//   list-style: none;
-//   left: 1rem;
-//   position: relative;
-// //   border-radius: 0px;
-// //   border: 1px solid #454545;
-// }
-
-
-// .ui-menu {
-//   background-color: white;
-//   border: 1px solid black;
-//   width: inherit;
-// }
-
 .ui-autocomplete {
   max-height: 200px;
   overflow-y: scroll;
@@ -629,7 +613,7 @@ svg {
 }
 
 .ui-menu-item {
-  padding: 5px 5px 10px 0;  
+  padding: 5px 5px 10px 0!important;  
 }
 
 .ui-menu-item:hover {
