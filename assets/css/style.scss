@@ -585,6 +585,7 @@ svg {
 
 .ui-menu {
   list-style: none;
+  padding: 10px;
   margin: 0;
   display: block;
   width: 227px;
@@ -612,14 +613,9 @@ svg {
   zoom: 1;
 }
 
-.ui-menu-item {
-  //padding: 5px 5px 10px 0!important;  
-}
-
 .ui-menu-item:hover {
   color: white;
   background-color: #206ec5;
-  box-shadow: 0 0 0 2px #206ec5;
 }
 
 .ui-menu .ui-menu-item a.ui-state-hover,
