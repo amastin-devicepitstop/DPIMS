@@ -15,8 +15,7 @@ function getStoreStock() {
     
   setTimeout(function(){ // works
     if (query.length > 0) {
-      console.log("TRUE");
-      $("#selectAll").html("<input type='checkbox' class='selectAll'>")
+      $(".selectAll").removeAttr("disabled");
     }
     for (let i = 0; i < query.length; i++){
       let product = query[i];
