@@ -67,7 +67,7 @@ function initCheckboxes() {
     }
     
     else {
-      if ($(".selectAll").checked == false)) {
+      if ($(".selectAll").checked == false) {
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
       }  
