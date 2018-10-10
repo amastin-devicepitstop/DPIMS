@@ -52,29 +52,41 @@ function initCheckboxes() {
   // If a single checkbox is selected, allow that product to be edited/deleted
   // If multiple checkboxes are selected, allow those products to be deleted
   $(":checkbox").change(function() {
-    if(this.checked) {
-      
-        if ($("input:checkbox:checked").length == 1) {
-          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
-          $(".font-xl").attr('class', 'modifyProduct');
-        }
-        else if ($("input:checkbox:checked").length > 1) {
-          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
-        }
-    }
-    
-    else if(!(this.checked)) {
-      if ($("input:checkbox:checked").length == 0) {
+    if ($("input:checkbox:checked").length == 0) {
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
       }
-    }
+    else if ($("input:checkbox:checked").length == 1) {
+          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").attr('class', 'modifyProduct');
+        }
+    else if ($("input:checkbox:checked").length > 1) {
+          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+        }
+    
+//     if(this.checked) {
+      
+//         if ($("input:checkbox:checked").length == 1) {
+//           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+//           $(".font-xl").attr('class', 'modifyProduct');
+//         }
+//         else if ($("input:checkbox:checked").length > 1) {
+//           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+//         }
+//     }
+    
+//     else if(!(this.checked)) {
+//       if ($("input:checkbox:checked").length == 0) {
+//         $(".modifyProduct").html("Store Stock Tracker");
+//         $(".modifyProduct").attr("class", "font-xl");
+//       }
+//     }
     
   });
   
-  $(".selectAll").change(function() {
-    console.log("selectAll changed");
-    console.log(document.getElementsByClassName("selectAll")[0]);  
-  });
+//   $(".selectAll").change(function() {
+//     console.log("selectAll changed");
+//     console.log(document.getElementsByClassName("selectAll")[0]);  
+//   });
 }
 
