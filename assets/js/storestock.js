@@ -67,7 +67,7 @@ function initCheckboxes() {
     }
   });
   
-    $(".selectAll").change(function (e) {
+    $(".selectAll").change(function() {
     if ($(".selectAll").checked == false) {
       $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", "font-xl");
