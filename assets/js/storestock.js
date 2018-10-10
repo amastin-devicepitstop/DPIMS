@@ -1,5 +1,5 @@
 window.onload = function(){
-  selectAll();
+  initCheckboxes();
   hideAnimation();
   initDatabase();
   getStoreStock();
