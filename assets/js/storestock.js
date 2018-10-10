@@ -42,9 +42,15 @@ function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
   console.log("Successfully added " + model + " to the table.");
 }
 
-function selectAll() {
+function initCheckboxes() {
   $(".selectAll").click(function (e) {
       $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
-    });    
+    });
+  
+  $(":checkbox").change(function() {
+    if(this.checked) {
+        console.log("checked");
+    }
+});
 }
 
