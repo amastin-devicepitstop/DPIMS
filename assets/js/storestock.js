@@ -53,6 +53,7 @@ function initCheckboxes() {
   // If multiple checkboxes are selected, allow those products to be deleted
   $(":checkbox").change(function() {
     if ($("input:checkbox:checked").length == 0) {
+        console.log("No checkboxes checked");
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
       }
