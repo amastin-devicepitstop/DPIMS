@@ -1,4 +1,5 @@
 window.onload = function(){
+  selectAll();
   hideAnimation();
   initDatabase();
   getStoreStock();
@@ -39,5 +40,11 @@ function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
   
   $("#store-stock-tracker > tbody").append(rowStart + checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell + rowEnd);
   console.log("Successfully added " + model + " to the table.");
+}
+
+function selectAll() {
+  $(".selectAll").click(function (e) {
+      $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
+    });    
 }
 
