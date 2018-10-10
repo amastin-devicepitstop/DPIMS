@@ -72,7 +72,10 @@ function initCheckboxes() {
     }
     
     else {
-      console.log("true too");  
+      if ($(".selectAll").checked == false)) {
+        $(".modifyProduct").html("Store Stock Tracker");
+        $(".modifyProduct").attr("class", "font-xl");
+      }
     }
   });
 }
