@@ -47,6 +47,8 @@ function initCheckboxes() {
       $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
     });
   
+
+  
   // If a single checkbox is selected, allow that product to be edited/deleted
   // If multiple checkboxes are selected, allow those products to be deleted
   $(":checkbox").change(function() {
@@ -65,12 +67,15 @@ function initCheckboxes() {
       $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", "font-xl");
     }
+    
   });
   
-  // For some reason selectAll will not make the "More Actions" dialog go away. I can't figure it out right now. I give up.
-    if ($(".selectAll").checked == false) {
+  $(".selectAll").change(function() {
+      // For some reason selectAll will not make the "More Actions" dialog go away. I can't figure it out right now. I give up.
+    if ($(".selectAll").attr('checked') == false) {
       $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", "font-xl");
-    }
+    }  
+  });
 }
 
