@@ -1,8 +1,6 @@
 window.onload = function(){
   initDatabase();
   getStoreStock();
-  initCheckboxes();
-  hideAnimation();
 }
 
 // ===================
@@ -23,6 +21,8 @@ function getStoreStock() {
       console.log("Adding " + product.model + " to the table...");
       addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
     }
+    initCheckboxes();
+    hideAnimation();
   }, 1000); 
 }
 
