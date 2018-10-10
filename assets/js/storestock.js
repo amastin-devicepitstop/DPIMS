@@ -50,11 +50,11 @@ function initCheckboxes() {
   $(":checkbox").change(function() {
     if(this.checked) {
         if ($("input:checkbox:checked").length == 1) {
-          $(".font-lg").html("<select></select>");
+          $(".font-lg").html("<select><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
           $(".font-lg").attr('class', 'modifyProduct');
         }
         else if ($("input:checkbox:checked").length > 1) {
-          
+          $(".font-lg").html("<select><option value='Delete'>Delete</option></select>");
         }
     }
     
