@@ -66,14 +66,11 @@ function initCheckboxes() {
       $(".modifyProduct").attr("class", "font-xl");
     }
     
-    else {
-      if ($(".selectAll").checked == false) {
-        $(".modifyProduct").html("Store Stock Tracker");
-        $(".modifyProduct").attr("class", "font-xl");
-      }  
-    }
 
-
+    if ($(".selectAll").checked == false) {
+      $(".modifyProduct").html("Store Stock Tracker");
+      $(".modifyProduct").attr("class", "font-xl");
+    }  
   });
 }
 
