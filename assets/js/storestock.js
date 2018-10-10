@@ -60,6 +60,7 @@ function initCheckboxes() {
     else if ($("input:checkbox:checked").length == 1) {
           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
+          $(".modifyProduct").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
         }
     
     // If multiple checkboxes are selected, allow those products to be deleted
