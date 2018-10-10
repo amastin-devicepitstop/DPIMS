@@ -54,10 +54,12 @@ function initCheckboxes() {
   $(":checkbox").change(function() {
     if(this.checked) {
         if ($("input:checkbox:checked").length == 1) {
-          console.log("1 checked");
+          $(".font-lg").html("<select></select>");
+          $(".font-lg").attr('class', 'modifyProduct');
         }
         else if ($("input:checkbox:checked").length > 1) {
-          console.log("multiple checked");
+          $(".modifyProduct").attr("class", ".font-lg");
+          $(".font-lg").html("Store Stock Tracker");
         }
     }
   });
