@@ -63,6 +63,7 @@ function initCheckboxes() {
         }
     else if ($("input:checkbox:checked").length > 1) {
           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").attr('class', 'modifyProduct');
         }
     
 //     if(this.checked) {
