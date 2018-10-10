@@ -60,6 +60,7 @@ function initCheckboxes() {
           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
         else {
+          console.log("true");
           $(".modifyProduct").html("Store Stock Tracker");
           $(".modifyProduct").attr("class", "font-xl");
         }
@@ -68,6 +69,10 @@ function initCheckboxes() {
     if(!(this.checked)) {
       $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", "font-xl");
+    }
+    
+    else {
+      console.log("true too");  
     }
   });
 }
