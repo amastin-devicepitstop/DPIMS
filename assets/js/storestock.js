@@ -64,8 +64,10 @@ function initCheckboxes() {
     }
     
     else if(!(this.checked)) {
-      $(".modifyProduct").html("Store Stock Tracker");
-      $(".modifyProduct").attr("class", "font-xl");
+      if ($("input:checkbox:checked").length == 0) {
+        $(".modifyProduct").html("Store Stock Tracker");
+        $(".modifyProduct").attr("class", "font-xl");
+      }
     }
     
   });
