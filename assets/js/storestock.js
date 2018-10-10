@@ -15,7 +15,7 @@ function getStoreStock() {
     
   setTimeout(function(){ // works
     if (query.length > 0) {
-      $("#selectAll").disabled = false;
+      $("#selectAll").prop('disabled', false);
     }
     for (let i = 0; i < query.length; i++){
       let product = query[i];
