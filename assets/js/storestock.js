@@ -72,9 +72,7 @@ function initCheckboxes() {
   
   $(".selectAll").change(function() {
     console.log("selectAll changed");
-    if (document.getElementsByClassName("selectAll")[0].selected == false){
-      console.log("true");  
-    }
+    console.log(document.getElementsByClassName("selectAll")[0]);  
   });
 }
 
