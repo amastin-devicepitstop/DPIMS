@@ -54,7 +54,7 @@ function initCheckboxes() {
           $(".font-lg").attr('class', 'modifyProduct');
         }
         else if ($("input:checkbox:checked").length > 1) {
-          $(".font-lg").html("<select><option value='Delete'>Delete</option></select>");
+          $(".font-lg").html("<select><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
     }
     
