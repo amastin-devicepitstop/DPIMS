@@ -48,6 +48,7 @@ function initCheckboxes() {
     });
   
   $(":checkbox").change(function() {
+    console.log($("input:checkbox:checked").length);
     // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
         console.log("No checkboxes checked");
