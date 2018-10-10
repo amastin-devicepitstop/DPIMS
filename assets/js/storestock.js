@@ -12,10 +12,11 @@ function getStoreStock() {
   let date = new Date();
   let month = String(date.getMonth() + 1);
   let query = getWhere("devices", "month", "==", month);
-  
-  console.log(query); // works
-  
+    
   setTimeout(function(){ // works
+    if (query.length > 0) {
+      this.disabled = false;
+    }
     for (let i = 0; i < query.length; i++){
       let product = query[i];
       addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
