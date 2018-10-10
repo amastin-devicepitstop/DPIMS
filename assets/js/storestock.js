@@ -60,7 +60,7 @@ function initCheckboxes() {
     
     if(!(this.checked)) {
       $(".modifyProduct").html("Store Stock Tracker");
-      $(".modifyProduct").attr("class", ".font-lg");
+      $(".modifyProduct").attr("class", "font-lg");
     }
   });
 }
