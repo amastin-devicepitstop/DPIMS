@@ -47,48 +47,24 @@ function initCheckboxes() {
       $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
     });
   
-
-  
-  // If a single checkbox is selected, allow that product to be edited/deleted
-  // If multiple checkboxes are selected, allow those products to be deleted
   $(":checkbox").change(function() {
+    // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
         console.log("No checkboxes checked");
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
       }
+    
+    // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
         }
+    
+    // If multiple checkboxes are selected, allow those products to be deleted
     else if ($("input:checkbox:checked").length > 1) {
           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
         }
-    
-//     if(this.checked) {
-      
-//         if ($("input:checkbox:checked").length == 1) {
-//           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
-//           $(".font-xl").attr('class', 'modifyProduct');
-//         }
-//         else if ($("input:checkbox:checked").length > 1) {
-//           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
-//         }
-//     }
-    
-//     else if(!(this.checked)) {
-//       if ($("input:checkbox:checked").length == 0) {
-//         $(".modifyProduct").html("Store Stock Tracker");
-//         $(".modifyProduct").attr("class", "font-xl");
-//       }
-//     }
-    
-  });
-  
-//   $(".selectAll").change(function() {
-//     console.log("selectAll changed");
-//     console.log(document.getElementsByClassName("selectAll")[0]);  
-//   });
 }
 
