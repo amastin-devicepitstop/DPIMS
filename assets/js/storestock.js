@@ -67,6 +67,6 @@ function initCheckboxes() {
           $(".font-xl").attr('class', 'modifyProduct');
           $(".modifyProduct").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
-  )};
+  }); 
 }
 
