@@ -49,6 +49,7 @@ function initCheckboxes() {
   // If multiple checkboxes are selected, allow those products to be deleted
   $(":checkbox").change(function() {
     if(this.checked) {
+      console.log("checked");
         if ($("input:checkbox:checked").length == 1) {
           $(".font-lg").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
           $(".font-lg").attr('class', 'modifyProduct');
@@ -59,6 +60,7 @@ function initCheckboxes() {
     }
     
     if(!(this.checked)) {
+      console.log("unchecked");
       $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", "font-xl");
     }
