@@ -43,14 +43,22 @@ function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
 }
 
 function initCheckboxes() {
+  // Checkbox with class="selectAll" will select all check boxes on the page
   $(".selectAll").click(function (e) {
       $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
     });
   
+  // If a single checkbox is selected, allow that product to be edited/deleted
+  // If multiple checkboxes are selected, allow those products to be deleted
   $(":checkbox").change(function() {
     if(this.checked) {
-        console.log("checked");
+        if ($("input:checkbox:checked").length == 1) {
+          console.log("1 checked");
+        }
+        else if ($("input:checkbox:checked").length == 1) {
+          console.log("multiple checked");
+        }
     }
-});
+  });
 }
 
