@@ -59,6 +59,10 @@ function initCheckboxes() {
         else if ($("input:checkbox:checked").length > 1) {
           $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
+        else if ($("input:checkbox:checked").length == 0) {
+          $(".modifyProduct").html("Store Stock Tracker");
+          $(".modifyProduct").attr("class", "font-xl");
+        }
     }
     
     if(!(this.checked)) {
