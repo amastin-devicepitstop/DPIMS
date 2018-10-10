@@ -59,8 +59,8 @@ function initCheckboxes() {
     }
     
     if(!(this.checked)) {
+      $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", ".font-lg");
-      $(".font-lg").html("Store Stock Tracker");
     }
   });
 }
