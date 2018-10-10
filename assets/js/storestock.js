@@ -51,19 +51,17 @@ function initCheckboxes() {
     if(this.checked) {
       
         if ($("input:checkbox:checked").length == 1) {
-          console.log("checked");
-          $(".font-lg").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
-          $(".font-lg").attr('class', 'modifyProduct');
+          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").attr('class', 'modifyProduct');
         }
         else if ($("input:checkbox:checked").length > 1) {
-          $(".font-lg").html("<select><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").html("<select><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
     }
     
     if(!(this.checked)) {
       $(".modifyProduct").html("Store Stock Tracker");
       $(".modifyProduct").attr("class", "font-xl");
-      console.log("unchecked");
     }
   });
 }
