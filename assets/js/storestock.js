@@ -16,10 +16,8 @@ function getStoreStock() {
   console.log(query); // works
   
   setTimeout(function(){ // works
-    console.log("# of Results: " + query.length);
     for (let i = 0; i < query.length; i++){
       let product = query[i];
-      console.log("Adding " + product.model + " to the table...");
       addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
     }
     initCheckboxes();
@@ -28,7 +26,6 @@ function getStoreStock() {
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
-  console.log("Processing product data...");
   let rowStart = "<tr>";
   let checkboxCell = "<td><input type='checkbox'></td>";
   let techCell = "<td class='overflow'><a>" + tech + "</a></td>";
@@ -40,7 +37,6 @@ function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
   let rowEnd = "</tr>";
   
   $("#store-stock-tracker > tbody").append(rowStart + checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell + rowEnd);
-  console.log("Successfully added " + model + " to the table.");
 }
 
 function initCheckboxes() {
