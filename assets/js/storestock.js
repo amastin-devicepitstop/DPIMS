@@ -1,8 +1,8 @@
 window.onload = function(){
-  initCheckboxes();
-  hideAnimation();
   initDatabase();
   getStoreStock();
+  initCheckboxes();
+  hideAnimation();
 }
 
 // ===================
