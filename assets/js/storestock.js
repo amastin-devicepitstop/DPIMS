@@ -1,6 +1,7 @@
 window.onload = function(){
   initDatabase();
   getStoreStock();
+  initCheckboxes();
 }
 
 // ===================
@@ -21,7 +22,6 @@ function getStoreStock() {
       console.log("Adding " + product.model + " to the table...");
       addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
     }
-    initCheckboxes();
     hideAnimation();
   }, 1000); 
 }
@@ -55,7 +55,7 @@ function initCheckboxes() {
         if ($("input:checkbox:checked").length == 1) {
           console.log("1 checked");
         }
-        else if ($("input:checkbox:checked").length == 1) {
+        else if ($("input:checkbox:checked").length > 1) {
           console.log("multiple checked");
         }
     }
