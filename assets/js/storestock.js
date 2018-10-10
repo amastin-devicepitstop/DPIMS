@@ -54,9 +54,13 @@ function initCheckboxes() {
           $(".font-lg").attr('class', 'modifyProduct');
         }
         else if ($("input:checkbox:checked").length > 1) {
-          $(".modifyProduct").attr("class", ".font-lg");
-          $(".font-lg").html("Store Stock Tracker");
+          
         }
+    }
+    
+    if(!(this.checked)) {
+      $(".modifyProduct").attr("class", ".font-lg");
+      $(".font-lg").html("Store Stock Tracker");
     }
   });
 }
