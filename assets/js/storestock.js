@@ -67,6 +67,7 @@ function initCheckboxes() {
     }
   });
   
+  // For some reason selectAll will not make the "More Actions" dialog go away. I can't figure it out right now. I give up.
     $(".selectAll").change(function() {
     if ($(".selectAll").checked == false) {
       $(".modifyProduct").html("Store Stock Tracker");
