@@ -16,21 +16,6 @@ function getStoreStock() {
   setTimeout(function(){ // works
     enableSelectAll(query);
     populateTable(query);
-    console.log($("input:checkbox").length);
-    while True:
-      if (query.length > 0) {
-        if ($("input:checkbox").length == 1) {
-          console.log("Running query");
-          populateTable(query);
-        }
-        else{
-          console.log("Table populated. Ending loop.")
-          break;  
-        }
-      }
-      else {
-        console.log("There were no results from the query."); 
-      }
     // Add a check here -- if query length > 0, check if data has been added to the table, and if not, run query again until it has been added.
     initCheckboxes();
     hideAnimation();
@@ -45,10 +30,28 @@ function enableSelectAll(query) {
 }
 
 function populateTable(query) {
-  for (let i = 0; i < query.length; i++){
-      let product = query[i];
-      addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
-    }
+  while true:
+    // If the query returns results...
+      if (query.length > 0) {
+        // Check if the rows were added to the table
+        if ($("input:checkbox").length == 1) {
+          console.log("Running query");
+          // If they weren't, add them.
+          for (let i = 0; i < query.length; i++){
+            let product = query[i];
+            addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
+          }
+        }
+        // Otherwise there's no need to try to add them again.
+        else{
+          console.log("Table populated. Ending loop.")
+          break;  
+        }
+      }
+  // If the query doesn't return results, prompt to add a new product
+      else {
+        console.log("There were no results from the query."); 
+      }
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
