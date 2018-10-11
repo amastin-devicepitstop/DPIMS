@@ -7,8 +7,8 @@ window.onload = function(){
 }
 
 function populateForm(query) {
+  console.log(query);
   let product = query[0];
-  console.log(product.tech.split(" "));
   let firstName = product.tech.split(" ")[0];
   let lastName = product.tech.split(" ")[1];
   let manufacturer = product.manufacturer;
@@ -17,8 +17,8 @@ function populateForm(query) {
   let sku = product.sku;
   let date = product.date;
   
-  $("#first-name").val(firstName);
-  $("#last-name").val(lastName);
+  $("#first-name").val(product.tech.split(" ")[0]);
+  $("#last-name").val(product.tech.split(" ")[1]);
   $("#manufacturer").val(manufacturer);
   $("#model").val(model);
   $("#actions").val(actions);
