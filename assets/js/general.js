@@ -73,7 +73,7 @@ function initDatabase(){
   database.settings(settings);
 }  
 
-function del(collection, doc) {
+function remove(collection, doc) {
   database.collection(collection).doc(doc).delete().then(function() {
     console.log("Document successfully deleted!");
   }).catch(function(error) {
