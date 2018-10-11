@@ -111,3 +111,6 @@ function editProduct() {
   setURL("https://amastin-devicepitstop.github.io/IMS/storestock-edit.html?model=" + model + "&sku=" + sku);
 }
 
+function deleteProduct() {
+    
+}
