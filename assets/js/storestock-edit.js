@@ -7,7 +7,7 @@ window.onload = function(){
 }
 
 function updatePageTitle() {  
-  $(".font-xl").val(getQueryString("sku"));
+  $(".font-xl")[0].val(getQueryString("sku"));
 }
 
 function preventFormSubmit() {
