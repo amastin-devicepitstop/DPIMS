@@ -6,17 +6,40 @@ window.onload = function(){
   hideAnimation();
 }
 
+function populateForm(query) {
+  let product = query[0];
+  let firstName = product.tech.split(" ")[0];
+  let lastName product.tech.split(" ")[1];
+  let manufacturer = product.manufacturer;
+  let model = product.model;
+  let actions = product.actions;
+  let sku = product.sku;
+  let date = product.date;
+  
+  $("#first-name").val(firstName);
+  $("#last-name").val(lastName);
+  $("#manufacturer").val(manufacturer);
+  $("#model").val(model);
+  $("#actions").val(actions);
+  $("#sku").val(sku);
+  $("#date").val(date);
+}
+
+function getProduct() {
+  let query = getWhere("devices", "sku", "==", getSKU());
+  setTimeout(function(){
+    populateForm(query)
+  }, 1000); 
+}
+
 function updatePageTitle() {  
   $(".font-xl").text("Editing " + getModel());
-  console.log(getSKU());
 }
 
 function preventFormSubmit() {
   // Check that the current page is the "Edit" page
   
-  if (urlContains("edit")) {
-    $("#date").val(new Date().toLocaleDateString());
-    
+  if (urlContains("edit")) {    
     // Prevent form submission
     $("form").submit(function (e) {  
       e.preventDefault();
