@@ -30,7 +30,9 @@ function getModel() {
 }
 
 function getSKU() {
-  return window.location.search.replace("&sku=", "");
+  let sku = window.location.search;
+  sku = sku.slice(sku.indexOf("1"), sku.indexOf("U"));
+  return sku;
 }
 
 function urlContains(string) {
