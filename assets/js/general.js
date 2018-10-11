@@ -73,6 +73,14 @@ function initDatabase(){
   database.settings(settings);
 }  
 
+function delete(collection, doc) {
+  database.collection(collection).doc(doc).delete().then(function() {
+    console.log("Document successfully deleted!");
+  }).catch(function(error) {
+      alert("An error occurred while processing your request. Please try again.");
+  });  
+}
+
 function save(collection, doc, json) {
   database.collection(collection).doc(doc).set(json)
   .then(function(){
