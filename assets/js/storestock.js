@@ -35,7 +35,6 @@ function populateTable(query) {
       if (query.length > 0) {
         // Check if the rows were added to the table
         if ($("input:checkbox").length == 1) {
-          console.log("Running query");
           // If they weren't, add them.
           for (let i = 0; i < query.length; i++){
             let product = query[i];
@@ -44,13 +43,11 @@ function populateTable(query) {
         }
         // Otherwise there's no need to try to add them again.
         else{
-          console.log("Table populated. Ending loop.")
           break;  
         }
       }
   // If the query doesn't return results, prompt to add a new product
       else {
-        console.log("There were no results from the query."); 
       }
   }
 }
