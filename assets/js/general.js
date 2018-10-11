@@ -23,7 +23,7 @@ function getPage(){
 }
 
 function getQueryString() {
-  console.log(location.pathname.split("?"));
+  console.log(window.location.href.slice(window.location.href.indexOf('?') + 1));
   return location.pathname.split("?")[1];
 }
 
