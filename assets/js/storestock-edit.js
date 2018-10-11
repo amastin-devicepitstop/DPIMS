@@ -7,7 +7,7 @@ window.onload = function(){
 }
 
 function updatePageTitle() {  
-  console.log(getPage());
+  console.log(getQueryString());
 }
 
 function preventFormSubmit() {
