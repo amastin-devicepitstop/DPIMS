@@ -96,16 +96,10 @@ function initCheckboxes() {
 }
 
 function parseOption() {
-  console.log("Parse option");
   if ($("#modifyOptions").val() == "Edit") {
-    console.log("Edit selected");
     editProduct();  
   }
   else {
-    console.log(document.getElementsByClassName("modifyOptions")[0]);
-    console.log(document.getElementsByClassName("modifyOptions")[0].innerText);  
-    console.log(document.getElementsByClassName("modifyOptions")[0].innerHTML);
-    console.log(document.getElementsByClassName("modifyOptions")[0].value);
   }
 }
 
@@ -113,7 +107,8 @@ function editProduct() {
   //console.log($("#store-stock-tracker tbody tr td input:checkbox:checked"))  
   let row = $("input:checkbox:checked").closest('tr');
   console.log(row);
-  let cell = $(row).find('td:sixth');
+  let cell = row.cells[5];
   console.log(cell);
+  console.log(cell.innerText);
 }
 
