@@ -22,7 +22,7 @@ function getPage(){
   return location.pathname.split("/").pop();
 }
 
-funciton getQueryString() {
+function getQueryString() {
   return location.pathname.split("?").pop();
 }
 
