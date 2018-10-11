@@ -96,8 +96,13 @@ function initCheckboxes() {
 }
 
 function parseOption() {
+  console.log("Parse option");
   if ($(".modifyProduct").val() == "Edit") {
+    console.log("Edit selected");
     editProduct();  
+  }
+  else {
+    console.log($(".modifyProduct").val());  
   }
 }
 
