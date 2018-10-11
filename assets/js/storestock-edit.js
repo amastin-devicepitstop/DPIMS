@@ -1,9 +1,9 @@
 window.onload = function(){
-  hideAnimation();
   preventFormSubmit();
   initDatabase();
   autocomplete();
   updatePageTitle();
+  hideAnimation();
 }
 
 function updatePageTitle() {  
