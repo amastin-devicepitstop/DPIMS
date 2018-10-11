@@ -97,16 +97,16 @@ function initCheckboxes() {
 
 function parseOption() {
   if ($("#modifyOptions").val() == "Edit") {
-    editProduct();  
+    editProduct(5);  
   }
   else {
   }
 }
 
-function editProduct() {
+function editProduct(cell) {
   //console.log($("#store-stock-tracker tbody tr td input:checkbox:checked"))  
   let row = $("input:checkbox:checked").closest('tr');
-  let sku = row[0].cells[5].innerText;
-  setURL('https://amastin-devicepitstop.github.io/IMS/storestock-edit.html?=' + sku);
+  let value = row[0].cells[cell].innerText;
+  setURL('https://amastin-devicepitstop.github.io/IMS/storestock-edit.html?=' + value);
 }
 
