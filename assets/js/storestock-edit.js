@@ -7,7 +7,7 @@ window.onload = function(){
 }
 
 function updatePageTitle() {  
-  console.log(getQueryString());
+  console.log(getQueryString("sku"));
 }
 
 function preventFormSubmit() {
