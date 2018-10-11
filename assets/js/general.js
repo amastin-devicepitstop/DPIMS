@@ -22,6 +22,10 @@ function getPage(){
   return location.pathname.split("/").pop();
 }
 
+funciton getQueryString() {
+  return location.pathname.split("?").pop();
+}
+
 function urlContains(string) {
   return window.location.href.indexOf(string) !== -1
 }
