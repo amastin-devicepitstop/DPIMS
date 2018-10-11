@@ -30,7 +30,7 @@ function enableSelectAll(query) {
 }
 
 function populateTable(query) {
-  while (true):
+  while (true) {
     // If the query returns results...
       if (query.length > 0) {
         // Check if the rows were added to the table
@@ -52,6 +52,7 @@ function populateTable(query) {
       else {
         console.log("There were no results from the query."); 
       }
+  }
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
