@@ -23,7 +23,8 @@ function getPage(){
 }
 
 function getQueryString() {
-  return location.pathname.split("?").pop();
+  console.log(location.pathname.split("?"));
+  return location.pathname.split("?")[1];
 }
 
 function urlContains(string) {
