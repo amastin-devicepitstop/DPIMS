@@ -24,7 +24,7 @@ function getPage(){
 
 function getModel() {
   let model = window.location.search.replace("?model=", "");
-  model = model.replace("%20", " ");
+  model = model.split("%20").join(" ");
   model = model.slice(0, model.indexOf("&"));
   return model;
 }
