@@ -10,7 +10,7 @@ function populateForm(query) {
   let product = query[0];
   console.log(product.tech.split(" "));
   let firstName = product.tech.split(" ")[0];
-  let lastName product.tech.split(" ")[1];
+  let lastName = product.tech.split(" ")[1];
   let manufacturer = product.manufacturer;
   let model = product.model;
   let actions = product.actions;
