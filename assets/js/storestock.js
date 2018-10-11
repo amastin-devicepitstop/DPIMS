@@ -17,6 +17,20 @@ function getStoreStock() {
     enableSelectAll(query);
     populateTable(query);
     console.log($("input:checkbox").length);
+    while True:
+      if (query.length > 0) {
+        if ($("input:checkbox").length == 1) {
+          console.log("Running query");
+          populateTable(query);
+        }
+        else{
+          console.log("Table populated. Ending loop.")
+          break;  
+        }
+      }
+      else {
+        console.log("There were no results from the query."); 
+      }
     // Add a check here -- if query length > 0, check if data has been added to the table, and if not, run query again until it has been added.
     initCheckboxes();
     hideAnimation();
