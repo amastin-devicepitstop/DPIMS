@@ -7,7 +7,7 @@ window.onload = function(){
 }
 
 function populateForm(query) {
-  console.log(query);
+  console.log("Populating form...");
   let product = query[0];
   let firstName = product.tech.split(" ")[0];
   let lastName = product.tech.split(" ")[1];
@@ -29,7 +29,8 @@ function populateForm(query) {
 function getProduct() {
   let query = getWhere("devices", "sku", "==", getSKU());
   setTimeout(function(){
-    populateForm(query)
+    console.log("Attempting to populate form...")
+    populateForm(query);
   }, 1000); 
 }
 
