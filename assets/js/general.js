@@ -22,8 +22,14 @@ function getPage(){
   return location.pathname.split("/").pop();
 }
 
-function getQueryString(char, string) {
-  return window.location.search.replace(char + string + "=", "");
+function getModel() {
+  let model = window.location.search.replace("?model=", "");
+  model = model.replace("%20", "");
+  return model;
+}
+
+function getSKU() {
+  return window.location.search.replace("&sku=", "");
 }
 
 function urlContains(string) {
