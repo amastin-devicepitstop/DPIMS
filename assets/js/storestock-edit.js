@@ -4,7 +4,7 @@ window.onload = function(){
   autocomplete();
   updatePageTitle();
   getProduct();
-  hideAnimation();
+  
 }
 
 function populateForm(query) {
@@ -30,6 +30,7 @@ function getProduct() {
   let query = getWhere("devices", "sku", "==", getSKU());
   setTimeout(function(){
     populateForm(query);
+    hideAnimation();
   }, 1000); 
 }
 
