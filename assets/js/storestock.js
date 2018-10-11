@@ -107,8 +107,9 @@ function editProduct() {
   //console.log($("#store-stock-tracker tbody tr td input:checkbox:checked"))  
   let row = $("input:checkbox:checked").closest('tr');
   console.log(row);
-  let cell = row.cells[5];
+  let cells = row.cells;
+  console.log(cells);
+  let cell = cells[5];
   console.log(cell);
-  console.log(cell.innerText);
 }
 
