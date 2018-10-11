@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/IMS/assets/js/general.js"></script>
-    <script src="/IMS/assets/js/storestock-new.js"></script>
+    <script src="/IMS/assets/js/storestock-edit.js"></script>
   </head>
   <body>
 
@@ -64,8 +64,7 @@
                 <svg class="text-top svg-18" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z"></path></svg>
               </button>
             </div>
-            <div class="font-xlg">
-              New Store Stock
+            <div class="font-xl">
             </div>
           </div>
         </div>
@@ -77,28 +76,28 @@
                   <div class="form-group">
                     <label class="input-15">Technician</label>
                     <div class="input-25">
-                      <input id="first-name" placeholder="First Name" type="text" class="form-control " required>
+                      <input id="first-name" placeholder="First Name" type="text" class="form-control width-100" required>
                     </div>
                     <div class="input-25">
-                      <input id="last-name" placeholder="Last Name" type="text" class="form-control " required>
+                      <input id="last-name" placeholder="Last Name" type="text" class="form-control width-100" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="input-15">Manufacturer</label>
                     <div class="input-50">
-                      <input id="manufacturer" type="text" class="form-control" required>
+                      <input id="manufacturer" type="text" class="form-control width-100" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="input-15">Product Model</label>
                     <div class="input-50">
-                      <input id="model" type="text" class="form-control" required>
+                      <input id="model" type="text" class="form-control width-100" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="input-15">Actions Performed</label>
                     <div class="input-25">
-                      <select id="actions-performed" class="form-control" onchange="addAction()" required>
+                      <select id="actions-performed" class="form-control width-100" onchange="addAction()" required>
                         <option value="" disabled selected hidden>Select an option...</option>
                         <option id="opt-cellbie" value="Cellbie">Cellbie</option>
                         <option id="opt-screen" value="Replaced screen">Replaced screen</option>
@@ -110,19 +109,19 @@
                       </select>
                     </div>
                     <div class="input-25">
-                      <input id="actions" type="text" class="form-control" required>
+                      <input id="actions" type="text" class="form-control width-100" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="input-15">Product SKU</label>
                     <div class="input-50">
-                      <input id="sku" type="text" class="form-control" required>
+                      <input id="sku" type="text" class="form-control width-100" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="input-15">Current Date</label>
                     <div class="input-50">
-                      <input id="date" type="text" class="form-control" required>
+                      <input id="date" type="text" class="form-control width-100" required>
                     </div>
                   </div>
                 </div>
