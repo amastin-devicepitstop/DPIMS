@@ -102,7 +102,10 @@ function parseOption() {
     editProduct();  
   }
   else {
+    console.log(document.getElementsByClassName("modifyProduct")[0]);
     console.log(document.getElementsByClassName("modifyProduct")[0].innerText);  
+    console.log(document.getElementsByClassName("modifyProduct")[0].innerHTML);
+    console.log(document.getElementsByClassName("modifyProduct")[0].value);
   }
 }
 
