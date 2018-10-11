@@ -22,8 +22,8 @@ function getPage(){
   return location.pathname.split("/").pop();
 }
 
-function getQueryString(string) {
-  return window.location.search.replace("?" + string + "=", "");
+function getQueryString(char, string) {
+  return window.location.search.replace(char + string + "=", "");
 }
 
 function urlContains(string) {
