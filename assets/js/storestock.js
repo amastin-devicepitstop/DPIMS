@@ -73,27 +73,39 @@ function initCheckboxes() {
     });
   
   $(":checkbox").change(function() {
-    console.log($("input:checkbox:checked").length);
     // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
-        console.log("No checkboxes checked");
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
       }
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          $(".modifyProduct").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
         }
     
     // If multiple checkboxes are selected, allow those products to be deleted
     else if ($("input:checkbox:checked").length > 1) {
-          $(".font-xl").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html("<select class='form-control'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          $(".modifyProduct").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
   }); 
+}
+
+function parseOption() {
+  if ($(".modifyProduct").val() == "Edit") {
+    editProduct();  
+  }
+}
+
+function editProduct() {
+  //console.log($("#store-stock-tracker tbody tr td input:checkbox:checked"))  
+  let row = $("input:checkbox:checked").closest('tr');
+  console.log(row);
+  let cell = $(row).find('td:sixth');
+  console.log(cell);
 }
 
