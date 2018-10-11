@@ -81,31 +81,31 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-          $(".font-xl").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
         }
     
     // If multiple checkboxes are selected, allow those products to be deleted
     else if ($("input:checkbox:checked").length > 1) {
-          $(".font-xl").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          $(".font-xl").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
           $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html("<select class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
         }
   }); 
 }
 
 function parseOption() {
   console.log("Parse option");
-  if ($(".modifyProduct > select").val() == "Edit") {
+  if ($("#modifyOptions").val() == "Edit") {
     console.log("Edit selected");
     editProduct();  
   }
   else {
-    console.log(document.getElementsByClassName("modifyProduct")[0]);
-    console.log(document.getElementsByClassName("modifyProduct")[0].innerText);  
-    console.log(document.getElementsByClassName("modifyProduct")[0].innerHTML);
-    console.log(document.getElementsByClassName("modifyProduct")[0].value);
+    console.log(document.getElementsByClassName("modifyOptions")[0]);
+    console.log(document.getElementsByClassName("modifyOptions")[0].innerText);  
+    console.log(document.getElementsByClassName("modifyOptions")[0].innerHTML);
+    console.log(document.getElementsByClassName("modifyOptions")[0].value);
   }
 }
 
