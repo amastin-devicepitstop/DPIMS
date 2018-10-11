@@ -7,7 +7,8 @@ window.onload = function(){
 }
 
 function updatePageTitle() {  
-  $(".font-xl").text("Editing " + getQueryString("?", "model"));
+  $(".font-xl").text("Editing " + getModel());
+  console.log(getSKU());
 }
 
 function preventFormSubmit() {
