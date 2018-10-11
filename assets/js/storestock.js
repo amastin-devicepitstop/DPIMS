@@ -15,10 +15,11 @@ function getStoreStock() {
     
   setTimeout(function(){ // works
     enableSelectAll(query);
+    hideAnimation();
     populateTable(query);
     // Add a check here -- if query length > 0, check if data has been added to the table, and if not, run query again until it has been added.
     initCheckboxes();
-    hideAnimation();
+    //hideAnimation();
   }, 1000); 
 }
 
