@@ -31,7 +31,7 @@ function getModel() {
 
 function getSKU() {
   let sku = window.location.search;
-  sku = sku.slice(sku.indexOf("1"), sku.indexOf("U"));
+  sku = sku.slice(sku.indexOf("1"), sku.indexOf("U") + 1);
   return sku;
 }
 
