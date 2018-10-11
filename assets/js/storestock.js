@@ -14,17 +14,27 @@ function getStoreStock() {
   let query = getWhere("devices", "month", "==", month);
     
   setTimeout(function(){ // works
-    if (query.length > 0) {
-      $(".selectAll").removeAttr("disabled");
-    }
-    for (let i = 0; i < query.length; i++){
-      let product = query[i];
-      addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
-    }
+    enableSelectAll(query);
+    populateTable(query);
+    console.log($("input:checkbox").length);
     // Add a check here -- if query length > 0, check if data has been added to the table, and if not, run query again until it has been added.
     initCheckboxes();
     hideAnimation();
   }, 1000); 
+}
+
+function enableSelectAll(query) {
+  // Removes the 'disabled' attribute from the checkbox with id "selectAll"
+  if (query.length > 0) {
+    $(".selectAll").removeAttr("disabled");
+  }
+}
+
+function populateTable(query) {
+  for (let i = 0; i < query.length; i++){
+      let product = query[i];
+      addStoreStockRow(product.tech, product.manufacturer, product.model, product.actions, product.sku, product.date);
+    }
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
