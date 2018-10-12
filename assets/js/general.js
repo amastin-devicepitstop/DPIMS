@@ -18,7 +18,7 @@ function showConfirmDialog(message) {
   if (message == "Do you want to delete the selected product(s)?") {
     $("#confirm-button").one("click", (function() {
       deleteProduct();
-    });
+    }));
     
     $("#cancel-button").one("click", (function() {
       $("#modal-content").attr('class', 'modal fade show in closed');
@@ -27,7 +27,7 @@ function showConfirmDialog(message) {
         $("#modal").attr('class', 'modal-closed');
       }, 200);
       $("#modifyOptions").val('0').change();
-    });
+    }));
   }
 }
 
