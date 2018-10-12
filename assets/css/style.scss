@@ -663,10 +663,6 @@ option:hover {
   opacity: .5;  
 }
 
-.modal-backdrop.fade {
-  opacity: 0;  
-}
-
 .show {
   display: block!important;  
 }
@@ -675,6 +671,8 @@ option:hover {
   position: fixed;
   z-index: 11;
   outline: 0;
+  left: 42%;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
 }
 
 .modal-open, .modal-backdrop {
@@ -696,24 +694,18 @@ option:hover {
 }
 
 .fade {
-  opacity: 0;
+  opacity: inherit;
   transition: opacity .15s linear;
-}
-
-.fade.in {
-  opacity: 1;
 }
 
 .modal-dialog {
   width: 510px;
-  height: 200px; // Temporary
   margin-top: 0;
 }
 
 .modal-content {
   position: relative;
   background-color: #fff;
-  box-shadow: 0 3px 9px rgba(0,0,0,.5);
   outline: 0;
   height: 100%;
   border: 0;
@@ -734,3 +726,8 @@ option:hover {
   margin-bottom: 18px;
 }
 
+.svg.alert {
+  height: 40px;
+  width: 40px;
+  fill: orange;  
+}
