@@ -21,9 +21,9 @@ function showConfirmDialog(message) {
     });
     
     $("#cancel-button").click(function() {
-      $("#modal").attr('class', 'modal-closed');
-      $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
       $("#modal-content").attr('class', 'modal fade show in closed');
+      $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
+      $("#modal").attr('class', 'modal-closed');
       $("#modifyOptions").val('0').change();
     });
   }
