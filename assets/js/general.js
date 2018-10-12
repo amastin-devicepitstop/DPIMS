@@ -16,14 +16,16 @@ function showConfirmDialog(message) {
   $("#modal-content").attr('class', 'modal fade show in open');
 
   if (message == "Do you want to delete the selected product(s)?") {
-    $("#confirm-button").click(function() {
+    $("#confirm-button").one("click", (function() {
       deleteProduct();
     });
     
-    $("#cancel-button").click(function() {
+    $("#cancel-button").one("click", (function() {
       $("#modal-content").attr('class', 'modal fade show in closed');
       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
-      $("#modal").attr('class', 'modal-closed');
+      setTimeout(function() {
+        $("#modal").attr('class', 'modal-closed');
+      }, 200);
       $("#modifyOptions").val('0').change();
     });
   }
