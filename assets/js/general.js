@@ -9,6 +9,20 @@ window.onload = function(){
 // === GENERAL ===
 // ===============
 
+function showConfirmDialog(message) {
+  $("#modal").attr('class', 'modal-open');
+
+  if (message == "Do you want to delete the selected product(s)?") {
+    $("#confirm-button").click(function() {
+      deleteProduct();
+    });
+    
+    $("#cancel-button").click(function() {
+      $("#modal").attr('class', 'modal-closed');
+    });
+  }
+}
+
 function hideAnimation() {
   document.getElementById("load-screen").style.display = "none";
 }
