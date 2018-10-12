@@ -654,6 +654,29 @@ option:hover {
   background-color: #206ec5;
 }
 
+.modal, .modal-open {
+  overflow-x: auto;  
+  overflow-y: auto;
+}
+
+.modal-backdrop.in {
+  opacity: .5;  
+}
+
+.modal-backdrop.fade {
+  opacity: 0;  
+}
+
+.show {
+  display: block!important;  
+}
+
+.modal {
+  position: fixed;
+  z-index: 11;
+  outline: 0;
+}
+
 .modal-open, .modal-backdrop {
   bottom: 0;
   left: 0;
@@ -663,9 +686,18 @@ option:hover {
 
 .modal-backdrop {
   position: fixed;
-  z-index: 101;
+  z-index: 10;
   background-color: #fff;
   transition: all .3s;
+}
+
+.modal.fade, .modal-dialog {
+  transition: transform .3s ease-out;  
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear;
 }
 
 .fade.in {
@@ -684,4 +716,21 @@ option:hover {
   box-shadow: 0 3px 9px rgba(0,0,0,.5);
   outline: 0;
   height: 100%;
+  border: 0;
+  border-radius: 0;
 }
+
+.modal-body {
+  position: relative;
+  padding: 20px;
+}
+
+.modal-row {
+  
+}
+
+.alert-actions {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
