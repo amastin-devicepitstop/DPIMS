@@ -1,4 +1,4 @@
-let database;
+let database; 
 
 window.onload = function(){
   hideAnimation();
