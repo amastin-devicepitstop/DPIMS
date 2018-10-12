@@ -755,5 +755,9 @@ p {
 }
 
 .modal-closed {
-  display: none;  
+  visibility: hidden;  
+}
+
+.modal-open {
+  visibility: visible;  
 }
