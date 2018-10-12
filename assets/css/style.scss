@@ -700,34 +700,46 @@ option:hover {
 
 .modal-dialog {
   width: 510px;
-  margin-top: 0;
-}
-
-.modal-content {
-  position: relative;
-  background-color: #fff;
-  outline: 0;
-  height: 100%;
-  border: 0;
-  border-radius: 0;
-}
-
-.modal-body {
-  position: relative;
-  padding: 20px;
 }
 
 .modal-row {
-  
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.alert-icon {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 16.6666667%;
+}
+
+.modal-content {
+  bottom: 2.5rem;
+  position: relative;
+  width: 83.333333333333%;
+  float: right;
+  padding-left: 15px;  
 }
 
 .alert-actions {
   margin-top: 18px;
-  margin-bottom: 18px;
 }
 
 .svg.alert {
   height: 40px;
   width: 40px;
   fill: orange;  
+}
+
+#modal-text {
+  position: relative;
+  right: 4px;
+}
+
+p {
+  margin: 0 0 10.5px;  
 }
