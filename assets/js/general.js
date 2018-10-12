@@ -21,12 +21,13 @@ function showConfirmDialog(message) {
     }));
     
     $("#cancel-button").one("click", (function() {
-      $("#modal-content").attr('class', 'modal fade show in closed');
-      $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
-//       setTimeout(function() {
-        $("#modal").attr('class', 'modal-closed ');
-//       }, 200);
-      $("#modifyOptions").val('0').change();
+      $("#modal-content").animate({
+        transform: translate3d(0, 0, 0), opacity: 0;
+      }, { duration: .3s, queue: false});
+//       $("#modal-content").attr('class', 'modal fade show in closed');
+//       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
+//       $("#modal").attr('class', 'modal-closed ');
+//       $("#modifyOptions").val('0').change();
     }));
   }
 }
