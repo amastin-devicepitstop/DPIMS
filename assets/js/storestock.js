@@ -100,11 +100,11 @@ function parseOption() {
     editProduct();  
   }
   else {
+    
   }
 }
 
 function editProduct() {
-  //console.log($("#store-stock-tracker tbody tr td input:checkbox:checked"))  
   let row = $("input:checkbox:checked").closest('tr');
   let model = row[0].cells[3].innerText;
   let sku = row[0].cells[5].innerText;
@@ -112,5 +112,7 @@ function editProduct() {
 }
 
 function deleteProduct() {
-    
+  let row = $("input:checkbox:checked").closest('tr');
+  let sku = row[0].cells[5].innerText;
+  console.log("Attempting to delete " + sku);
 }
