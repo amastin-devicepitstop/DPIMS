@@ -99,8 +99,8 @@ function parseOption() {
   if ($("#modifyOptions").val() == "Edit") {
     editProduct();  
   }
-  else {
-    
+  else ($("#modifyOptions").val() == "Delete"){
+    showConfirmDialog("Do you want to delete the selected product(s)?");
   }
 }
 
