@@ -11,6 +11,8 @@ window.onload = function(){
 
 function showConfirmDialog(message) {
   $("#modal").attr('class', 'modal-open');
+  $("#backdrop").attr('class', 'modal-backdrop fade  in open');
+  $("#modal-content").attr('class', 'modal fade show in open');
   $("#modal-text").val(message);
 
   if (message == "Do you want to delete the selected product(s)?") {
@@ -20,6 +22,9 @@ function showConfirmDialog(message) {
     
     $("#cancel-button").click(function() {
       $("#modal").attr('class', 'modal-closed');
+      $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
+      $("#modal-content").attr('class', 'modal fade show in closed');
+      $("#modifyOptions").val('0').change();
     });
   }
 }
