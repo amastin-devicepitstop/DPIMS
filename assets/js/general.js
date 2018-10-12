@@ -11,7 +11,7 @@ window.onload = function(){
 
 function showConfirmDialog(message) {
   $("#modal-text").text(message);
-  $("#modal").attr('class', 'modal-open fade');
+  $("#modal").attr('class', 'modal-open ');
   $("#backdrop").attr('class', 'modal-backdrop fade  in open');
   $("#modal-content").attr('class', 'modal fade show in open');
 
@@ -23,9 +23,9 @@ function showConfirmDialog(message) {
     $("#cancel-button").one("click", (function() {
       $("#modal-content").attr('class', 'modal fade show in closed');
       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
-      setTimeout(function() {
-        $("#modal").attr('class', 'modal-closed fade');
-      }, 200);
+//       setTimeout(function() {
+        $("#modal").attr('class', 'modal-closed ');
+//       }, 200);
       $("#modifyOptions").val('0').change();
     }));
   }
