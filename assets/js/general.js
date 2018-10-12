@@ -11,6 +11,7 @@ window.onload = function(){
 
 function showConfirmDialog(message) {
   $("#modal").attr('class', 'modal-open');
+  $("#modal-text").val(message);
 
   if (message == "Do you want to delete the selected product(s)?") {
     $("#confirm-button").click(function() {
