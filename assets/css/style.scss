@@ -690,7 +690,12 @@ option:hover {
   transition: all .3s;
 }
 
+.modal.in, .modal-dialog {
+  transform: translate3d(0,0,0);  
+}
+
 .modal.fade, .modal-dialog {
+  transform: translate3d(0,-25%,0);
   transition: transform .3s ease-out;  
 }
 
@@ -742,4 +747,8 @@ option:hover {
 
 p {
   margin: 0 0 10.5px;  
+}
+
+.modal-closed {
+  display: none;  
 }
