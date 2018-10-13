@@ -18,14 +18,14 @@ function showConfirmDialog(message) {
   if (message == "Do you want to delete the selected product(s)?") {
     $("#confirm-button").click(function(e) {
       deleteProduct();
-      e.stopPropagation();
+      return false;
     }));
     
     $("#cancel-button").click.(function(e) {
       $("#modal-content").attr('class', 'modal-dialog fade show in closed');
       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
       $("#modal").attr('class', 'modal closed');
-      e.stopPropagation();
+      return false;
       }));
   }
 }
