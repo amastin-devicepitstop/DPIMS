@@ -21,7 +21,7 @@ function showConfirmDialog(message) {
       return false;
     });
     
-    $("#cancel-button").click.(function(e) {
+    $("#cancel-button").click(function(e) {
       $("#modal-content").attr('class', 'modal-dialog fade show in closed');
       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
       $("#modal").attr('class', 'modal closed');
