@@ -23,7 +23,7 @@ function showConfirmDialog(message) {
     $("#cancel-button").one("click", (function() {
       $("#modal-content").attr('class', 'modal-dialog fade show in closed');
       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
-      $("#modal").attr('class', 'modal closed fade');
+      $("#modal").attr('class', 'modal closed');
       }));
   }
 }
