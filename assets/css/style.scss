@@ -660,11 +660,14 @@ option:hover {
 }
 
 .modal-backdrop.in.open {
-  
+  opacity: 1;
+  transition: opacity .15s linear;
 }
 
 .modal-backdrop.in.closed {
-
+  opacity: 0;
+  transition: opacity .15s linear;
+  z-index: -1;
 }
 
 .show {
@@ -706,7 +709,7 @@ option:hover {
 
 .fade {
   opacity: inherit;
-  transition: opacity .15s linear;
+  //transition: opacity .15s linear;
 }
 
 .modal-dialog {
@@ -762,10 +765,11 @@ p {
 
 .modal.closed {
   opacity: 0;
-  transition: transform .3s ease-out, opacity .15s linear;
+  //transition: transform .3s ease-out, opacity .15s linear;
+  z-index: -1;
 }
 
 .modal.open {
   opacity: 1;
-  transition: transform .3s ease-out, opacity .15s linear; 
+  //transition: transform .3s ease-out, opacity .15s linear; 
 }
