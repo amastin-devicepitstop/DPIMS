@@ -12,9 +12,8 @@ window.onload = function(){
 function showConfirmDialog(message) {
   $("#modal-text").text(message);
   $("#modal").attr('class', 'modal open fade');
-  $("#backdrop").attr('class', 'modal-backdrop fade  in open');
+  $("#backdrop").attr('class', 'modal-backdrop fade  in open high');
   $("#modal-content").attr('class', 'modal-dialog fade show in open');
-  $(".modal-backdrop.closed").css("z-index", "10!important");
 
   if (message == "Do you want to delete the selected product(s)?") {
     $("#confirm-button").click(function(e) {
@@ -24,10 +23,10 @@ function showConfirmDialog(message) {
     
     $("#cancel-button").click(function(e) {
       $("#modal-content").attr('class', 'modal-dialog fade show in closed');
-      $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
+      $("#backdrop").attr('class', 'modal-backdrop fade  in closed high');
       $("#modal").attr('class', 'modal closed');
       setTimeout(function() {
-        $(".modal-backdrop.closed").css("z-index", -1);
+        $("#backdrop").attr('class', 'modal-backdrop fade  in closed low');
       }, 500);
       return false;
       });
