@@ -660,11 +660,11 @@ option:hover {
 }
 
 .modal-backdrop.in.open {
-  opacity: .5;  
+  
 }
 
 .modal-backdrop.in.closed {
-  opacity: 0;  
+
 }
 
 .show {
@@ -672,7 +672,12 @@ option:hover {
 }
 
 .modal {
-
+  position: fixed;
+  z-index: 11;
+  outline: 0;
+  left: 42%;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  background: #fff;
 }
 
 .modal-open, .modal-backdrop {
@@ -685,7 +690,7 @@ option:hover {
 .modal-backdrop {
   position: fixed;
   z-index: 10;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   transition: all .3s;
 }
 
@@ -706,12 +711,6 @@ option:hover {
 
 .modal-dialog {
   width: 510px;
-  position: fixed;
-  z-index: 11;
-  outline: 0;
-  left: 42%;
-  box-shadow: 0 3px 9px rgba(0,0,0,.5);
-  background: #fff;
 }
 
 .modal-row {
@@ -755,11 +754,12 @@ p {
   margin: 0 0 10.5px;  
 }
 
-.modal-closed {
+.modal.closed {
   opacity: 0;
   transition: transform .3s ease-out, opacity .15s linear;  
 }
 
-.modal-open {
+.modal.open {
   opacity: 1;
+  transition: transform .3s ease-out, opacity .15s linear; 
 }
