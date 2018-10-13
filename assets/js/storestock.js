@@ -97,11 +97,24 @@ function initCheckboxes() {
 
 function parseOption() {
   if ($("#modifyOptions").val() == "Edit") {
+    resetSelect(0);
     editProduct();  
   }
   else if ($("#modifyOptions").val() == "Delete") {
+    resetSelect(1);
     showConfirmDialog("Do you want to delete the selected product(s)?");
   }
+  
+}
+
+function resetSelect(int) {
+  if (int == 0) {
+    $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+  }
+  else if (int == 1) {
+    $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+  }
+  
 }
 
 function editProduct() {
