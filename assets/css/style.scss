@@ -680,6 +680,7 @@ option:hover {
 }
 
 .modal-dialog.closed {
+  opacity: 0;
   transform: translate3d(0,-25%,0);
   transition: transform .3s ease-out, opacity .15s linear;  
 }
@@ -764,7 +765,7 @@ p {
 }
 
 .modal.closed {
-  opacity: 0;
+  //opacity: 0;
   //transition: transform .3s ease-out, opacity .15s linear;
   z-index: -1;
 }
