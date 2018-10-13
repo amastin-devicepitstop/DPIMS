@@ -667,7 +667,6 @@ option:hover {
 .modal-backdrop.in.closed {
   opacity: 0;
   transition: opacity .15s linear;
-  z-index: -1;
 }
 
 .show {
