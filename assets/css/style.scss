@@ -773,3 +773,11 @@ p {
   opacity: 1;
   //transition: transform .3s ease-out, opacity .15s linear; 
 }
+
+.high {
+  z-index: 10;  
+}
+
+.low {
+  z-index: -1;  
+}
