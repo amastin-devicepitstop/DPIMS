@@ -24,7 +24,7 @@ function showConfirmDialog(message) {
       $("#modal-content").attr('class', 'modal fade show in closed');
       $("#backdrop").attr('class', 'modal-backdrop fade  in closed');
       $("#modal").attr('class', 'modal-closed fade');
-      $("#modifyOptions").val('0').change();
+      $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
     }));
   }
 }
