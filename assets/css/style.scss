@@ -756,6 +756,7 @@ p {
 
 .modal-closed {
   opacity: 0;
+  transition: transform .3s ease-out, opacity .15s linear;  
 }
 
 .modal-open {
