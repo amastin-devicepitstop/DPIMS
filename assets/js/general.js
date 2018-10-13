@@ -11,7 +11,7 @@ window.onload = function(){
 
 function showConfirmDialog(message) {
   $("#modal-text").text(message);
-  $("#modal").attr('class', 'modal open');
+  $("#modal").attr('class', 'modal open fade');
   $("#backdrop").attr('class', 'modal-backdrop fade  in open');
   $("#modal-content").attr('class', 'modal-dialog fade show in open');
 
