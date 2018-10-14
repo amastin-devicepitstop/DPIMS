@@ -4,6 +4,11 @@
 @import "{{ site.theme }}";
 
 @font-face {
+  font-family: 'Metropolis Thin';
+  src: url(/IMS/assets/fonts/Metropolis-Thin.ttf);
+}
+
+@font-face {
   font-family: 'Metropolis Light';
   src: url(/IMS/assets/fonts/Metropolis-Light.ttf);
 }
@@ -52,6 +57,7 @@ body {
   font-size: 15px;
   line-height: 1.42857143;
   color: #222;
+  letter-spacing: -0.045rem;
 }
 
 header {
@@ -321,7 +327,7 @@ a {
     padding: 8px;
   }
   
-  checkbox:not(th) {
+  input[type="checkbox"] {
     left: 4px;
     position: relative;
   }
@@ -816,4 +822,3 @@ th, td {
   padding: 12px 8px;
   border-bottom: 1px solid #ededed;
 }
-
