@@ -74,6 +74,10 @@ function getYear(date) {
   return date.split("/")[2];  
 }
 
+function sortTable(tableID) {
+  $("#" + tableID).tablesorter();
+}
+
 // ====================
 // ===== FIREBASE =====
 // ====================
@@ -147,5 +151,5 @@ function getAll(collection) {
     querySnapshot.forEach(function(doc) {
         console.log(doc.data());
     });
-});
+  });
 }
