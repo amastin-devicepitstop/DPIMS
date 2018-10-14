@@ -28,6 +28,12 @@
   src: url(/IMS/assets/fonts/Metropolis-Bold.ttf);
 }
 
+body, button {
+  font-family: 'Metropolis Regular', 'Helvetica', 'Arial', sans-serif;
+  font-size: 15px;
+  letter-spacing: -0.045rem;
+}
+
 
 @media (max-width: 1280px) { 
   
@@ -53,11 +59,8 @@ html, body {
 }
 
 body {
-  font-family: 'Metropolis Regular', 'Helvetica', 'Arial', sans-serif;
-  font-size: 15px;
   line-height: 1.42857143;
   color: #222;
-  letter-spacing: -0.045rem;
 }
 
 header {
