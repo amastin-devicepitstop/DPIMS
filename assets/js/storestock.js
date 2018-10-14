@@ -72,6 +72,7 @@ function initCheckboxes() {
     });
   
   $(":checkbox").change(function() {
+    $("input:checkbox:not(:checked)").closest('tr').css('background-color', '#ffffff');
     $("input:checkbox:checked").closest('tr').css('background-color', '#f0f0f0');
     
     // If no checkboxes are selected, display "Store Stock Tracker"
