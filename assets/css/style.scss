@@ -581,7 +581,7 @@ svg {
     }
     
     a:hover, a:focus {
-      font-weight: inherit;
+      font-weight: normal;
       outline: 0;
     }
     
@@ -594,15 +594,15 @@ svg {
   }
   
   li.active {
-    background-color: #1f282d;
-    border-left-color: #2FA3E6;
+    background-color: #8dc63f;
+    border-left-color: #8dc63f;
     
     a {
-      color: #2FA3E6;
+      color: #222;
     }
     
     a svg {
-      fill: #2FA3E6;
+      fill: #222;
     }
     
   }
