@@ -828,3 +828,9 @@ th, td {
   padding: 12px 8px;
   border-bottom: 1px solid #ededed;
 }
+
+table {
+  tr:hover {  
+    background-color: #fafafa;
+  }
+}
