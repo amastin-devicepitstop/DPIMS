@@ -1,5 +1,5 @@
-let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
-let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
+let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Mark as Ready for Floor'>Mark as Ready for Floor</option><option value='Mark as Not Ready for Floor'>Mark as Not Ready for Floor</option><option value='Delete'>Delete</option></select>";
+let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Mark as Ready for Floor'>Mark as Ready for Floor</option><option value='Mark as Not Ready for Floor'>Mark as Not Ready for Floor</option><option value='Delete'>Delete</option></select>";
 
 window.onload = function(){
   initDatabase();
@@ -122,7 +122,7 @@ function shadeSelected() {
   $("input:checkbox:checked").closest('tr').attr('class', 'selected');
 }
 
-function markAsSold() {
+function markAsSold(sold) {
   // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
   let product;
   let sku;
@@ -130,11 +130,11 @@ function markAsSold() {
   
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
-    merge("devices", sku, {sold: true});
+    merge("devices", sku, {sold: sold});
   }
 }
 
-function markAsNotSold() {
+function markAsReady(ready) {
   // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
   let product;
   let sku;
@@ -142,7 +142,7 @@ function markAsNotSold() {
   
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
-    merge("devices", sku, {sold: false});
+    merge("devices", sku, {ready: ready});
   }
 }
 
@@ -157,20 +157,24 @@ function parseOption() {
     int = 1;
   }
   
+  resetSelect(int);
+  
   if ($("#modifyOptions").val() == "Edit") {
-    resetSelect(int);
     editProduct();  
   }
   else if ($("#modifyOptions").val() == "Mark as Sold") {
-    resetSelect(int);
-    markAsSold();
+    markAsSold(true);
   }
   else if ($("#modifyOptions").val() == "Mark as Not Sold") {
-    resetSelect(int);
-    markAsNotSold();
+    markAsSold(false);
+  }
+  else if ($("#modifyOptions").val() == "Mark as Ready for Floor") {
+    markAsReady(true);
+  }
+    else if ($("#modifyOptions").val() == "Mark as Not Ready for Floor") {
+    markAsReady(false);
   }
   else if ($("#modifyOptions").val() == "Delete") {
-    resetSelect(int);
     showConfirmDialog("Do you want to delete the selected product(s)?");
   }
   
