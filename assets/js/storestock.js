@@ -140,7 +140,7 @@ function markAsNotSold() {
   
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[0]).closest('tr')[0].cells[5].innerText;
-    merge("devices", sku, {sold: true});
+    merge("devices", sku, {sold: false});
   }
 }
 
