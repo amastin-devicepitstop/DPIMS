@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url(/IMS/assets/fonts/Proxima-Nova-Light.otf);
+}
+
 @media (max-width: 1280px) { 
   
   .nav {
