@@ -8,6 +8,11 @@
   src: url(/IMS/assets/fonts/Proxima-Nova-Light.otf);
 }
 
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(/IMS/assets/fonts/Proxima-Nova-Regular.ttf);
+}
+
 @media (max-width: 1280px) { 
   
   .nav {
@@ -34,6 +39,7 @@ html, body {
 body {
   line-height: 1.42857143;
   overflow: hidden;
+  font-family: 'Proxima Nova', sans-serif;
 }
 
 header {
