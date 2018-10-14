@@ -72,8 +72,7 @@ function initCheckboxes() {
     });
   
   $(":checkbox").change(function() {
-    $("input:checkbox:not(:checked)").closest('tr').css('background-color', '#ffffff');
-    $("input:checkbox:checked").closest('tr').css('background-color', '#f0f0f0');
+    shadeSelected();
     
     // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
@@ -106,6 +105,16 @@ function initCheckboxes() {
           $(".modifyProduct").html(multiCheckBoxHTML)
     }
   }); 
+}
+
+function shadeSelected() {
+  // Any <tr> elements should have a white background if it's checkbox is not checked
+  $("input:checkbox:not(:checked)").closest('tr').css('background-color', '#ffffff');
+  
+  // Any <tr> elements should have a background color of #f0f0f0 if it's checkbox is checked
+  // Additionally the bottom border color should change so it doesn't blend in to the background.
+  $("input:checkbox:checked").closest('tr').css('background-color', '#f0f0f0');
+  $("input:checkbox:checked").closest('tr').css('border-bottom', '1px solid #e5e5e5');
 }
 
 function markAsSold() {
