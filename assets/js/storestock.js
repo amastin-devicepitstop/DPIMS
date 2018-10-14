@@ -116,7 +116,7 @@ function shadeSelected() {
   // Additionally the bottom border color should change so it doesn't blend in to the background.
 //   $("input:checkbox:checked").closest('tr').css('background-color', '#f0f0f0');
 //   $("input:checkbox:checked").closest('tr').css('border-bottom', '1px solid #e5e5e5');
-  $("input:checkbox:checked").closest('tr').attr('class', 'tr-selected');
+  $("input:checkbox:checked").closest('tr').attr('class', 'selected');
 }
 
 function markAsSold() {
