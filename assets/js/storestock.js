@@ -80,16 +80,11 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-      if ($("input[type='checkbox']:checked")[0].hasClass(".selectAll")){
-          console.log("selectAll is checked");
-          $(".selectAll").prop('checked', false); 
-      }
-      else{
-        let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
-        $(".font-xl").html(singleCheckBoxHTML);
-        $(".font-xl").attr('class', 'modifyProduct');
-        $(".modifyProduct").html(singleCheckBoxHTML)
-      }
+      let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
+      $(".selectAll").prop('checked', false); 
+      $(".font-xl").html(singleCheckBoxHTML);
+      $(".font-xl").attr('class', 'modifyProduct');
+      $(".modifyProduct").html(singleCheckBoxHTML)
     }
     
     // If multiple checkboxes are selected, allow those products to be deleted
