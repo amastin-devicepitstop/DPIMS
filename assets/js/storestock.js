@@ -52,6 +52,7 @@ function populateTable(query) {
 }
 
 function addStoreStockRow(tech, manufacturer, model, actions, sku, date) {
+  // Creates each part of the row piece by piece and then appends it to the table body
   let rowStart = "<tr>";
   let checkboxCell = "<td><input type='checkbox'></td>";
   let techCell = "<td class='overflow'><a>" + tech + "</a></td>";
@@ -158,6 +159,7 @@ function resetSelect(int) {
 }
 
 function editProduct() {
+  // Get the nearest row and then grabs the sku from it, queries the database and edits the product
   let row = $("input:checkbox:checked").closest('tr');
   let model = row[0].cells[3].innerText;
   let sku = row[0].cells[5].innerText;
