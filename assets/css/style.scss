@@ -302,6 +302,11 @@ a {
     vertical-align: bottom;
     padding: 8px;
   }
+  
+  checkbox:not(th) {
+    left: 4px;
+    position: relative;
+  }
 }
 
 .width-5 {
@@ -793,3 +798,4 @@ th, td {
   padding: 12px 8px;
   border-bottom: 1px solid #ededed;
 }
+
