@@ -80,7 +80,7 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-      if ($("input:checkbox:checked").hasClass(".selectAll")){
+      if ($("input[type='checkbox']:checked").hasClass(".selectAll")){
           console.log("selectAll is checked");
           $(".selectAll").prop('checked', false); 
       }
