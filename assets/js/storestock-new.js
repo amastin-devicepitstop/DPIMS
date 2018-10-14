@@ -31,7 +31,10 @@ function addStoreStock() {
   let day = getDay(date);
   let year = getYear(date);
   
-  save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year});
+  let sold = false;
+  let ready = false;
+  
+  save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year, sold: sold, ready: ready});
 }
 
 function addAction() {
