@@ -18,6 +18,8 @@ function showConfirmDialog(message) {
   if (message == "Do you want to delete the selected product(s)?") {
     $("#confirm-button").click(function(e) {
       deleteProduct();
+      e.preventDefault;
+      e.stopPropagation;
       return false;
     });
     
@@ -28,6 +30,8 @@ function showConfirmDialog(message) {
       setTimeout(function() {
         $("#backdrop").attr('class', 'modal-backdrop fade  in closed low');
       }, 500);
+      e.preventDefault;
+      e.stopPropagation;
       return false;
       });
   }
