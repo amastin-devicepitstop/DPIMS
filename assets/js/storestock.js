@@ -120,6 +120,12 @@ function shadeSelected() {
 function markAsSold() {
   let product;
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
+  console.log($(checkboxes[0]).closest('tr'));
+//   for (let i = 0; i < checkboxes.length; i++) {
+//     $("input:checkbox:checked").closest('tr')
+//     let sku = check//row[0].cells[5].innerText;
+    
+//   }
   console.log(checkboxes);
 }
 
