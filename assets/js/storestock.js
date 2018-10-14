@@ -158,19 +158,19 @@ function parseOption() {
   }
   
   if ($("#modifyOptions").val() == "Edit") {
-    resetSelect(0);
+    resetSelect(int);
     editProduct();  
   }
   else if ($("#modifyOptions").val() == "Mark as Sold") {
-    resetSelect(0);
+    resetSelect(int);
     markAsSold();
   }
   else if ($("#modifyOptions").val() == "Mark as Not Sold") {
-    resetSelect(0);
+    resetSelect(int);
     markAsNotSold();
   }
   else if ($("#modifyOptions").val() == "Delete") {
-    resetSelect(1);
+    resetSelect(int);
     showConfirmDialog("Do you want to delete the selected product(s)?");
   }
   
