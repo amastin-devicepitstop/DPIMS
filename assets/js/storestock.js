@@ -98,7 +98,7 @@ function initCheckboxes() {
 
 function markAsSold() {
   let product;
-  let checkboxes = $("input[type='checkbox']:checked")
+  let checkboxes = $("input[type='checkbox']:checked:not('#selectAll')")
   console.log(checkboxes);
 }
 
