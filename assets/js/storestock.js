@@ -123,7 +123,7 @@ function shadeSelected() {
 function markAsSold() {
   let product;
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
-  console.log($(checkboxes[0]).closest('tr').cells[5].innerText);
+  console.log($(checkboxes[0]).closest('tr')[0].cells[5].innerText);
 //   for (let i = 0; i < checkboxes.length; i++) {
 //     $(checkboxes[i]).closest('tr').cells[5].innerText
 //     let sku = check//row[0].cells[5].innerText;
