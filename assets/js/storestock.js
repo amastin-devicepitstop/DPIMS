@@ -16,7 +16,7 @@ function getStoreStock() {
     enableSelectAll(query);
     populateTable(query);
     initCheckboxes();
-    sortTable("store-stock-tracker", {sortList: [[5,0]]});
+    sortTable("store-stock-tracker", {sortList: [[5,1]]});
     hideAnimation();
   }, 1000);  
 }
