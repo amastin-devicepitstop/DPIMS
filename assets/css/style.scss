@@ -830,6 +830,11 @@ th, td {
   border-bottom: 1px solid #ededed;
 }
 
+tr-selected {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 table {
   tr:hover {  
     background-color: #fafafa;
