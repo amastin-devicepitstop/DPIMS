@@ -80,24 +80,36 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-          $(".font-xl").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+          let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
+          $(".font-xl").html(singleCheckBoxHTML);
           $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
-        }
+          $(".modifyProduct").html(singleCheckBoxHTML)
+    }
     
     // If multiple checkboxes are selected, allow those products to be deleted
     else if ($("input:checkbox:checked").length > 1) {
-          $(".font-xl").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+          let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
+          $(".font-xl").html(multiCheckBoxHTML);
           $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
-        }
+          $(".modifyProduct").html(multiCheckBoxHTML)
+    }
   }); 
+}
+
+function markAsSold() {
+  let product;
+  let checkboxes = $("input[type='checkbox']")
+  console.log(checkboxes);
 }
 
 function parseOption() {
   if ($("#modifyOptions").val() == "Edit") {
     resetSelect(0);
     editProduct();  
+  }
+  else if ($("#modifyOptions").val() == "Mark as Sold") {
+    resetSelect(0);
+    markAsSold();
   }
   else if ($("#modifyOptions").val() == "Delete") {
     resetSelect(1);
