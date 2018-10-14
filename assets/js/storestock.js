@@ -91,7 +91,7 @@ function initCheckboxes() {
       }
       
       else {
-        let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
+        let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
         $(".font-xl").html(singleCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
         $(".modifyProduct").html(singleCheckBoxHTML)
@@ -100,7 +100,7 @@ function initCheckboxes() {
     
     // If multiple checkboxes are selected, allow those products to be deleted
     else if ($("input:checkbox:checked").length > 1) {
-          let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
+          let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
           $(".font-xl").html(multiCheckBoxHTML);
           $(".font-xl").attr('class', 'modifyProduct');
           $(".modifyProduct").html(multiCheckBoxHTML)
@@ -121,9 +121,23 @@ function shadeSelected() {
 }
 
 function markAsSold() {
+  // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
   let product;
   let sku;
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
+  
+  for (let i = 0; i < checkboxes.length; i++) {
+    sku = $(checkboxes[0]).closest('tr')[0].cells[5].innerText;
+    merge("devices", sku, {sold: true});
+  }
+}
+
+function markAsNotSold() {
+  // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
+  let product;
+  let sku;
+  let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
+  
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[0]).closest('tr')[0].cells[5].innerText;
     merge("devices", sku, {sold: true});
@@ -139,6 +153,10 @@ function parseOption() {
     resetSelect(0);
     markAsSold();
   }
+  else if ($("#modifyOptions").val() == "Mark as Not Sold") {
+    resetSelect(0);
+    markAsNotSold();
+  }
   else if ($("#modifyOptions").val() == "Delete") {
     resetSelect(1);
     showConfirmDialog("Do you want to delete the selected product(s)?");
@@ -147,6 +165,8 @@ function parseOption() {
 }
 
 function resetSelect(int) {
+  // THIS NEEDS TO BE UPDATED
+  // Resets 'modifyProduct' to not change option when clicking on an option. Still runs the command though.
   if (int == 0) {
     $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
   }
