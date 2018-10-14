@@ -153,7 +153,8 @@ function parseOption() {
   if ($("input[type='checkbox']:checked").length == 1) {
     int = 0;
   }
-  else ($("input[type='checkbox']:checked").length > 1){
+  
+  else if ($("input[type='checkbox']:checked").length > 1){
     int = 1;
   }
   
