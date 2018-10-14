@@ -80,6 +80,7 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
+      console.log($("input[type='checkbox']:checked"));
       let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
       $(".selectAll").prop('checked', false); 
       $(".font-xl").html(singleCheckBoxHTML);
