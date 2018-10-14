@@ -1,5 +1,5 @@
-let singleCheckBoxHTML;
-let multiCheckBoxHTML;
+let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
+let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
 
 window.onload = function(){
   initDatabase();
@@ -93,17 +93,16 @@ function initCheckboxes() {
         $(".modifyProduct").attr("class", "font-xl"); 
       }
       
+      // Otherwise convert 'Store Stock Tracker' to 'More Actions'
       else {
-        singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
         $(".font-xl").html(singleCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
         $(".modifyProduct").html(singleCheckBoxHTML)
       }
     }
     
-    // If multiple checkboxes are selected, allow those products to be deleted
+    // If multiple checkboxes are selected, do not allow editing
     else if ($("input:checkbox:checked").length > 1) {
-          multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
           $(".font-xl").html(multiCheckBoxHTML);
           $(".font-xl").attr('class', 'modifyProduct');
           $(".modifyProduct").html(multiCheckBoxHTML)
