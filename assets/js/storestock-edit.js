@@ -16,6 +16,8 @@ function populateForm(query) {
   let actions = product.actions;
   let sku = product.sku;
   let date = product.date;
+  let sold = product.sold;
+  let ready = product.ready;
   
   $("#first-name").val(product.tech.split(" ")[0]);
   $("#last-name").val(product.tech.split(" ")[1]);
@@ -24,6 +26,8 @@ function populateForm(query) {
   $("#actions").val(actions);
   $("#sku").val(sku);
   $("#date").val(date);
+  $("#sold").prop('checked', sold);
+  $("#ready").prop('checked', ready);
 }
 
 function getProduct() {
@@ -62,8 +66,10 @@ function addStoreStock() {
   let day = getDay(date);
   let year = getYear(date);
   
-  save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year});
-}
+  let sold = document.getElementById("sold").value;
+  let ready = document.getElementById("ready").value;
+  
+  save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year, sold: sold, ready: ready});}
 
 function addAction() {
   let actions = document.getElementById("actions");
