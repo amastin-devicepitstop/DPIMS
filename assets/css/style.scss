@@ -4,14 +4,25 @@
 @import "{{ site.theme }}";
 
 @font-face {
-  font-family: 'Proxima Nova Light';
-  src: url(/IMS/assets/fonts/Proxima-Nova-Light.otf);
+  font-family: 'Metropolis Light';
+  src: url(/ims/assets/fonts/metropolis-light.ttf);
 }
 
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url(/IMS/assets/fonts/Proxima-Nova-Regular.ttf);
+  font-family: 'Metropolis Regular';
+  src: url(/ims/assets/fonts/metropolis-regular.ttf);
 }
+
+@font-face {
+  font-family: 'Metropolis SemiBold';
+  src: url(/ims/assets/fonts/metropolis-semibold.ttf);
+}
+
+@font-face {
+  font-family: 'Metropolis Bold';
+  src: url(/ims/assets/fonts/metropolis-bold.ttf);
+}
+
 
 @media (max-width: 1280px) { 
   
@@ -37,7 +48,7 @@ html, body {
 }
 
 body {
-  font-family: ProximaNovaRegular,Helvetica,Arial,sans-serif;
+  font-family: 'Metropolis Regular', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
   color: #222;
