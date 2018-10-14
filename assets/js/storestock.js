@@ -1,3 +1,6 @@
+let singleCheckBoxHTML;
+let multiCheckBoxHTML;
+
 window.onload = function(){
   initDatabase();
   getStoreStock();
@@ -91,7 +94,7 @@ function initCheckboxes() {
       }
       
       else {
-        let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
+        singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
         $(".font-xl").html(singleCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
         $(".modifyProduct").html(singleCheckBoxHTML)
@@ -100,7 +103,7 @@ function initCheckboxes() {
     
     // If multiple checkboxes are selected, allow those products to be deleted
     else if ($("input:checkbox:checked").length > 1) {
-          let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
+          multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Delete'>Delete</option></select>";
           $(".font-xl").html(multiCheckBoxHTML);
           $(".font-xl").attr('class', 'modifyProduct');
           $(".modifyProduct").html(multiCheckBoxHTML)
@@ -145,6 +148,15 @@ function markAsNotSold() {
 }
 
 function parseOption() {
+  let int;
+  
+  if ($("input[type='checkbox']:checked").length == 1) {
+    int = 0;
+  }
+  else ($("input[type='checkbox']:checked").length > 1){
+    int = 1;
+  }
+  
   if ($("#modifyOptions").val() == "Edit") {
     resetSelect(0);
     editProduct();  
@@ -165,13 +177,12 @@ function parseOption() {
 }
 
 function resetSelect(int) {
-  // THIS NEEDS TO BE UPDATED
   // Resets 'modifyProduct' to not change option when clicking on an option. Still runs the command though.
   if (int == 0) {
-    $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Delete'>Delete</option></select>");
+    $(".modifyProduct").html(singleCheckBoxHTML);
   }
   else if (int == 1) {
-    $(".modifyProduct").html("<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Delete'>Delete</option></select>");
+    $(".modifyProduct").html(multiCheckBoxHTML);
   }
   
 }
