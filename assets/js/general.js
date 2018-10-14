@@ -74,8 +74,8 @@ function getYear(date) {
   return date.split("/")[2];  
 }
 
-function sortTable(tableID) {
-  $("#" + tableID).tablesorter();
+function sortTable(tableID, sortRules) {
+  $("#" + tableID).tablesorter(sortRules);
 }
 
 // ====================
