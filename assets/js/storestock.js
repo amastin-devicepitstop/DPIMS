@@ -84,7 +84,7 @@ function initCheckboxes() {
     else if ($("input:checkbox:checked").length == 1) {
       console.log($("input[type='checkbox']:checked"));
       console.log($("input[type='checkbox']:checked")[0]);
-      if ($("input[type='checkbox']:checked")[0]).classList.contains(".selectAll") {
+      if ($("input[type='checkbox']:checked")[0].classList.contains(".selectAll")) {
         console.log(true);  
       }
       let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Delete'>Delete</option></select>";
