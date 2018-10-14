@@ -127,7 +127,7 @@ function markAsSold() {
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
   
   for (let i = 0; i < checkboxes.length; i++) {
-    sku = $(checkboxes[0]).closest('tr')[0].cells[5].innerText;
+    sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
     merge("devices", sku, {sold: true});
   }
 }
@@ -139,7 +139,7 @@ function markAsNotSold() {
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
   
   for (let i = 0; i < checkboxes.length; i++) {
-    sku = $(checkboxes[0]).closest('tr')[0].cells[5].innerText;
+    sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
     merge("devices", sku, {sold: false});
   }
 }
