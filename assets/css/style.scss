@@ -194,6 +194,10 @@ a {
 }
 
 .font-lg {
+  font-family: 'Metropolis Light', sans-serif;  
+}
+
+.font-lg {
   font-size: 20px;
 }
 
@@ -305,7 +309,6 @@ a {
 #store-stock-tracker {
   border-bottom: 1px solid #ededed;
   table-layout: fixed;
-  font-family: 'Proxima Nova Light', sans-serif;
   
   thead {
     font-size: 12px;
