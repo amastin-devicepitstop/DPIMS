@@ -35,8 +35,8 @@ function addSign() {
   let commentsRow;
   let skuRow
   if (comments == "") {
-    commentsRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + comments + "></td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'>" + sku + "</td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell'><input id='no-comment-input' class='sign-cell sign-value' value=" + comments + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input id='no-comment-sku' class='sign-cell sign-value' value=" + sku + "></td></tr>";
   }
   else {
     commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment' value=" + comments + "></td></tr>";
@@ -44,6 +44,20 @@ function addSign() {
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
+  
+  
+  let signComment = $("#no-comment-input");
+  let skuInput = $("#no-comment-sku");
+  signComment.change(function() {
+    if (signComment.val() != "") {
+      signComment.attr("class", 'sign-cell sign-value sign-comment')
+      skuInput.attr("class", 'sign-cell sign-value sign-sku-comment');
+    }
+    else {
+      signComment.attr("class", 'sign-cell sign-value')
+      skuInput.attr("class", 'sign-cell sign-value');  
+    }
+  });
   
   count += 1;
   $(".page").append(sign);
