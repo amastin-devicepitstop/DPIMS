@@ -23,7 +23,7 @@ function addSign() {
   let carrier = $("#carrier").val();
   let storage = $("#storage").val();
   let price = $("#price").val();
-  let comments = $("#comments").val();
+  let comments = $("#comments").val() || " ";
   let sku = $("#sku").val();
 
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
