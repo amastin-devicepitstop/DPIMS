@@ -930,15 +930,15 @@ table {
   width: 90%;
 }
 
+input.sign-value {
+  padding: 0;
+  width: 100%;
+}
+
 .sign-value {
   line-height: 1.42857143;
   color: #231f20;
   display: block;
   border: none;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-  
-  input {
-    padding: 0;
-    width: 100%;
-  }
 }
