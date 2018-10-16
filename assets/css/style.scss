@@ -883,6 +883,13 @@ table {
 .sign-sku {
   text-align: right!important;
   font-size: 12px;
+  top: 2.5em;
+  position: relative;
+}
+
+.sign-sku-comment {
+  text-align: right!important;
+  font-size: 12px;
   top: 0.5em;
   position: relative;
 }
@@ -893,7 +900,6 @@ table {
   text-transform: uppercase;
   font-family: 'Metropolis Bold';
 }
-
 
 .preview {
   width: 30%;
