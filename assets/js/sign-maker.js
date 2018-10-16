@@ -2,7 +2,7 @@ window.onload = function(){
   preventFormSubmit();
   initDatabase();
   autocomplete();
-  forceDollarsign();
+  forceDollarSign();
   hideAnimation();
 }
 
