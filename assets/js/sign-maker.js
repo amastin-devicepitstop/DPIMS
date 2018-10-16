@@ -1,8 +1,9 @@
 window.onload = function(){
-  hideAnimation();
   preventFormSubmit();
   initDatabase();
   autocomplete();
+  forceDollarsign();
+  hideAnimation();
 }
 
 function preventFormSubmit() {
