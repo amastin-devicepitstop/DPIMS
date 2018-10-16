@@ -849,3 +849,16 @@ table {
 .required::after {
   content: '*';  
 }
+
+.sign {
+  height: 15em;
+  width: 25em;
+  background-color: #fff;
+  border: 2px solid;
+  max-height: 15em;
+  width: 25em;
+}
+
+.dp-logo {
+  background: url(https://www.devicepitstop.com/wp-content/themes/devicepitstop/less/../images/site-logo.png) no-repeat 0 0;  
+}
