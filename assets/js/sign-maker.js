@@ -37,7 +37,7 @@ function addSign() {
   let skuRow
   if (comments == "") {
     commentsRow = "<tr><td colspan='2' class='sign-cell'><input id='no-comment-input' class='sign-cell sign-value' value=" + comments + "></td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input id='no-comment-sku' class='sign-cell sign-value' value=" + sku + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input id='no-comment-sku' class='sign-cell sign-value sign-sku' value=" + sku + "></td></tr>";
   }
   else {
     commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment' value=" + comments + "></td></tr>";
@@ -50,13 +50,14 @@ function addSign() {
   let signComment = $("#no-comment-input");
   let skuInput = $("#no-comment-sku");
   signComment.change(function() {
+    console.log("Comment changed!");
     if (signComment.val() != "") {
       signComment.attr("class", 'sign-cell sign-value sign-comment')
       skuInput.attr("class", 'sign-cell sign-value sign-sku-comment');
     }
     else {
       signComment.attr("class", 'sign-cell sign-value')
-      skuInput.attr("class", 'sign-cell sign-value');  
+      skuInput.attr("class", 'sign-cell sign-value sign-sku');  
     }
   });
   
