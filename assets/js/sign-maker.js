@@ -1,3 +1,4 @@
+let count;
 window.onload = function(){
   preventFormSubmit();
   initDatabase();
@@ -18,7 +19,6 @@ function preventFormSubmit() {
 }
 
 function addSign() {
-  let count = 1;
   let manufacturer = $("#manufacturer").val();
   let model = $("#model").val();
   let carrier = $("#carrier").val();
@@ -34,9 +34,12 @@ function addSign() {
   let carrierRow = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
   let commentsRow;
   if (comments = "") {
+    console.log("Comments empty");
     commentsRow = "<tr><td colspan='2' class='sign-cell'>" + ' ' + "</td></tr>";
   }
   else {
+    console.log("Comments not empty");
+    console.log("Comments: " + comments);
     commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
   }
   let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'>" + sku + "</td></tr>";
