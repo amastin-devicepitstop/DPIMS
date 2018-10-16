@@ -936,9 +936,9 @@ table {
   display: block;
   border: none;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-.sign-value > input {
-  padding: 0;
-  width: 100%;
+  
+  input {
+    padding: 0;
+    width: 100%;
+  }
 }
