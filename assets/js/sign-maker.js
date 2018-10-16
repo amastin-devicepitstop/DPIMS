@@ -26,7 +26,7 @@ function addSign() {
   let comments = $("#comments").val();
   let sku = $("#sku").val();
 
-  let signBegin = "<div class='sign'><div><table><tbody>";
+  let signBegin = "<div class='sign-preview'><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'><td class='sign-cell sign-price'>" + '$' + price + "</td></tr>";
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'>" + manufacturer + " " + model + "</td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
