@@ -21,7 +21,8 @@ function preventFormSubmit() {
 function addSign() {
   let manufacturer = $("#manufacturer").val();
   let model = $("#model").val();
-  let product = manufacturer + " " + model;
+  let product = manufacturer + ' ' + model;
+  console.log(product);
   let carrier = $("#carrier").val();
   let storage = $("#storage").val();
   let price = $("#price").val();
