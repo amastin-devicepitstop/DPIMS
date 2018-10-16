@@ -17,6 +17,15 @@ function preventFormSubmit() {
   }
 }
 
+function forceDollarSign() {
+  let price = $("#price");
+  price.change(function() {
+    if (price.val().substr(0, 1) !== '$'){
+      price.val('$' + price.val());
+    }
+  });
+}
+
 function addSign() {
   let manufacturer = $("#manufacturer").val();
   let model = $("#model").val();
