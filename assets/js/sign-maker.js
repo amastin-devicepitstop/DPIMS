@@ -92,7 +92,7 @@ function autocomplete() {
     source: models
   });
   
-  let carriers = ["AT&T",
+  let carrier = ["AT&T",
                   "Other",
                   "T-Mobile",
                   "Unlocked",
@@ -101,8 +101,8 @@ function autocomplete() {
                   "Wi-Fi Only"
                  ];
   
-  $("#carriers").autocomplete({
-    source: carriers
+  $("#carrier").autocomplete({
+    source: carrier
   });
   
   let storage = ["4GB",
