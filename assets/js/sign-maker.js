@@ -32,7 +32,7 @@ function addSign() {
   let storageRow = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
   let commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
-  let skuRow = "<tr><td colspan='2' class='sign-sku'>" + sku + "</td></tr>";
+  let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'>" + sku + "</td></tr>";
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
