@@ -23,7 +23,7 @@ function addSign() {
   let carrier = $("#carrier").val();
   let storage = $("#storage").val();
   let price = $("#price").val();
-  let comments = $("#comments").val() || " ";
+  let comments = $("#comments").val();
   let sku = $("#sku").val();
 
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
@@ -31,7 +31,12 @@ function addSign() {
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'>" + manufacturer + " " + model + "</td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
-  let commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
+  if (comments = "") {
+    let commentsRow = "<tr><td colspan='2' class='sign-cell'>" + ' ' + "</td></tr>";
+  }
+  else {
+    let commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
+  }
   let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'>" + sku + "</td></tr>";
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
