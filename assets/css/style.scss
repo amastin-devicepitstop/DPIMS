@@ -927,3 +927,20 @@ table {
 #column-header {
   width: 90%;
 }
+
+.sign-value {
+  line-height: 1.42857143;
+  color: #231f20;
+  display: block;
+  height: 33px;
+  padding: 5px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: none;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  
+  .sign-price {
+    width: 6em;
+    font-size: 25px;
+  }
+}
