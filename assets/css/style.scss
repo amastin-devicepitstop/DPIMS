@@ -825,7 +825,7 @@ p {
   z-index: -1;  
 }
 
-th, td:not(.sign-cell):not(.sign-comment) {
+th, td {
   text-align: left;
   padding: 12px 8px;
   border-bottom: 1px solid #ededed;
@@ -866,17 +866,19 @@ table {
   width: 14em;
   background-size: 12em;
   background-position: 1em;
+  border-bottom: none!important;
 }
 
 .sign-price {
   font-size: 25px;
   font-family: 'Metropolis Bold'!important;
+  border-bottom: none!important;
 }
 
 .sign-cell {
   text-align: center;
   padding: 5px 10px;
-  border-bottom: none;
+  border-bottom: none!important;
   font-family: 'Metropolis SemiBold', sans-serif;
 }
 
@@ -885,6 +887,7 @@ table {
   font-size: 12px;
   top: 2.5em;
   position: relative;
+  border-bottom: none!important;
 }
 
 .sign-sku-comment {
@@ -892,6 +895,7 @@ table {
   font-size: 12px;
   top: 0.5em;
   position: relative;
+  border-bottom: none!important;
 }
 
 .sign-comment {	
@@ -899,6 +903,7 @@ table {
   background-color: yellow;
   text-transform: uppercase;
   font-family: 'Metropolis Bold';
+  border-bottom: none!important;
 }
 
 .preview {
