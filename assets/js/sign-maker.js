@@ -33,7 +33,7 @@ function addSign() {
   let storageRow = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
   let commentsRow;
-  if (comments = "" || comments == " ") {
+  if (comments == "") {
     console.log("Comments empty");
     commentsRow = "<tr><td colspan='2' class='sign-cell'>" + ' ' + "</td></tr>";
   }
