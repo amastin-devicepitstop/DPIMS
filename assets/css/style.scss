@@ -854,11 +854,33 @@ table {
   height: 15em;
   width: 25em;
   background-color: #fff;
-  border: 2px solid;
+  border: 2px solid #f1f1f1;
   max-height: 15em;
   width: 25em;
 }
 
+.sign-logo {
+    height: 4em;
+    width: 14em;
+    background-size: 14em;
+}
+
 .dp-logo {
-  background: url(https://www.devicepitstop.com/wp-content/themes/devicepitstop/less/../images/site-logo.png) no-repeat 0 0;  
+    background: url(https://www.devicepitstop.com/wp-content/themes/devicepitstop/less/../images/site-logo.png) no-repeat 0 0;
+}
+
+.sign-price {
+    font-size: 25px;
+    font-family: 'Metropolis Bold';
+}
+
+.sign-cell {
+    text-align: center;
+}
+
+.sign-comment {	
+    color: #df6869;
+    background-color: yellow;
+    text-transform: uppercase;
+    font-family: 'Metropolis Semibold';
 }
