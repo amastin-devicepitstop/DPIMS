@@ -43,7 +43,7 @@ function addSign() {
   }
   else {
     commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment' value=" + comments + "></td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku-comment'><input class='sign-cell sign-value sign-sku-comment' value=" + sku + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + sku + "></td></tr>";
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
@@ -55,7 +55,7 @@ function addSign() {
     console.log("Comment changed!");
     if (signComment.val() != "") {
       signComment.attr("class", 'sign-cell sign-value sign-comment')
-      skuInput.attr("class", 'sign-cell sign-value sign-sku-comment');
+      skuInput.attr("class", 'sign-cell sign-value');
     }
     else {
       signComment.attr("class", 'sign-cell sign-value')
