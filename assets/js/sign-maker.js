@@ -36,7 +36,7 @@ function addSign() {
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
-  $("hr").prepend(sign);
+  $(".border-light").prepend(sign);
 }
 
 function autocomplete() {
