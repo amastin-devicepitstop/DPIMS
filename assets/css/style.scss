@@ -825,7 +825,7 @@ p {
   z-index: -1;  
 }
 
-th, td:not(.sign-cell) {
+th, td:not(.sign-cell):not(.sign-comment) {
   text-align: left;
   padding: 12px 8px;
   border-bottom: 1px solid #ededed;
@@ -850,13 +850,14 @@ table {
   content: '*';  
 }
 
-.sign {
+.sign-preview {
   height: 15em;
   width: 25em;
   background-color: #fff;
   border: 2px solid #f1f1f1;
   max-height: 15em;
   width: 25em;
+  zoom: 50%;
 }
 
 .dp-logo.sign-logo {
@@ -879,11 +880,10 @@ table {
 }
 
 .sign-sku {
-  text-align: right;
+  text-align: right!important;
   font-size: 12px;
   top: 0.5em;
   position: relative;
-  font-family: 'Metropolis SemiBold';
 }
 
 .sign-comment {	
