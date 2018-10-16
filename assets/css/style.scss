@@ -841,3 +841,11 @@ table {
     background-color: #fafafa;
   }
 }
+
+.required {
+  color: #df6869;  
+}
+
+.required::after {
+  content: '*';  
+}
