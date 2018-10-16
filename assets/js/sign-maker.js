@@ -30,17 +30,17 @@ function addSign() {
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value='$'" + price + "></td></tr>";
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + manufacturer + " " + model + "></td></tr>";
-  let storageRow = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
-  let carrierRow = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
+  let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + storage + "></input></td></tr>";
+  let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + carrier + "></td></tr>";
   let commentsRow;
   let skuRow
   if (comments == "") {
-    commentsRow = "<tr><td colspan='2' class='sign-cell'>" + ' ' + "</td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + comments + "></td></tr>";
     skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'>" + sku + "</td></tr>";
   }
   else {
-    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku-comment'>" + sku + "</td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value' value=" + comments + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku-comment'><input class='sign-cell sign-value' value=" + sku + "></td></tr>";
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
