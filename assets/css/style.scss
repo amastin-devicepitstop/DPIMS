@@ -825,7 +825,7 @@ p {
   z-index: -1;  
 }
 
-th, td {
+th, td:not(.sign-cell) {
   text-align: left;
   padding: 12px 8px;
   border-bottom: 1px solid #ededed;
@@ -859,28 +859,36 @@ table {
   width: 25em;
 }
 
-.sign-logo {
-    height: 4em;
-    width: 14em;
-    background-size: 14em;
-}
-
-.dp-logo {
-    background: url(https://www.devicepitstop.com/wp-content/themes/devicepitstop/less/../images/site-logo.png) no-repeat 0 0;
+.dp-logo.sign-logo {
+  background: url(https://www.devicepitstop.com/wp-content/themes/devicepitstop/less/../images/site-logo.png) no-repeat 0 0;
+  height: 4em;
+  width: 14em;
+  background-size: 14em;
 }
 
 .sign-price {
-    font-size: 25px;
-    font-family: 'Metropolis Bold';
+  font-size: 25px;
+  font-family: 'Metropolis Bold'!important;
 }
 
 .sign-cell {
-    text-align: center;
+  text-align: center;
+  padding: 5px 10px;
+  border-bottom: none;
+  font-family: 'Metropolis SemiBold', sans-serif;
+}
+
+.sign-sku {
+  text-align: right;
+  font-size: 12px;
+  top: 0.5em;
+  position: relative;
+  font-family: 'Metropolis SemiBold';
 }
 
 .sign-comment {	
-    color: #df6869;
-    background-color: yellow;
-    text-transform: uppercase;
-    font-family: 'Metropolis Semibold';
+  color: #df6869;
+  background-color: yellow;
+  text-transform: uppercase;
+  font-family: 'Metropolis Bold';
 }
