@@ -27,14 +27,14 @@ function addSign() {
   let sku = $("#sku").val();
 
   let signBegin = "<div class='sign'><div><table><tbody>";
-  let logoAndPrice = "<tr><td class='dp-logo sign-logo'><td class='sign-cell sign-price'>" + price + "</td></tr>";
-  let manufacturerAndModel = "<tr><td colspan='2' class='sign-cell'>" + manufacturer + " " + model + "</td></tr>";
-  let storage = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
-  let carrier = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
-  let comments = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
-  let sku = "<tr><td colspan='2' class='sign-sku'>" + sku + "</td></tr>";
+  let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'><td class='sign-cell sign-price'>" + price + "</td></tr>";
+  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'>" + manufacturer + " " + model + "</td></tr>";
+  let storageRow = "<tr><td colspan='2' class='sign-cell'>" + storage + "</td></tr>";
+  let carrierRow = "<tr><td colspan='2' class='sign-cell'>" + carrier + "</td></tr>";
+  let commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'>" + comments + "</td></tr>";
+  let skuRow = "<tr><td colspan='2' class='sign-sku'>" + sku + "</td></tr>";
   let signEnd = "</tbody></table></div></div>";
-  let sign = signBegin + logoAndPrice + manufacturerAndModel + storage + carrier + comments + sku + signEnd
+  let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
   $("hr").prepend(sign);
 }
