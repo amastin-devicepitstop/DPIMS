@@ -22,7 +22,6 @@ function addSign() {
   let manufacturer = $("#manufacturer").val();
   let model = $("#model").val();
   let product = manufacturer + ' ' + model;
-  console.log(product);
   let carrier = $("#carrier").val();
   let storage = $("#storage").val();
   let price = $("#price").val();
@@ -31,7 +30,7 @@ function addSign() {
 
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + '$' + price + "></td></tr>";
-  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + product + "></td></tr>";
+  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + manufacturer + ' ' + model + "></td></tr>";
   console.log(manufacturerAndModelRow);
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + storage + "></input></td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + carrier + "></td></tr>";
