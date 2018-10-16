@@ -18,6 +18,7 @@ function preventFormSubmit() {
 }
 
 function addSign() {
+  let count = 1;
   let manufacturer = $("#manufacturer").val();
   let model = $("#model").val();
   let carrier = $("#carrier").val();
@@ -41,8 +42,9 @@ function addSign() {
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
+  count += 1;
   $(".page").append(sign);
-  console.log("Appended");
+  console.log(count);
 }
 
 function autocomplete() {
