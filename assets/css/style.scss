@@ -866,13 +866,14 @@ table {
   width: 14em;
   background-size: 12em;
   background-position: 1em;
-  border-bottom: none!important;
+  border-bottom: none !important;
 }
 
 .sign-price {
   font-size: 25px;
-  font-family: 'Metropolis Bold'!important;
-  border-bottom: none!important;
+  font-family: "Metropolis Bold" !important;
+  border-bottom: none !important;
+  text-align: right;
 }
 
 .sign-cell {
@@ -880,6 +881,7 @@ table {
   padding: 5px 10px;
   border-bottom: none!important;
   font-family: 'Metropolis SemiBold', sans-serif;
+  margin: auto;
 }
 
 .sign-sku {
@@ -932,15 +934,13 @@ table {
   line-height: 1.42857143;
   color: #231f20;
   display: block;
-  height: 33px;
-  padding: 5px 12px;
   background-color: #fff;
   background-image: none;
   border: none;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-  
-  .sign-price {
-    width: 6em;
-    font-size: 25px;
-  }
+}
+
+.sign-value > input {
+  padding: 0;
+  width: 100%;
 }
