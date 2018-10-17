@@ -36,7 +36,7 @@ function toQueue() {
     let carrier = $(".sign-carrier").val();
     let storage = $(".sign-storage").val();
     let price = $(".sign-price").val();
-    let comments = $(".inputComment").val();
+    let comments = '"' + $(".inputComment").val() '"';
     let sku = $(".inputSKU").val();
   
     save("signs", sku, {product: product, carrier: carrier, storage: storage, price: price, comments: comments, sku: sku});
