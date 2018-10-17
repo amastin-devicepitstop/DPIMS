@@ -60,8 +60,9 @@ function isOdd(num) {
 function clearQueue() {
   let sign;
   setTimeout(function() {
-    for (let i = 0; i < signs.length; i++){
-      sign = signs[i];
+    console.log("hello");
+    for (let j = 0; j < signs.length; j++){
+      sign = signs[j];
       console.log(sign.sku);
     }
   }, 1000);
