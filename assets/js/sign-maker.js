@@ -43,21 +43,17 @@ function addSign() {
   let skuRow
   // If the sign has no comments, it should appear as a blank line
   if (comments == "") {
-    commentsRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputComment' value=" + comments + "></td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputComment' oninput='inputChange()' value=" + comments + "></td></tr>";
     skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + sku + "></td></tr>";
   }
   // If the sign does have comments, it should appear as a yellow line with red text.
   else {
-    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment inputComment' value=" + comments + "></td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment inputComment' oninput='inputChange()' value=" + comments + "></td></tr>";
     skuRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputSKU' value=" + sku + "></td></tr>";
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
-  
-//   $(".inputComment").on('input', function() {
-//     console.log(($(this).val() != ""));  
-//   });
-  
+    
   $(".inputComment").on('input',function() {alert("Change detected!");});
   
   count += 1;
