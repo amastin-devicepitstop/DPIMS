@@ -948,3 +948,11 @@ input.sign-value {
   position: relative;
   right: 0;
 }
+
+.btn-toolbar-center {
+  text-align: center;
+}
+
+.btn-toolbar-center .btn {
+  margin-left: 0.5rem;  
+}
