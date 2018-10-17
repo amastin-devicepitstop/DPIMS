@@ -1,16 +1,19 @@
+let signs;
+
 window.onload = function(){
   initDatabase();
   loadSigns();
 }
 
 function loadSigns() {
-  let signs = getAll("signs");
+  signs = getAll("signs");
   setTimeout(function() {
     for (let i = 0; i < signs.length; i++){
       createSign(signs[i], isOdd(signs.indexOf(signs[i])));
     }
   }, 1000);
   hideAnimation();
+  clearQueue();
 }
              
 
@@ -52,4 +55,10 @@ function createSign(sign, odd) {
 
 function isOdd(num) {
   return num % 2;
+}
+
+function clearQueue() {
+  for (let i = 0; i < signs.length; i++){
+    console.log(signs[i]);
+  }
 }
