@@ -3,9 +3,13 @@
     visibility: hidden;
   }
   
-  .sign-preview {
+  .sign-preview *{
     visibility: visible!important;
     zoom: normal;
-    -webkit-print-color-adjust: exact; 
+    -webkit-print-color-adjust: exact;
+  }
+
+  .sign-preview div{
+    border: 2px solid #ededed;
   }
 }
