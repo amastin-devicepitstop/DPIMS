@@ -158,11 +158,13 @@ function getWhere(collection, field, operator, expected) {
 }
 
 function getAll(collection) {
+  let array = [];
   database.collection(collection).get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-        console.log(doc.data());
+        array.push(doc.data());
     });
   });
+  return array;
 }
 
 function merge(collection, doc, json) {
