@@ -41,6 +41,11 @@ function hideAnimation() {
   document.getElementById("load-screen").style.display = "none";
 }
 
+function newTab(url) {
+  let tab = window.open(url, '_blank');
+  tab.focus();
+}
+
 function setURL(url) {
   document.location.href = url;
 }
