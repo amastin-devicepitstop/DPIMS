@@ -58,10 +58,11 @@ function isOdd(num) {
 }
 
 function clearQueue() {
+  let sign;
   setTimeout(function() {
     for (let i = 0; i < signs.length; i++){
-      console.log(signs[i].sku);
-      remove("signs", String(signs[i].sku));
+      sign = signs[i];
+      console.log(sign.sku);
     }
   }, 1000);
 }
