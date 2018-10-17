@@ -31,6 +31,8 @@ function addSign() {
   let noCommentInput = '"#input-' + sku + '"';
   let noCommentSku = '"#sku-' + sku + '"';
 
+  console.log(noCommentInput);
+  console.log(noCommentSku);
   // Create HTML for sign
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + '$' + price + "></td></tr>";
