@@ -61,7 +61,7 @@ function clearQueue() {
   setTimeout(function() {
     for (let i = 0; i < signs.length; i++){
       console.log(signs[i].sku);
-      remove("signs", String(signs[i].sku);
+      remove("signs", String(signs[i].sku));
     }
   }, 1000);
 }
