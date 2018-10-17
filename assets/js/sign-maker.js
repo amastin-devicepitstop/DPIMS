@@ -80,7 +80,9 @@ function addSign() {
   $(".card").empty();
   $(".card").append(loadingAnimation);
   $(".card").append(sign);
-  $(".lds-grid").toggle();
+//   setTimeout(function() {
+//     $(".lds-grid").toggle();
+//   }, 200);
 }
 
 function autocomplete() {
