@@ -50,7 +50,7 @@ function addSign() {
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
-  $(".inputComment").change(function() {
+  $(".inputComment").on('input', function() {
     console.log(($(this).val() != ""));  
   });
   
