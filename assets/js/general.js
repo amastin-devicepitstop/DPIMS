@@ -157,12 +157,16 @@ function getWhere(collection, field, operator, expected) {
   return array;
 }
 
-function getAll(collection) {
-  database.collection(collection).get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        console.log(doc.data());
-    });
-  });
+// function getAll(collection) {
+//   database.collection(collection).get().then(function(querySnapshot) {
+//     querySnapshot.forEach(function(doc) {
+//         console.log(doc.data());
+//     });
+//   });
+// }
+
+function getAll(collection){
+  console.log(database.collection(collection).get());
 }
 
 function merge(collection, doc, json) {
