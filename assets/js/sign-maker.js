@@ -65,7 +65,7 @@ function addSign() {
   
   count += 1;
   $(".page").append(sign);
-  
+  $("#" + id + '"').val(product);
   console.log(count);
 }
 
