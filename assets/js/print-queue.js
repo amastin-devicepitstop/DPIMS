@@ -13,7 +13,6 @@ function loadSigns() {
              
 
 function createSign(sign, odd) {
-  console.log(sign);
   let product = sign.product;
   let carrier = sign.carrier;
   let storage = sign.storage;
