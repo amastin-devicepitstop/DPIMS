@@ -19,7 +19,13 @@ function preventFormSubmit() {
 }
 
 function inputChange(element) {
-  console.log(element);
+  if (element.val() == ""){
+    console.log("empty");  
+  }
+  
+  else{
+    console.log("not empty");  
+  }
 }
 
 function addSign() {
@@ -49,7 +55,7 @@ function addSign() {
   }
   // If the sign does have comments, it should appear as a yellow line with red text.
   else {
-    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input id=" + id + "class='sign-cell sign-value sign-comment inputComment' oninput='inputChange()' value=" + comments + "></td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input id=" + id + "class='sign-cell sign-value sign-comment inputComment' oninput='inputChange($(this))' value=" + comments + "></td></tr>";
     skuRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputSKU' value=" + sku + "></td></tr>";
   }
   let signEnd = "</tbody></table></div></div>";
