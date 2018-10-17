@@ -12,7 +12,7 @@ function preventFormSubmit() {
     // Prevent form submission
     $("form").submit(function (e) {  
       e.preventDefault();
-      $("form").reset();
+      document.getElementById("sign-form").reset();
       addSign();
     });	
   }
