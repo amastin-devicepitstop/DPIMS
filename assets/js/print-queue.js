@@ -7,7 +7,9 @@ window.onload = function(){
 function loadSigns() {
   let signs = getAll("signs");
   setTimeout(function() {
-    createSign(signs[0], isOdd(signs.indexOf(signs[0])));
+    for (let i = 0; i < signs.length; i++){
+      createSign(signs[i], isOdd(signs.indexOf(signs[i])));
+    }
   }, 1000);
 }
              
