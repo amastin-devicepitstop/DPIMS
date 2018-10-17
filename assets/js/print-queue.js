@@ -63,7 +63,7 @@ function clearQueue() {
     console.log("hello");
     for (let j = 0; j < signs.length; j++){
       sign = signs[j];
-      console.log(sign.sku);
+      remove("signs", sign.sku);
     }
   }, 1000);
 }
