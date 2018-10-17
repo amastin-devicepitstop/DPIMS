@@ -5,11 +5,17 @@
   
   .sign-preview *{
     visibility: visible!important;
-    zoom: normal;
     -webkit-print-color-adjust: exact;
+    page-break-inside: avoid;
+    margin-right: -5px;
   }
 
   .sign-preview div{
     border: 2px solid #ededed;
+  }
+
+  .container {
+    padding: 32px;
+    width: 100%;
   }
 }
