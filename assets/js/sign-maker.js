@@ -19,7 +19,7 @@ function preventFormSubmit() {
 }
 
 function inputChange() {
-  console.log($(this);
+  console.log($(this));
 }
 
 function addSign() {
