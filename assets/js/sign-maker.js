@@ -28,8 +28,6 @@ function addSign() {
   let price = $("#price").val();
   let comments = $("#comments").val();
   let sku = $("#sku").val();
-  let noCommentInput = "input-" + sku;
-  let noCommentSku = "sku-" + sku;
 
   console.log(noCommentInput);
   console.log(noCommentSku);
@@ -43,35 +41,20 @@ function addSign() {
   let skuRow
   // If the sign has no comments, it should appear as a blank line
   if (comments == "") {
-    commentsRow = "<tr><td colspan='2' class='sign-cell'><input id=" + noCommentInput + " class='sign-cell sign-value' value=" + comments + "></td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input id=" + noCommentSku + " class='sign-cell sign-value sign-sku' value=" + sku + "></td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputComment' value=" + comments + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + sku + "></td></tr>";
   }
   // If the sign does have comments, it should appear as a yellow line with red text.
   else {
-    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment' value=" + comments + "></td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + sku + "></td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment inputComment' value=" + comments + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputSKU' value=" + sku + "></td></tr>";
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
-  
-  let signComment = $("#" + noCommentInput);
-  let skuInput = $("#" + noCommentSku);
-
-  $("input[id=" + noCommentInput + "]").change(function() {
-    console.log("True!");  
-  }
-//   signComment.change(function() {
-//     console.log("Comment changed!");
-//     if (signComment.val() != "") {
-//       signComment.attr("class", 'sign-cell sign-value sign-comment')
-//       skuInput.attr("class", 'sign-cell sign-value');
-//     }
-//     else {
-//       signComment.attr("class", 'sign-cell sign-value')
-//       skuInput.attr("class", 'sign-cell sign-value sign-sku');  
-//     }
-//   });
+  $(".inputComment").change(function() {
+    console.log(($(this).val() != ""));  
+  });
   
   count += 1;
   $(".page").append(sign);
