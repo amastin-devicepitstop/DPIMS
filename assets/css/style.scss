@@ -972,7 +972,10 @@ input.sign-value {
 
 .sign-maker-column {
   margin: auto;
-  text-alignt: center;
+  text-align: center;
+  top: 65px;
+  position: relative;
+  padding: 4% 10%;
 }
 
 .btn-large {
@@ -993,6 +996,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-link {
-  margin-top: 10.5px;
+  margin-top: 0px;
   margin-bottom: 10.5px;  
 }
