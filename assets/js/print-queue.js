@@ -58,11 +58,9 @@ function isOdd(num) {
 }
 
 function clearQueue() {
-  console.log("clear queue");
-  console.log(signs);
-  console.log(signs[0]);
-  for (let j = 0; j < signs.length; j++) {
-    console.log("for loop" + i);
-    console.log(signs[j]);
-  }
+  setTimeout(function() {
+    for (let i = 0; i < signs.length; i++){
+      console.log(signs[i]);
+    }
+  }, 1000);
 }
