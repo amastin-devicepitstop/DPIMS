@@ -5,5 +5,7 @@
   
   .sign-preview {
     visibility: visible!important;
+    zoom: normal;
+    -webkit-print-color-adjust: exact; 
   }
 }
