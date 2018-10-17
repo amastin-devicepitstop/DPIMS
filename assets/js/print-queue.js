@@ -13,7 +13,6 @@ function loadSigns() {
     }
   }, 1000);
   hideAnimation();
-  clearQueue();
 }
              
 
