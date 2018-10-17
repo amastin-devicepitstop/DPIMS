@@ -20,11 +20,11 @@ function preventFormSubmit() {
 
 function inputChange(element) {
   if (element.val() == ""){
-    console.log("empty");  
+    element.attr('class', 'sign-cell sign-value inputComment');
   }
   
   else{
-    console.log("not empty");  
+    element.attr('class', 'sign-cell sign-value sign-comment inputComment');
   }
 }
 
