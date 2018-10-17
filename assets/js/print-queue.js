@@ -1,7 +1,6 @@
 window.onload = function(){
   initDatabase();
   loadSigns();
-  hideAnimation();
 }
 
 function loadSigns() {
@@ -11,6 +10,7 @@ function loadSigns() {
       createSign(signs[i], isOdd(signs.indexOf(signs[i])));
     }
   }, 1000);
+  hideAnimation();
 }
              
 
