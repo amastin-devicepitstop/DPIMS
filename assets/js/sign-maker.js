@@ -57,18 +57,21 @@ function addSign() {
   
   let signComment = $("#" + noCommentInput);
   let skuInput = $("#" + noCommentSku);
-  console.log(signComment);
-  signComment.change(function() {
-    console.log("Comment changed!");
-    if (signComment.val() != "") {
-      signComment.attr("class", 'sign-cell sign-value sign-comment')
-      skuInput.attr("class", 'sign-cell sign-value');
-    }
-    else {
-      signComment.attr("class", 'sign-cell sign-value')
-      skuInput.attr("class", 'sign-cell sign-value sign-sku');  
-    }
-  });
+
+  $("input[id=" + noCommentInput + "]").change(function() {
+    console.log("True!");  
+  }
+//   signComment.change(function() {
+//     console.log("Comment changed!");
+//     if (signComment.val() != "") {
+//       signComment.attr("class", 'sign-cell sign-value sign-comment')
+//       skuInput.attr("class", 'sign-cell sign-value');
+//     }
+//     else {
+//       signComment.attr("class", 'sign-cell sign-value')
+//       skuInput.attr("class", 'sign-cell sign-value sign-sku');  
+//     }
+//   });
   
   count += 1;
   $(".page").append(sign);
