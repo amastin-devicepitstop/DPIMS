@@ -19,6 +19,7 @@ function preventFormSubmit() {
 }
 
 function addSign() {
+  // Get <input> values
   let manufacturer = $("#manufacturer").val();
   let model = $("#model").val();
   let product = '"' + manufacturer + ' ' + model + '"';
@@ -27,19 +28,23 @@ function addSign() {
   let price = $("#price").val();
   let comments = $("#comments").val();
   let sku = $("#sku").val();
+  let noCommentInput = '"#input-' + sku + '"';
+  let noCommentSku = '"#sku-' + sku + '"';
 
+  // Create HTML for sign
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + '$' + price + "></td></tr>";
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + product + "></td></tr>";
-  console.log(manufacturerAndModelRow);
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + storage + "></input></td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + carrier + "></td></tr>";
   let commentsRow;
   let skuRow
+  // If the sign has no comments, it should appear as a blank line
   if (comments == "") {
-    commentsRow = "<tr><td colspan='2' class='sign-cell'><input id='no-comment-input' class='sign-cell sign-value' value=" + comments + "></td></tr>";
-    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input id='no-comment-sku' class='sign-cell sign-value sign-sku' value=" + sku + "></td></tr>";
+    commentsRow = "<tr><td colspan='2' class='sign-cell'><input id=" + noCommentInput + " class='sign-cell sign-value' value=" + comments + "></td></tr>";
+    skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input id=" + noCommentSku + " class='sign-cell sign-value sign-sku' value=" + sku + "></td></tr>";
   }
+  // If the sign does have comments, it should appear as a yellow line with red text.
   else {
     commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment' value=" + comments + "></td></tr>";
     skuRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value' value=" + sku + "></td></tr>";
@@ -48,8 +53,9 @@ function addSign() {
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
   
-  let signComment = $("#no-comment-input");
-  let skuInput = $("#no-comment-sku");
+  let signComment = $(noCommentInput);
+  let skuInput = $(noCommentSku);
+  console.log(signComment);
   signComment.change(function() {
     console.log("Comment changed!");
     if (signComment.val() != "") {
