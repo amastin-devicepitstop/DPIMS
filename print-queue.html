@@ -15,7 +15,8 @@
     <script src="/IMS/assets/js/general.js"></script>
     <script src="/IMS/assets/js/print-queue.js"></script>
   </head>
-  <body>
+  <body onafterprint="clearQueue()">
+    
 
     <div id="load-screen">
       <div class="lds-dual-ring"></div>
