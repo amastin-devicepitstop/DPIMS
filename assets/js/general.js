@@ -116,7 +116,9 @@ function save(collection, doc, json) {
   database.collection(collection).doc(doc).set(json)
   .then(function(){
         console.log("Document successfully written!");
-        setURL("/IMS/storestock.html");
+        if (getPage().indexOf("storestock-new") !== -1){
+          setURL("/IMS/storestock.html");
+        }
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
