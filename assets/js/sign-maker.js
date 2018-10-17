@@ -12,8 +12,8 @@ function preventFormSubmit() {
     // Prevent form submission
     $("form").submit(function (e) {  
       e.preventDefault();
-      document.getElementById("sign-form").reset();
       addSign();
+      document.getElementById("sign-form").reset();
     });	
   }
 }
