@@ -5,5 +5,5 @@ window.onload = function(){
 }
 
 function loadSigns() {
-  let signs = getAll("signs");
+  getAll("signs");
 }
