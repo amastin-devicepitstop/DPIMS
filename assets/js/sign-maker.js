@@ -21,10 +21,12 @@ function preventFormSubmit() {
 function inputChange(element) {
   if (element.val() == ""){
     element.attr('class', 'sign-cell sign-value inputComment');
+    element.closest("td").attr('class', 'sign-cell sign-comment');
   }
   
   else{
     element.attr('class', 'sign-cell sign-value sign-comment inputComment');
+    element.closest("td").attr('class', 'sign-cell');
   }
 }
 
