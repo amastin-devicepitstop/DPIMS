@@ -855,7 +855,7 @@ table {
   background-color: #fff;
   border: 2px solid #ededed;
   max-height: 15em;
-  zoom: 100%;
+  zoom: 90%;
 }
 
 .dp-logo.sign-logo {
@@ -933,13 +933,8 @@ input.sign-value {
 
 .card {
   box-shadow:0px 10px 20px -2px rgba(0,0,0,0.35);
-  width: 371px;
-  height: 221px;  
-}
-
-.sign-preview.queue {
-  zoom: 90%;
-  margin: 0;
+  width: 335px;
+  height: 201px;  
 }
 
 .queue-left {
