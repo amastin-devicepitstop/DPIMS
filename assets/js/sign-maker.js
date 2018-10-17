@@ -40,6 +40,7 @@ function toQueue() {
     let sku = $(".inputSKU").val();
   
     save("signs", sku, {product: product, carrier: carrier, storage: storage, price: price, comments: comments, sku: sku});
+    $(".card").empty();
   }
 }
 
