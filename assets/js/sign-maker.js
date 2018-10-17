@@ -1,4 +1,3 @@
-let count = 0;
 window.onload = function(){
   preventFormSubmit();
   initDatabase();
@@ -62,10 +61,9 @@ function addSign() {
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
-      
-  count += 1;
-  $(".page").append(sign);
-  console.log(count);
+  
+  $(".card".empty();
+  $(".card").append(sign);
 }
 
 function autocomplete() {
