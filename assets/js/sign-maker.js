@@ -50,9 +50,11 @@ function addSign() {
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
-  $(".inputComment").on('input', function() {
-    console.log(($(this).val() != ""));  
-  });
+//   $(".inputComment").on('input', function() {
+//     console.log(($(this).val() != ""));  
+//   });
+  
+  $(".inputComment").on('input',function() {alert("Change detected!");});
   
   count += 1;
   $(".page").append(sign);
