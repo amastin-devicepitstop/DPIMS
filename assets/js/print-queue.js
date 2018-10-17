@@ -13,6 +13,7 @@ function loadSigns() {
     }
   }, 1000);
   hideAnimation();
+  clearQueue;
 }
              
 
@@ -59,7 +60,7 @@ function isOdd(num) {
 function clearQueue() {
   setTimeout(function() {
     for (let i = 0; i < signs.length; i++){
-      console.log(signs[i]);
+      remove("signs", signs[i].sku);
     }
   }, 1000);
 }
