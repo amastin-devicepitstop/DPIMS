@@ -62,7 +62,7 @@ function addSign() {
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
-  $(".card".empty();
+  $(".card".empty());
   $(".card").append(sign);
 }
 
