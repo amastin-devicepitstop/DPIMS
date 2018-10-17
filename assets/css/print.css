@@ -1,1 +1,9 @@
-
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .sign-preview {
+    visibility: visible!important;
+  }
+}
