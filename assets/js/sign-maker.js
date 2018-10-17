@@ -75,9 +75,12 @@ function addSign() {
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
+  let loadingAnimation = "<div class='lds-grid'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
   
   $(".card").empty();
+  $(".card").append(loadingAnimation);
   $(".card").append(sign);
+  $(".lds-grid").toggle();
 }
 
 function autocomplete() {
