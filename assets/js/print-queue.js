@@ -60,7 +60,8 @@ function isOdd(num) {
 function clearQueue() {
   console.log("clear queue");
   console.log(signs);
-  for (let j = 0; j < signs.length; j++){
+  for (let j = 0; j < signs.length; j++){\
+    console.log("for loop" + i);
     console.log(signs[j]);
   }
 }
