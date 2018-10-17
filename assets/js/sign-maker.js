@@ -19,7 +19,7 @@ function preventFormSubmit() {
 }
 
 function inputChange() {
-  console.log("Change occurred");
+  console.log($(this);
 }
 
 function addSign() {
@@ -53,9 +53,7 @@ function addSign() {
   }
   let signEnd = "</tbody></table></div></div>";
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
-    
-  $(".inputComment").on('input',function() {alert("Change detected!");});
-  
+      
   count += 1;
   $(".page").append(sign);
   console.log(count);
