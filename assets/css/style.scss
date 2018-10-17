@@ -931,3 +931,9 @@ input.sign-value {
   border: none;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+.card {
+  box-shadow: 0px 10px 20px -7px rgba(0,0,0,1);
+  width: 371px;
+  height: 221px;  
+}
