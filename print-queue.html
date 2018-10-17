@@ -1,1 +1,53 @@
-<div class="sign-preview"><div><table><tbody><tr><td class="dp-logo sign-logo"></td><td class="sign-cell"><input class="sign-price sign-value" value="$399.99"></td></tr><tr><td colspan="2" class="sign-cell"><input class="sign-cell sign-value" value="Apple iPhone 7"></td></tr><tr><td colspan="2" class="sign-cell"><input class="sign-cell sign-value" value="128GB"></td></tr><tr><td colspan="2" class="sign-cell"><input class="sign-cell sign-value" value="AT&amp;T"></td></tr><tr><td colspan="2" class="sign-cell"><input id="id-10012012001U" class="sign-cell sign-value inputComment" oninput="inputChange($(this))" value=""></td></tr><tr><td colspan="2" class="sign-cell sign-sku"><input class="sign-cell sign-value sign-sku inputSKU" value="10012012001U"></td></tr></tbody></table></div></div>
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/IMS/assets/css/style.css">
+    <link rel="stylesheet" href="/IMS/assets/css/print.css" media="print"> 
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/IMS/assets/js/general.js"></script>
+    <script src="/IMS/assets/js/sign-maker.js"></script>
+  </head>
+  <body>
+
+    <div id="load-screen">
+      <div class="lds-dual-ring"></div>
+    </div>   
+    <main role="main">
+      <div class="sign-preview">
+        <div>
+          <table>
+            <tbody>
+              <tr>
+                <td class="dp-logo sign-logo"></td><td class="sign-cell"><input class="sign-price sign-value" value="$399.99"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="sign-cell"><input class="sign-cell sign-value" value="Apple iPhone 7"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="sign-cell"><input class="sign-cell sign-value" value="128GB"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="sign-cell"><input class="sign-cell sign-value" value="AT&amp;T"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="sign-cell"><input id="id-10012012001U" class="sign-cell sign-value inputComment" oninput="inputChange($(this))" value=""></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="sign-cell sign-sku"><input class="sign-cell sign-value sign-sku inputSKU" value="10012012001U"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
