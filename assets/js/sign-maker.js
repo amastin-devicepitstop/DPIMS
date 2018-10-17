@@ -18,6 +18,10 @@ function preventFormSubmit() {
   }
 }
 
+function inputChange() {
+  console.log("Change occurred");
+}
+
 function addSign() {
   // Get <input> values
   let manufacturer = $("#manufacturer").val();
