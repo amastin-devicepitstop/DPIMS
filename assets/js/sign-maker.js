@@ -28,8 +28,8 @@ function addSign() {
   let price = $("#price").val();
   let comments = $("#comments").val();
   let sku = $("#sku").val();
-  let noCommentInput = '"#input-' + sku + '"';
-  let noCommentSku = '"#sku-' + sku + '"';
+  let noCommentInput = "input-" + sku;
+  let noCommentSku = "sku-" + sku;
 
   console.log(noCommentInput);
   console.log(noCommentSku);
@@ -55,8 +55,8 @@ function addSign() {
   let sign = signBegin + logoAndPriceRow + manufacturerAndModelRow + storageRow + carrierRow + commentsRow + skuRow + signEnd
   
   
-  let signComment = $(noCommentInput);
-  let skuInput = $(noCommentSku);
+  let signComment = $("#" + noCommentInput);
+  let skuInput = $("#" + noCommentSku);
   console.log(signComment);
   signComment.change(function() {
     console.log("Comment changed!");
