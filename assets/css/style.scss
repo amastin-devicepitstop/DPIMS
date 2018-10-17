@@ -74,7 +74,7 @@ header {
   width: 12.5rem;
   background-color: #ededed;
   z-index: 2;
-  position: absolute;
+  position: fixed;
 }
 
 #site-logo {
@@ -91,7 +91,9 @@ header {
   top: 0;
   left: 12.5rem;
   height: 3.1rem;
+  width: 100%;
   background-color: #f8f7f7;
+  position: fixed;
 }
 
 #topbar, .ui {
@@ -100,7 +102,7 @@ header {
 
 #search-bar {
   padding: 0.54rem;
-  left: 17rem;
+  left: 2rem;
   height: 31px;
   position: relative;
   display: table;
@@ -143,9 +145,10 @@ header {
   padding-top: 12px;
   width: 12.5rem;
   height: -webkit-fill-available;
-  top:0;
-  bottom: 3.1rem;
+  bottom: -3.1rem;
   overflow-y: auto;
+  position: fixed;
+  background-color: inherit;
 }
 
 .tab {
