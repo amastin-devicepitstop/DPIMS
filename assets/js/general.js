@@ -117,6 +117,16 @@ function remove(collection, doc) {
   });  
 }
 
+function removeAll(collection) {
+  showConfirmDialog("Do you want to delete all signs in the print queue?");
+//   let docs = getAll(collection);
+//   setTimeout(function() {
+//     for (let i = 0; i < docs.length; i++){
+//       remove(collection, docs[i]);
+//     }
+//   }, 1000);
+}
+
 function save(collection, doc, json) {
   database.collection(collection).doc(doc).set(json)
   .then(function(){
