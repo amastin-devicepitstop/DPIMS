@@ -127,12 +127,17 @@ function remove(collection, doc) {
 }
 
 function removeAll(collection) {
+  console.log("Got collection " + collection);
   let docs = getAll(collection);
+  console.log("Got docs from collection");
   setTimeout(function() {
+    console.log("About to remove docs from collection");
     for (let i = 0; i < docs.length; i++){
       remove(collection, docs[i]);
     }
+    console.log("Removed docs from collection");
   }, 1000);
+  console.log("End of function, returning);
 }
 
 function save(collection, doc, json) {
