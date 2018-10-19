@@ -131,8 +131,8 @@ function removeAll(collection) {
   let docs = getAll(collection);
   console.log("Got docs from collection");
   console.log(docs);
-  console.log(docs[0]);
   setTimeout(function() {
+    console.log(docs[0]);
     console.log("About to remove docs from collection");
     for (let i = 0; i < docs.length; i++){
       remove(collection, docs[i]);
