@@ -54,7 +54,8 @@ function createSign(sign, odd) {
 
 function deleteSign() {
   closeModal();
-  $(this).closest(".sign-delete").remove();
+  console.log($(this).closest(".sign-delete"));
+  $(this).closest(".sign-delete")[0].remove();
 }
 
 function isOdd(num) {
