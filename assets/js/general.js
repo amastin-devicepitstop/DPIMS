@@ -26,8 +26,8 @@ function closeModal(){
 }
 
 function closeModalNoBackdrop() {
-  $("#modal-content").attr('class', 'modal-dialog fade show in closed');
   $("#modal").attr('class', 'modal closed');
+  $("#modal-content").attr('class', 'modal-dialog fade show in closed');
 }
 
 function showSuccessDialog(message) {
@@ -42,7 +42,7 @@ function showSuccessDialog(message) {
     $(".checkmark__circle").attr('class', 'checkmark__circle wait');
     $(".checkmark").attr('class', 'checkmark wait');
     $(".checkmark__check").attr('class', 'checkmark__check wait');
-  }, 2500);
+  }, 3000);
 }
 
 
