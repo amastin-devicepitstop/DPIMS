@@ -62,7 +62,10 @@ function createSign(sign, odd) {
     $(newSign).find(".inputComment").val(comments);
   }
   else {
-    $(".queue-left").append(newSign);  
+    $(".queue-left").append(newSign);
+    newSign = $(".queue-left").children().last();
+    $(newSign).find(".sign-product").val(product);
+    $(newSign).find(".inputComment").val(comments);
   }
 }
 
