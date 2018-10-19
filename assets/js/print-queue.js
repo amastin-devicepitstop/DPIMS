@@ -12,8 +12,8 @@ function loadSigns() {
       createSign(signs[i], isOdd(signs.indexOf(signs[i])));
       setupDelete();
     }
-  }, 3000);
-  hideAnimation();
+    hideAnimation();
+  }, 1000);
 }             
 
 function createSign(sign, odd) {
