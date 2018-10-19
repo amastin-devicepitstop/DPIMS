@@ -130,6 +130,8 @@ function removeAll(collection) {
   console.log("Got collection " + collection);
   let docs = getAll(collection);
   console.log("Got docs from collection");
+  console.log(docs);
+  console.log(docs[0]);
   setTimeout(function() {
     console.log("About to remove docs from collection");
     for (let i = 0; i < docs.length; i++){
