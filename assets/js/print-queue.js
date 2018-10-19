@@ -54,7 +54,7 @@ function createSign(sign, odd) {
 
 function deleteSign(e) {
   closeModal();
-  console.log(e.target.id);
+  console.log(e.target.target.id);
 //   console.log($(this).closest(".sign-delete"));
 //   $(this).closest(".sign-delete")[0].remove();
 }
