@@ -57,7 +57,7 @@ function createSign(sign, odd) {
   
   if (odd) {
     $(".queue-right").append(newSign);
-    let newSign = $(".queue-right").children().last();
+    newSign = $(".queue-right").children().last();
     $(newSign).find(".sign-product").val(product);
     $(newSign).find(".inputComment").val(comments);
   }
