@@ -12,10 +12,9 @@ function loadSigns() {
       createSign(signs[i], isOdd(signs.indexOf(signs[i])));
     }
   }, 1000);
+  setupDelete();
   hideAnimation();
-  clearQueue;
-}
-             
+}             
 
 function createSign(sign, odd) {
   let product = sign.product;
@@ -25,7 +24,7 @@ function createSign(sign, odd) {
   let comments = sign.comments;
   let sku = sign.sku;
   
-  let signBegin = "<div class='sign-preview'><div><table><tbody>";
+  let signBegin = "<div class='sign-preview'><div class='sign-delete'></div><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + price + "></td></tr>";
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + product + "></td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
@@ -53,6 +52,10 @@ function createSign(sign, odd) {
   }
 }
 
+function deleteSign() {
+  
+}
+
 function isOdd(num) {
   return num % 2;
 }
@@ -66,4 +69,10 @@ function clearQueue() {
       remove("signs", sign.sku);
     }
   }, 1000);
+}
+
+function setupDelete() {
+  $(".sign-delete").click(function() {
+    console.log($(this).closest(".sign-delete"));
+  });
 }
