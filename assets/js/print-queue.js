@@ -42,7 +42,6 @@ function createSign(sign, odd) {
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' value=" + carrier + "></td></tr>";
   let commentsRow;
-  let skuRow;
   // If the sign has no comments, it should appear as a blank line
   let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + sku + "></td></tr>";
   // If the sign has no comments, it should appear as a blank line
