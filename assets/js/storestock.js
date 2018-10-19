@@ -118,6 +118,7 @@ function initCheckboxes() {
 }
 
 function newToX() {
+  // Converts the '+ New' button to 'X'
   $("#new").closest('form').attr('action', 'javascript:xToNew()');
   $("#new").html("<svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg>");
   $("#new").attr('class', 'btn btn-transparent btn-small return');
@@ -125,8 +126,11 @@ function newToX() {
 }
 
 function xToNew() {
+  // Converts the 'X' button to '+ New'
   if ($("input:checkbox:checked").length >= 1) {
-    $(".selectAll").change();
+    // Unchecks any checked checkboxes
+    $(".selectAll").prop('checked', true);
+    $(".selectAll").prop('checked', false); 
   }
   $("#deselect").closest('form').attr('action', 'storestock-new.html');
   $("#deselect").attr('class', 'btn btn-primary btn-small');
