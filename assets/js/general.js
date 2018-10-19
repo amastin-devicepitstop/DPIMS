@@ -38,7 +38,7 @@ function showSuccessDialog(message) {
   $(".checkmark").attr('class', 'checkmark');
   $(".checkmark__check").attr('class', 'checkmark__check');
   setTimeout(function(){
-    closeModalNoBackdrop();
+    closeModal();
     $(".checkmark__circle").attr('class', 'checkmark__circle wait');
     $(".checkmark").attr('class', 'checkmark wait');
     $(".checkmark__check").attr('class', 'checkmark__check wait');
