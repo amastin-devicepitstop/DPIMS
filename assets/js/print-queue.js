@@ -29,7 +29,7 @@ function loadSigns() {
 }             
 
 function createSign(sign, odd) {
-  let product = sign.product;
+  let manufacturerAndModel = sign.product;
   let carrier = sign.carrier;
   let storage = sign.storage;
   let price = sign.price;
@@ -38,7 +38,7 @@ function createSign(sign, odd) {
   
   let signBegin = "<div class='sign-preview'><div class='sign-delete'></div><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + price + "></td></tr>";
-  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + product + "></td></tr>";
+  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + manufacturerAndModel + "></td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
   let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' value=" + carrier + "></td></tr>";
   let commentsRow;
