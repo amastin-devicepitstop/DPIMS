@@ -83,6 +83,7 @@ function clearQueue() {
 function setupDelete() {
   $(".sign-delete").click(function() {
     $(this).attr('class', 'sign-delete to-delete');
+    console.log($(this).closest(".sign-sku"));
     showConfirmDialog("Do you want to delete this sign?");
   });
 }
