@@ -12,7 +12,7 @@ function loadSigns() {
       createSign(signs[i], isOdd(signs.indexOf(signs[i])));
       setupDelete();
     }
-  }, 2000);
+  }, 3000);
   hideAnimation();
 }             
 
