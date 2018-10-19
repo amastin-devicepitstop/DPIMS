@@ -25,13 +25,24 @@ function closeModal(){
   }, 500);  
 }
 
+function closeModalNoBackdrop() {
+  $("#modal-content").attr('class', 'modal-dialog fade show in closed');
+  $("#modal").attr('class', 'modal closed');
+}
+
 function showSuccessDialog(message) {
+  $(".checkmark__circle").attr('class', 'checkmark__circle');
+  $(".checkmark").attr('class', 'checkmark');
+  $(".checkmark__check").attr('class', 'checkmark__check');
+  $("#modal-text").text(message);
+  $("#modal").attr('class', 'modal open fade');
+  $("#modal-content").attr('class', 'modal-dialog fade show in open');
   setTimeout(function(){
-    $("#modal-text").text(message);
-    $("#modal").attr('class', 'modal open fade');
-    $("#modal-content").attr('class', 'modal-dialog fade show in open');
+    closeModalNoBackdrop();
+    $(".checkmark__circle").attr('class', 'checkmark__circle wait');
+    $(".checkmark").attr('class', 'checkmark wait');
+    $(".checkmark__check").attr('class', 'checkmark__check wait');
   }, 1000);
-  closeModal();
 }
 
 
@@ -126,6 +137,7 @@ function removeAll(collection) {
 }
 
 function save(collection, doc, json) {
+  console.log(event.target.id);
   database.collection(collection).doc(doc).set(json)
   .then(function(){
         console.log("Document successfully written!");
