@@ -127,11 +127,16 @@ function newToX() {
 
 function xToNew() {
   // Converts the 'X' button to '+ New'
-  if ($("input:checkbox:checked").length >= 1) {
+  let checked = $("input:checkbox:checked");
+  if (checked.length >= 1) {
     // Unchecks any checked checkboxes
-    $(".selectAll").prop('checked', true);
-    $(".selectAll").prop('checked', false); 
+    for (let i = 0; i < checked.length; i++){
+      checked[i].prop('checked', false);  
+    }
+    $(".modifyProduct").html("Store Stock Tracker");
+    $(".modifyProduct").attr("class", "font-xl"); 
   }
+  
   $("#deselect").closest('form').attr('action', 'storestock-new.html');
   $("#deselect").attr('class', 'btn btn-primary btn-small');
   $("#deselect").html("<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='M511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>" + '                  New                ');
