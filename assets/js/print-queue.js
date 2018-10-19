@@ -52,10 +52,11 @@ function createSign(sign, odd) {
   }
 }
 
-function deleteSign() {
+function deleteSign(e) {
   closeModal();
-  console.log($(this).closest(".sign-delete"));
-  $(this).closest(".sign-delete")[0].remove();
+  console.log(e.target.id);
+//   console.log($(this).closest(".sign-delete"));
+//   $(this).closest(".sign-delete")[0].remove();
 }
 
 function isOdd(num) {
