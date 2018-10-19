@@ -73,7 +73,7 @@ function clearQueue() {
 
 function setupDelete() {
   $(".sign-delete").click(function() {
-    console.log($(this).closest(".sign-delete")[0]);
+    console.log($(this).closest(".sign-preview")[0]);
     //$(this).closest(".sign-delete").remove();
   });
 }
