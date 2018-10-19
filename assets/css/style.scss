@@ -1028,7 +1028,7 @@ div[role=status] {
 $color--green: #7ac142;
 $curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
 
-.checkmark__circle {
+.checkmark__circle:not(.wait) {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
   stroke-width: 2;
@@ -1038,9 +1038,9 @@ $curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
   animation: stroke .6s $curve forwards;
 }
 
-.checkmark {
-  width: 56px;
-  height: 56px;
+.checkmark:not(.wait) {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: block;
   stroke-width: 2;
@@ -1051,7 +1051,7 @@ $curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
 
-.checkmark__check {
+.checkmark__check:not(.wait) {
   transform-origin: 50% 50%;
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
@@ -1077,4 +1077,8 @@ $curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
   100% {
     box-shadow: inset 0px 0px 0px 30px $color--green;
   }
+}
+
+.wait {
+  
 }
