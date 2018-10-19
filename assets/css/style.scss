@@ -611,11 +611,7 @@ svg {
   li:hover:not(.active) {
     background-color: #2fa3e6;
     border-left-color: #2fa3e6;
-    border-right: 1px solid #d9d9d9;
-    
-    a {
-      color: #fff;
-    }
+    color: #fff;
     
     svg {
       fill: #fff;
@@ -623,22 +619,6 @@ svg {
   }
   
 }
-
-// .ui-menu .ui-menu-item {
-//   color: black;
-//   list-style: none;
-//   left: 1rem;
-//   position: relative;
-// //   border-radius: 0px;
-// //   border: 1px solid #454545;
-// }
-
-
-// .ui-menu {
-//   background-color: white;
-//   border: 1px solid black;
-//   width: inherit;
-// }
 
 .ui-autocomplete {
   max-height: 200px;
