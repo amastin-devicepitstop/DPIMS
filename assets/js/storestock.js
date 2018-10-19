@@ -91,6 +91,7 @@ function initCheckboxes() {
     else if ($("input:checkbox:checked").length == 1) {
       // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
       if ($("input[type='checkbox']:checked")[0].className == "selectAll") {
+        xToNew();
         $(".selectAll").prop('checked', false); 
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl"); 
