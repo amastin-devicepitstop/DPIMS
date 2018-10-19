@@ -54,7 +54,7 @@ function createSign(sign, odd) {
 
 function deleteSign() {
   closeModal();
-  console.log($(".to-delete").closest(".inputSKU"));
+  console.log($(".to-delete").closest(".sign-sku"));
   let sku = $(".to-delete").closest(".inputSKU").val();
   console.log(sku);
   //$(".to-delete").closest(".sign-preview").remove();
