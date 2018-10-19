@@ -56,8 +56,8 @@ function deleteSign() {
   closeModal();
   let sku = $(".to-delete").closest(".sign-preview").find(".inputSKU").val();
   console.log(sku);
-  //$(".to-delete").closest(".sign-preview").remove();
-  //remove("signs", sku);
+  $(".to-delete").closest(".sign-preview").remove();
+  remove("signs", sku);
 }
 
 function keepSign() {
