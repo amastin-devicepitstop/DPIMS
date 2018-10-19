@@ -585,12 +585,7 @@ svg {
       position: relative;
       bottom: 2px;
     }
-    
-    a:hover, a:focus {
-      font-weight: normal;
-      outline: 0;
-    }
-    
+        
     svg {
       fill: #d9d9d9;
       position: relative;
@@ -1019,4 +1014,9 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255,263,0.75);
   font-family: 'Metropolis Light';
   font-size: 1.2666666667em;
+}
+
+a:hover, a:focus {
+  font-weight: normal;
+  outline: 0;
 }
