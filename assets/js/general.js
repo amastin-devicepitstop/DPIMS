@@ -137,7 +137,7 @@ function removeAll(collection) {
     }
     console.log("Removed docs from collection");
   }, 1000);
-  console.log("End of function, returning);
+  console.log("End of function, returning");
 }
 
 function save(collection, doc, json) {
