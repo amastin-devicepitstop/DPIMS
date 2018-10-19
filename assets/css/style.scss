@@ -1014,8 +1014,9 @@ h1, h2, h3, h4, h5, h6 {
 .sign-delete:hover::before {
   content: '\00d7';
   position: absolute;
-  left: 6px;
-  bottom: -5.5px;
+  left: 0.274em;
+  bottom: -0.45em;
   color: rgba(255, 255,263,0.75);
-  font-family: 'Metropolis Light';  
+  font-family: 'Metropolis Light';
+  font-size: 1.2666666667em;
 }
