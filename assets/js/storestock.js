@@ -81,6 +81,7 @@ function initCheckboxes() {
     
     // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
+        $("#deselect").html("<button id='new' class='btn btn-primary btn-small' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>New</button>");
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
       }
