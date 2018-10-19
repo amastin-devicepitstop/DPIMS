@@ -25,6 +25,15 @@ function closeModal(){
   }, 500);  
 }
 
+function showSuccessDialog(message) {
+  setTimeout(function(){
+    $("#modal-text").text(message);
+    $("#modal").attr('class', 'modal open fade');
+    $("#modal-content").attr('class', 'modal-dialog fade show in open');
+  }, 1000);
+  closeModal();
+}
+
 
 function hideAnimation() {
   document.getElementById("load-screen").style.display = "none";
