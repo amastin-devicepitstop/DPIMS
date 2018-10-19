@@ -1,11 +1,8 @@
 window.onload = function(){
   initDatabase();
-  emptyQueue()
   hideAnimation();
 }
 
 function emptyQueue() {
-  $("#removeSigns").click(function() {
-    removeAll('signs');
-  });
+  showConfirmDialog("Do you want to delete all signs in the print queue?");
 }
