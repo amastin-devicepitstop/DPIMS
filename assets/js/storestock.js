@@ -120,11 +120,11 @@ function newToX() {
   $("#new").html("<svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg>");
   $("#new").attr('class', 'btn btn-transparent btn-small return');
   $("#new").attr('id', 'deselect');
-  $("#new").closest('form').attr('action', 'javascript:xToNew()');
+  $("#new").closest('form').attr('action', 'storestock-new.html');
 }
 
 function xToNew() {
-  $("#deselect").closest('form').attr('action', 'storestock-new.html');
+  $("#deselect").closest('form').attr('action', 'javascript:xToNew()');
   $("#deselect").attr('class', 'btn btn-primary btn-small');
   $("#deselect").html("<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='M511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>" + '                  New                ');
   $("#deselect").attr('id', 'new');
