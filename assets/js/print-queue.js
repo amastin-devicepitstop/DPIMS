@@ -52,11 +52,14 @@ function createSign(sign, odd) {
   }
 }
 
-function deleteSign(e) {
+function deleteSign() {
   closeModal();
-  console.log(e.target.target.id);
-//   console.log($(this).closest(".sign-delete"));
-//   $(this).closest(".sign-delete")[0].remove();
+  $(".to-delete").closest(".sign-preview").remove();
+}
+
+function keepSign() {
+  closeModal();
+  $(".to-delete").attr('class', 'sign-delete');
 }
 
 function isOdd(num) {
@@ -75,6 +78,7 @@ function clearQueue() {
 
 function setupDelete() {
   $(".sign-delete").click(function() {
+    $(this).attr('class', 'sign-delete to-delete');
     showConfirmDialog("Do you want to delete this sign?");
   });
 }
