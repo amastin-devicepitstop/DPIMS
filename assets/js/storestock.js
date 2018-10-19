@@ -17,11 +17,11 @@ function getStoreStock() {
   let query = getWhere("devices", "month", "==", month);
     
   setTimeout(function(){ // works
+    hideAnimation();
     enableSelectAll(query);
     populateTable(query);
     initCheckboxes();
     sortTable("store-stock-tracker", {sortList: [[5,1]], headers: {0: {sorter: false}}});
-    hideAnimation();
   }, 2000);  
 }
 
