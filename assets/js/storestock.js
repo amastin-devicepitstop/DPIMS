@@ -88,7 +88,8 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-      $("#new").html("<button id='deselect' class='btn btn-transparent btn-small return' onclick=" + 'deselectAll()' + "><svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg></button>");
+      $("#new").html("<svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg>");
+      $("#new").attr('class', 'btn btn-transparent btn-small return');
       // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
       if ($("input[type='checkbox']:checked")[0].className == "selectAll") {
         $(".selectAll").prop('checked', false); 
