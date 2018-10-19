@@ -53,7 +53,8 @@ function createSign(sign, odd) {
 }
 
 function deleteSign() {
-  console.log("Hello!");
+  closeModal();
+  $(this).closest(".sign-delete").remove();
 }
 
 function isOdd(num) {
@@ -72,8 +73,6 @@ function clearQueue() {
 
 function setupDelete() {
   $(".sign-delete").click(function() {
-    console.log($(this).closest(".sign-preview")[0]);
     showConfirmDialog("Do you want to delete this sign?");
-    //$(this).closest(".sign-delete").remove();
   });
 }
