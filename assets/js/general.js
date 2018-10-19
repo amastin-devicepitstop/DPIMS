@@ -14,28 +14,17 @@ function showConfirmDialog(message) {
   $("#modal").attr('class', 'modal open fade');
   $("#backdrop").attr('class', 'modal-backdrop fade  in open high');
   $("#modal-content").attr('class', 'modal-dialog fade show in open');
-
-  if (message == "Do you want to delete the selected product(s)?") {
-    $("#confirm-button").click(function(e) {
-      deleteProduct();
-      e.preventDefault;
-      e.stopPropagation;
-      return false;
-    });
-    
-    $("#cancel-button").click(function(e) {
-      $("#modal-content").attr('class', 'modal-dialog fade show in closed');
-      $("#backdrop").attr('class', 'modal-backdrop fade  in closed high');
-      $("#modal").attr('class', 'modal closed');
-      setTimeout(function() {
-        $("#backdrop").attr('class', 'modal-backdrop fade  in closed low');
-      }, 500);
-      e.preventDefault;
-      e.stopPropagation;
-      return false;
-      });
-  }
 }
+
+function closeModal(){
+  $("#modal-content").attr('class', 'modal-dialog fade show in closed');
+  $("#backdrop").attr('class', 'modal-backdrop fade  in closed high');
+  $("#modal").attr('class', 'modal closed');
+  setTimeout(function() {
+    $("#backdrop").attr('class', 'modal-backdrop fade  in closed low');
+  }, 500);  
+}
+
 
 function hideAnimation() {
   document.getElementById("load-screen").style.display = "none";
