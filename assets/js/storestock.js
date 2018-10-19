@@ -129,6 +129,8 @@ function xToNew() {
   // Converts the 'X' button to '+ New'
   let checked = $("input:checkbox:checked");
   if (checked.length >= 1) {
+    console.log(checked);
+    console.log(checked[0]);
     // Unchecks any checked checkboxes
     for (let i = 0; i < checked.length; i++){
       checked[i].prop('checked', false);  
