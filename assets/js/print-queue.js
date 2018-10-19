@@ -10,9 +10,9 @@ function loadSigns() {
   setTimeout(function() {
     for (let i = 0; i < signs.length; i++){
       createSign(signs[i], isOdd(signs.indexOf(signs[i])));
+      setupDelete();
     }
   }, 1000);
-  setupDelete();
   hideAnimation();
 }             
 
