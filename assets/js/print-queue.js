@@ -59,6 +59,7 @@ function createSign(sign, odd) {
   
   if (odd) {
     $(".queue-right").append(newSign);
+    console.log($(".queue-right").children().last());
   }
   else {
     $(".queue-left").append(newSign);  
