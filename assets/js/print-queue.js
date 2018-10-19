@@ -54,8 +54,7 @@ function createSign(sign, odd) {
 
 function deleteSign() {
   closeModal();
-  console.log($(".to-delete").closest(".sign-preview").find(".inputSKU"));
-  let sku = $(".to-delete").closest(".inputSKU").val();
+  let sku = $(".to-delete").closest(".sign-preview").find(".inputSKU").val();
   console.log(sku);
   //$(".to-delete").closest(".sign-preview").remove();
   //remove("signs", sku);
@@ -83,7 +82,6 @@ function clearQueue() {
 function setupDelete() {
   $(".sign-delete").click(function() {
     $(this).attr('class', 'sign-delete to-delete');
-    console.log($(this).closest(".sign-sku"));
     showConfirmDialog("Do you want to delete this sign?");
   });
 }
