@@ -5,6 +5,18 @@ window.onload = function(){
   loadSigns();
 }
 
+function inputChange(element) {
+  if (element.val() == ""){
+    element.attr('class', 'sign-cell sign-value inputComment');
+    element.closest("td").attr('class', 'sign-cell');
+  }
+  
+  else{
+    element.attr('class', 'sign-cell sign-value sign-comment inputComment');
+    element.closest("td").attr('class', 'sign-cell sign-comment');
+  }
+}
+
 function loadSigns() {
   signs = getAll("signs");
   setTimeout(function() {
