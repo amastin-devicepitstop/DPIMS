@@ -31,12 +31,12 @@ function closeModalNoBackdrop() {
 }
 
 function showSuccessDialog(message) {
-  $(".checkmark__circle").attr('class', 'checkmark__circle');
-  $(".checkmark").attr('class', 'checkmark');
-  $(".checkmark__check").attr('class', 'checkmark__check');
   $("#modal-text").text(message);
   $("#modal").attr('class', 'modal open fade');
   $("#modal-content").attr('class', 'modal-dialog fade show in open');
+  $(".checkmark__circle").attr('class', 'checkmark__circle');
+  $(".checkmark").attr('class', 'checkmark');
+  $(".checkmark__check").attr('class', 'checkmark__check');
   setTimeout(function(){
     closeModalNoBackdrop();
     $(".checkmark__circle").attr('class', 'checkmark__circle wait');
