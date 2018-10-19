@@ -41,6 +41,7 @@ function toQueue() {
   
     save("signs", sku, {product: product, carrier: carrier, storage: storage, price: price, comments: comments, sku: sku});
     $(".card").empty();
+    showSuccessDialog("Successfully added sign to queue!");
   }
 }
 
