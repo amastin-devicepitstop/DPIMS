@@ -127,7 +127,7 @@ function xToNew() {
   $("#deselect").closest('form').attr('action', 'xToNew()');
   $("#deselect").attr('class', 'btn btn-primary btn-small');
   $("#deselect").html("<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='M511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>");
-  $("#deselect").prop('value', 'New');
+  $("#deselect").text('New');
   $("#deselect").attr('id', 'new');
 }
 
