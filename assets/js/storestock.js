@@ -81,6 +81,7 @@ function initCheckboxes() {
     
     // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
+        xToNew();
         $("#deselect").html("<button id='new' class='btn btn-primary btn-small' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>New</button>");
         $(".modifyProduct").html("Store Stock Tracker");
         $(".modifyProduct").attr("class", "font-xl");
@@ -88,8 +89,6 @@ function initCheckboxes() {
     
     // If a single checkbox is selected, allow that product to be edited/deleted
     else if ($("input:checkbox:checked").length == 1) {
-      $("#new").html("<svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg>");
-      $("#new").attr('class', 'btn btn-transparent btn-small return');
       // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
       if ($("input[type='checkbox']:checked")[0].className == "selectAll") {
         $(".selectAll").prop('checked', false); 
@@ -99,6 +98,7 @@ function initCheckboxes() {
       
       // Otherwise convert 'Store Stock Tracker' to 'More Actions'
       else {
+        newToX();
         $(".font-xl").html(singleCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
         $(".modifyProduct").html(singleCheckBoxHTML)
@@ -107,16 +107,27 @@ function initCheckboxes() {
     
     // If multiple checkboxes are selected, do not allow editing
     else if ($("input:checkbox:checked").length > 1) {
-          $(".font-xl").html(multiCheckBoxHTML);
-          $(".font-xl").attr('class', 'modifyProduct');
-          $(".modifyProduct").html(multiCheckBoxHTML)
+      newToX();
+      $(".font-xl").html(multiCheckBoxHTML);
+      $(".font-xl").attr('class', 'modifyProduct');
+      $(".modifyProduct").html(multiCheckBoxHTML)
     }
   }); 
 }
 
-function deselectAll() {
+function newToX() {
+  $("#new").html("<svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg>");
+  $("#new").attr('class', 'btn btn-transparent btn-small return');
+  $("#new").attr('id', 'deselect');
+  $("#new").closest('form').attr('action', 'xToNew()');
+}
+
+function xToNew() {
   $(".selectAll").change();
-  $("#deselect").html("<button id='new' class='btn btn-primary btn-small' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>New</button>");
+  $("#deselect").closest('form').attr('action', 'xToNew()');
+  $("#deselect").attr('class', 'btn btn-primary btn-small');
+  $("#deselect").html("<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>New");
+  $("#deselect").attr('id', 'new');
 }
 
 function shadeSelected() {
