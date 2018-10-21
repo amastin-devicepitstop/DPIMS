@@ -1080,20 +1080,55 @@ a .tab:not(.active):hover {
   background-color: yellow;  
 }
 
+.sort {
+  float: right;  
+}
+
 .sort-up {
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  
-  border-bottom: 5px solid black;
+  width: 0;
+  height: 0;
+  position: relative;
+  bottom: -0.5em;
+  left: 0.5em;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid black;
+  float: left;
 }
 
 .sort-down {
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  
-  border-bottom: 5px solid black;  
+  width: 0;
+  height: 0;
+  top: 0.9em;
+  position: relative;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid black;
+  float: right;
 }
+
+.sort-up-selected {
+  border-bottom: 3px solid #333;
+}
+
+.sort-up-deselected {
+ border-bottom: 3px solid #bcbcbc; 
+}
+
+.sort-down-selected {
+  border-top: 3px solid #333;  
+}
+
+.sort-down-deselected {
+  border-top: 3px solid #bcbcbc;  
+}
+
+th.headerSortUp { 
+  //background-image: url(../img/small_asc.gif); 
+  background-color: red; 
+} 
+
+th.headerSortDown { 
+  //background-image: url(../img/small_desc.gif); 
+  background-color: blue; 
+} 
