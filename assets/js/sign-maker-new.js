@@ -30,6 +30,18 @@ function inputChange(element) {
   }
 }
 
+function styleCarrier(element) {
+  if (element.val() == "Unlocked"){
+    element.attr('class', 'sign-carrier sign-cell sign-value highlight-yellow');
+    element.closest("td").attr('class', 'sign-cell highlight-yellow');
+  }
+  
+  else{
+    element.attr('class', 'sign-carrier sign-cell sign-value');
+    element.closest("td").attr('class', 'sign-cell');
+  }
+}
+
 function toQueue() {
   if ($(".card").children().length !== 0 ) {
     let product = $(".sign-product").val();
@@ -61,7 +73,7 @@ function addSign() {
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + '$' + price + "></td></tr>";
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + product + "></td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
-  let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' value=" + carrier + "></td></tr>";
+  let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' oninput='styleCarrier($(this))' value=" + carrier + "></td></tr>";
   let commentsRow;
   let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + sku + "></td></tr>";
   // If the sign has no comments, it should appear as a blank line
