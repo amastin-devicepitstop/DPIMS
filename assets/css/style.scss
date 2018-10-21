@@ -1125,8 +1125,12 @@ a .tab:not(.active):hover {
 
 th.headerSortUp { 
   background-image: url(/IMS/assets/img/asc.gif); 
+  background-repeat: no-repeat;
+  background-position: right;
 } 
 
 th.headerSortDown { 
   background-image: url(/IMS/assets/img/desc.gif); 
+  background-repeat: no-repeat;
+  background-position: right;
 } 
