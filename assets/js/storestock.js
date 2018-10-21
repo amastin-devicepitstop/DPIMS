@@ -22,7 +22,7 @@ function getStoreStock() {
     enableSelectAll(query);
     populateTable(query);
     initCheckboxes();
-    sortTable("store-stock-tracker", {sortList: [[5,1]], headers: {0: {sorter: false}}});
+    sortTable("store-stock-tracker", {sortList: [[5,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
   }, 2000);  
 }
 
