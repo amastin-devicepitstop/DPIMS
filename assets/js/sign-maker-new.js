@@ -78,12 +78,10 @@ function addSign() {
   let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + sku + "></td></tr>";
   // If the sign has no comments, it should appear as a blank line
   if (comments == "" || comments == '""') {
-    console.log(comments);
     commentsRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-cell sign-value inputComment' oninput='inputChange($(this))' value=" + comments + "></td></tr>";
   }
   // If the sign does have comments, it should appear as a yellow line with red text.
   else {
-    console.log(comments);
     commentsRow = "<tr><td colspan='2' class='sign-cell sign-comment'><input class='sign-cell sign-value sign-comment inputComment' oninput='inputChange($(this))' value=" + comments + "></td></tr>";
   }
   let signEnd = "</tbody></table></div></div>";
