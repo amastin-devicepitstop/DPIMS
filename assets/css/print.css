@@ -18,4 +18,13 @@
     padding: 32px;
     width: 100%;
   }
+  
+  .sign-delete {
+    display: none;
+  }
+
+  tr:not(.inputComment):hover {
+    background-color: #fff;
+  }
+
 }
