@@ -73,7 +73,14 @@ function addSign() {
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + '$' + price + "></td></tr>";
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + product + "></td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
-  let carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' oninput='styleCarrier($(this))' value=" + carrier + "></td></tr>";
+  let carrierRow;
+  if (carrierRow == "Unlocked") {
+    carrierRow = "<tr><td colspan='2' class='sign-cell highlight-yellow'><input class='sign-carrier sign-cell sign-value highlight-yellow' oninput='styleCarrier($(this))' value=" + carrier + "></td></tr>";
+  }
+  else {
+    carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' oninput='styleCarrier($(this))' value=" + carrier + "></td></tr>";
+  }
+  
   let commentsRow;
   let skuRow = "<tr><td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + sku + "></td></tr>";
   // If the sign has no comments, it should appear as a blank line
