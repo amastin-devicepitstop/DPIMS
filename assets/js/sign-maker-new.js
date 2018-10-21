@@ -74,13 +74,11 @@ function addSign() {
   let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + product + "></td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
   let carrierRow;
-  if (carrierRow == "Unlocked") {
+  if (carrier == "Unlocked") {
     carrierRow = "<tr><td colspan='2' class='sign-cell highlight-yellow'><input class='sign-carrier sign-cell sign-value highlight-yellow' oninput='styleCarrier($(this))' value=" + carrier + "></td></tr>";
-    console.log(carrierRow);
   }
   else {
     carrierRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-carrier sign-cell sign-value' oninput='styleCarrier($(this))' value=" + carrier + "></td></tr>";
-    console.log(carrierRow);
   }
   
   let commentsRow;
