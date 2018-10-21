@@ -903,6 +903,7 @@ table {
 input.sign-value {
   padding: 0;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .sign-value {
@@ -1069,4 +1070,12 @@ $curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
 
 a .tab:not(.active):hover {
   color: #fff;
+}
+
+.sign-delete {
+  display: none;
+}
+
+tr:not(.inputComment):hover {
+  background-color: #fff;
 }
