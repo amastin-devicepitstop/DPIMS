@@ -869,6 +869,7 @@ table {
   font-size: 12px;
   position: relative;
   border-bottom: none!important;
+  text-transform: uppercase;
 }
 
 .sign-comment {	
@@ -903,7 +904,6 @@ table {
 input.sign-value {
   padding: 0;
   width: 100%;
-  text-transform: uppercase;
 }
 
 .sign-value {
@@ -1074,4 +1074,8 @@ a .tab:not(.active):hover {
 
 .uppercase {
   text-transform: uppercase;  
+}
+
+.highlight-yellow {
+  background-color: yellow;  
 }
