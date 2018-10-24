@@ -1135,13 +1135,8 @@ th.headerSortDown {
   background-position: right;
 } 
 
-.ready {
- 
-}
-
-.sold {
-  position: relative;
-  bottom: 3px;
+.tooltip {
+  display: inline-block;  
 }
 
 .tooltip .tooltiptext {
