@@ -79,16 +79,15 @@ function addStoreStockRow(product) {
    
   if (product.ready) {
     statusCellStart += readyIcon
+    
+    if (product.sold) {
+      console.log("ready and sold");
+      statusCellStart += soldIcon;
+    }
   }
   
   else if (product.sold) {
     statusCellStart += soldIcon
-  }
-  
-  else if (product.ready && product.sold) {
-    console.log("ready and sold");
-    statusCellStart += readyIcon;
-    statusCellStart += soldIcon;
   }
   
   let row = rowStart + checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell + statusCellStart + statusCellEnd + rowEnd;
