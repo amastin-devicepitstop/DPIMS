@@ -1157,11 +1157,9 @@ th.headerSortDown {
   transition: opacity 0.3s;
 }
 
-.tooltip:hover {
-  .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1; 
 }
 
 .tooltip-text::after {
