@@ -81,6 +81,7 @@ function addStoreStockRow(product) {
   }
   
   else if (product.ready && product.sold) {
+    console.log("ready and sold");
     statusCellStart += readyIcon + soldIcon;
   }
   
