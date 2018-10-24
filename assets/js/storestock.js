@@ -71,6 +71,11 @@ function addStoreStockRow(product) {
   let statusCellStart = "<td class='overflow'>";
   let statusCellEnd = "</td>";
   let rowEnd = "</tr>";
+  
+  console.log(product);
+  console.log(product.ready);
+  console.log(product.sold);
+  console.log("---");
    
   if (product.ready) {
     statusCellStart += readyIcon
