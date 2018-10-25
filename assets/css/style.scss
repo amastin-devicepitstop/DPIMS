@@ -51,7 +51,7 @@ body, button, select, input {
 }
 
 html, body {
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -833,12 +833,12 @@ table {
 }
 
 .sign-preview {
-  height: 15em;
+   height: 15em;
    width: 24.7415em;
    background-color: #fff;
    border: 2px solid #ededed;
    max-height: 15em;
-   zoom: 90%;
+   zoom: 89%;
 }
 
 .dp-logo.sign-logo {
