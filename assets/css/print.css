@@ -4,7 +4,7 @@
   }
 
   .sign-preview {
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
   
   .sign-preview *{
@@ -31,13 +31,5 @@
     background-color: #fff;
   }
 
-  .queue-left {
-    float: left;
-  }
-
-  .queue-right {
-    float: right;
-    right: 8px;
-  }
 
 }
