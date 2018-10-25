@@ -2,6 +2,10 @@
   body * {
     visibility: hidden;
   }
+
+  .sign-preview {
+    margin-bottom: 3px;
+  }
   
   .sign-preview *{
     visibility: visible!important;
@@ -25,6 +29,15 @@
 
   tr:not(.inputComment):hover {
     background-color: #fff;
+  }
+
+  .queue-left {
+    float: left;
+  }
+
+  .queue-right {
+    float: right;
+    right: 8px;
   }
 
 }
