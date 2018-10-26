@@ -161,6 +161,7 @@ function xToNew() {
     }
     $(".modifyProduct").html("Store Stock Tracker");
     $(".modifyProduct").attr("class", "font-xl"); 
+    shadeSelected();
   }
   
   $("#deselect").closest('form').attr('action', 'storestock-new.html');
