@@ -611,11 +611,7 @@ svg {
   li:hover:not(.active) {
     background-color: #2fa3e6;
     border-left-color: #2fa3e6;
-    border-right: 1px solid #d9d9d9;
-    
-    a {
-      color: #fff;
-    }
+    color: #fff;
     
     svg {
       fill: #fff;
@@ -623,22 +619,6 @@ svg {
   }
   
 }
-
-// .ui-menu .ui-menu-item {
-//   color: black;
-//   list-style: none;
-//   left: 1rem;
-//   position: relative;
-// //   border-radius: 0px;
-// //   border: 1px solid #454545;
-// }
-
-
-// .ui-menu {
-//   background-color: white;
-//   border: 1px solid black;
-//   width: inherit;
-// }
 
 .ui-autocomplete {
   max-height: 200px;
@@ -866,7 +846,7 @@ table {
   width: 14em;
   background-size: 12em;
   background-position: 1em;
-  border-bottom: none !important;
+  border-bottom: 4px solid #8dc63f!important;
 }
 
 .sign-price {
@@ -889,6 +869,7 @@ table {
   font-size: 12px;
   position: relative;
   border-bottom: none!important;
+  text-transform: uppercase;
 }
 
 .sign-comment {	
@@ -911,13 +892,13 @@ table {
 .page {
   background-color: #fff;
   width: 34em;
-  height: 44em;
+  //height: 44em;
   margin: 7em auto;
   padding: 4em;
 }
 
 #column-header {
-  width: 90%;
+  width: 85%;
 }
 
 input.sign-value {
@@ -1024,3 +1005,132 @@ a:hover, a:focus {
 div[role=status] {
   display: none;  
 }
+
+$color--green: #7ac142;
+$curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+
+.checkmark__circle:not(.wait) {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: $color--green;
+  fill: none;
+  animation: stroke .6s $curve forwards;
+}
+
+.checkmark:not(.wait) {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px $color--green;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check:not(.wait) {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s $curve .8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px $color--green;
+  }
+}
+
+.wait {
+  
+}
+
+#modifyOptions {
+  margin-bottom: 4px;
+}
+
+a .tab:not(.active):hover {
+  color: #fff;
+}
+
+.uppercase {
+  text-transform: uppercase;  
+}
+
+.highlight-yellow {
+  background-color: yellow;  
+}
+
+.sort {
+  float: right;  
+}
+
+.sort-up {
+  width: 0;
+  height: 0;
+  position: relative;
+  bottom: -0.5em;
+  left: 0.5em;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid black;
+  float: left;
+}
+
+.sort-down {
+  width: 0;
+  height: 0;
+  top: 0.9em;
+  position: relative;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid black;
+  float: right;
+}
+
+.sort-up-selected {
+  border-bottom: 3px solid #333;
+}
+
+.sort-up-deselected {
+ border-bottom: 3px solid #bcbcbc; 
+}
+
+.sort-down-selected {
+  border-top: 3px solid #333;  
+}
+
+.sort-down-deselected {
+  border-top: 3px solid #bcbcbc;  
+}
+
+th.headerSortUp { 
+  background-image: url(/IMS/assets/img/asc.gif); 
+  background-repeat: no-repeat;
+  background-position: right;
+} 
+
+th.headerSortDown { 
+  background-image: url(/IMS/assets/img/desc.gif); 
+  background-repeat: no-repeat;
+  background-position: right;
+} 
