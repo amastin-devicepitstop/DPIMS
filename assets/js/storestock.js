@@ -262,7 +262,7 @@ function editProduct() {
 function deleteProduct() {
   let row = $("input:checkbox:checked").closest('tr');
   let sku = row[0].cells[5].innerText;
-  sku = sku.replace(" ", "");
+  sku = sku.replace(/\s+/g, '');
   closeModal();
   setTimeout(function() {
     remove("devices", sku);
