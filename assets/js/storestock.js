@@ -157,6 +157,8 @@ function xToNew() {
     console.log(checked[0]);
     // Unchecks any checked checkboxes
     for (let i = 0; i < checked.length; i++){
+      console.log(checked)
+      console.log(checked[i]);
       checked[i].prop('checked', false);  
     }
     $(".modifyProduct").html("Store Stock Tracker");
