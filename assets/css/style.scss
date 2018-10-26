@@ -51,11 +51,15 @@ body, button, select, input {
 }
 
 html, body {
-  height: auto;
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+.auto-height {
+  height: auto!important; 
 }
 
 body {
