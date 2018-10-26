@@ -262,8 +262,8 @@ function editProduct() {
 function deleteProduct() {
   let row = $("input:checkbox:checked").closest('tr');
   let sku = row[0].cells[5].innerText;
-  console.log(sku);
-  console.log(typeof sku);
   closeModal();
-  remove("devices", '"' + sku + '"');
+  setTimeout(function() {
+    remove("devices", sku);
+  }, 1000);
 }
