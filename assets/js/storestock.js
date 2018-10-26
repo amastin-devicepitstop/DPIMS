@@ -263,4 +263,5 @@ function deleteProduct() {
   let row = $("input:checkbox:checked").closest('tr');
   let sku = row[0].cells[5].innerText;
   remove("devices", sku);
+  closeModal();
 }
