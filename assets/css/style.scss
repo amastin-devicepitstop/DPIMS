@@ -515,6 +515,16 @@ svg {
   height: 18px;
 }
 
+.svg-20 {
+  height: 20px;
+  width: 20px;
+}
+
+.svg-25 {
+  width: 25px;
+  height: 25px;
+}
+
 .sub-white {
   vertical-align: sub;
   fill: white;
@@ -1175,4 +1185,8 @@ th.headerSortDown {
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent rgba(85, 85, 85, 0.36) transparent;
+}
+
+.no-padding {
+  padding: 0;
 }
