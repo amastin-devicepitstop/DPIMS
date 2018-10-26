@@ -4,8 +4,8 @@ let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchang
 
 window.onload = function(){
   initDatabase();
-  hideAnimation();
   getStoreStock();
+  hideAnimation();
 }
 
 // ===================
