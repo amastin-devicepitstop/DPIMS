@@ -55,6 +55,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -901,6 +902,10 @@ table {
   width: 85%;
 }
 
+.wide {
+  width: 97%!important; 
+}
+
 input.sign-value {
   padding: 0;
   width: 100%;
@@ -1135,23 +1140,35 @@ th.headerSortDown {
   background-position: right;
 } 
 
-.ready {
- 
-}
-
-.sold {
- position: relative;
- bottom: 3px;
-}
-
-.ready:hover {
- 
-}
-
-.sold:hover {
- 
-}
-
 .tooltip {
- 
+  display: inline-block;  
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 84px;
+  background-color: rgba(85, 85, 85, 0.85);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  left: 88.8%;
+  top: 53%;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1; 
+}
+
+.tooltip-text::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(85, 85, 85, 0.36) transparent;
 }
