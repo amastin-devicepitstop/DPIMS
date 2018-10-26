@@ -1,6 +1,6 @@
 ---
 ---
-
+ 
 @import "{{ site.theme }}";
 
 @font-face {
@@ -1134,3 +1134,24 @@ th.headerSortDown {
   background-repeat: no-repeat;
   background-position: right;
 } 
+
+.ready {
+ 
+}
+
+.sold {
+ position: relative;
+ bottom: 3px;
+}
+
+.ready:hover {
+ 
+}
+
+.sold:hover {
+ 
+}
+
+.tooltip {
+ 
+}
