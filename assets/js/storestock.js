@@ -159,7 +159,7 @@ function xToNew() {
     for (let i = 0; i < checked.length; i++){
       console.log(checked)
       console.log(checked[i]);
-      checked[i].prop('checked', false);  
+//       checked[i].prop('checked', false);  
     }
     $(".modifyProduct").html("Store Stock Tracker");
     $(".modifyProduct").attr("class", "font-xl"); 
