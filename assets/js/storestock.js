@@ -5,6 +5,7 @@ let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchang
 window.onload = function(){
   initDatabase();
   getStoreStock();
+  remove("devices", "10012012007U");
 }
 
 // ===================
