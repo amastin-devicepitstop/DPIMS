@@ -5,7 +5,6 @@ let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchang
 window.onload = function(){
   initDatabase();
   getStoreStock();
-  hideAnimation();
 }
 
 // ===================
@@ -23,6 +22,7 @@ function getStoreStock() {
     populateTable(query);
     initCheckboxes();
     sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+    hideAnimation();
   }, 2000);  
 }
 
