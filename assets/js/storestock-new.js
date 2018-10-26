@@ -31,8 +31,8 @@ function addStoreStock() {
   let day = getDay(date);
   let year = getYear(date);
   
-  let sold = false;
-  let ready = false;
+  let sold = $("#sold").prop('checked');
+  let ready = $("#ready").prop('checked');
   
   save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year, sold: sold, ready: ready});
 }
