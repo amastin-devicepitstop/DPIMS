@@ -264,7 +264,6 @@ function deleteProduct() {
   let sku = row[0].cells[5].innerText;
   sku = sku.replace(/\s+/g, '');
   closeModal();
-  setTimeout(function() {
-    remove("devices", sku);
-  }, 1000);
+  remove("devices", sku);
+  row.remove();
 }
