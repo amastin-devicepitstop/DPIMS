@@ -1020,3 +1020,7 @@ a:hover, a:focus {
   font-weight: normal;
   outline: 0;
 }
+
+div[role=status] {
+  display: none;  
+}
