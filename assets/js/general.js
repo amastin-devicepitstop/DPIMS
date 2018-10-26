@@ -129,6 +129,7 @@ function initDatabase(){
 }  
 
 function remove(collection, doc) {
+  console.log(doc.exists);
   database.collection(collection).doc(doc).delete().then(function() {
     console.log("Document successfully deleted!");
     console.log(doc.exists);
