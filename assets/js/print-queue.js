@@ -79,11 +79,14 @@ function createSign(sign, odd) {
     $(newSign).find(".sign-product").val(product);
     $(newSign).find(".inputComment").val(comments);
   }
-  else {
+  else if (!(odd)){
     $(".queue-left").append(newSign);
     newSign = $(".queue-left").children().last();
     $(newSign).find(".sign-product").val(product);
     $(newSign).find(".inputComment").val(comments);
+  }
+  else {
+    alert("An error occurred while trying to place sign with SKU " + sku + " on the page.");  
   }
 }
 
@@ -101,7 +104,7 @@ function keepSign() {
 }
 
 function isOdd(num) {
-  return num % 2;
+  return (num % 2) == 1;
 }
 
 function clearQueue() {
