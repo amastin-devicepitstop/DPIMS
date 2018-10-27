@@ -21,6 +21,7 @@ function getStoreStock() {
     enableSelectAll(query);
     populateTable(query);
     initCheckboxes();
+    enableTooltips();
     sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     hideAnimation();
   }, 2000);  
@@ -267,4 +268,9 @@ function deleteProduct() {
   closeModal();
   remove("devices", sku);
   row.remove();
+}
+
+function enableTooltips() {
+  $("div[title='Ready for Floor']").tooltip();
+  $("div[title='Sold']").tooltip();
 }
