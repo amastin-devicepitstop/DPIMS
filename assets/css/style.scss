@@ -1161,3 +1161,18 @@ th.headerSortDown {
 .no-display {
   display: none;
 }
+
+.ui-tooltip {
+  padding: 8px;
+  position: absolute;
+  z-index: 9999;
+  max-width: 300px; 
+}
+
+.ui-widget-content {
+  font-family: 'Metropolis Regular', sans-serif; 
+}
+
+.ui-widget-shadow {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2); 
+}
