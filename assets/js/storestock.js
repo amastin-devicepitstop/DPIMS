@@ -277,7 +277,7 @@ function enableTooltips() {
 }
 
 function positionTooltips() {
-  $(".ready").on('mouseenter', '[title="Ready for Floor"]', function() {
+  $(".ready").on('mouseenter', '[role="tooltip"]', function() {
     $('[role="tooltip"]').css('left', '1535px!important');
   });
 }
