@@ -189,6 +189,12 @@ function markAsSold(sold) {
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
     merge("devices", sku, {sold: sold});
+    if ($(checkboxes[i]).closest('.no-padding').contains(".sold")) {
+      console.log(true);  
+    }
+    else {
+      console.log(false);  
+    }
   }
 }
 
