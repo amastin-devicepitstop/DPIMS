@@ -277,14 +277,21 @@ function enableTooltips() {
 }
 
 function positionTooltips() {
-  $("[title='Ready for Floor']").hover(function() {
-    $(".ui-tooltip").css('left', '1535px!important');
-  }, function() {
-    $(".ui-tooltip").css('left', '1579.39px');
-  });
-  $("[title='Sold']").hover(function() {
-    $(".ui-tooltip").css('left', '1568px!important');
-  }, function() {
-    $(".ui-tooltip").css('left', '1579.39px');
-  });
+  $(".ready").on({
+    mouseenter: function () {
+      $(".ui-tooltip").css('left', '1535px!important');
+    },
+    mouseleave: function () {
+      $(".ui-tooltip").css('left', '1579.39px');
+    }
+  }, "[title='Ready for Floor']");
+  
+  $(".sold").on({
+    mouseenter: function () {
+      $(".ui-tooltip").css('left', '1568px!important');
+    },
+    mouseleave: function () {
+      $(".ui-tooltip").css('left', '1579.39px');
+    }
+  }, "[title='Sold']");
 }
