@@ -22,7 +22,6 @@ function getStoreStock() {
     populateTable(query);
     initCheckboxes();
     enableTooltips();
-    positionTooltips();
     sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     hideAnimation();
   }, 2000);  
