@@ -273,8 +273,8 @@ function deleteProduct() {
 function enableTooltips() {
   $("[title='Ready for Floor']").tooltip({
     position: {
-      my: "center bottom",
-      at: "right bottom"
+      my: "left-44 bottom",
+      at: "center"
     }
   });
   $("[title='Sold']").tooltip();
