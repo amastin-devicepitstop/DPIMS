@@ -22,6 +22,7 @@ function getStoreStock() {
     populateTable(query);
     initCheckboxes();
     enableTooltips();
+    positionTooltips();
     sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     hideAnimation();
   }, 2000);  
@@ -273,4 +274,17 @@ function deleteProduct() {
 function enableTooltips() {
   $("[title='Ready for Floor']").tooltip();
   $("[title='Sold']").tooltip();
+}
+
+function positionTooltips() {
+  $("[title='Ready for Floor']").hover(function() {
+    $(".ui-tooltip").css('left', '1535px!important');
+  }, function() {
+    $(".ui-tooltip").css('left', '1579.39px');
+  });
+  $("[title='Sold']").hover(function() {
+    $(".ui-tooltip").css('left', '1568px!important');
+  }, function() {
+    $(".ui-tooltip").css('left', '1579.39px');
+  });
 }
