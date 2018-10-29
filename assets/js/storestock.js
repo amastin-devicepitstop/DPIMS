@@ -274,7 +274,7 @@ function enableTooltips() {
   $("[title='Ready for Floor']").tooltip({
     position: {
       my: "center top",
-      at: "center bottom"
+      at: "center bottom-10px"
     }
   });
   $("[title='Sold']").tooltip();
