@@ -275,7 +275,19 @@ function enableTooltips() {
     position: {
       my: "center top",
       at: "center bottom+10px"
+    },
+    show: {
+      delay: 300
     }
   });
-  $("[title='Sold']").tooltip();
+  
+  $("[title='Sold']").tooltip({
+    position: {
+      my: "center top",
+      at: "center bottom+10px"
+    },
+    show: {
+      delay: 300
+    }
+  });
 }
