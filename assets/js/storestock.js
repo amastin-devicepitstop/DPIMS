@@ -6,7 +6,7 @@ window.onload = function(){
   initDatabase();
   getStoreStock();
 }
-
+ 
 // ===================
 // = storestock.html =
 // ===================
