@@ -278,6 +278,6 @@ function enableTooltips() {
 
 function positionTooltips() {
   $(".ready").on('mouseenter', '[title="Ready for Floor"]', function() {
-    $('[title="Ready for Floor"]').css('left', '1535px!important');
+    $('[role="tooltip"]').css('left', '1535px!important');
   });
 }
