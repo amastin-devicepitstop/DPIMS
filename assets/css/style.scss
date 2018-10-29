@@ -1155,6 +1155,16 @@ th.headerSortDown {
   background-position: right;
 } 
 
+.tooltip {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sold {
+  position: relative;
+  top: 2px;
+}
+
 .no-padding {
   padding: 0;
 }
