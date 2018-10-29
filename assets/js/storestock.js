@@ -277,7 +277,7 @@ function enableTooltips() {
       at: "center bottom+10px"
     },
     show: {
-      delay: 300
+      duration: 300
     }
   });
   
@@ -287,7 +287,7 @@ function enableTooltips() {
       at: "center bottom+10px"
     },
     show: {
-      delay: 300
+      duration: 300
     }
   });
 }
