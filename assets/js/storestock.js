@@ -61,7 +61,7 @@ function populateTable(query) {
       }
   // If the query doesn't return results, prompt to add a new product
       else {
-        let row = "<tr><td colspan='7'><p class='text-muted'>No Records Found</p></td></tr>"
+        let row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
         $("#store-stock-tracker > tbody").append(row);
         break;
       }
@@ -281,7 +281,9 @@ function deleteProduct() {
       remove("devices", sku);
       row.remove();
     }
-  }  
+  }
+  
+  console.log(row.length);
 }
 
 function enableTooltips() {
