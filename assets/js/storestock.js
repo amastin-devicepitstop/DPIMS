@@ -74,17 +74,11 @@ function addStoreStockRow(product) {
   let statusCellStart = "<td class='overflow no-padding'>";
   let statusCellEnd = "</td>";
   let rowEnd = "</tr>";
-  
-  console.log(product);
-  console.log(product.ready);
-  console.log(product.sold);
-  console.log("---");
-   
+     
   if (product.ready) {
     statusCellStart += readyIcon
     
     if (product.sold) {
-      console.log("ready and sold");
       statusCellStart += soldIcon;
     }
   }
@@ -156,8 +150,6 @@ function xToNew() {
   // Converts the 'X' button to '+ New'
   let checked = $("input:checkbox:checked");
   if (checked.length >= 1) {
-    console.log(checked);
-    console.log(checked[0]);
     // Unchecks any checked checkboxes
     for (let i = 0; i < checked.length; i++){
       $(checked[i]).prop('checked', false);  
@@ -271,6 +263,7 @@ function editProduct() {
 
 function deleteProduct() {
   let row = $("input:checkbox:checked").closest('tr');
+  console.log(row);
   let sku = row[0].cells[5].innerText;
   sku = sku.replace(/\s+/g, '');
   closeModal();
