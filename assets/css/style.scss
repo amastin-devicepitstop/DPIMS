@@ -1192,3 +1192,12 @@ th.headerSortDown {
 .ui-widget-shadow {
   box-shadow: 0 1px 1px rgba(0,0,0,0.2); 
 }
+
+.no-results {
+  text-align: center;
+  border-color: white;
+}
+
+.no-results:hover {
+  background: white; 
+}
