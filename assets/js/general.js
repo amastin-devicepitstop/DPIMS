@@ -3,7 +3,6 @@ let database;
 window.onload = function(){
   hideAnimation();
   initDatabase();
-  initClient();
 } 
 
 // ===============
