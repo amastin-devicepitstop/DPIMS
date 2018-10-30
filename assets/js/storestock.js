@@ -263,14 +263,16 @@ function editProduct() {
 
 function deleteProduct() {
   let row = $("input:checkbox:checked").closest('tr');
-  console.log(row);
-  let sku = row[0].cells[5].innerText;
-  sku = sku.replace(/\s+/g, '');
+  let sku;
   closeModal();
-  if (sku !== 'SKU') {
-    remove("devices", sku);
-    row.remove();
-  }
+  for (let i = 0; i < row.length; i++) {
+    sku = row[i].cells[5].innerText;
+    sku = sku.replace(/\s+/g, '');
+    if (sku !== 'SKU') {
+      remove("devices", sku);
+      row.remove();
+    }
+  }  
 }
 
 function enableTooltips() {
