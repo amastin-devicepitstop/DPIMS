@@ -158,13 +158,19 @@
     color: #eb8f00;
     text-decoration: none;
 }
-.ui-datepicker .ui-datepicker-prev:hover {
+.ui-datepicker .ui-datepicker-prev {
     background: url(/IMS/assets/img/ui-icons_444444_256x240.png);
+    background-repeat: no-repeat;
     background-position: -80px -192px;
+    margin: 4px;
+    padding: 9px;
 }
 .ui-datepicker .ui-datepicker-next {
     background: url(/IMS/assets/img/ui-icons_444444_256x240.png);
-    background-position: -48px -192px;
+    background-repeat: no-repeat;
+    background-position: -47px -191px;
+    margin: 4px;
+    padding: 9px;
 }
 
 .ui-datepicker-calendar tr:hover {
