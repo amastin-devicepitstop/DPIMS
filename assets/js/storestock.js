@@ -53,6 +53,8 @@ function populateTable(query) {
       }
   // If the query doesn't return results, prompt to add a new product
       else {
+        let row = "<tr><td colspan="7"><p class='text-muted'>No Records Found</p></td></tr>"
+        $("#store-stock-tracker > tbody").append(row);
       }
   }
 }
