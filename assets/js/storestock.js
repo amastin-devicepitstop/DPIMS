@@ -61,6 +61,7 @@ function populateTable(query) {
       else {
         let row = "<tr><td colspan='7'><p class='text-muted'>No Records Found</p></td></tr>"
         $("#store-stock-tracker > tbody").append(row);
+        break;
       }
   }
 }
