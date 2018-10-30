@@ -19,6 +19,7 @@ function getStoreStock() {
   setTimeout(function(){ // works
     
     enableSelectAll(query);
+    console.log("About to populate table...");
     populateTable(query);
     initCheckboxes();
     enableTooltips();
@@ -36,6 +37,7 @@ function enableSelectAll(query) {
 
 function populateTable(query) {
   while (true) {
+    console.log("About to begin...");
     // If the query returns results...
       if (query.length > 0) {
         console.log("Found results.");
