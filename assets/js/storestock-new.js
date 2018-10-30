@@ -10,6 +10,7 @@ function preventFormSubmit() {
   
   if (urlContains("new")) {
     $("#date").val(new Date().toLocaleDateString());
+    $("#date").datepicker();
     
     // Prevent form submission
     $("form").submit(function (e) {  
