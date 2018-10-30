@@ -4,19 +4,18 @@
     overflow: hidden;
     background-repeat: no-repeat;
 }
-/* Overlays */
+
  .ui-widget-overlay {
     position:relative;
     width: 100%;
     height: 100%;
 }
 .ui-datepicker {
-    position:relative;
-    width: 170px;
+    position: relative;
+    width: 390px;
     height:auto;
     padding: 0;
     display: none;
-    margin:20px 0 0 23px;
 }
 .ui-datepicker .ui-datepicker-header {
     position: relative;
@@ -100,8 +99,7 @@
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
     float: left;
 }
-/* Component containers
-----------------------------------*/
+
  .ui-widget {
     font-size: 1.1em;
 }
@@ -129,8 +127,7 @@
 .ui-widget-header a {
     color: #ffffff;
 }
-/* Interaction states
-----------------------------------*/
+
  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     border: 1px solid #cccccc;
     background: #f6f6f6;
@@ -162,10 +159,12 @@
     text-decoration: none;
 }
 .ui-datepicker .ui-datepicker-prev:hover {
-    background: transparent url(../img/datepickerArrow.png) top no-repeat;
+    background: url(/IMS/assets/img/ui-icons_444444_256x240.png);
+    background-position: -80px -192px;
 }
 .ui-datepicker .ui-datepicker-next {
-    background: transparent url(../img/datepickerArrow.png) bottom no-repeat;
+    background: url(/IMS/assets/img/ui-icons_444444_256x240.png);
+    background-position: -48px -192px;
 }
 
 .ui-datepicker-calendar tr:hover {
