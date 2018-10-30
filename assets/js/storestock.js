@@ -274,8 +274,10 @@ function deleteProduct() {
   let sku = row[0].cells[5].innerText;
   sku = sku.replace(/\s+/g, '');
   closeModal();
-  remove("devices", sku);
-  row.remove();
+  if (sku !== 'SKU') {
+    remove("devices", sku);
+    row.remove();
+  }
 }
 
 function enableTooltips() {
