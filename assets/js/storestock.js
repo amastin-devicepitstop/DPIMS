@@ -38,16 +38,20 @@ function populateTable(query) {
   while (true) {
     // If the query returns results...
       if (query.length > 0) {
+        console.log("Found results.");
         // Check if the rows were added to the table
         if ($("input:checkbox").length == 1) {
+          console.log("Attempting to add products to table.");
           // If they weren't, add them.
           for (let i = 0; i < query.length; i++){
             let product = query[i];
+            console.log(product);
             addStoreStockRow(product);
           }
         }
         // Otherwise there's no need to try to add them again.
         else{
+          console.log("Products have all been added to table.");
           break;  
         }
       }
