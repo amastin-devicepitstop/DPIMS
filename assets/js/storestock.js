@@ -311,13 +311,14 @@ function editProduct() {
 }
 
 function deleteProduct() {
-  let row = $("input:checkbox:not(#selectAll):checked").closest('tr');
+  let row = $("input:checkbox:checked").closest('tr');
   let sku;
   closeModal();
   for (let i = 0; i < row.length; i++) {
     sku = row[i].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     if (sku !== 'SKU') {
+      console.log(sku);
       //remove("devices", sku);
       row.remove();
       setTimeout(function() {
