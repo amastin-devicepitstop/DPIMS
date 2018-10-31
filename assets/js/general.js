@@ -169,12 +169,12 @@ function save(collection, doc, json) {
   .then(function(){
         console.log("Document successfully written!");
         updateBuyCount();
-        if (getPage().indexOf("storestock-new") !== -1){
-          setURL("/IMS/storestock.html");
-        }
-        else if (getPage().indexOf("returns-tracker-new") !== -1){
-          setURL("/IMS/returns-tracker.html");
-        }
+//         if (getPage().indexOf("storestock-new") !== -1){
+//           setURL("/IMS/storestock.html");
+//         }
+//         else if (getPage().indexOf("returns-tracker-new") !== -1){
+//           setURL("/IMS/returns-tracker.html");
+//         }
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
@@ -239,9 +239,15 @@ function update(collection, doc, json) {
 
 function updateBuyCount() {
   let ref = firebase.database().ref("stats").child("buys").child("count");
+  
   ref.transaction(function(count){
-    count = count + 1;
+    if (count){
+      count = count + 1;
+    }
+    return count;
   });
+  
+  console.log(ref);
 //   database.collection(collection).doc(doc).transac
 //   update("stats", "buys", {count: count+1}
 }
