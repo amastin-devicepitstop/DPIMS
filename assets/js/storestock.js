@@ -181,20 +181,38 @@ function shadeSelected() {
 
 function markAsSold(sold) {
   // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
+  let row;
   let product;
   let sku;
+  let status;
+  let statusCell;
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
   
+  // Mark each row with a checked checkbox as 'ready'
   for (let i = 0; i < checkboxes.length; i++) {
-    sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
-    merge("devices", sku, {sold: sold});
-    if ($(checkboxes[i]).closest('.no-padding')[0].contains(".sold")) {
-      console.log(true);  
-    }
-    else {
-      console.log(false);  
-    }
+    row = $(checkboxes[i]).closest('tr');
+    sku = row[0].cells[5].innerText;
+    sku = sku.replace(/\s+/g, '');
+    statusCell = row[0].cells[7];
+    status = $(statusCell).find("#sold-icon");
+    update("devices", sku, {sold: sold});
   }
+  
+  if (sold && status.length == 0) {
+    $(statusCell).append(soldIcon);
+  }
+  else if (!(sold) && status.length == 1) {
+    $(status).remove();
+  }
+  
+  // Show appropriate success dialog
+  if (sold) {
+    showSuccessDialog("Product(s) marked as 'Sold.'");
+  }
+  else {
+    showSuccessDialog("Product(s) marked as 'Not Sold.'");
+  }
+  
 }
 
 function markAsReady(ready) {
@@ -212,9 +230,7 @@ function markAsReady(ready) {
     sku = row[0].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     statusCell = row[0].cells[7];
-    console.log(statusCell);
     status = $(statusCell).find("#ready-icon");
-    console.log(status);
     update("devices", sku, {ready: ready});
   }
   
@@ -227,12 +243,11 @@ function markAsReady(ready) {
   
   // Show appropriate success dialog
   if (ready) {
-    showSuccessDialog("Product(s) marked as 'Ready for Floor'.");
+    showSuccessDialog("Product(s) marked as 'Ready for Floor.'");
   }
   else {
-    showSuccessDialog("Product(s) marked as 'Not Ready for Floor'.");
+    showSuccessDialog("Product(s) marked as 'Not Ready for Floor.'");
   }
-  
 }
 
 function parseOption() {
