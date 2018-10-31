@@ -209,7 +209,7 @@ function markAsReady(ready) {
     sku = row[0].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     status = row.find("#ready-icon");
-    console.log(row);
+    console.log(status);
     update("devices", sku, {ready: ready});
   }
   
