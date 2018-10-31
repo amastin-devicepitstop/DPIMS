@@ -19,7 +19,6 @@ function getStoreStock() {
   setTimeout(function(){ // works
     
     enableSelectAll(query);
-    console.log("About to populate table...");
     populateTable(query);
     initCheckboxes();
     enableTooltips();
@@ -39,23 +38,18 @@ function enableSelectAll(query) {
 
 function populateTable(query) {
   while (true) {
-    console.log("About to begin...");
     // If the query returns results...
       if (query.length > 0) {
-        console.log("Found results.");
         // Check if the rows were added to the table
         if ($("input:checkbox").length == 1) {
-          console.log("Attempting to add products to table.");
           // If they weren't, add them.
           for (let i = 0; i < query.length; i++){
             let product = query[i];
-            console.log(product);
             addStoreStockRow(product);
           }
         }
         // Otherwise there's no need to try to add them again.
         else{
-          console.log("Products have all been added to table.");
           break;  
         }
       }
@@ -203,27 +197,28 @@ function markAsSold(sold) {
 
 function markAsReady(ready) {
   // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
+  let row;
   let product;
   let sku;
+  let status
   let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
   
+  // Mark each row with a checked checkbox as 'ready'
   for (let i = 0; i < checkboxes.length; i++) {
-    sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
+    row = $(checkboxes[i]).closest('tr');
+    sku = row[0].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
-    status = $(checkboxes[i]).closest('tr');//.find("#ready-icon");
-    console.log(status);
+    status = row.find("#ready-icon");
+    console.log(row);
     update("devices", sku, {ready: ready});
-    
   }
   
+  // Show appropriate success dialog
   if (ready) {
     showSuccessDialog("Product(s) marked as 'Ready for Floor'.");
   }
   else {
     showSuccessDialog("Product(s) marked as 'Not Ready for Floor'.");
-  }
-  if ($.contains(status, ".ready")) {
-    console.log("This cell is already marked as ready");  
   }
 }
 
