@@ -330,8 +330,8 @@ function deleteProduct() {
   if ($("#store-stock-tracker tr").length == 1) { 
     row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
     $("#store-stock-tracker > tbody").append(row);
-    xToNew();
     $(".selectAll").prop('disabled', true);
+    xToNew();
   }
 }
 
