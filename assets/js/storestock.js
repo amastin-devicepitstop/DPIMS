@@ -237,13 +237,13 @@ function markAsReady(ready) {
   // Add ready icon if it does not exist
   if (ready && status.length == 0) {
     
-    // If cell contains a sold icon, put the ready icon before it. 
-    if ($(statusCell).find("#sold-icon").length == 1) {
+//     // If cell contains a sold icon, put the ready icon before it. 
+//     if ($(statusCell).find("#sold-icon").length == 1) {
+//       $(statusCell).prepend(readyIcon);
+//     }
+//     else{
       $(statusCell).prepend(readyIcon);
-    }
-    else{
-      $(statusCell).append(readyIcon);
-    }
+    //}
   }
   
   // Remove ready icon if it exists
