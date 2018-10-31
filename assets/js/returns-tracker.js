@@ -70,12 +70,12 @@ function addReturnsRow(product) {
   let rowStart = "<tr>";
   let checkboxCell = "<td><input type='checkbox'></td>";
   let techCell = "<td class='overflow'><a>" + product.tech + "</a></td>";
-  let actionsCell = "<td class='overflow'>" + product.reason + "</td>";
+  let reasonCell = "<td class='overflow'>" + product.reason + "</td>";
   let skuCell = "<td class='overflow'>" + product.sku + "</td>";
   let dateCell = "<td class='overflow'>" + product.date + "</td>";
   let rowEnd = "</tr>";
        
-  let row = rowStart + checkboxCell + techCell + actionsCell + skuCell + dateCell + rowEnd;
+  let row = rowStart + checkboxCell + techCell + reasonCell + skuCell + dateCell + rowEnd;
   
   $("#store-stock-tracker > tbody").append(row);
 }
@@ -220,6 +220,7 @@ function deleteProduct() {
   for (let i = 0; i < row.length; i++) {
     sku = row[i].cells[2].innerText;
     sku = sku.replace(/\s+/g, '');
+    console.log(sku);
     // If SKU matches ###########A...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
       remove("returns", sku);
