@@ -264,6 +264,7 @@ function updateStoreStockCount() {
 function updateReadyForFloorCount() {
   let readyForFloorCount = getWhereMultiple("devices", "date", "==", new Date().toLocaleDateString(), "ready", "==", "true");
   setTimeout(function() {
+    console.log(readyForFloorCount);
     $("#rff").text(readyForFloorCount.length);
   }, 1000);
 }
