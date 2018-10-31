@@ -223,7 +223,7 @@ function getAll(collection) {
 }
 
 function merge(collection, doc, json) {
-    database.collection(collection).doc(doc).set(json, { merge: true });
+    database.collection(collection).doc(doc).set(json, { merge: false });
 }
 
 function update(collection, doc, json) {
