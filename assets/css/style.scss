@@ -179,7 +179,6 @@ a {
   float: right;
   position: absolute;
   top: 3.1rem;
-  z-index: -1;
 }
 
 .dashboard-section {
@@ -203,6 +202,10 @@ a {
 .bottom-space {
   display: inline-block;
   padding-bottom: 14px!important;
+}
+
+.font-light {
+  font-family: 'Metropolis Light'!important;
 }
 
 .font-regular {
@@ -235,7 +238,7 @@ a {
 }
 
 .activity-panel:hover, .inventory-panel:hover {
-  border: 1px solid #41A0D9;  
+  border: 1px solid #41A0D9!important;  
 }
 
 .inventory-panel {
