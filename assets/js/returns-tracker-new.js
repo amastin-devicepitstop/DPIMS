@@ -2,7 +2,6 @@ window.onload = function(){
   hideAnimation();
   preventFormSubmit();
   initDatabase();
-  autocomplete();
 }
 
 function preventFormSubmit() {
