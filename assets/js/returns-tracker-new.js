@@ -30,5 +30,4 @@ function addReturn() {
   let year = getYear(date);
 
   save("returns", sku, {tech: name, reason: reason, sku: sku, date: date, month: month, day: day, year: year});
-  setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html");
 }
