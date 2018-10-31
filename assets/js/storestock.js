@@ -278,7 +278,7 @@ function deleteProduct() {
     sku = row[i].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     if (sku !== 'SKU') {
-      remove("devices", sku);
+      //remove("devices", sku);
       row.remove();
       showSuccessDialog("Product(s) successfully deleted.");
     }
