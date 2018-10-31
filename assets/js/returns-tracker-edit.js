@@ -1,7 +1,6 @@
 window.onload = function(){
   preventFormSubmit();
   initDatabase();
-  autocomplete();
   updatePageTitle();
   getReturn();
 }
