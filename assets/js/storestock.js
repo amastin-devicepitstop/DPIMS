@@ -311,7 +311,7 @@ function editProduct() {
 }
 
 function deleteProduct() {
-  let row = $("input:checkbox:checked").closest('tr');
+  let row = $("input:checkbox:not(#selectAll):checked").closest('tr');
   let sku;
   closeModal();
   for (let i = 0; i < row.length; i++) {
