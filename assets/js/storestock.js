@@ -317,8 +317,8 @@ function deleteProduct() {
   for (let i = 0; i < row.length; i++) {
     sku = row[i].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
-    if (sku !== 'SKU') {
-      console.log(sku);
+    // If SKU matches ###########A...
+    if (sku.test("(\d\d\d\d\d\d\d\d\d\d\d\w)")) {
       //remove("devices", sku);
       row.remove();
       setTimeout(function() {
