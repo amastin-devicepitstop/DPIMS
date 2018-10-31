@@ -279,7 +279,7 @@ function deleteProduct() {
     sku = sku.replace(/\s+/g, '');
     if (sku !== 'SKU') {
       //remove("devices", sku);
-      row.remove();
+      //row.remove();
       setTimeout(function() {
         showSuccessDialog("Product(s) successfully deleted.");
       }, 1000);
