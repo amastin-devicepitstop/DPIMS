@@ -250,10 +250,13 @@ function updateStoreStockCount() {
 
 function updateReadyForFloorCount() {
   let readyForFloorCount = getWhere("devices", "date", "==", new Date().toLocaleDateString());
+  let count = 0;
   setTimeout(function() {
     for (let i = 0; i < readyForFloorCount.length; i++) {
-      console.log(readyForFloorCount[i]);  
+      if (readyForFloorCount[i].ready) {
+        count++;
+      }
     }
-    $("#rff").text(readyForFloorCount.length);
+    $("#rff").text(count);
   }, 1000);
 }
