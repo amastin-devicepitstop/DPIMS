@@ -262,7 +262,7 @@ function updateReadyForFloorCount() {
 }
 
 function updateReturnCount() {
-  let returnCount = getWhere("devices", "date", "==", new Date().toLocaleDateString());
+  let returnCount = getWhere("returns", "date", "==", new Date().toLocaleDateString());
     setTimeout(function() {
     $("#returns-count").text(returnCount.length);
   }, 1000);
