@@ -174,6 +174,9 @@ function save(collection, doc, json) {
         if (getPage().indexOf("storestock-new") !== -1){
           setURL("/IMS/storestock.html");
         }
+        else if (getPage().indexOf("returns-tracker-new") !== -1){
+          setURL("/IMS/returns-tracker.html");
+        }
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
