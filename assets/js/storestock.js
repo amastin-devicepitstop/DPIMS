@@ -222,7 +222,7 @@ function markAsReady(ready) {
     $(statusCell).append(readyIcon);
   }
   else if (!(ready) && status.length == 1) {
-    //$(statusCell).remove(status[0]);
+    $(status).remove();
   }
   
   // Show appropriate success dialog
