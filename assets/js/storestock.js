@@ -313,12 +313,13 @@ function editProduct() {
 function deleteProduct() {
   let row = $("input:checkbox:checked").closest('tr');
   let sku;
+  let skuRegex = "(\d\d\d\d\d\d\d\d\d\d\d\w)";
   closeModal();
   for (let i = 0; i < row.length; i++) {
     sku = row[i].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     // If SKU matches ###########A...
-    if (sku.test("(\d\d\d\d\d\d\d\d\d\d\d\w)")) {
+    if (skuRegex.test(sku)) {
       //remove("devices", sku);
       row.remove();
       setTimeout(function() {
