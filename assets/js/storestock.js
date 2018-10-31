@@ -319,6 +319,8 @@ function deleteProduct() {
     sku = sku.replace(/\s+/g, '');
     // If SKU matches ###########A...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
+      console.log(sku + " matches Regex?");
+      console.log(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku));
       //remove("devices", sku);
       row.remove();
       setTimeout(function() {
