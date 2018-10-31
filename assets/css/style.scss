@@ -204,6 +204,22 @@ a {
   padding-bottom: 14px!important;
 }
 
+.yellow {
+  color: #f4a204; 
+}
+
+.red {
+  color: #db3f26;
+}
+
+.green {
+  color: #388a10;
+}
+
+.blue {
+  color: #1093de; 
+}
+
 .font-light {
   font-family: 'Metropolis Light'!important;
 }
@@ -1411,4 +1427,10 @@ th.headerSortDown {
   padding-left: 8px;
   text-align: right;
 }
+
+.legend {
+  margin: -10px 0 0;
+  font-size: 36px;
+}
+
 
