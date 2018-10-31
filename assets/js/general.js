@@ -231,3 +231,11 @@ function update(collection, doc, json) {
           console.error("Error updating document: ", error);
       });
 }
+
+// ==========================
+// ===== FIREBASE STATS =====
+// ==========================
+
+function quantityOnHand() {
+  
+}
