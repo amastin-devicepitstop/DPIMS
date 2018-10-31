@@ -210,6 +210,7 @@ function markAsReady(ready) {
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
     merge("devices", sku, {ready: ready});
+    showSuccessDialog("Product(s) marked as 'Ready for Floor'.");
   }
 }
 
@@ -278,8 +279,8 @@ function deleteProduct() {
     sku = row[i].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     if (sku !== 'SKU') {
-      //remove("devices", sku);
-      //row.remove();
+      remove("devices", sku);
+      row.remove();
       setTimeout(function() {
         showSuccessDialog("Product(s) successfully deleted.");
       }, 1000);
