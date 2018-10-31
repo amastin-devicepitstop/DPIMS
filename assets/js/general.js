@@ -50,7 +50,7 @@ function showSuccessDialog(message) {
       if ($("#backdrop").length > 0) {
         convertModal();
       }
-    }, 100);
+    }, 250);
   }, 3000);
 }
 
