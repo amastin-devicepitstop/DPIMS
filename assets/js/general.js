@@ -32,7 +32,7 @@ function closeModalNoBackdrop() {
 
 function showSuccessDialog(message) {
   // Basically check if the unwanted stuff is here, and if so, call convertModal().
-  if ($("#backdrop").length) {
+  if ($("#backdrop").length > 0) {
     convertModal();  
   }
   $("#modal-text").text(message);
@@ -46,7 +46,7 @@ function showSuccessDialog(message) {
     $(".checkmark__circle").attr('class', 'checkmark__circle wait');
     $(".checkmark").attr('class', 'checkmark wait');
     $(".checkmark__check").attr('class', 'checkmark__check wait');
-    if ($("#backdrop").length) {
+    if ($("#backdrop").length > 0) {
       convertModal();
     }
   }, 3000);
