@@ -30,7 +30,7 @@ function getStoreStock() {
       sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     }
     hideAnimation();
-  }, 2000);  
+  }, 2500);  
 }
 
 function enableSelectAll(query) {
