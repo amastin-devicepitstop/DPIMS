@@ -227,6 +227,9 @@ function merge(collection, doc, json) {
 }
 
 function update(collection, doc, json) {
+  console.log(collection);
+  console.log(doc);
+  console.log(json);
     database.collection(collection).doc(doc).update(json)
       .then(function() {
           console.log("Document successfully updated!");
