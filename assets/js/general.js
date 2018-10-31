@@ -168,6 +168,7 @@ function save(collection, doc, json) {
   database.collection(collection).doc(doc).set(json)
   .then(function(){
         console.log("Document successfully written!");
+        updateBuyCount();
         if (getPage().indexOf("storestock-new") !== -1){
           setURL("/IMS/storestock.html");
         }
@@ -236,6 +237,11 @@ function update(collection, doc, json) {
 // ===== FIREBASE STATS =====
 // ==========================
 
-function quantityOnHand() {
-  
+function updateBuyCount() {
+  let ref = firebase.database().ref("stats").child("buys").child("count");
+  ref.transaction(function(count){
+    count = count + 1;
+  });
+//   database.collection(collection).doc(doc).transac
+//   update("stats", "buys", {count: count+1}
 }
