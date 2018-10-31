@@ -208,9 +208,7 @@ function markAsReady(ready) {
   
   // Mark each row with a checked checkbox as 'ready'
   for (let i = 0; i < checkboxes.length; i++) {
-    row = $(checkboxes[i]).closest('tr');
-    console.log(row);
-    console.log(row.cells);
+    row = $(checkboxes[i]).closest('tr')[0];
     sku = row[0].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
     statusCell = row.cells[7];
