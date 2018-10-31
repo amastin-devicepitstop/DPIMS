@@ -331,6 +331,7 @@ function deleteProduct() {
     row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
     $("#store-stock-tracker > tbody").append(row);
     xToNew();
+    $("#selectAll").prop('disabled', true);
   }
   else {
     console.log($("#store-stock-tracker tr").length);
