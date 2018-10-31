@@ -27,7 +27,7 @@ function getReturns() {
     initCheckboxes();
     enableTooltips();
     if (query.length > 0) {
-      sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+      sortTable("store-stock-tracker", {sortList: [[3,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     }
     hideAnimation();
   }, 2500);  
