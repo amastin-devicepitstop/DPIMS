@@ -322,6 +322,7 @@ function deleteProduct() {
       console.log(sku + " matches Regex?");
       console.log(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku));
       //remove("devices", sku);
+      console.log(row);
       row.remove();
       setTimeout(function() {
         showSuccessDialog("Product(s) successfully deleted.");
