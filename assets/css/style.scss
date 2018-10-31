@@ -220,12 +220,20 @@ a {
   color: #1093de; 
 }
 
+.text-center {
+  text-align: center; 
+}
+
 .font-light {
   font-family: 'Metropolis Light'!important;
 }
 
 .font-regular {
   font-family: 'Metropolis Regular'!important; 
+}
+
+.font-xs {
+  font-size: 11px;
 }
 
 .font-sm {
@@ -1433,4 +1441,18 @@ th.headerSortDown {
   font-size: 36px;
 }
 
+.qty {
+  margin-top: -7px;
+  font-size: 8px;
+  color: #8d99ae;  
+}
+
+.qty-label {
+  font-size: 12px;
+  padding-top: 15px;
+  color: #495569;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+}
 
