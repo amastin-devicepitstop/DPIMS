@@ -3,5 +3,7 @@ window.onload = function(){
   updateReturnCount();
   updateStoreStockCount();
   updateReadyForFloorCount();
-  hideAnimation();
+  setTimeout(function() {
+    hideAnimation();
+  }, 1000);
 }
