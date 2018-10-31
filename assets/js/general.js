@@ -164,7 +164,6 @@ function removeAll(collection) {
 }
 
 function save(collection, doc, json) {
-  console.log(event.target.id);
   database.collection(collection).doc(doc).set(json)
   .then(function(){
         console.log("Document successfully written!");
@@ -244,7 +243,7 @@ function updateBuyCount() {
 }
 
 function updateStoreStockCount() {
-  let storeStockCount = getWhere("devices", "date", "==", new Date().toLocaleDateString());
+  let storeStockCount = getWhere("devices", "date", "==", new Date().toLocaleDateString()).length;
   console.log(storeStockCount);
-  console.log(storeStockCount.length);
+  //console.log(storeStockCount.length);
 }
