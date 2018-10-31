@@ -91,7 +91,8 @@ function getModel() {
 
 function getSKU() {
   let sku = window.location.search;
-  sku = sku.slice(sku.indexOf("1"), sku.indexOf("U") + 1);
+  sku = sku.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i);
+  console.log(sku);
   return sku;
 }
 
