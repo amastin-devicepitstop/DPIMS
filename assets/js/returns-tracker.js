@@ -49,7 +49,7 @@ function populateTable(query) {
           // If they weren't, add them.
           for (let i = 0; i < query.length; i++){
             let product = query[i];
-            addReturnsStockRow(product);
+            addReturnsRow(product);
           }
         }
         // Otherwise there's no need to try to add them again.
