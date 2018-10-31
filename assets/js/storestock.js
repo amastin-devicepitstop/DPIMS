@@ -214,9 +214,15 @@ function markAsReady(ready) {
     update("devices", sku, {ready: ready});
     
   }
-  showSuccessDialog("Product(s) marked as 'Ready for Floor'.");
+  
+  if (ready) {
+    showSuccessDialog("Product(s) marked as 'Ready for Floor'.");
+  }
+  else {
+    showSuccessDialog("Product(s) marked as 'Not Ready for Floor'.");
+  }
   if ($.contains(status, ".ready")) {
-    console.log("This cell already is marked as ready");  
+    console.log("This cell is already marked as ready");  
   }
 }
 
