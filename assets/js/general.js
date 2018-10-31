@@ -168,8 +168,7 @@ function save(collection, doc, json) {
   .then(function(){
         console.log("Document successfully written!");
         if (getPage().indexOf("storestock-new") !== -1){
-          updateStoreStockCount();
-          //setURL("/IMS/storestock.html");
+          setURL("/IMS/storestock.html");
         }
         else if (getPage().indexOf("returns-tracker-new") !== -1){
           setURL("/IMS/returns-tracker.html");
@@ -244,8 +243,7 @@ function updateBuyCount() {
 
 function updateStoreStockCount() {
   let storeStockCount = getWhere("devices", "date", "==", new Date().toLocaleDateString());
-  console.log(storeStockCount);
   setTimeout(function() {
-    console.log(storeStockCount.length);
+    $("#qoh").val(storeStockCount.length);
   }, 1000);
 }
