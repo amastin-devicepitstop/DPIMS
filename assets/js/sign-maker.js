@@ -10,4 +10,7 @@ function emptyQueue() {
 function removePendingSigns() {
   closeModal();
   removeAll('signs');
+  setTimeout(function() {
+    showSuccessDialog("All pending signs have been successfully removed.");
+  }, 1000);
 }
