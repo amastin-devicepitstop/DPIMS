@@ -218,7 +218,7 @@ function deleteProduct() {
   let sku;
   closeModal();
   for (let i = 0; i < row.length; i++) {
-    sku = row[i].cells[2].innerText;
+    sku = row[i].cells[3].innerText;
     sku = sku.replace(/\s+/g, '');
     console.log(sku);
     // If SKU matches ###########A...
