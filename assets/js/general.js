@@ -1,8 +1,8 @@
 let database;  
 
 window.onload = function(){
-  hideAnimation();
   initDatabase();
+  hideAnimation();
 } 
 
 // ===============
