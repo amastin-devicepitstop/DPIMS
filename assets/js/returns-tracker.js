@@ -25,7 +25,6 @@ function getReturns() {
     enableSelectAll(query);
     populateTable(query);
     initCheckboxes();
-    enableTooltips();
     if (query.length > 0) {
       sortTable("store-stock-tracker", {sortList: [[4,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     }
@@ -59,7 +58,7 @@ function populateTable(query) {
       }
   // If the query doesn't return results, prompt to add a new product
       else {
-        let row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
+        let row = "<tr><td colspan='4' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
         $("#store-stock-tracker > tbody").append(row);
         break;
       }
@@ -219,7 +218,7 @@ function deleteProduct() {
   let sku;
   closeModal();
   for (let i = 0; i < row.length; i++) {
-    sku = row[i].cells[5].innerText;
+    sku = row[i].cells[2].innerText;
     sku = sku.replace(/\s+/g, '');
     // If SKU matches ###########A...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
@@ -232,31 +231,9 @@ function deleteProduct() {
   }
   // Display 'No Records Found' if the last row is removed from the table. 
   if ($("#store-stock-tracker tr").length == 1) { 
-    row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
+    row = "<tr><td colspan='4' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
     $("#store-stock-tracker > tbody").append(row);
     $(".selectAll").prop('disabled', true);
     xToNew();
   }
-}
-
-function enableTooltips() {
-  $("[title='Ready for Floor']").tooltip({
-    position: {
-      my: "center top",
-      at: "center bottom+10px"
-    },
-    show: {
-      duration: 300
-    }
-  });
-  
-  $("[title='Sold']").tooltip({
-    position: {
-      my: "center top",
-      at: "center bottom+10px"
-    },
-    show: {
-      duration: 300
-    }
-  });
 }
