@@ -205,6 +205,10 @@ a {
   padding-bottom: 14px!important;
 }
 
+.font-regular {
+  font-family: 'Metropolis Regular'!important, sans-serif; 
+}
+
 .font-sm {
   font-size: 13px; 
 }
@@ -1397,9 +1401,11 @@ th.headerSortDown {
 }
 
 .inv-container {
-  border-left: 1px solid #EDF1F2;
-  text-align: right;
   max-width: 35%;
   min-width: 15%;
+  margin-top: -8px;
+  border-left: 1px solid #EDF1F2;
+  padding-left: 8px;
+  text-align: right;
 }
 
