@@ -225,3 +225,14 @@ function getAll(collection) {
 function merge(collection, doc, json) {
     database.collection(collection).doc(doc).set(json, { merge: true });
 }
+
+function update(collection, doc, json) {
+    database.collection(collection).doc(doc).update(json)
+      .then(function() {
+          console.log("Document successfully updated!");
+      })
+      .catch(function(error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+      });
+}
