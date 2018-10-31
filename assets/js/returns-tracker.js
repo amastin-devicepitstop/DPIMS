@@ -219,7 +219,6 @@ function deleteProduct() {
   for (let i = 0; i < row.length; i++) {
     sku = row[i].cells[3].innerText;
     sku = sku.replace(/\s+/g, '');
-    console.log(sku);
     // If SKU matches ###########A...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
       remove("returns", sku);
