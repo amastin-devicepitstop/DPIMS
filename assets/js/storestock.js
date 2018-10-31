@@ -332,8 +332,12 @@ function deleteProduct() {
       }, 1000);
     }
   }
-  
-  console.log(row.length);
+  // Display 'No Records Found' if the last row is removed from the table. 
+  if ($("#store-stock-tracker tr").length == 0) { 
+    row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
+    $("#store-stock-tracker > tbody").append(row);
+    xToNew();
+  }
 }
 
 function enableTooltips() {
