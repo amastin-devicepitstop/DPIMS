@@ -43,12 +43,14 @@ function showSuccessDialog(message) {
   $(".checkmark__check").attr('class', 'checkmark__check');
   setTimeout(function(){
     closeModal();
-    $(".checkmark__circle").attr('class', 'checkmark__circle wait');
-    $(".checkmark").attr('class', 'checkmark wait');
-    $(".checkmark__check").attr('class', 'checkmark__check wait');
-    if ($("#backdrop").length > 0) {
-      convertModal();
-    }
+    setTimeout(function() {
+      $(".checkmark__circle").attr('class', 'checkmark__circle wait');
+      $(".checkmark").attr('class', 'checkmark wait');
+      $(".checkmark__check").attr('class', 'checkmark__check wait');
+      if ($("#backdrop").length > 0) {
+        convertModal();
+      }
+    }, 500);
   }, 3000);
 }
 
