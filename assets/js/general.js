@@ -244,6 +244,6 @@ function updateBuyCount() {
 function updateStoreStockCount() {
   let storeStockCount = getWhere("devices", "date", "==", new Date().toLocaleDateString());
   setTimeout(function() {
-    $("#qoh").val(storeStockCount.length);
+    $("#qoh").text(storeStockCount.length);
   }, 1000);
 }
