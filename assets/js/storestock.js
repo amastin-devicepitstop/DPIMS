@@ -319,10 +319,7 @@ function deleteProduct() {
     sku = sku.replace(/\s+/g, '');
     // If SKU matches ###########A...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
-      console.log(sku + " matches Regex?");
-      console.log(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku));
-      //remove("devices", sku);
-      console.log(row);
+      remove("devices", sku);
       row[i].remove();
       setTimeout(function() {
         showSuccessDialog("Product(s) successfully deleted.");
@@ -331,14 +328,10 @@ function deleteProduct() {
   }
   // Display 'No Records Found' if the last row is removed from the table. 
   if ($("#store-stock-tracker tr").length == 1) { 
-    console.log("No rows");
     row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
     $("#store-stock-tracker > tbody").append(row);
     xToNew();
-    $("#selectAll").prop('disabled', true);
-  }
-  else {
-    console.log($("#store-stock-tracker tr").length);
+    $(".selectAll").prop('disabled', true);
   }
 }
 
