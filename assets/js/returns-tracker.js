@@ -17,8 +17,9 @@ window.onload = function(){
 
 function getReturns() {
   let date = new Date();
-  let month = String(date.getMonth() + 1);
-  let query = getWhere("returns", "month", "==", month);
+  let year = String(date.getYear() + 1);
+  console.log(year);
+  let query = getWhere("returns", "year", "==", year);
     
   setTimeout(function(){ // works
     
