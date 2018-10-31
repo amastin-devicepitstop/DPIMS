@@ -234,9 +234,19 @@ function markAsReady(ready) {
     update("devices", sku, {ready: ready});
   }
   
+  // Add ready icon if it does not exist
   if (ready && status.length == 0) {
-    $(statusCell).append(readyIcon);
+    
+    // If cell contains a sold icon, put the ready icon before it. 
+    if ($(statusCell).find("#sold-icon").length == 1) {
+      $(statusCell).prepend(readyIcon);
+    }
+    else{
+      $(statusCell).append(readyIcon);
+    }
   }
+  
+  // Remove ready icon if it exists
   else if (!(ready) && status.length == 1) {
     $(status).remove();
   }
