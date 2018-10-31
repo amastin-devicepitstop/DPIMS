@@ -209,7 +209,9 @@ function markAsReady(ready) {
   
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
+    console.log(sku);
     sku = sku.replace(/\s+/g, '');
+    console.log(sku);
     status = $(checkboxes[i]).closest('tr')[0].cells[7];
     update("devices", sku, {ready: ready});
     
