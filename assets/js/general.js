@@ -57,7 +57,7 @@ function convertModal() {
     console.log("no checkmark");
     $("#backdrop").hide();
     $("#alert-actions").hide();
-    ($(".alert-icon")[0]).html("<i><svg class='checkmark wait' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'><circle class='checkmark__circle wait' cx='26' cy='26' r='25' fill='none'/><path class='checkmark__check wait' fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8'/></svg></i>");
+    $(".alert-icon"[0]).html("<i><svg class='checkmark wait' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'><circle class='checkmark__circle wait' cx='26' cy='26' r='25' fill='none'/><path class='checkmark__check wait' fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8'/></svg></i>");
   }
   else {
     console.log("checkmark");
