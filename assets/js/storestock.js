@@ -210,7 +210,7 @@ function markAsReady(ready) {
   for (let i = 0; i < checkboxes.length; i++) {
     sku = $(checkboxes[i]).closest('tr')[0].cells[5].innerText;
     status = $(checkboxes[i]).closest('tr')[0].cells[7];
-    update("devices", sku, {ready: ready});
+    merge("devices", sku, {ready: ready});
     
   }
   showSuccessDialog("Product(s) marked as 'Ready for Floor'.");
