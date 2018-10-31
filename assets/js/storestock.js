@@ -135,10 +135,20 @@ function initCheckboxes() {
     
     // If multiple checkboxes are selected, do not allow editing
     else if ($("input:checkbox:checked").length > 1) {
-      newToX();
-      $(".font-xl").html(multiCheckBoxHTML);
-      $(".font-xl").attr('class', 'modifyProduct');
-      $(".modifyProduct").html(multiCheckBoxHTML)
+      // If selectAll and one other checkbox are checked, treat it as though only one checkbox is checked.
+      if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked")){
+        newToX();
+        $(".font-xl").html(singleCheckBoxHTML);
+        $(".font-xl").attr('class', 'modifyProduct');
+        $(".modifyProduct").html(singleCheckBoxHTML)
+      }
+          
+      else{
+        newToX();
+        $(".font-xl").html(multiCheckBoxHTML);
+        $(".font-xl").attr('class', 'modifyProduct');
+        $(".modifyProduct").html(multiCheckBoxHTML)
+      }
     }
   }); 
 }
