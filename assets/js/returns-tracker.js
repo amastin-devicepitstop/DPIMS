@@ -18,7 +18,6 @@ window.onload = function(){
 function getReturns() {
   let date = new Date();
   let year = String(date.getFullYear());
-  console.log(year);
   let query = getWhere("returns", "year", "==", year);
     
   setTimeout(function(){ // works
