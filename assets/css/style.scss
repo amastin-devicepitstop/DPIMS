@@ -205,7 +205,11 @@ a {
   padding-bottom: 14px!important;
 }
 
-.font-lg, .font-xl {
+.font-sm {
+  font-size: 13px; 
+}
+
+.font-sm, .font-lg, .font-xl {
   font-family: 'Metropolis Thin', sans-serif;  
 }
 
@@ -387,11 +391,11 @@ a {
   white-space: nowrap;
 }
 
-left {
+.left {
   float: left!important;  
 }
 
-right {
+.right {
   float: right!important; 
 }
 
@@ -978,6 +982,14 @@ input.sign-value {
   padding: 10px 24px;  
 }
 
+.text-normal {
+  color: #222!important; 
+}
+
+.text-void {
+  color: #666!important; 
+}
+
 .text-muted {
   color: #777!important;  
 }
@@ -1013,7 +1025,9 @@ h1, h2, h3, h4, h5, h6 {
   left: 0.274em;
   bottom: -0.45em;
   color: rgba(255, 255,263,0.75);
-  font-family: 'Metropolis Light';
+  // ====================
+// ===== FIREBASE =====
+// ====================family: 'Metropolis Light';
   font-size: 1.2666666667em;
 }
 
@@ -1380,5 +1394,12 @@ th.headerSortDown {
 
 .hide {
   display: none; 
+}
+
+.inv-quantity {
+  border-left: 1px solid #EDF1F2;
+  text-align: right;
+  max-width: 35%;
+  min-width: 15%;
 }
 
