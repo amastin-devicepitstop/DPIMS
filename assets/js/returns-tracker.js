@@ -222,7 +222,7 @@ function deleteProduct() {
     sku = sku.replace(/\s+/g, '');
     // If SKU matches ###########A...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
-      remove("devices", sku);
+      remove("returns", sku);
       row[i].remove();
       setTimeout(function() {
         showSuccessDialog("Returns(s) successfully removed.");
