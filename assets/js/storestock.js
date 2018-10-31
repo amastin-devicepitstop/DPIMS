@@ -213,7 +213,7 @@ function markAsReady(ready) {
     sku = sku.replace(/\s+/g, '');
     statusCell = row[0].cells[7];
     console.log(statusCell);
-    status = $(statusCell).find("#ready-icon")[0];
+    status = $(statusCell).find("#ready-icon");
     console.log(status);
     update("devices", sku, {ready: ready});
   }
@@ -222,7 +222,7 @@ function markAsReady(ready) {
     $(statusCell).append(readyIcon);
   }
   else if (!(ready) && status.length == 1) {
-    $(statusCell).remove(status);
+    $(statusCell).remove(status[0]);
   }
   
   // Show appropriate success dialog
