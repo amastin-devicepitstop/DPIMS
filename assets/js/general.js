@@ -206,6 +206,19 @@ function getWhere(collection, field, operator, expected) {
   return array;
 }
 
+function getWhereMultiple(collection, field1, operator1, expected1, field2, operator2, expected2) {
+  let array = [];
+  database.collection(collection).where(field1, operator1, expected1).where(field2, operator2, expected2).get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
+          array.push(doc.data())
+        });
+    })
+  return array;
+}
+
 function getAll(collection) {
   let array = [];
   database.collection(collection).get().then(function(querySnapshot) {
@@ -245,5 +258,12 @@ function updateStoreStockCount() {
   let storeStockCount = getWhere("devices", "date", "==", new Date().toLocaleDateString());
   setTimeout(function() {
     $("#qoh").text(storeStockCount.length);
+  }, 1000);
+}
+
+function updateReadyForFloorCount() {
+  let readyForFloorCount = getWhereMultiple("devices", "date", "==", new Date().toLocaleDateString(), "ready", "==", "true");
+  setTimeout(function() {
+    $("#rff").text(storeStockCount.length);
   }, 1000);
 }
