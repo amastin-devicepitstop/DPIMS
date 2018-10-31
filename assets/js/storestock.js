@@ -280,6 +280,7 @@ function deleteProduct() {
     if (sku !== 'SKU') {
       remove("devices", sku);
       row.remove();
+      showSuccessDialog("Product(s) successfully deleted.");
     }
   }
   
