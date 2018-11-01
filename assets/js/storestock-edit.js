@@ -67,8 +67,8 @@ function addStoreStock() {
   let day = getDay(date);
   let year = getYear(date);
   
-  let sold = document.getElementById("sold").value;
-  let ready = document.getElementById("ready").value;
+  let sold = $("#sold").prop('checked');
+  let ready = $("#ready").prop('checked');
   
   console.log(sold);
   console.log(ready);
