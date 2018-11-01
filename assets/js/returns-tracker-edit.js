@@ -36,8 +36,9 @@ function updatePageTitle() {
 
 function preventFormSubmit() {
   // Check that the current page is the "Edit" page
-  
   if (urlContains("edit")) {    
+    $("#date").datepicker();
+    
     // Prevent form submission
     $("form").submit(function (e) {  
       e.preventDefault();
