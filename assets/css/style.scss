@@ -1415,7 +1415,7 @@ th.headerSortDown {
     color: #c77405;
     text-decoration: none;
 }
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, :not(.ui-menu-item:hover){
     color: #fff;
     background-color: #2FA3E6;
     border-color: #1E95DA;
