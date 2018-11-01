@@ -224,6 +224,12 @@ function update(collection, doc, json) {
     database.collection(collection).doc(doc).update(json)
       .then(function() {
           console.log("Document successfully updated!");
+          if (getPage().indexOf("storestock") !== -1){
+            setURL("/IMS/storestock.html");
+          }
+          else if (getPage().indexOf("returns-tracker") !== -1){
+            setURL("/IMS/returns-tracker.html");
+          }
       })
       .catch(function(error) {
           // The document probably doesn't exist.
