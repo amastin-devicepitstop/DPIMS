@@ -57,4 +57,4 @@ function addReturn() {
   let day = getDay(date);
   let year = getYear(date);
   
-  save("devices", sku, {tech: name, reason: reason, sku: sku, date: date, month: month, day: day, year: year});}
+  update("devices", getSKU(), {tech: name, reason: reason, sku: sku, date: date, month: month, day: day, year: year});}
