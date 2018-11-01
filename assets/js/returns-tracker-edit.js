@@ -37,7 +37,7 @@ function updatePageTitle() {
 function preventFormSubmit() {
   // Check that the current page is the "Edit" page
   if (urlContains("edit")) {    
-    $("#date").datepicker();
+    $("#date").datepicker({dateFormat: "m/d/yy"});
     
     // Prevent form submission
     $("form").submit(function (e) {  
