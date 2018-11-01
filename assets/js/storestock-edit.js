@@ -70,10 +70,7 @@ function addStoreStock() {
   let sold = $("#sold").prop('checked');
   let ready = $("#ready").prop('checked');
   
-  console.log(sold);
-  console.log(ready);
-  
-  //save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year, sold: sold, ready: ready});
+  save("devices", sku, {tech: name, manufacturer: manufacturer, model: model, actions: actions, sku: sku, date: date, month: month, day: day, year: year, sold: sold, ready: ready});
 }
 
 function addAction() {
