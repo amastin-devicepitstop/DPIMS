@@ -343,6 +343,10 @@ function deleteProduct() {
     $(".selectAll").prop('disabled', true);
     xToNew();
   }
+  
+  if ($("input:checkbox:checked").length == 0) {
+    xToNew();  
+  }
 }
 
 function enableTooltips() {
