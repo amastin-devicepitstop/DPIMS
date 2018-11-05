@@ -167,10 +167,10 @@ function save(collection, doc, json) {
   database.collection(collection).doc(doc).set(json)
   .then(function(){
         console.log("Document successfully written!");
-        if (getPage().indexOf("storestock") !== -1){
+        if (getPage().indexOf("storestock") !== -1 && getPage().indexOf("storestock.html") == -1){
           setURL("/IMS/storestock.html");
         }
-        else if (getPage().indexOf("returns-tracker") !== -1){
+        else if (getPage().indexOf("returns-tracker") !== -1 && getPage().indexOf("returns-tracker.html") == -1){
           setURL("/IMS/returns-tracker.html");
         }
     })
