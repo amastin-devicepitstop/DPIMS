@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <title>New Buy/Sale | Device Pitstop - Maple Grove</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/IMS/assets/css/style.css">
+    <link rel="shortcut icon" href="/IMS/assets/img/favicon.ico">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/IMS/assets/js/general.js"></script>
+    <script src="/IMS/assets/js/storestock-new.js"></script>
+  </head>
+  <body>
+
+    <div id="load-screen">
+      <div class="lds-dual-ring"></div>
+    </div>
+    <header role="banner">
+      <div id="header">
+        <div id="site-logo"></div>
+      </div>
+      <div id="topbar">
+        <div id="search-bar">
+          <div id="search-left-half">
+              <span id="search-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                      <path d="M511.256 466.306L371.179 326.229a2.542 2.542 0 0 0-3.595 0l-11.513 11.512c31.591-35.855 50.786-82.878 50.786-134.312C406.856 91.26 315.6.001 203.428.001 91.257.001 0 91.26 0 203.43s91.257 203.426 203.428 203.426c51.432 0 98.457-19.196 134.314-50.783l-11.513 11.512a2.543 2.543 0 0 0 0 3.595l140.076 140.074a2.545 2.545 0 0 0 3.596 0l41.353-41.352a2.541 2.541 0 0 0 .002-3.596zm-307.828-92.508c-93.942 0-170.371-76.428-170.371-170.369s76.428-170.37 170.371-170.37c93.942 0 170.371 76.428 170.371 170.37S297.37 373.798 203.428 373.798z"></path>
+                  </svg>
+              </span>
+          </div>
+          <div>
+              <input id="search-right-half" placeholder="Search" maxlength="100" type="text">
+          </div>
+        </div>
+      </div>
+    </header>
+   
+    <main id="content" class="main-content" role="main">
+      <div id="sidebar-container">
+        <ul class="nav" id="sidebar">
+          <a href="https://amastin-devicepitstop.github.io/IMS">
+            <li class="tab">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M422 496H304V384c0-8.8-7.2-16-16-16h-64c-8.8 0-16 7.2-16 16v112H90c-5.5 0-10-4.5-10-10V272H32.6c-5.5 0-10.8-2.6-13.8-7.2-4.3-6.5-3.2-14.9 2.1-20.1L244.7 21.6c6.2-6.2 16.3-6.2 22.6 0l223.9 223.1c4.6 4.6 6 11.5 3.5 17.4s-8.3 9.9-14.8 9.9H432v214c0 5.5-4.5 10-10 10zm-86-32h59c2.8 0 5-2.2 5-5V272c0-17.6 14.4-32 32-32h9.2L256 55.5 70.8 240H80c17.6 0 32 14.4 32 32v187c0 2.8 2.2 5 5 5h59v-80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v80z"></path><circle cx="256" cy="224" r="32"></circle></svg>
+              Dashboard
+            </li>
+          </a>
+          <a href="storestock.html">
+            <li class="tab">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.7 25.7"><path d="M19.8 11.2l-6.3-7.7c-.4-.6-.8-.6-1.3 0L6 11.2H-.2v1.6h1.6l3.3 9.8H21l3.3-9.8h1.6v-1.6h-6.1zm-7-5.9l4.8 5.9H8.1l4.7-5.9zM19.9 21h-14l-2.7-8.1h19.5L19.9 21z"></path><path d="M8.3 16.2h9v1.1h-9z"></path></svg>
+              Store Stock
+            </li>
+          </a>
+          <a href="buy-sale-tracker.html">
+            <li class="tab active">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0c-53 0-96 43-96 96v64h32V96c0-35.3 28.7-64 64-64s64 28.7 64 64v64h32V96c0-53-43-96-96-96z"></path><path d="M416 160v320H96V160h320M96 128c-17.7 0-32 14.3-32 32v320c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H96z"></path><circle cx="176" cy="208" r="16"></circle><circle cx="336" cy="208" r="16"></circle></svg>
+              Big Buys/Sales
+            </li>
+          </a>
+          <a href="returns-tracker.html">
+            <li class="tab">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-192 -240 512 512"><path d="M-161.7 84.8c0 5.5 2.5 10.7 7.2 13.6l209.4 131c5.2 3.2 11.9 3.2 17.1-.1L281.7 98.4c4.7-2.9 7.3-8 7.3-13.5V-95.2c0-6.4-3.1-12.3-9-14.8L70.7-198.6c-4-1.7-8.4-1.7-12.4 0l-209.9 89.1c-5.8 2.4-10 8.2-10.1 14.5M64 6.5L-7.5-34.3l177-87.8 68.5 29L64 6.5zm.6-173l66 27.9L-41-53.5l-68.4-39.1 174-73.9zM-130-67.2l73 41.3V8.2c0 8.7 7.3 16 16 16s16-7.3 16-16V-7.6l73 41.9V187L-130 76V-67.2zM79 186.9V34.3L257-67.6V75.9l-178 111z"></path></svg>
+              Returns
+            </li>
+          </a>
+          <a href="sign-maker.html">
+            <li class="tab">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-160 -208 512 512"><path d="M272 304c-4.3 0-8.4-1.7-11.5-4.9l-49.2-50.8-38.7 49.5c-2.8 3.6-7.1 5.8-11.6 6.1-4.6.3-9-1.4-12.3-4.7l-52.6-52.6-51.7 52.5c-3.2 3.3-7.7 5-12.3 4.7-4.6-.3-8.9-2.5-11.7-6.1l-38.8-49.6-50.2 51c-4.6 4.6-11.5 6-17.5 3.6-6-2.5-9.9-8.3-9.9-14.8V-176c0-17.6 14.4-32 32-32h320c17.6 0 32 14.4 32 32v464c0 6.5-4 12.4-10 14.8-1.9.8-4 1.2-6 1.2zM96 208c4.2 0 8.3 1.7 11.3 4.7l44.8 44.8c3.4 3.4 9 3.1 12-.7l33.3-42.6c2.8-3.6 7.1-5.9 11.8-6.1 4.6-.2 9.1 1.5 12.3 4.8l31.1 32.1c1.3 1.3 3.4.4 3.4-1.4V-160c0-8.8-7.2-16-16-16H-48c-8.8 0-16 7.2-16 16v404.1c0 1.8 2.2 2.7 3.4 1.4l32.2-32.7c3.2-3.3 7.7-5 12.3-4.7s8.9 2.5 11.7 6.1l33.2 42.5c3 3.8 8.6 4.1 12 .7l43.8-44.5c3-3.2 7.1-4.9 11.4-4.9z"></path><path d="M95-62.8C95-54.1 87.9-47 79.2-47H14.8C6.1-47-1-54.1-1-62.8v-.4C-1-71.9 6.1-79 14.8-79h64.4C87.9-79 95-71.9 95-63.2v.4zM191 32c0 9-7.1 16-15.8 16H14.8C6.1 48-1 40.9-1 32.2v-.3C-1 23.2 6.1 16 14.8 16h160.3c8.7 0 15.9 7.2 15.9 15.9v.1zm0 64c0 9-7.1 16-15.8 16H14.8C6.1 112-1 104.9-1 96.2v-.3C-1 87.2 6.1 80 14.8 80h160.3c8.7 0 15.9 7.2 15.9 16z"></path></svg>
+              Sign Maker
+            </li>
+          </a>
+          <a href="reports.html">
+            <li class="tab">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M409.5 154l26.6 17.7-78 147-26.7-17.7zm-164.7 65.2l65 80-22.6 22.6-65-80zm-73.3 4.8l26.6 17.7L101.5 361l-26.6-17.7z"></path><path d="M67 354c16.6 0 30 13.4 30 30s-13.4 30-30 30-30-13.4-30-30 13.4-30 30-30m0-30c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm139-152c16.6 0 30 13.4 30 30s-13.4 30-30 30-30-13.4-30-30 13.4-30 30-30m0-30c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zm118 168c16.6 0 30 13.4 30 30s-13.4 30-30 30-30-13.4-30-30 13.4-30 30-30m0-30c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60zM445 98c16.6 0 30 13.4 30 30s-13.4 30-30 30-30-13.4-30-30 13.4-30 30-30m0-30c-33.1 0-60 26.9-60 60s26.9 60 60 60 60-26.9 60-60-26.9-60-60-60z"></path></svg>
+              Reports
+            </li>
+          </a>
+        </ul>
+      </div>
+      <div id="column" class="form-column">
+        <div id="column-header" class="header-btm-border">
+          <div id="action-row">
+            <div class="btn-toolbar-right">
+              <button class="btn btn-transparent btn-small return" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html')">
+                <svg class="text-top svg-18" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z"></path></svg>
+              </button>
+            </div>
+            <div class="font-xl">
+              New Buy/Sale
+            </div>
+          </div>
+        </div>
+        <div id="column-content-form">
+          <div id="column-container">
+            <div class="row product-form">
+              <div class="row-container">
+                <form action="buy-sale-tracker.html">
+                  <div class="form-group">
+                    <label class="input-15 required">Technician</label>
+                    <div class="input-25">
+                      <input id="first-name" placeholder="First Name" type="text" class="form-control width-100" required>
+                    </div>
+                    <div class="input-25">
+                      <input id="last-name" placeholder="Last Name" type="text" class="form-control width-100" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15 required">Manufacturer</label>
+                    <div class="input-50">
+                      <input id="manufacturer" type="text" class="form-control width-100" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15 required">Product Model</label>
+                    <div class="input-50">
+                      <input id="model" type="text" class="form-control width-100" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15 required">Product SKU</label>
+                    <div class="input-50">
+                      <input autocomplete="new-password" id="sku" type="text" class="form-control width-100" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15 required">Current Date</label>
+                    <div class="input-50">
+                      <input autocomplete="new-password" id="date" type="text" class="form-control width-100" required>
+                    </div>
+                  </div>
+                  <br>
+                  <h4 style="font-family: 'Metropolis Light'">Additional Parameters</h4>
+                  <div class="form-group">
+                    <label class="input-15">Buy</label>
+                    <div class="input-50">
+                      <input id="buy" type="radio" class="form-control-sm">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-15">Sale</label>
+                    <div class="input-50">
+                      <input id="sale" type="radio" class="form-control-sm">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="border-light">
+              <div class="row">
+                <div class="btn-toolbar-left">
+                  <button class="btn btn-33 btn-primary" type="submit">Save</button>
+                  <button class="btn btn-33 btn-default" type="button" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html')">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
