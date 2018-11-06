@@ -173,6 +173,9 @@ function save(collection, doc, json) {
         else if (getPage().indexOf("returns-tracker") !== -1 && getPage().indexOf("returns-tracker.html") == -1){
           setURL("/IMS/returns-tracker.html");
         }
+        else if (getPage().indexOf("buy-sale-tracker") !== -1 && getPage().indexOf("buy-sale-tracker.html") == -1){
+          setURL("/IMS/buy-sale-tracker.html");
+        }
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
@@ -229,6 +232,9 @@ function update(collection, doc, json) {
         }
         else if (getPage().indexOf("returns-tracker") !== -1 && getPage().indexOf("returns-tracker.html") == -1){
           setURL("/IMS/returns-tracker.html");
+        }
+        else if (getPage().indexOf("buy-sale-tracker") !== -1 && getPage().indexOf("buy-sale-tracker.html") == -1){
+          setURL("/IMS/buy-sale-tracker.html");
         }
       })
       .catch(function(error) {
