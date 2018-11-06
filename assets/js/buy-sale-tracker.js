@@ -39,7 +39,6 @@ function populateColumns(query) {
   while (true) {
     // If the query returns results...
       if (query.length > 0) {
-        console.log(query.length);
         // Check if the rows were added to the table
         if ($("input:checkbox").length == 1) {
           // If they weren't, add them.
@@ -65,7 +64,7 @@ function populateColumns(query) {
 
 function addBuySale(product) {
   // Creates the transaction and puts it in the correct column. 
-  
+  console.log(product);
   let divStart = "<div class='transaction-list-item'>";
   let checkboxDiv = "<div class='width-10'><div><input type='checkbox'></div></div>";
   let infoDivStart = "<div class='width-90'><div>";
@@ -75,7 +74,9 @@ function addBuySale(product) {
   let buttonDiv = "<div class='right'><div><button type='button'>" + 'X' + "</button></div></div></div></div>";
        
   let transaction = divStart + checkboxDiv + infoDivStart + productDiv + skuDiv + date + buttonDiv;     
-       
+  
+  console.log(transaction);
+  
   if (product.buy) {
     $("#buys").prepend(transaction);
   }
