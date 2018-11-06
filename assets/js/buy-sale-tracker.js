@@ -62,13 +62,13 @@ function addBuySale(product) {
   let checkboxDiv = "<div class='width-10'><div><input type='checkbox'></div></div>";
   let infoDivStart = "<div class='width-90'>";
   let productDiv = "<div class='transaction-product'><span>" + product.manufacturer + " " + product.model + "</span></div>";
-  let nameDiv = "<div class='transaction-technician'><span class='block'>" + '"' + product.tech + '"' + "</span></div>";
+  let nameDiv = "<div class='transaction-technician'><span class='block'>" + product.tech + "</span></div>";
   let skuDiv = "<div class='transaction-sku'><span class='block'>" + product.sku + "</span></div>";
   let date = "<div class='transaction-date'><label class='text-muted'>" + product.date + "</label></div>";
   let id = "<div class='transaction-id'><label class='no-display'>" + product.id + "</label></div>";
   let buttonDiv = "<div class='right'><div><button type='button'>" + 'X' + "</button></div></div></div></div>";
        
-  let transaction = divStart + checkboxDiv + infoDivStart + productDiv + skuDiv + date + id + buttonDiv;     
+  let transaction = divStart + checkboxDiv + infoDivStart + productDiv + nameDiv + skuDiv + date + id + buttonDiv;     
     
   if (product.buy) {
     $("#buys").prepend(transaction);
