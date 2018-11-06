@@ -59,11 +59,11 @@ function addBuySale(product) {
   // Creates the transaction and puts it in the correct column. 
   let divStart = "<div class='transaction-list-item'>";
   let checkboxDiv = "<div class='width-10'><div><input type='checkbox'></div></div>";
-  let infoDivStart = "<div class='width-90'><div>";
-  let productDiv = "<span>" + product.manufacturer + " " + product.model + "</span></div>";
-  let nameDiv = "<div><span class='block'>" + product.tech + "</span>";
-  let skuDiv = "<span class='block'>" + product.sku + "</span>";
-  let date = "<label class='text-muted'>" + product.date + "</label>";
+  let infoDivStart = "<div class='width-90'>";
+  let productDiv = "<div><span>" + product.manufacturer + " " + product.model + "</span></div>";
+  let nameDiv = "<div><span class='block'>" + product.tech + "</span></div>";
+  let skuDiv = "<div><span class='block'>" + product.sku + "</span></div>";
+  let date = "<div><label class='text-muted'>" + product.date + "</label></div>";
   let buttonDiv = "<div class='right'><div><button type='button'>" + 'X' + "</button></div></div></div></div>";
        
   let transaction = divStart + checkboxDiv + infoDivStart + productDiv + skuDiv + date + buttonDiv;     
