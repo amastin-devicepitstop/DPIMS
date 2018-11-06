@@ -45,10 +45,6 @@ function populateColumns(query) {
           console.log("About to add product...");
           addBuySale(product);
         }
-        // Otherwise there's no need to try to add them again.
-        else{
-          break;  
-        }
       }
   // If the query doesn't return results, prompt to add a new product
       else {
