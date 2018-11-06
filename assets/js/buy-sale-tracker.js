@@ -8,14 +8,14 @@ let soldIcon = "<div id='sold-icon' class='tooltip'><span class='no-display'>Sol
 
 window.onload = function(){
   initDatabase();
-  getStoreStock();
+  getBuySale();
 }
  
 // =========================
 // = buy-sale-tracker.html =
 // =========================
 
-function getStoreStock() {
+function getBuySale() {
   let date = new Date();
   let month = String(date.getMonth() + 1);
   let query = getWhere("buysale", "month", "==", month);
@@ -39,6 +39,7 @@ function populateColumns(query) {
   while (true) {
     // If the query returns results...
       if (query.length > 0) {
+        console.log(query.length);
         // Check if the rows were added to the table
         if ($("input:checkbox").length == 1) {
           // If they weren't, add them.
