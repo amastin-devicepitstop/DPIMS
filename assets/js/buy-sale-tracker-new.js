@@ -57,7 +57,7 @@ function autocomplete() {
   
   $("#manufacturer").autocomplete({
     source: manufacturers,
-    delay: 0
+    delay: 50
   });
   
   let models = ["Elitebook ",
