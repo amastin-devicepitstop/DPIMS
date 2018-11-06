@@ -39,13 +39,11 @@ function populateColumns(query) {
   while (true) {
     // If the query returns results...
       if (query.length > 0) {
-        // Check if the rows were added to the table
-        if ($("input:checkbox").length == 1) {
-          // If they weren't, add them.
-          for (let i = 0; i < query.length; i++){
-            let product = query[i];
-            addBuySale(product);
-          }
+        console.log(query.length)
+        for (let i = 0; i < query.length; i++){
+          let product = query[i];
+          console.log("About to add product...");
+          addBuySale(product);
         }
         // Otherwise there's no need to try to add them again.
         else{
