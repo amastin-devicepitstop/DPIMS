@@ -36,7 +36,7 @@ function addBuySale() {
   
   let time = String(Date.now()).slice(0, -1);
   
-  save("buysale", time, {tech: name, manufacturer: manufacturer, model: model, sku: sku, date: date, month: month, day: day, year: year, buy: buy, sale: sale});
+  save("buysale", time, {tech: name, manufacturer: manufacturer, model: model, sku: sku, date: date, month: month, day: day, year: year, buy: buy, sale: sale, id: time});
 }
 
 function autocomplete() {
