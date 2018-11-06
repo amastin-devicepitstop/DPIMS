@@ -62,7 +62,7 @@ function addBuySale(product) {
   let infoDivStart = "<div class='width-90'><div>";
   let productDiv = "<span>" + product.manufacturer + " " + product.model + "</span></div>";
   let nameDiv = "<div><span class='block'>" + product.tech + "</span>";
-  let skuDiv = "<div><span class='block'>" + product.sku + "</span>";
+  let skuDiv = "<span class='block'>" + product.sku + "</span>";
   let date = "<label class='text-muted'>" + product.date + "</label>";
   let buttonDiv = "<div class='right'><div><button type='button'>" + 'X' + "</button></div></div></div></div>";
        
