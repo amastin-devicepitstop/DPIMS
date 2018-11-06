@@ -6,7 +6,7 @@ window.onload = function(){
 }
 
 function preventFormSubmit() {
-  // Check that the current page is the "New Store Stock" page
+  // Check that the current page is the "New Buy/Sale" page
   
   if (urlContains("new")) {
     $("#date").val(new Date().toLocaleDateString());
