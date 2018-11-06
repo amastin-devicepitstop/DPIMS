@@ -57,7 +57,7 @@ function autocomplete() {
   
   $("#manufacturer").autocomplete({
     source: manufacturers,
-    delay: 50
+    delay: 0
   });
   
   let models = ["Elitebook ",
@@ -88,6 +88,7 @@ function autocomplete() {
                ];
   
   $("#model").autocomplete({
-    source: models
+    source: models,
+    delay: 0
   });
 }
