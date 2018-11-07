@@ -154,6 +154,8 @@ function checkAll(element) {
 }
 
 function resetColumn(element) {
+  element.closest(".transaction-column").find("input[type='checkbox']").prop("checked", false);
+  
   if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
     $(".actions").html(buys);
     $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
