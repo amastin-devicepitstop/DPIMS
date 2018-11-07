@@ -1,5 +1,6 @@
 window.onload = function(){
   initDatabase();
+  updateBuySaleCount()
   updateReturnCount();
   updateStoreStockCount();
   updateReadyForFloorCount();
