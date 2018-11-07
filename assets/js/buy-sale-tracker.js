@@ -70,8 +70,10 @@ function addBuySale(product) {
 
 function initCheckboxes() {  
   $(":checkbox").change(function() {
+    console.log("change occurred");
     
     if ($("#buys input:checkbox:checked").length >= 0){
+      console.log("buys");
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
           $(".actions").html(buys);
@@ -95,7 +97,7 @@ function initCheckboxes() {
     }
     
     else if ($("#sales input:checkbox:checked").length >= 0){
-      console.log(true);
+      console.log("sales");
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#sales input:checkbox:checked").length == 0) {
           $(".actions").html(sales);
