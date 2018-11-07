@@ -106,6 +106,11 @@ function deleteBuySale(element) {
     $(selected[i]).remove();   
   }
   
+  if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
+    $(".actions").html(buys);
+    $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+  }
+  
   
   // Get id in transaction-list-item
   // Delete it from database
