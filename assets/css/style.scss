@@ -1524,3 +1524,10 @@ th.headerSortDown {
 .block {
   display: block;
 }
+
+.transaction-list-item-empty {
+  margin-top: 12px;
+  border: 1px solid #F2F2F2;
+  padding: 45px 0;
+  background-color: #fff;
+}
