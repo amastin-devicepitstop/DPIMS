@@ -1062,6 +1062,10 @@ input.sign-value {
   color: #fff!important; 
 }
 
+.fill-normal {
+  fill: #222!important; 
+}
+
 .btn-container {
   margin-top: 25px;
 }
@@ -1560,4 +1564,8 @@ th.headerSortDown {
 .transaction-list-item:hover .edit-icon {
   opacity: 1; 
   -webkit-transition: opacity 0.15s;
+}
+
+.btn-spacer {
+  margin-right: 11px; 
 }
