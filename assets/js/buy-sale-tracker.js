@@ -80,6 +80,11 @@ function addBuySale(product) {
 
 function initCheckboxes() {  
   $(":checkbox").change(function() {
+    if ($("#title-buys").closest(".selectAll:checked").length == 0) {
+      $(".actions").html(buys);
+      $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+    }
+    
     if ($("#buys input:checkbox:checked").length >= 0){
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
