@@ -126,8 +126,61 @@ function markSold() {
 }
 
 function markReady(element) {
-  let icon = "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='363.025px' height='363.024px' viewBox='0 0 363.025 363.024' style='enable-background:new 0 0 363.025 363.024;' xml:space='preserve'><g><g><g><path d='M181.512,363.024C81.43,363.024,0,281.601,0,181.513C0,81.424,81.43,0,181.512,0     c100.083,0,181.513,81.424,181.513,181.513C363.025,281.601,281.595,363.024,181.512,363.024z M181.512,11.71     C87.88,11.71,11.71,87.886,11.71,181.513s76.17,169.802,169.802,169.802c93.633,0,169.803-76.175,169.803-169.802     S275.145,11.71,181.512,11.71z'></path></g></g><g><polygon style='fill:#030303;' points='147.957,258.935 83.068,194.046 91.348,185.767 147.957,242.375 271.171,119.166     279.451,127.445   '></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>";  
+  let icon = "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='363.025px' height='363.024px' viewBox='0 0 363.025 363.024' style='enable-background:new 0 0 363.025 363.024;' xml:space='preserve'><g><g><g><path d='M181.512,363.024C81.43,363.024,0,281.601,0,181.513C0,81.424,81.43,0,181.512,0     c100.083,0,181.513,81.424,181.513,181.513C363.025,281.601,281.595,363.024,181.512,363.024z M181.512,11.71     C87.88,11.71,11.71,87.886,11.71,181.513s76.17,169.802,169.802,169.802c93.633,0,169.803-76.175,169.803-169.802     S275.145,11.71,181.512,11.71z'></path></g></g><g><polygon style='fill:#030303;' points='147.957,258.935 83.068,194.046 91.348,185.767 147.957,242.375 271.171,119.166     279.451,127.445   '></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>";   
+}
+
+function autocomplete() {
+  let manufacturers = ["Acer", "Alienware", "Apple", "ASUS",
+                       "BenQ",
+                       "Compaq","CyberPowerPC",
+                       "Dell",
+                       "Gateway",
+                       "HP","HTC",
+                       "Intel",
+                       "Lenovo","LG",
+                       "Microsoft", "Motorola", "MSI",
+                       "Origin PC",
+                       "Panasonic",
+                       "Razer",
+                       "Samsung",
+                       "Toshiba",
+                       "Vizio"
+                      ];
   
+  $("#manufacturer").autocomplete({
+    source: manufacturers
+  });
+  
+  let models = ["Elitebook ",
+                "Galaxy S4", "Galaxy S4 Active",
+                "Galaxy S5", "Galaxy S5 Active",
+                "Galaxy S6", "Galaxy S6 Active", "Galaxy S6 Edge", "Galaxy S6 Edge+",
+                "Galaxy S7", "Galaxy S7 Edge", "Galaxy S7 Active",
+                "Galaxy S8", "Galaxy S8+", "Galaxy S8 Active",
+                "Galaxy S9", "Galaxy S9+",
+                "iPad (1st Gen)", "iPad (2nd Gen)", "iPad (3rd Gen)",
+                "iPad Mini",
+                "iPad (4th Gen)",
+                "iPad Air",
+                "iPad Mini 2",
+                "iPad Air 2",
+                "iPad Mini 3", "iPad Mini 4",
+                "iPad Pro (1st Gen, 12.9 in.)", "iPad Pro (1st Gen, 9.7 in.)", 
+                "iPad (2017)",
+                "iPad Pro (2nd Gen, 12.9 in.)", "iPad Pro (2nd Gen, 9.7 in.)",
+                "iPad (2018)",
+                "iPhone 5", "iPhone 5S",
+                "iPhone 6", "iPhone 6S", "iPhone 6S Plus", "iPhone SE",
+                "iPhone 7", "iPhone 7 Plus",
+                "iPhone 8", "iPhone 8 Plus",
+                "iPhone X", "iPhone XR", "iPhone XS", "iPhone XS Max",
+                "Thinkpad ",
+                "XPS "
+               ];
+  
+  $("#model").autocomplete({
+    source: models
+  });
 }
 
 // ====================
