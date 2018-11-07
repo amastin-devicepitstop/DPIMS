@@ -26,13 +26,6 @@ function getBuySale() {
   }, 2500);  
 }
 
-function enableSelectAll(query) {
-  // Removes the 'disabled' attribute from the checkbox with id "selectAll"
-  if (query.length > 0) {
-    $(".selectAll").removeAttr("disabled");
-  }
-}
-
 function populateColumns(query) {
   while (true) {
     // If the query returns results...
@@ -78,17 +71,6 @@ function addBuySale(product) {
 
 function initCheckboxes() {  
   $(":checkbox").change(function() {
-    if ($("#title-buys").find(".selectAll").length !== 0){
-      if ($("#title-buys").find(".selectAll")[0].prop("checked", false)) {
-        console.log("not checked");
-        $(".actions").html(buys);
-        $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
-      }
-      else{
-        console.log("checked");
-        console.log($("#title-buys").find(".selectAll")[0].prop("checked", $(".selectAll").checked));
-      }
-    }
     
     if ($("#buys input:checkbox:checked").length >= 0){
       // If no checkboxes are selected, display "Store Stock Tracker"
@@ -163,4 +145,11 @@ function editBuySale(element) {
 
 function checkAll(element) {
   element.closest(".transaction-column").find("input[type='checkbox']").prop("checked", element[0].checked);
+  
+  if (element[0].checked == false) {
+    if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
+      $(".actions").html(buys);
+      $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+    }
+  }
 }
