@@ -253,10 +253,13 @@ function update(collection, doc, json) {
 // ===== FIREBASE STATS =====
 // ==========================
 
-function updateBuyCount() {
-  getWhere("",);
-//   database.collection(collection).doc(doc).transac
-//   update("stats", "buys", {count: count+1}
+function updateBuySaleCount() {
+  let buySaleCount = getWhere("buysale", "date", "==", new Date().toLocaleDateString());
+  let buyCount = 0;
+  let saleCount = 0;
+  setTimeout(function() {
+    
+    
 }
 
 function updateStoreStockCount() {
