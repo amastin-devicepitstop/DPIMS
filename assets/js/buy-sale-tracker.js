@@ -334,7 +334,7 @@ function deleteProduct() {
 }
 
 function fillColumns() {
-  let noRecords = "<div class='transaction-list-item-empty text-center'><label>No Records Found</label></div>;
+  let noRecords = "<div class='transaction-list-item-empty text-center'><label>No Records Found</label></div>";
   
   if ($("#buys").children().length == 0) {
     $("#buys").prepend(noRecords);
