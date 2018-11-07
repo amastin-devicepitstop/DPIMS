@@ -29,6 +29,7 @@ function populateForm(query) {
 function getProduct() {
   let query = getWhere("devices", "id", "==", getID());
   setTimeout(function(){
+    console.log(query[0]);
     populateForm(query);
     hideAnimation();
   }, 1000); 
