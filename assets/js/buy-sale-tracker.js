@@ -87,6 +87,7 @@ function initCheckboxes() {
   $(":checkbox").change(function() {
     
     if ($.contains($("input:checkbox:checked"), $("#buys"))){
+      console.log(true);
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
           $(".actions")[0].html(buys);
