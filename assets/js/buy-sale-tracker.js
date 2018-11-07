@@ -97,7 +97,7 @@ function initCheckboxes() {
 }
 
 function deleteBuySale() {
-  console.log($("input:checkbox:checked"));
+  console.log($("input:checkbox:checked").closest(".transaction-list-item");
 }
 
 function deleteProduct() {
