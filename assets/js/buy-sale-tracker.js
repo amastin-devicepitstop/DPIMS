@@ -111,6 +111,8 @@ function deleteBuySale(element) {
     $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
   }
   
+  fillColumns();
+  
   
   // Get id in transaction-list-item
   // Delete it from database
