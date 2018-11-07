@@ -6,23 +6,23 @@ window.onload = function(){
 
 function populateForm(query) {
   let product = query[0];
-  let firstName = product.tech.split(" ")[0];
-  let lastName = product.tech.split(" ")[1];
-  let manufacturer = product.manufacturer;
-  let model = product.model;
-  let sku = product.sku;
-  let date = product.date;
-  let buy = product.buy;
-  let sale = product.sale;
+//   let firstName = product.tech.split(" ")[0];
+//   let lastName = product.tech.split(" ")[1];
+//   let manufacturer = product.manufacturer;
+//   let model = product.model;
+//   let sku = product.sku;
+//   let date = product.date;
+//   let buy = product.buy;
+//   let sale = product.sale;
   
-  $("#first-name").val(product.tech.split(" ")[0]);
-  $("#last-name").val(product.tech.split(" ")[1]);
-  $("#manufacturer").val(manufacturer);
-  $("#model").val(model);
-  $("#sku").val(sku);
-  $("#date").val(date);
-  $("#buy").prop('checked', buy);
-  $("#sale").prop('checked', sale);
+//   $("#first-name").val(product.tech.split(" ")[0]);
+//   $("#last-name").val(product.tech.split(" ")[1]);
+//   $("#manufacturer").val(manufacturer);
+//   $("#model").val(model);
+//   $("#sku").val(sku);
+//   $("#date").val(date);
+//   $("#buy").prop('checked', buy);
+//   $("#sale").prop('checked', sale);
 }
 
 function getProduct() {
