@@ -1483,7 +1483,8 @@ th.headerSortDown {
 .transaction-column {
   position: relative;
   display: inline-table;
-  height: 500px;
+  height: auto;
+  min-height: 89vh;
   width: 360px;
   margin-left: 30px;
   border: none;
