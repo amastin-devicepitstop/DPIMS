@@ -92,6 +92,7 @@ function initCheckboxes() {
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
           $(".actions").html(buys);
+          $("#title-buys").closest(".transaction-header")[0].css({'padding-bottom':'15px'});
         }
 
       // If a single checkbox is selected, allow that product to be edited/deleted
@@ -99,11 +100,13 @@ function initCheckboxes() {
         // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
         if ($("#buys input[type='checkbox']:checked")[0].className == "selectAll") {
           $(".actions").html(buys);
+          $("#title-buys").closest(".transaction-header")[0].css({'padding-bottom':'15px'});
         }
 
         // Otherwise convert 'Store Stock Tracker' to 'More Actions'
         else {
           $("#title-buys").html(actions);
+          $("#title-buys").closest(".transaction-header")[0].css({'padding-bottom':'14px'});
         }
       }
     }
