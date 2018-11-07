@@ -1,6 +1,8 @@
 // These two variables are used to provide the correct options for the 'modifyOptions' dropdown.
-let singleCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Edit'>Edit</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Mark as Ready for Floor'>Mark as Ready for Floor</option><option value='Mark as Not Ready for Floor'>Mark as Not Ready for Floor</option><option value='Delete'>Delete</option></select>";
-let multiCheckBoxHTML = "<select id='modifyOptions' class='form-control' onchange='parseOption()'><option value='' disabled selected hidden>More Actions</option><option value='Mark as Sold'>Mark as Sold</option><option value='Mark as Not Sold'>Mark as Not Sold</option><option value='Mark as Ready for Floor'>Mark as Ready for Floor</option><option value='Mark as Not Ready for Floor'>Mark as Not Ready for Floor</option><option value='Delete'>Delete</option></select>";
+let actions = "<div class='actions'><input class='selectAll btn-spacer' type='checkbox'><button class='btn btn-transparent btn-small no-padding' style=' '><svg class='svg-18' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='774.266px' height='774.266px' viewBox='0 0 774.266 774.266' xml:space='preserve'> <g> <g> <path d='M640.35,91.169H536.971V23.991C536.971,10.469,526.064,0,512.543,0c-1.312,0-2.187,0.438-2.614,0.875 C509.491,0.438,508.616,0,508.179,0H265.212h-1.74h-1.75c-13.521,0-23.99,10.469-23.99,23.991v67.179H133.916 c-29.667,0-52.783,23.116-52.783,52.783v38.387v47.981h45.803v491.6c0,29.668,22.679,52.346,52.346,52.346h415.703 c29.667,0,52.782-22.678,52.782-52.346v-491.6h45.366v-47.981v-38.387C693.133,114.286,670.008,91.169,640.35,91.169z M285.713,47.981h202.84v43.188h-202.84V47.981z M599.349,721.922c0,3.061-1.312,4.363-4.364,4.363H179.282 c-3.052,0-4.364-1.303-4.364-4.363V230.32h424.431V721.922z M644.715,182.339H129.551v-38.387c0-3.053,1.312-4.802,4.364-4.802 H640.35c3.053,0,4.365,1.749,4.365,4.802V182.339z'></path> <rect x='475.031' y='286.593' width='48.418' height='396.942'></rect> <rect x='363.361' y='286.593' width='48.418' height='396.942'></rect><rect x='251.69' y='286.593' width='48.418' height='396.942'></rect></g></g></svg></button><button class='fill-normal right btn btn-transparent btn-small return no-padding'><svg class='text-top' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg></button></div>";
+let buys = "<span id='title-buys' class='font-md text-white font-regular'>Buys</span>";
+let sales = "<span id='title-sales' class='font-md text-white font-regular'>Sales</span>";
+
 
 // Icons for product status
 let readyIcon = "<div id='ready-icon' class='tooltip'><span class='no-display'>Ready</span><span class='ready'><svg title='Ready for Floor' xmlns='http://www.w3.org/2000/svg' class='ready-icon svg-20' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='363.025px' height='363.024px' viewBox='0 0 363.025 363.024' xml:space='preserve'><g><g><g><path d='M181.512,363.024C81.43,363.024,0,281.601,0,181.513C0,81.424,81.43,0,181.512,0     c100.083,0,181.513,81.424,181.513,181.513C363.025,281.601,281.595,363.024,181.512,363.024z M181.512,11.71     C87.88,11.71,11.71,87.886,11.71,181.513s76.17,169.802,169.802,169.802c93.633,0,169.803-76.175,169.803-169.802     S275.145,11.71,181.512,11.71z'></path></g></g><g><polygon points='147.957,258.935 83.068,194.046 91.348,185.767 147.957,242.375 271.171,119.166     279.451,127.445   '></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></span></div>";
@@ -89,218 +91,26 @@ function initCheckboxes() {
   
   $(":checkbox").change(function() {
     
-    // If no checkboxes are selected, display "Store Stock Tracker"
-    if ($("input:checkbox:checked").length == 0) {
-        xToNew();
-        $("#deselect").html("<button id='new' class='btn btn-primary btn-small' type='submit'><svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>New</button>");
-        $(".modifyProduct").html("Store Stock Tracker");
-        $(".modifyProduct").attr("class", "font-xl");
-      }
-    
-    // If a single checkbox is selected, allow that product to be edited/deleted
-    else if ($("input:checkbox:checked").length == 1) {
-      // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
-      if ($("input[type='checkbox']:checked")[0].className == "selectAll") {
-        xToNew();
-        $(".selectAll").prop('checked', false); 
-        $(".modifyProduct").html("Store Stock Tracker");
-        $(".modifyProduct").attr("class", "font-xl"); 
-      }
-      
-      // Otherwise convert 'Store Stock Tracker' to 'More Actions'
-      else {
-        newToX();
-        $(".font-xl").html(singleCheckBoxHTML);
-        $(".font-xl").attr('class', 'modifyProduct');
-        $(".modifyProduct").html(singleCheckBoxHTML)
-      }
-    }
-    
-    // If multiple checkboxes are selected, do not allow editing
-    else if ($("input:checkbox:checked").length > 1) {
-      // If selectAll and one other checkbox are checked, treat it as though only one checkbox is checked.
-      if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked")){
-        newToX();
-        $(".font-xl").html(singleCheckBoxHTML);
-        $(".font-xl").attr('class', 'modifyProduct');
-        $(".modifyProduct").html(singleCheckBoxHTML)
-      }
-          
-      else{
-        newToX();
-        $(".font-xl").html(multiCheckBoxHTML);
-        $(".font-xl").attr('class', 'modifyProduct');
-        $(".modifyProduct").html(multiCheckBoxHTML)
+    if ($.contains($("input:checkbox:checked"), $("#buys")){
+      // If no checkboxes are selected, display "Store Stock Tracker"
+      if ($("#buys input:checkbox:checked").length == 0) {
+          $(".actions")[0].html(buys);
+        }
+
+      // If a single checkbox is selected, allow that product to be edited/deleted
+      else if ($("#buys input:checkbox:checked").length == 1) {
+        // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
+        if ($("#buys input[type='checkbox']:checked")[0].className == "selectAll") {
+          $(".actions")[0].html(buys);
+        }
+
+        // Otherwise convert 'Store Stock Tracker' to 'More Actions'
+        else {
+          $("#title-buys").html(actions);
+        }
       }
     }
   }); 
-}
-
-function newToX() {
-  // Converts the '+ New' button to 'X'
-  $("#new").closest('form').attr('action', 'javascript:xToNew()');
-  $("#new").html("<svg class='text-top svg-18' xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><path d='M466.745 0L256 210.745 45.255 0 0 45.254 210.745 256 0 466.745 45.255 512 256 301.255 466.745 512 512 466.745 301.255 256 512 45.254z'></path></svg>");
-  $("#new").attr('class', 'btn btn-transparent btn-small return');
-  $("#new").attr('id', 'deselect');
-}
-
-function xToNew() {
-  // Converts the 'X' button to '+ New'
-  let checked = $("input:checkbox:checked");
-  if (checked.length >= 1) {
-    // Unchecks any checked checkboxes
-    for (let i = 0; i < checked.length; i++){
-      $(checked[i]).prop('checked', false);  
-    }
-    $(".modifyProduct").html("Store Stock Tracker");
-    $(".modifyProduct").attr("class", "font-xl"); 
-    shadeSelected();
-  }
-  
-  $("#deselect").closest('form').attr('action', 'storestock-new.html');
-  $("#deselect").attr('class', 'btn btn-primary btn-small');
-  $("#deselect").html("<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='M511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>" + '                  New                ');
-  $("#deselect").attr('id', 'new');
-}
-
-function shadeSelected() {
-  // Any <tr> elements should have a white background if it's checkbox is not checked
-  $("input:checkbox:not(:checked)").closest('tr').attr('class', '');
-  
-  // Any <tr> elements should have a background color of #f0f0f0 if it's checkbox is checked
-  // Additionally the bottom border color should change so it doesn't blend in to the background.
-  $("input:checkbox:checked").closest('tr').attr('class', 'selected');
-}
-
-function markAsSold(sold) {
-  // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
-  let row;
-  let product;
-  let sku;
-  let status;
-  let statusCell;
-  let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
-  
-  // Mark each row with a checked checkbox as 'ready'
-  for (let i = 0; i < checkboxes.length; i++) {
-    row = $(checkboxes[i]).closest('tr');
-    sku = row[0].cells[5].innerText;
-    sku = sku.replace(/\s+/g, '');
-    statusCell = row[0].cells[7];
-    status = $(statusCell).find("#sold-icon");
-    update("devices", sku, {sold: sold});
-  }
-  
-  if (sold && status.length == 0) {
-    $(statusCell).append(soldIcon);
-  }
-  else if (!(sold) && status.length == 1) {
-    $(status).remove();
-  }
-  
-  // Show appropriate success dialog
-  if (sold) {
-    showSuccessDialog("Product(s) marked as 'Sold.'");
-  }
-  else {
-    showSuccessDialog("Product(s) marked as 'Not Sold.'");
-  }
-  
-}
-
-function markAsReady(ready) {
-  // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
-  let row;
-  let product;
-  let sku;
-  let status;
-  let statusCell;
-  let checkboxes = $("input[type='checkbox']:checked:not('.selectAll')")
-  
-  // Mark each row with a checked checkbox as 'ready'
-  for (let i = 0; i < checkboxes.length; i++) {
-    row = $(checkboxes[i]).closest('tr');
-    sku = row[0].cells[5].innerText;
-    sku = sku.replace(/\s+/g, '');
-    statusCell = row[0].cells[7];
-    status = $(statusCell).find("#ready-icon");
-    update("devices", sku, {ready: ready});
-  }
-  
-  // Add ready icon if it does not exist
-  if (ready && status.length == 0) {
-    $(statusCell).prepend(readyIcon);
-  }
-  
-  // Remove ready icon if it exists
-  else if (!(ready) && status.length == 1) {
-    $(status).remove();
-  }
-  
-  // Show appropriate success dialog
-  if (ready) {
-    showSuccessDialog("Product(s) marked as 'Ready for Floor.'");
-  }
-  else {
-    showSuccessDialog("Product(s) marked as 'Not Ready for Floor.'");
-  }
-}
-
-function parseOption() {
-  let int;
-  
-  if ($("input[type='checkbox']:checked").length == 1) {
-    int = 0;
-  }
-  
-  else if ($("input[type='checkbox']:checked").length > 1){
-    int = 1;
-  }
-  
-  if ($("#modifyOptions").val() == "Edit") {
-    resetSelect(int);
-    editProduct();  
-  }
-  else if ($("#modifyOptions").val() == "Mark as Sold") {
-    resetSelect(int);
-    markAsSold(true);
-  }
-  else if ($("#modifyOptions").val() == "Mark as Not Sold") {
-    resetSelect(int);
-    markAsSold(false);
-  }
-  else if ($("#modifyOptions").val() == "Mark as Ready for Floor") {
-    resetSelect(int);
-    markAsReady(true);
-  }
-    else if ($("#modifyOptions").val() == "Mark as Not Ready for Floor") {
-    resetSelect(int);
-    markAsReady(false);
-  }
-  else if ($("#modifyOptions").val() == "Delete") {
-    resetSelect(int);
-    showConfirmDialog("Do you want to delete the selected product(s)?");
-  }
-  
-}
-
-function resetSelect(int) {
-  // Resets 'modifyProduct' to not change option when clicking on an option. Still runs the command though.
-  if (int == 0) {
-    $(".modifyProduct").html(singleCheckBoxHTML);
-  }
-  else if (int == 1) {
-    $(".modifyProduct").html(multiCheckBoxHTML);
-  }
-  
-}
-
-function editProduct() {
-  // Get the nearest row and then grabs the sku from it, queries the database and edits the product
-  let row = $("input:checkbox:checked").closest('tr');
-  let model = row[0].cells[3].innerText;
-  let sku = row[0].cells[5].innerText;
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock-edit.html?model=" + model + "&sku=" + sku);
 }
 
 function deleteProduct() {
