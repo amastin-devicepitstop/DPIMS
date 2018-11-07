@@ -90,14 +90,14 @@ function initCheckboxes() {
       console.log(true);
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
-          $(".actions")[0].html(buys);
+          $(".actions").html(buys);
         }
 
       // If a single checkbox is selected, allow that product to be edited/deleted
       else if ($("#buys input:checkbox:checked").length == 1) {
         // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
         if ($("#buys input[type='checkbox']:checked")[0].className == "selectAll") {
-          $(".actions")[0].html(buys);
+          $(".actions").html(buys);
         }
 
         // Otherwise convert 'Store Stock Tracker' to 'More Actions'
