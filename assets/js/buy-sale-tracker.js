@@ -24,7 +24,7 @@ function getBuySale() {
     enableSelectAll(query);
     populateColumns(query);
     fillColumns();
-    //initCheckboxes();
+    initCheckboxes();
     hideAnimation();
   }, 2500);  
 }
@@ -57,7 +57,7 @@ function populateColumns(query) {
 }
 
 function addBuySale(product) {
-  console.log(product.tech);
+  let editIcon = "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='528.899px' height='528.899px' viewBox='0 0 528.899 528.899' style='enable-background:new 0 0 528.899 528.899;' xml:space='preserve'> <g> <path d='M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981 c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611 C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069 L27.473,390.597L0.3,512.69z'/></g></svg>";
   // Creates the transaction and puts it in the correct column. 
   let divStart = "<div class='transaction-list-item'>";
   let checkboxDiv = "<div class='width-10'><div><input type='checkbox'></div></div>";
@@ -65,7 +65,7 @@ function addBuySale(product) {
   let productDiv = "<div class='transaction-product'><span>" + product.manufacturer + " " + product.model + "</span></div>";
   let nameDiv = "<div class='transaction-technician'><span class='block'>" + product.tech + "</span></div>";
   let skuDiv = "<div class='transaction-sku'><span class='block'>" + product.sku + "</span></div>";
-  let buttonDiv = "<div class='right'><div><button type='button'>" + 'X' + "</button></div></div>";
+  let buttonDiv = "<div class='right'><div><button type='button' class='edit-icon' onclick='editBuySale($(this))'>" + editIcon + "</button></div></div>";
   let date = "<div class='transaction-date'><label class='text-muted'>" + product.date + "</label></div>";
   let id = "<div class='transaction-id'><label class='no-display'>" + product.id + "</label></div>";
   let divEnd = "</div></div>";
@@ -85,10 +85,9 @@ function initCheckboxes() {
   // Checkbox with class="selectAll" will select all check boxes on the page
   $(".selectAll").click(function (e) {
       $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
-    });
+  });
   
   $(":checkbox").change(function() {
-    shadeSelected();
     
     // If no checkboxes are selected, display "Store Stock Tracker"
     if ($("input:checkbox:checked").length == 0) {
@@ -343,4 +342,8 @@ function fillColumns() {
   if ($("#sales").children().length == 0) {
     $("#sales").prepend(noRecords);
   }
+}
+
+function editBuySale(element) {  
+  console.log(element.closest(".transaction-list-item"));
 }
