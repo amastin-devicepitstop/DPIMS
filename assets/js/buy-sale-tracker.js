@@ -62,7 +62,7 @@ function addBuySale(product) {
   let divStart = "<div class='transaction-list-item'>";
   let checkboxDiv = "<div class='width-10'><div><input type='checkbox'></div></div>";
   let infoDivStart = "<div class='width-90'>";
-  let productDiv = "<div class='transaction-product'><span>" + product.manufacturer + " " + product.model + "</span></div>";
+  let productDiv = "<div class='transaction-product'><span class='font-medium'>" + product.manufacturer + " " + product.model + "</span></div>";
   let nameDiv = "<div class='transaction-technician'><span class='block'>" + product.tech + "</span></div>";
   let skuDiv = "<div class='transaction-sku'><span class='block'>" + product.sku + "</span></div>";
   let buttonDiv = "<div class='right'><div><button type='button' class='edit-icon' onclick='editBuySale($(this))'>" + editIcon + "</button></div></div>";
