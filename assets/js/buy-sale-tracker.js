@@ -119,6 +119,8 @@ function initCheckboxes() {
 }
 
 function deleteBuySale(element) {
+  // Make the trash can go to a method which calls showConfirmDialog(), and have it create an invisible identifier somewhere
+  // that can be used to determine which button was pressed. 
   let column = element.closest(".transaction-column")[0];
   let selected = $(column).find(".transaction-column-content input:checkbox:checked").closest(".transaction-list-item");
   let ids = $(column).find(".transaction-column-content input:checkbox:checked").closest(".transaction-list-item").find(".transaction-id label");
