@@ -51,7 +51,7 @@ function addBuySale(product) {
   let infoDivStart = "<div class='width-90'>";
   let productDiv = "<div class='transaction-product'><span class='font-medium'>" + product.manufacturer + " " + product.model + "</span></div>";
   let nameDiv = "<div class='transaction-technician'><span class='block'><a>" + product.tech + "</a></span></div>";
-  let skuDiv = "<div class='transaction-sku'><span class='block text-muted'>" + product.sku + "</span></div>";
+  let skuDiv = "<div class='transaction-sku'><span class='block text-muted font-light'>" + product.sku + "</span></div>";
   let buttonDiv = "<div class='right'><div><button type='button' class='edit-icon' onclick='editBuySale($(this))'>" + editIcon + "</button></div></div>";
   let date = "<div class='transaction-date'><label class='text-muted font-light'>" + product.date + "</label></div>";
   let id = "<div class='transaction-id'><label class='no-display'>" + product.id + "</label></div>";
