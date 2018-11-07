@@ -45,8 +45,6 @@ function populateColumns(query) {
       }
   // If the query doesn't return results, prompt to add a new product
       else {
-        //let row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
-        //$("#store-stock-tracker > tbody").append(row);
         console.log("no results");
         break;
       }
@@ -80,6 +78,7 @@ function addBuySale(product) {
 
 function initCheckboxes() {  
   $(":checkbox").change(function() {
+    console.log($("#title-buys").closest(".selectAll:checked"));
     if ($("#title-buys").closest(".selectAll:checked").length == 0) {
       $(".actions").html(buys);
       $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
