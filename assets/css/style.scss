@@ -1546,6 +1546,8 @@ th.headerSortDown {
   opacity: 0;
 }
 
-.edit-icon:hover {
-  opacity: 1; 
+.transaction-list-item:hover {
+  .edit-icon:hover {
+    opacity: 1; 
+  }
 }
