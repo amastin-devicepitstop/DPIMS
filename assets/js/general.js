@@ -259,10 +259,10 @@ function updateBuySaleCount() {
   let saleCount = 0;
   setTimeout(function() {
     for (let i = 0; i < buySaleCount.length; i++) {
-      if (readyForFloorCount[i].buy) {
+      if (buySaleCount[i].buy) {
         buyCount++;
       }
-      else if (readyForFloorCount[i].sale) {
+      else if (buySaleCount[i].sale) {
         saleCount++;
       }
     }
