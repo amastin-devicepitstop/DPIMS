@@ -119,6 +119,7 @@ function initCheckboxes() {
 }
 
 function confirmDelete(element) {
+  // Append an invisible element to the corresponding .actions div so that the button that was pressed can be identified.
   if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
     element.closest(".actions").append("<span id='buy-column' class='no-display'></span>")
   }
@@ -131,6 +132,7 @@ function confirmDelete(element) {
 
 function findElement() {
   closeModal();
+  // Search for the identifying element
   if ($("#buy-column").length > 0) {
     let element = $("#buy-column").closest(".actions").find(".return");
     deleteBuySale(element);
@@ -142,16 +144,19 @@ function findElement() {
 }
 
 function deleteBuySale(element) {
-  // Make the trash can go to a method which calls showConfirmDialog(), and have it create an invisible identifier somewhere
-  // that can be used to determine which button was pressed. 
   let column = element.closest(".transaction-column")[0];
   let selected = $(column).find(".transaction-column-content input:checkbox:checked").closest(".transaction-list-item");
   let ids = $(column).find(".transaction-column-content input:checkbox:checked").closest(".transaction-list-item").find(".transaction-id label");
-  
+  let id;
   for (let i = 0; i < selected.length; i++) {
-    console.log(ids[i].innerText);
-    $(selected[i]).remove();   
+    id = ids[i].innerText;
+    remove("buysale", id);
+    $(selected[i]).remove();
   }
+  
+  setTimeout(function() {
+    showSuccessDialog("Product(s) successfully deleted.");
+  }, 1000);
   
   if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
     $(".actions").html(buys);
@@ -170,35 +175,6 @@ function deleteBuySale(element) {
   // Delete it from database
   // Delete it from page
   // Don't forget confirm and success dialogs
-}
-
-function deleteProduct() {
-  let row = $("input:checkbox:checked").closest('tr');
-  let sku;
-  closeModal();
-  for (let i = 0; i < row.length; i++) {
-    sku = row[i].cells[5].innerText;
-    sku = sku.replace(/\s+/g, '');
-    // If SKU matches ###########A...
-    if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
-      remove("devices", sku);
-      row[i].remove();
-      setTimeout(function() {
-        showSuccessDialog("Product(s) successfully deleted.");
-      }, 1000);
-    }
-  }
-  // Display 'No Records Found' if the last row is removed from the table. 
-  if ($("#store-stock-tracker tr").length == 1) { 
-    row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
-    $("#store-stock-tracker > tbody").append(row);
-    $(".selectAll").prop('disabled', true);
-    xToNew();
-  }
-  
-  if ($("input:checkbox:checked").length == 0) {
-    xToNew();  
-  }
 }
 
 function fillColumns() {
