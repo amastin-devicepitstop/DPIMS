@@ -100,9 +100,8 @@ function deleteBuySale(element) {
   let column = element.closest(".transaction-column")[0];
   let selected = $(column).find(".transaction-column-content input:checkbox:checked");
   let ids = $(column).find(".transaction-column-content input:checkbox:checked").closest(".transaction-list-item").find(".transaction-id label");
-//   let ids = $("input:checkbox:checked").closest(".transaction-list-item").find(".transaction-id label");
-//   let column = $("input:checkbox:checked").closest(".transaction-column-content");
   console.log(selected);
+  console.log(ids);
   
   for (let i = 0; i < selected.length; i++) {
 //     console.log(column);
