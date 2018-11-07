@@ -258,7 +258,7 @@ function updateBuySaleCount() {
   let buyCount = 0;
   let saleCount = 0;
   setTimeout(function() {
-    for (let i = 0; i < readyForFloorCount.length; i++) {
+    for (let i = 0; i < buySaleCount.length; i++) {
       if (readyForFloorCount[i].buy) {
         buyCount++;
       }
