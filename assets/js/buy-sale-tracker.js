@@ -130,11 +130,14 @@ function confirmDelete(element) {
 }
 
 function findElement() {
+  closeModal();
   if ($("#buy-column").length > 0) {
-    console.log($("#buy-column").closest(".actions").find(".return"));
+    let element = $("#buy-column").closest(".actions").find(".return");
+    deleteBuySale(element);
   }
   else if ($("#sale-column").length > 0) {
-    console.log($("#sale-column").closest(".actions").find(".return"));
+    let element = $("#sale-column").closest(".actions").find(".return");
+    deleteBuySale(element);
   }
 }
 
