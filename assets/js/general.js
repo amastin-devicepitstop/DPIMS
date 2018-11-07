@@ -89,6 +89,12 @@ function getModel() {
   return model;
 }
 
+function getID() {
+  let id = window.location.search.replace("?id=", "");
+  id = id.split("%20").join(" ");
+  return id;
+}
+
 function getSKU() {
   let sku = window.location.search;
   sku = sku.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)[0];
