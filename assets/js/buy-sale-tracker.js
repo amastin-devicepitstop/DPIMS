@@ -23,6 +23,7 @@ function getBuySale() {
   setTimeout(function(){ // works
     enableSelectAll(query);
     populateColumns(query);
+    fillColumns();
     //initCheckboxes();
     hideAnimation();
   }, 2500);  
@@ -329,5 +330,17 @@ function deleteProduct() {
   
   if ($("input:checkbox:checked").length == 0) {
     xToNew();  
+  }
+}
+
+function fillColumns() {
+  let noRecords = "<div class='transaction-list-item-empty text-center'><label>No Records Found</label></div>;
+  
+  if ($("#buys").children().length == 0) {
+    $("#buys").prepend(noRecords);
+  }
+  
+  if ($("#sales").children().length == 0) {
+    $("#sales").prepend(noRecords);
   }
 }
