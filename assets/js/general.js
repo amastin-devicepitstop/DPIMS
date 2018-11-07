@@ -132,9 +132,9 @@ function markReady(element) {
 function autocomplete() {
   let manufacturers = ["Acer", "Alienware", "Apple", "ASUS",
                        "BenQ",
-                       "Compaq","CyberPowerPC",
+                       "Compaq", "CyberPowerPC",
                        "Dell",
-                       "Gateway",
+                       "Gateway", "Google",
                        "HP","HTC",
                        "Intel",
                        "Lenovo","LG",
@@ -148,7 +148,8 @@ function autocomplete() {
                       ];
   
   $("#manufacturer").autocomplete({
-    source: manufacturers
+    source: manufacturers,
+    delay: 0
   });
   
   let models = ["Elitebook ",
@@ -179,7 +180,37 @@ function autocomplete() {
                ];
   
   $("#model").autocomplete({
-    source: models
+    source: models,
+    delay: 0
+  });
+  
+  let carrier = ["AT&T",
+                  "Other",
+                  "T-Mobile",
+                  "Unlocked",
+                  "Verizon",
+                  "Sprint",
+                  "Wi-Fi Only"
+                 ];
+  
+  $("#carrier").autocomplete({
+    source: carrier,
+    delay: 0
+  });
+  
+  let storage = ["4GB",
+                 "8GB",
+                 "16GB",
+                 "32GB",
+                 "64GB",
+                 "128GB",
+                 "256GB",
+                 "512GB"
+                ];
+                
+  $("#storage").autocomplete({
+    source: storage,
+    delay: 0
   });
 }
 
