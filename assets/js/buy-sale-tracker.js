@@ -78,9 +78,11 @@ function addBuySale(product) {
 
 function initCheckboxes() {  
   $(":checkbox").change(function() {
-    if ($("#title-buys").find(".selectAll")[0].prop("checked", false)) {
-      $(".actions").html(buys);
-      $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+    if ($("#title-buys").find(".selectAll").length !== 0){
+      if ($("#title-buys").find(".selectAll")[0].prop("checked", false)) {
+        $(".actions").html(buys);
+        $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+      }
     }
     
     if ($("#buys input:checkbox:checked").length >= 0){
