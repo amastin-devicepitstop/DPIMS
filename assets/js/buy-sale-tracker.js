@@ -346,5 +346,5 @@ function fillColumns() {
 
 function editBuySale(element) {  
   console.log(element.closest(".transaction-list-item").find(".transaction-id").children("label"));
-  console.log(element.closest(".transaction-list-item").find(".transaction-id").children("label").val());
+  console.log(element.closest(".transaction-list-item").find(".transaction-id").children("label")[0].val());
 }
