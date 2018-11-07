@@ -1549,10 +1549,11 @@ th.headerSortDown {
   border: none;
   fill: #9B9B9B;
   opacity: 0;
+  -webkit-transition: opacity 0.15s;
+  cursor: pointer;
 }
 
-.transaction-list-item:hover {
-  .edit-icon:hover {
-    opacity: 1; 
-  }
+.transaction-list-item:hover .edit-icon {
+  opacity: 1; 
+  -webkit-transition: opacity 0.15s;
 }
