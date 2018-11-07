@@ -101,7 +101,7 @@ function deleteBuySale() {
   let ids = $("input:checkbox:checked").closest(".transaction-list-item").find(".transaction-id label");
   
   for (let i = 0; i < selected.length; i++) {
-    console.log(selected);
+    console.log(selected[i]);
     console.log(ids[i].innerText);
   }
   // Get id in transaction-list-item
