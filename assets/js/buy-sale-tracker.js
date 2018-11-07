@@ -18,7 +18,6 @@ function getBuySale() {
   let query = getWhere("buysale", "month", "==", month);
     
   setTimeout(function(){ // works
-    enableSelectAll(query);
     populateColumns(query);
     fillColumns();
     initCheckboxes();
