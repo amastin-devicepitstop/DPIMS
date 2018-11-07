@@ -152,5 +152,6 @@ function editBuySale(element) {
 }
 
 function checkAll(element) {
-  $(element).closest(".transaction-column").find("input:checkbox").prop("checked", this.checked);  
+  console.log(element);
+  element.closest(".transaction-column").find("input:checkbox").prop("checked", this.checked);  
 }
