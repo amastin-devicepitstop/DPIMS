@@ -110,7 +110,7 @@ function initCheckboxes() {
 
         // Otherwise convert 'Store Stock Tracker' to 'More Actions'
         else {
-          $("#sales-column .actions").html(actions);
+          $("#title-sales").html(actions);
           $("#title-sales").closest(".transaction-header").css({'padding-bottom':'14px'});
         }
       }
