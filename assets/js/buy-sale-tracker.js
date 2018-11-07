@@ -98,6 +98,10 @@ function initCheckboxes() {
 
 function deleteBuySale() {
   console.log($("input:checkbox:checked").closest(".transaction-list-item"));
+  // Get id in transaction-list-item
+  // Delete it from database
+  // Delete it from page
+  // Don't forget confirm and success dialogs
 }
 
 function deleteProduct() {
