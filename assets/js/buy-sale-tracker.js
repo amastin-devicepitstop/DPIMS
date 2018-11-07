@@ -81,7 +81,7 @@ function addBuySale(product) {
 function initCheckboxes() {
   // Checkbox with class="selectAll" will select all check boxes on the page
   $(".selectAll").click(function (e) {
-      $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
+      $(this).closest(".transaction-column").find("input:checkbox").prop("checked", this.checked);
   });
   
   $(":checkbox").change(function() {
