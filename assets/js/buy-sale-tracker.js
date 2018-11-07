@@ -80,8 +80,13 @@ function initCheckboxes() {
   $(":checkbox").change(function() {
     if ($("#title-buys").find(".selectAll").length !== 0){
       if ($("#title-buys").find(".selectAll")[0].prop("checked", false)) {
+        console.log("not checked");
         $(".actions").html(buys);
         $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+      }
+      else{
+        console.log("checked");
+        console.log($("#title-buys").find(".selectAll")[0].prop("checked", $(".selectAll").checked));
       }
     }
     
