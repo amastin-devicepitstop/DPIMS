@@ -73,7 +73,7 @@ function initCheckboxes() {
     console.log("change occurred");
     
     if ($("#buys input:checkbox:checked").length >= 0){
-      console.log("buys");
+      console.log($("#buys input:checkbox:checked"));
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
           $(".actions").html(buys);
@@ -97,7 +97,7 @@ function initCheckboxes() {
     }
     
     else if ($("#sales input:checkbox:checked").length >= 0){
-      console.log("sales");
+      console.log($("#sales input:checkbox:checked"));
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#sales input:checkbox:checked").length == 0) {
           $(".actions").html(sales);
