@@ -78,8 +78,7 @@ function addBuySale(product) {
 
 function initCheckboxes() {  
   $(":checkbox").change(function() {
-    console.log($("#title-buys").find(".selectAll"));
-    if ($("#title-buys").find(".selectAll:checked").length == 0) {
+    if ($("#title-buys").find(".selectAll")[0].prop("checked", false)) {
       $(".actions").html(buys);
       $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
     }
