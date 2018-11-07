@@ -100,13 +100,13 @@ function initCheckboxes() {
         // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
         if ($("#buys input[type='checkbox']:checked")[0].className == "selectAll") {
           $(".actions").html(buys);
-          $("#title-buys").closest(".transaction-header")[0].css({'padding-bottom':'15px'});
+          $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
         }
 
         // Otherwise convert 'Store Stock Tracker' to 'More Actions'
         else {
           $("#title-buys").html(actions);
-          $("#title-buys").closest(".transaction-header")[0].css({'padding-bottom':'14px'});
+          $("#title-buys").closest(".transaction-header").css({'padding-bottom':'14px'});
         }
       }
     }
