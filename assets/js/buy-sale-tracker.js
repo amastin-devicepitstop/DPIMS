@@ -104,7 +104,7 @@ function deleteBuySale() {
   console.log(selectedBuys);
   
   for (let i = 0; i < selectedBuys.length; i++) {
-    console.log(column[0]);
+    console.log(column);
     console.log(ids[i].innerText);
     $(selected[i]).remove();   
   }
