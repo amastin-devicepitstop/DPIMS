@@ -1543,4 +1543,9 @@ th.headerSortDown {
   border-radius: 33%;
   border: none;
   fill: #9B9B9B;
+  opacity: 0;
+}
+
+.edit-icon:hover {
+  opacity: 1; 
 }
