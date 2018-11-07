@@ -96,7 +96,7 @@ function initCheckboxes() {
       }
     }
     
-    else if ($("#sales input:checkbox:checked").length >= 0){
+    if ($("#sales input:checkbox:checked").length >= 0){
       console.log($("#sales input:checkbox:checked"));
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#sales input:checkbox:checked").length == 0) {
@@ -118,9 +118,6 @@ function initCheckboxes() {
           $("#title-sales").closest(".transaction-header").css({'padding-bottom':'14px'});
         }
       }
-    }
-    else {
-      console.log("All else failed");  
     }
   }); 
 }
