@@ -258,8 +258,17 @@ function updateBuySaleCount() {
   let buyCount = 0;
   let saleCount = 0;
   setTimeout(function() {
-    
-    
+    for (let i = 0; i < readyForFloorCount.length; i++) {
+      if (readyForFloorCount[i].buy) {
+        buyCount++;
+      }
+      else if (readyForFloorCount[i].sale) {
+        saleCount++;
+      }
+    }
+    $("#buys-count").text(buyCount);
+    $("#sales-count").text(saleCount);
+  }, 1000);
 }
 
 function updateStoreStockCount() {
