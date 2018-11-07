@@ -99,10 +99,10 @@ function initCheckboxes() {
 function deleteBuySale() {
   let selected = $("input:checkbox:checked").closest(".transaction-list-item");
   let ids = $("input:checkbox:checked").closest(".transaction-list-item").find(".transaction-id label");
-  let column = $("input:checkbox:checked").closest(".transaction-column-content")[0];
-  console.log(column);
+  let column = $("input:checkbox:checked").closest(".transaction-column-content");
   
   for (let i = 0; i < selected.length; i++) {
+    console.log(column[0]);
     console.log(ids[i].innerText);
     $(selected[i]).remove();   
   }
