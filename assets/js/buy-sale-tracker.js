@@ -93,6 +93,29 @@ function initCheckboxes() {
         }
       }
     }
+    
+    else if ($("#sales input:checkbox:checked").length >= 0){
+      // If no checkboxes are selected, display "Store Stock Tracker"
+      if ($("#sales input:checkbox:checked").length == 0) {
+          $(".actions").html(sales);
+          $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
+        }
+
+      // If a single checkbox is selected, allow that product to be edited/deleted
+      else if ($("#sales input:checkbox:checked").length == 1) {
+        // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
+        if ($("#sales input[type='checkbox']:checked")[0].className == "selectAll") {
+          $(".actions").html(sales);
+          $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
+        }
+
+        // Otherwise convert 'Store Stock Tracker' to 'More Actions'
+        else {
+          $("#title-sales").html(actions);
+          $("#title-sales").closest(".transaction-header").css({'padding-bottom':'14px'});
+        }
+      }
+    }
   }); 
 }
 
@@ -109,6 +132,11 @@ function deleteBuySale(element) {
   if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
     $(".actions").html(buys);
     $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+  }
+  
+  else if (element.closest(".transaction-column").find("#title-sales").length !== 0) {
+    $(".actions").html(sales);
+    $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
   }
   
   fillColumns();
@@ -174,6 +202,10 @@ function checkAll(element) {
       $(".actions").html(buys);
       $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
     }
+    else if (element.closest(".transaction-column").find("#title-sales").length !== 0) {
+      $(".actions").html(sales);
+      $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
+    }
   }
 }
 
@@ -184,5 +216,9 @@ function resetColumn(element) {
   if (element.closest(".transaction-column").find("#title-buys").length !== 0) {
     $(".actions").html(buys);
     $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
+  }
+  else if (element.closest(".transaction-column").find("#title-sales").length !== 0) {
+    $(".actions").html(sales);
+    $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
   }
 }
