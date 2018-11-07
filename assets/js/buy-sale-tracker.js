@@ -90,7 +90,7 @@ function initCheckboxes() {
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
           $(".actions").html(buys);
-          $("#title-buys").closest(".transaction-header")[0].css({'padding-bottom':'15px'});
+          $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
         }
 
       // If a single checkbox is selected, allow that product to be edited/deleted
