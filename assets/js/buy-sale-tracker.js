@@ -73,7 +73,7 @@ function initCheckboxes() {
     if ($("#buys input:checkbox:checked").length >= 0){
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#buys input:checkbox:checked").length == 0) {
-          $(".actions").html(buys);
+          $("#buys-column .actions").html(buys);
           $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
         }
 
@@ -81,7 +81,7 @@ function initCheckboxes() {
       else if ($("#buys input:checkbox:checked").length == 1) {
         // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
         if ($("#buys input[type='checkbox']:checked")[0].className == "selectAll") {
-          $(".actions").html(buys);
+          $("#buys-column .actions").html(buys);
           $("#title-buys").closest(".transaction-header").css({'padding-bottom':'15px'});
         }
 
@@ -96,7 +96,7 @@ function initCheckboxes() {
     if ($("#sales input:checkbox:checked").length >= 0){
       // If no checkboxes are selected, display "Store Stock Tracker"
       if ($("#sales input:checkbox:checked").length == 0) {
-          $(".actions").html(sales);
+          $("#sales-column .actions").html(sales);
           $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
         }
 
@@ -104,13 +104,13 @@ function initCheckboxes() {
       else if ($("#sales input:checkbox:checked").length == 1) {
         // Deselect 'selectAll' and revert 'More Actions' to 'Store Stock Tracker' if 'selectAll' is the only selected checkbox.
         if ($("#sales input[type='checkbox']:checked")[0].className == "selectAll") {
-          $(".actions").html(sales);
+          $("#sales-column .actions").html(sales);
           $("#title-sales").closest(".transaction-header").css({'padding-bottom':'15px'});
         }
 
         // Otherwise convert 'Store Stock Tracker' to 'More Actions'
         else {
-          $("#title-sales").html(actions);
+          $("#sales-column .actions").html(actions);
           $("#title-sales").closest(".transaction-header").css({'padding-bottom':'14px'});
         }
       }
