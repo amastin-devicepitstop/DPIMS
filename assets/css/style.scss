@@ -1586,6 +1586,12 @@ th.headerSortDown {
   margin-top: 20px; 
 }
 
+#search-icon:focus {
+  #search-options {
+    display: block; 
+  }
+}
+
 #search-options {
   position: absolute;
   top: 40px;
@@ -1600,10 +1606,6 @@ th.headerSortDown {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 2px;
   box-shadow: 0 6px 12px rgba(0,0,0,.175); 
-}
-
-#search-options:not(:focus) {
-  display: none;
 }
 
 .caret {
@@ -1625,6 +1627,12 @@ th.headerSortDown {
   padding-left: 33px; 
   display: block;
   padding: 3px 20px;
+}
+
+.search-option:focus {
+  #search-options {
+    display: none; 
+  }
 }
 
 .search-option:hover {
