@@ -214,6 +214,10 @@ function autocomplete() {
   });
 }
 
+function showSearch() {
+  $("#search-options").css("display", "block");  
+}
+
 // ====================
 // ===== FIREBASE =====
 // ====================
