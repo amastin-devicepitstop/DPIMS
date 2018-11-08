@@ -1586,6 +1586,22 @@ th.headerSortDown {
   margin-top: 20px; 
 }
 
+#search-options {
+  position: absolute;
+  top: 40px;
+  z-index: 1000;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 15px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 2px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175); 
+}
+
 #search-options:not(:focus) {
   display: none;
 }
@@ -1604,3 +1620,17 @@ th.headerSortDown {
   border-bottom: 4px solid transparent; 
   user-select: none;
 }
+
+.search-option {
+  padding-left: 33px; 
+  display: block;
+  padding: 3px 20px;
+}
+
+.search-option:hover {
+  text-decoration: none;
+  fill: #fff;
+  color: #fff;
+  background-color: #2e8fda; 
+}
+
