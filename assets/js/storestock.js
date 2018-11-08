@@ -299,6 +299,7 @@ function parseOption() {
     showConfirmDialog("Do you want to delete the selected product(s)?");
   }
   
+  enableTooltips();
 }
 
 function resetSelect(int) {
