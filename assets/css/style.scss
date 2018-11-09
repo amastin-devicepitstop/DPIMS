@@ -941,9 +941,15 @@ table {
   border-bottom: 4px solid #8dc63f!important;
 }
 
+.sign-product {
+  font-size: 18px;
+  font-family: "Metropolis Bold"!important;
+  
+}
+
 .sign-price {
   font-size: 25px;
-  font-family: "Metropolis Bold" !important;
+  font-family: "Metropolis Black" !important;
   border-bottom: none !important;
   text-align: right;
 }
@@ -970,6 +976,10 @@ table {
   text-transform: uppercase;
   font-family: 'Metropolis Bold';
   border-bottom: none!important;
+}
+
+.sign-msrp {
+  text-align: left;
 }
 
 .preview {
@@ -1641,4 +1651,5 @@ th.headerSortDown {
   color: #fff;
   background-color: #2e8fda; 
 }
+
 
