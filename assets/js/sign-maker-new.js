@@ -32,7 +32,7 @@ function inputChange(element) {
 
 function displayMSRP() {
   let msrp = "ABC"
-  if ($(".sign-product")[0].indexOf("Apple") !== -1) {
+  if ($(".sign-product")[0].val().indexOf("Apple") !== -1) {
     $("#sku-row").html("<td colspan='1' class='sign-cell'><input class='sign-cell sign-value sign-msrp' value=" + msrp + "></td><td colspan='1' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU")[0].val() + "></td>");
   }
   else {
