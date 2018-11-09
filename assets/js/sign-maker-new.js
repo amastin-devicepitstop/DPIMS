@@ -33,7 +33,7 @@ function inputChange(element) {
 function displayMSRP() {
   let msrp = "ABC"
   if ($(".sign-product")[0].indexOf("Apple") !== -1) {
-    $("#sku-row").html("<td colspan='1' class='sign-cell'><input class='sign-cell sign-value sign-msrp' value=" + msrp + "></td><td colspan='1' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU")[0].val() + "></td>";
+    $("#sku-row").html("<td colspan='1' class='sign-cell'><input class='sign-cell sign-value sign-msrp' value=" + msrp + "></td><td colspan='1' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU")[0].val() + "></td>");
   }
   else {
     $("#sku-row").html("<td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU")[0].val() + "></td>");
@@ -81,7 +81,7 @@ function addSign() {
   // Create HTML for sign
   let signBegin = "<div class='sign-preview'><div><table><tbody>";
   let logoAndPriceRow = "<tr><td class='dp-logo sign-logo'></td><td class='sign-cell'><input class='sign-price sign-value' value=" + '$' + price + "></td></tr>";
-  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' value=" + product + "></td></tr>";
+  let manufacturerAndModelRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-product sign-cell sign-value' onchange='displayMSRP()' value=" + product + "></td></tr>";
   let storageRow = "<tr><td colspan='2' class='sign-cell'><input class='sign-storage sign-cell sign-value' value=" + storage + "></input></td></tr>";
   let carrierRow;
   if (carrier == "Unlocked") {
@@ -110,4 +110,6 @@ function addSign() {
   setTimeout(function() {
     $(".card").toggle();
   }, 200);
+  
+  displayMSRP();
 }
