@@ -31,9 +31,11 @@ function inputChange(element) {
 }
 
 function displayMSRP() {
-  let msrp = "ABC"
+  return;
+  
+  let msrp; // GET MSRP FROM DATABASE --> getWhere("msrp", "==", model_capacity) (ex. getWhere("msrp", "==", "iphone6s_64")
   if ($(".sign-product").eq(0).val().indexOf("Apple") !== -1) {
-    $("#sku-row").html("<td colspan='1' class='sign-cell'><input class='sign-cell sign-value sign-msrp' value=" + msrp + "></td><td colspan='1' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU").eq(0).val() + "></td>");
+    $("#sku-row").html("<td colspan='1' class='sign-cell'><input class='sign-cell sign-value sign-msrp' disabled value=" + "MSRP: " + msrp + "></td><td colspan='1' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU").eq(0).val() + "></td>");
   }
   else {
     $("#sku-row").html("<td colspan='2' class='sign-cell sign-sku'><input class='sign-cell sign-value sign-sku inputSKU' value=" + $(".inputSKU").eq(0).val() + "></td>");
