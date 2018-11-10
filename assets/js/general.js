@@ -216,6 +216,7 @@ function autocomplete() {
 
 function showSearch() {
   $("#search-options").css("display", "block");
+  $("#search-options").focus();
   $("#search-options").focusout(function() {
     $("#search-options").css("display", "none");
   });
