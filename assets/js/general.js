@@ -215,7 +215,10 @@ function autocomplete() {
 }
 
 function showSearch() {
-  $("#search-options").css("display", "block");  
+  $("#search-options").css("display", "block");
+  $("#search-options").focusout(function() {
+    $("#search-options").css("display", "none");
+  });
 }
 
 // ====================
