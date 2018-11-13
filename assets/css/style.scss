@@ -1643,17 +1643,23 @@ th.headerSortDown {
   user-select: none;
 }
 
-.search-option:focus {
-  #search-options {
-    display: none; 
-  }
-}
-
 .search-option:hover {
   text-decoration: none;
   fill: #fff;
   color: #fff;
   background-color: #2e8fda; 
+ 
+  .icon-xs {
+    fill: #fff; 
+  }
 }
+
+.icon-xs {
+  width: 12px;
+  height: 12px;
+  fill: #333;
+}
+
+
 
 
