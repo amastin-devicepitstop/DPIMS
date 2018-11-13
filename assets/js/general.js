@@ -230,7 +230,7 @@ function displaySearch() {
   $(document).on("click", ":not(#search-options), :not(.search-option)", function (event) {
     alert("2: " + event.target.id);
     hideSearch();
-  }
+  })
 }
 
 function showSearch() {
