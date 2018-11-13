@@ -217,9 +217,7 @@ function autocomplete() {
 function showSearch() {
   if ($("#search-options").hasClass("no-display")) {
     $("#search-options").attr("class", "width-100");
-    setTimeout(function() {
-      $("#search-options").focus();
-    }, 1);
+    document.getElementById("search-options").focus();
   }
   else if ($("#search-options").hasClass("no-display") === false) {
     hideSearch();
