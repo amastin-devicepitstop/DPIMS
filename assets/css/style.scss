@@ -1636,6 +1636,11 @@ th.headerSortDown {
   user-select: none;
 }
 
+#selected-icon {
+  position: relative;
+  left: -5px;
+}
+
 .selected-option {
   padding-left: 10px; 
 }
