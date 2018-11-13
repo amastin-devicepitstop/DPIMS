@@ -225,11 +225,13 @@ function initSearch() {
 }
 
 function showSearch() {
-  if ($("#search-options").css("display") == "none") {
+  if ($("#search-options").hasClass("no-display")) {
     $("#search-options").show();
+    $("#search-options").attr("class", "width-100");
   }
-  else if ($("#search-options").css("display") == "block") {
-    $("#search-options").hide();  
+  else if ($("#search-options").hasClass("no-display") === false) {
+    $("#search-options").hide();
+    $("#search-options").attr("class", "no-display width-100");
   } 
 }
 
