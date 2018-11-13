@@ -223,7 +223,8 @@ function initSearch() {
     }
     
     if ($(e.target).hasClass("search-option")) {
-      console.log(e.target);
+      console.log(e.target.innerText);
+      container.hide();
     }
   });   
 }
