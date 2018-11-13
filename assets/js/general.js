@@ -216,7 +216,7 @@ function autocomplete() {
 }
 
 function displaySearch() {
-  $(document).on("click", "#search-icon", function (event) {
+  $("#search-icon").on("click", function (event) {
     
     alert("1: " + event.target.id);
     if ($("#search-options").hasClass("no-display")) {
@@ -227,7 +227,7 @@ function displaySearch() {
     }
   });
   
-  $(document).on("click", ":not(#search-options), :not(.search-option)", function (event) {
+  $(":not(#search-options), :not(.search-option)").on("click", function (event) {
     alert("2: " + event.target.id);
     hideSearch();
   })
