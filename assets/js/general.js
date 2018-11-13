@@ -230,6 +230,10 @@ function hideSearch() {
   $("#search-options").attr("class", "no-display width-100");
 }
 
+function hi() {
+  console.log("Focus in");  
+}
+
 // ====================
 // ===== FIREBASE =====
 // ====================
