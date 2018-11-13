@@ -215,6 +215,18 @@ function autocomplete() {
   });
 }
 
+function parseSearchSelection(selection) {
+    if (selection === "Store Stock") {
+      $("#search-right-half").val("STT: ");
+    }
+    elif (selection === "Buy") {
+      $("#search-right-half").val("BUY: ");
+    }
+    elif (selection === "Sale") {
+      $("#search-right-half").val("SALE: ");
+    }
+}
+
 function initSearch() {
   $(document).mouseup(function (e){
     let container = $("#search-options");
@@ -223,7 +235,7 @@ function initSearch() {
     }
     
     if ($(e.target).hasClass("search-option")) {
-      console.log(e.target.innerText);
+      parseSearchSelection(e.target.innerText);
       container.hide();
     }
   });   
