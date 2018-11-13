@@ -225,7 +225,12 @@ function initSearch() {
 }
 
 function showSearch() {
-  $("#search-options").toggle();
+  if ($("#search-options").css("display") == "none") {
+    $("#search-options").show();
+  }
+  else if ($("#search-options").css("display") == "block") {
+    $("#search-options").hide();  
+  } 
 }
 
 
