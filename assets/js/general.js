@@ -3,10 +3,7 @@ let database;
 window.onload = function(){
   initDatabase();
   hideAnimation();
-  
-  $(document).on("click", ".appDetails", function (event) {
-    alert(event.target.id);
-});
+  displaySearch();
 } 
 
 // ===============
