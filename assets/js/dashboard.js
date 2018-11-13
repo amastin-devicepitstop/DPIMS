@@ -4,6 +4,7 @@ window.onload = function(){
   updateReturnCount();
   updateStoreStockCount();
   updateReadyForFloorCount();
+  initSearch();
   setTimeout(function() {
     hideAnimation();
   }, 1000);
