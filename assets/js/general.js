@@ -253,6 +253,10 @@ function showSearch() {
   } 
 }
 
+function getSelectedOption() {
+  return $(".selected-option");  
+}
+
 
 // ====================
 // ===== FIREBASE =====
