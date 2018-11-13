@@ -215,11 +215,15 @@ function autocomplete() {
 }
 
 function showSearch() {
+  console.log("1");
+  console.log($(":focus"));
   if ($("#search-options").hasClass("no-display")) {
     $("#search-options").attr("class", "width-100");
     $("#search-options").focus(function() {
       alert("Focus");   
     });
+    console.log("2");
+    console.log($(":focus"));
   }
   else if ($("#search-options").hasClass("no-display") === false) {
     hideSearch();
@@ -227,6 +231,8 @@ function showSearch() {
 }
 
 function hideSearch() {
+  console.log("3");
+  console.log($(":focus"));
   $("#search-options").attr("class", "no-display width-100");
 }
 
