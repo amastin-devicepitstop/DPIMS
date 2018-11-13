@@ -216,39 +216,18 @@ function autocomplete() {
 }
 
 function initSearch() {
-  console.log("Init search...");
   $(document).mouseup(function (e){
-    console.log("mouse up");
     let container = $("#search-options");
-    console.log(container);
     if (!container.is(e.target) && container.has(e.target).length === 0){
       container.hide();
-      console.log("container hidden");
     }
   });   
 }
 
 function showSearch() {
-  $("#search-options").show();
-//   if ($("#search-options").hasClass("no-display")) {
-    
-//     $("#search-options").attr("class", "width-100");
-//     $("#search-options").blur(function() {
-//       alert("Focus");   
-//     });
-//   }
-//   else if ($("#search-options").hasClass("no-display") === false) {
-//     hideSearch();
-//   }
+  $("#search-options").toggle();
 }
 
-function hideSearch() {
-  $("#search-options").attr("class", "no-display width-100");
-}
-
-function hi() {
-  console.log("Focus in");  
-}
 
 // ====================
 // ===== FIREBASE =====
