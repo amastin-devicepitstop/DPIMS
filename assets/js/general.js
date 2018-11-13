@@ -217,6 +217,10 @@ function autocomplete() {
 function showSearch() {
   if ($("#search-options").hasClass("no-display")) {
     $("#search-options").attr("class", "width-100");
+    $("#search-options").focus();
+    $("#search-options").focusout(function() {
+      $("#search-options").attr("class", "no-display width-100");
+    });
   }
   else if ($("#search-options").hasClass("no-display") === false) {
     $("#search-options").attr("class", "no-display width-100");
