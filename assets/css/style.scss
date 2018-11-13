@@ -1636,10 +1636,13 @@ th.headerSortDown {
   user-select: none;
 }
 
+.selected-option {
+  padding-left: 10px; 
+}
+
 .search-option {
-  padding-left: 33px; 
   display: block;
-  padding: 3px 20px;
+  padding: 3px 20px 3px 28px;
   user-select: none;
 }
 
