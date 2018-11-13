@@ -215,11 +215,12 @@ function autocomplete() {
 }
 
 function showSearch() {
-  $("#search-options").css("display", "block");
-  $("#search-options").focus();
-  $("#search-options").focusout(function() {
-    $("#search-options").css("display", "none");
-  });
+  if ($("#search-options").hasClass("no-display")) {
+    $("#search-options").attr("class", "width-100");
+  }
+  else if ($("#search-options").hasClass("no-display") === false) {
+    $("#search-options").attr("class", "no-display width-100");
+  }
 }
 
 // ====================
