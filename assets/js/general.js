@@ -217,10 +217,13 @@ function autocomplete() {
 
 function initSearch() {
   $(document).mouseup(function (e){
-    console.log(e.target);
     let container = $("#search-options");
     if (!container.is(e.target) && container.has(e.target).length === 0){
       container.hide();
+    }
+    
+    if (e.target.hasClass("search-option")) {
+      console.log(e.target);
     }
   });   
 }
