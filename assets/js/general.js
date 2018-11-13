@@ -222,7 +222,7 @@ function initSearch() {
       container.hide();
     }
     
-    if (e.target.hasClass("search-option")) {
+    if ($(e.target).hasClass("search-option")) {
       console.log(e.target);
     }
   });   
