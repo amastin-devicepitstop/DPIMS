@@ -240,6 +240,7 @@ function initSearch() {
       container.hide();
       // For some reason it makes you click twice to get it to make the div appear after selecting an option.
       // Doing this should simulate 1 mouse click and therefore make it only take 1 mouse click from the user to open the div. 
+      // That's the idea at least -- it doesn't actually work. Figure it out later I guess.
       $("#search-options").click();
     }
   });   
