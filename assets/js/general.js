@@ -3,6 +3,10 @@ let database;
 window.onload = function(){
   initDatabase();
   hideAnimation();
+  
+  $(document).on("click", ".appDetails", function (event) {
+    alert(event.target.id);
+});
 } 
 
 // ===============
@@ -214,16 +218,30 @@ function autocomplete() {
   });
 }
 
+function displaySearch() {
+  $(document).on("click", "#search-icon", function (event) {
+    
+    alert("1: " + event.target.id);
+    if ($("#search-options").hasClass("no-display")) {
+      $("#search-options").attr("class", "width-100");
+    }
+    else if ($("#search-options").hasClass("no-display") === false) {
+      hideSearch();
+    }
+  });
+  
+  $(document).on("click", ":not(#search-options), :not(.search-option)", function (event) {
+    alert("2: " + event.target.id);
+    hideSearch();
+  }
+}
+
 function showSearch() {
-  console.log("1");
-  console.log($(document.activeElement));
   if ($("#search-options").hasClass("no-display")) {
     $("#search-options").attr("class", "width-100");
     $("#search-options").blur(function() {
       alert("Focus");   
     });
-    console.log("2");
-    console.log($(document.activeElement));
   }
   else if ($("#search-options").hasClass("no-display") === false) {
     hideSearch();
@@ -231,8 +249,6 @@ function showSearch() {
 }
 
 function hideSearch() {
-  console.log("3");
-  console.log($(document.activeElement));
   $("#search-options").attr("class", "no-display width-100");
 }
 
