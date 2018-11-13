@@ -219,12 +219,6 @@ function parseSearchSelection(selection) {
     if (selection === "Store Stock") {
       $("#search-right-half").val("STT: ");
     }
-    elif (selection === "Buy") {
-      $("#search-right-half").val("BUY: ");
-    }
-    elif (selection === "Sale") {
-      $("#search-right-half").val("SALE: ");
-    }
 }
 
 function initSearch() {
