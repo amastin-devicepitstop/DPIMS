@@ -3,7 +3,7 @@ let database;
 window.onload = function(){
   initDatabase();
   hideAnimation();
-  displaySearch();
+  initSearch();
 } 
 
 // ===============
@@ -215,34 +215,31 @@ function autocomplete() {
   });
 }
 
-function displaySearch() {
-  $("#search-icon").on("click", function (event) {
-    
-    alert("1: " + event.target.id);
-    if ($("#search-options").hasClass("no-display")) {
-      $("#search-options").attr("class", "width-100");
+function initSearch() {
+  console.log("Init search...");
+  $(document).mouseup(function (e){
+    console.log("mouse up");
+    let container = $("#search-options");
+    console.log(container);
+    if (!container.is(e.target) && container.has(e.target).length === 0){
+      container.hide();
+      console.log("container hidden");
     }
-    else if ($("#search-options").hasClass("no-display") === false) {
-      hideSearch();
-    }
-  });
-  
-  $(":not(#search-options), :not(.search-option)").on("click", function (event) {
-    alert("2: " + event.target.id);
-    hideSearch();
-  })
+  });   
 }
 
 function showSearch() {
-  if ($("#search-options").hasClass("no-display")) {
-    $("#search-options").attr("class", "width-100");
-    $("#search-options").blur(function() {
-      alert("Focus");   
-    });
-  }
-  else if ($("#search-options").hasClass("no-display") === false) {
-    hideSearch();
-  }
+  $("#search-options").show();
+//   if ($("#search-options").hasClass("no-display")) {
+    
+//     $("#search-options").attr("class", "width-100");
+//     $("#search-options").blur(function() {
+//       alert("Focus");   
+//     });
+//   }
+//   else if ($("#search-options").hasClass("no-display") === false) {
+//     hideSearch();
+//   }
 }
 
 function hideSearch() {
