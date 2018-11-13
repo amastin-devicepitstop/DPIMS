@@ -234,7 +234,7 @@ function initSearch() {
       // Add new selected option 
       $(e.target).addClass("selected-option");
       // Add checkmark to selected option
-      $(e.target).append("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='icon icon-xs tick-mark'><path d='M497.8 51.5l-.4-.4c-9.2-9.2-21.4-14.2-34.4-14.2s-25.2 5.1-34.4 14.2L154.3 325.5 83 254.2C73.8 245 61.6 240 48.6 240s-25.2 5.1-34.4 14.2C5 263.4 0 275.6 0 288.6s5 25.2 14.2 34.4l106 106c9.2 9.2 21.4 14.2 34.4 14.2s25.2-5.1 34.4-14.2l308.8-308.8c18.9-18.9 18.9-49.8 0-68.7z'></path></svg>");
+      $(e.target).prepend("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='icon icon-xs tick-mark'><path d='M497.8 51.5l-.4-.4c-9.2-9.2-21.4-14.2-34.4-14.2s-25.2 5.1-34.4 14.2L154.3 325.5 83 254.2C73.8 245 61.6 240 48.6 240s-25.2 5.1-34.4 14.2C5 263.4 0 275.6 0 288.6s5 25.2 14.2 34.4l106 106c9.2 9.2 21.4 14.2 34.4 14.2s25.2-5.1 34.4-14.2l308.8-308.8c18.9-18.9 18.9-49.8 0-68.7z'></path></svg>");
       parseSearchSelection(e.target.innerText);
       container.hide();
     }
