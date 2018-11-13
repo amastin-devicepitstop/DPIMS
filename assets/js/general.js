@@ -219,7 +219,7 @@ function showSearch() {
   console.log($(document.activeElement));
   if ($("#search-options").hasClass("no-display")) {
     $("#search-options").attr("class", "width-100");
-    $("#search-options").focus(function() {
+    $("#search-options").blur(function() {
       alert("Focus");   
     });
     console.log("2");
