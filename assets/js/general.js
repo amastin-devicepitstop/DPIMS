@@ -247,13 +247,13 @@ function parseSearchSelection() {
     let search = $("#search-right-half").val();
     
     if (selected == "Store Stock") {
-      setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + search)
+      setURL(getHomePage() + "storestock.html?search=" + search)
     }
     else if (selected == "Big Buys/Sales") {
-      setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + search)
+      setURL(getHomePage() + "buy-sale-tracker.html?search=" + search)
     }
     else if (selected == "Returns") {
-      setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html?search=" + search)
+      setURL(getHomePage() + "returns-tracker.html?search=" + search)
     }
   }
 }
@@ -339,19 +339,19 @@ function getSearch() {
 }
 
 function getBuySaleToday() {
-  setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + new Date().toLocaleDateString());
+  setURL(getHomePage() + "buy-sale-tracker.html?search=" + new Date().toLocaleDateString());
 }
 
 function getReturnsToday() {
-  setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html?search=" + new Date().toLocaleDateString());
+  setURL(getHomePage() + "returns-tracker.html?search=" + new Date().toLocaleDateString());
 }
 
 function getStoreStockToday() {
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + new Date().toLocaleDateString());
+  setURL(getHomePage() + "storestock.html?search=" + new Date().toLocaleDateString());
 }
 
 function getReady() {
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + new Date().toLocaleDateString() + "&ready=true");
+  setURL(getHomePage() + "storestock.html?search=" + new Date().toLocaleDateString() + "&ready=true");
 }
     
 // ====================
@@ -398,13 +398,13 @@ function save(collection, doc, json) {
   .then(function(){
         console.log("Document successfully written!");
         if (getPage().indexOf("storestock") !== -1 && getPage().indexOf("storestock.html") == -1){
-          setURL("/IMS/storestock.html");
+          setURL(getHomePage() + "storestock.html");
         }
         else if (getPage().indexOf("returns-tracker") !== -1 && getPage().indexOf("returns-tracker.html") == -1){
-          setURL("/IMS/returns-tracker.html");
+          setURL(getHomePage() + "returns-tracker.html");
         }
         else if (getPage().indexOf("buy-sale-tracker") !== -1 && getPage().indexOf("buy-sale-tracker.html") == -1){
-          setURL("/IMS/buy-sale-tracker.html");
+          setURL(getHomePage() + "/buy-sale-tracker.html");
         }
     })
     .catch(function(error) {
@@ -488,13 +488,13 @@ function update(collection, doc, json) {
       .then(function() {
         console.log("Document successfully updated!");
         if (getPage().indexOf("storestock") !== -1 && getPage().indexOf("storestock.html") == -1){
-          setURL("/IMS/storestock.html");
+          setURL(getHomePage() + "storestock.html");
         }
         else if (getPage().indexOf("returns-tracker") !== -1 && getPage().indexOf("returns-tracker.html") == -1){
-          setURL("/IMS/returns-tracker.html");
+          setURL(getHomePage() + "returns-tracker.html");
         }
         else if (getPage().indexOf("buy-sale-tracker") !== -1 && getPage().indexOf("buy-sale-tracker.html") == -1){
-          setURL("/IMS/buy-sale-tracker.html");
+          setURL(getHomePage() + "buy-sale-tracker.html");
         }
       })
       .catch(function(error) {
