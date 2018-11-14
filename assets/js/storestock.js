@@ -16,16 +16,20 @@ window.onload = function(){
 // ===================
 
 function checkSearch() {
-  parseSearch("devices");
+  if (urlContains("search")) {
+    let query = parseSearch("devices");
+    getStoreStock(query);
+  }
+  else {
+    let date = new Date();
+    let month = String(date.getMonth() + 1);
+    let query = getWhere("devices", "month", "==", month);
+    getStoreStock(query);
+  }
 }
 
 function getStoreStock(query) {
-  let date = new Date();
-  let month = String(date.getMonth() + 1);
-  let query = getWhere("devices", "month", "==", month);
-    
   setTimeout(function(){ // works
-    
     enableSelectAll(query);
     populateTable(query);
     initCheckboxes();
