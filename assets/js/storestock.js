@@ -8,7 +8,7 @@ let soldIcon = "<div id='sold-icon' class='tooltip'><span class='no-display'>Sol
 
 window.onload = function(){
   initDatabase();
-  getStoreStock();
+  checkSearch();
 }
  
 // ===================
@@ -16,12 +16,10 @@ window.onload = function(){
 // ===================
 
 function checkSearch() {
-  if (urlContains("search")) {
-    console.log(true);
-  }
+  parseSearch("devices");
 }
 
-function getStoreStock() {
+function getStoreStock(query) {
   let date = new Date();
   let month = String(date.getMonth() + 1);
   let query = getWhere("devices", "month", "==", month);
