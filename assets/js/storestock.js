@@ -30,21 +30,19 @@ function checkSearch() {
 
 function getStoreStock(query) {
   while(true) {
-    if (query.length !== 0) {
-      enableSelectAll(query);
-      populateTable(query);
-      initCheckboxes();
-      enableTooltips();
-      if (query.length > 0) {
-        sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+    setTimeout(function() {
+      if (query.length !== 0) {
+        enableSelectAll(query);
+        populateTable(query);
+        initCheckboxes();
+        enableTooltips();
+        if (query.length > 0) {
+          sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+        }
+        hideAnimation();
+        break;
       }
-      hideAnimation();
-      break;
-    }
-    else {
-      console.log(query.length);
-      setTimeout(function(){}, 1000);
-    }
+    }, 100);
   }
 //   setTimeout(function(){ // works
 //     enableSelectAll(query);
