@@ -314,7 +314,7 @@ function getSearch() {
 
 function getStoreStockToday() {
   let today = new Date();
-  let date = today.getDate() + "/" + today.getMonth() + 1 + "/" + today.getFullYear();
+  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
   setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date)
 }
     
