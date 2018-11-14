@@ -241,6 +241,11 @@ function initSearch() {
       container.hide();
     }
   });   
+  
+  $("#search").submit(function(e){
+    e.preventDefault();
+    parseSearchSelection($('.selected-option')[0].innerText);
+  });
 }
 
 function showSearch() {
