@@ -388,6 +388,10 @@ function getWhere(collection, field, operator, expected) {
 }
   
 function getWhereWhere(collection, field1, operator1, expected1, field2, operator2, expected2) {
+  console.log(field1);
+  console.log(expected1);
+  console.log(field2);
+  console.log(expected2);
   let array = [];
   database.collection(collection).where(field1, operator1, expected1).where(field2, operator2, expected2).get()
     .then(function(querySnapshot) {
