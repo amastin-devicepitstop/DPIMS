@@ -19,6 +19,7 @@ function checkSearch() {
   if (urlContains("search")) {
     let query = parseSearch("devices");
     getStoreStock(query);
+    $(".font-xl").html("Results for '" + getSearch() + "' in Store Stock Tracker");
   }
   else {
     let date = new Date();
