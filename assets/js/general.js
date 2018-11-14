@@ -217,10 +217,11 @@ function autocomplete() {
 
 function parseSearchSelection() {
   if ($('.selected-option').length !== 0) {
-    let selected = $('.selected-option')[0].innerText
+    let selected = $(".selected-option")[0].innerText
+    let search = $("#search-right-half").val();
     
     if (selected == "Store Stock") {
-      setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + selected)
+      setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + search)
     }
   }
 }
