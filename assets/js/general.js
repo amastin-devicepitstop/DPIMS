@@ -219,6 +219,7 @@ function parseSearchSelection() {
   if ($('.selected-option').length !== 0) {
     let selected = $(".selected-option")[0].innerText
     let search = $("#search-right-half").val();
+    console.log(search);
     
     if (selected == "Store Stock") {
       setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + search)
