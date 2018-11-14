@@ -37,13 +37,13 @@ function getStoreStock(query) {
       enableTooltips();
       if (query.length > 0) {
         sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+      }
       hideAnimation();
       break;
     }
     else {
       setTimeout(function(){}, 10);  
     }
-    
   }
 //   setTimeout(function(){ // works
 //     enableSelectAll(query);
