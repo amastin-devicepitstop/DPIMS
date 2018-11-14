@@ -42,7 +42,8 @@ function getStoreStock(query) {
       break;
     }
     else {
-      setTimeout(function(){}, 10);  
+      console.log(query.length);
+      setTimeout(function(){}, 1000);
     }
   }
 //   setTimeout(function(){ // works
