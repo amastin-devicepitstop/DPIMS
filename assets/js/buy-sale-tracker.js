@@ -4,6 +4,7 @@ let buys = "<span id='title-buys' class='font-md text-normal font-regular'>Buys<
 let sales = "<span id='title-sales' class='font-md text-normal font-regular'>Sales</span>";
 
 window.onload = function(){
+  setActiveTab();
   initDatabase();
   checkSearch();
 }
