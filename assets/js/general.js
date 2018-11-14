@@ -286,6 +286,13 @@ function parseSearch(collection) {
     let sku = search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)[0];
     return getWhere(collection, "sku", "==", sku);
   }
+  
+  // If user searched for m/yyyy...
+  else if (search.match(/([1-9]|10|11|12)\/20[0-9]{2}$/)) {
+    let m = search.match(/([1-9]|10|11|12)/);
+    let yyyy = search.match(/20[0-9]{2}/);
+    return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
+  }
 
 }
 
@@ -370,6 +377,19 @@ function get(collection, doc) {
 function getWhere(collection, field, operator, expected) {
   let array = [];
   database.collection(collection).where(field, operator, expected).get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
+          array.push(doc.data())
+        });
+    })
+  return array;
+}
+  
+function getWhereWhere(collection, field1, operator1, expected1, field2, operator2, expected2) {
+  let array = [];
+  database.collection(collection).where(field1, operator1, expected1).where(field2, operator2, expected2).get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
