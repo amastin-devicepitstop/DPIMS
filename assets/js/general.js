@@ -10,6 +10,12 @@ window.onload = function(){
 // === GENERAL ===
 // ===============
 
+function setActiveTab() {
+  if (getPage().indexOf("storestock") !== -1) {
+    $("a[href='storestock.html']").attr('class', 'tab active');  
+  }
+}
+
 function showConfirmDialog(message) {
   if ($(".checkmark").length > 0) {
     convertModalToConfirm();
