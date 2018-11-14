@@ -12,7 +12,8 @@ window.onload = function(){
 // ===============
 
 function getHomePage() {
-  return "https://amastin-devicepitstop.github.io/IMS/";  
+  return "https://google.com";
+  //return "https://amastin-devicepitstop.github.io/IMS/";  
 }
 
 function setActiveTab() {
