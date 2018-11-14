@@ -217,7 +217,11 @@ function autocomplete() {
 
 function parseSearchSelection() {
   if ($('.selected-option').length !== 0) {
+    console.log(true)
     console.log($('.selected-option')[0].innerText);
+  }
+  else {
+    console.log($('.selected-option').length);
   }
 }
 
