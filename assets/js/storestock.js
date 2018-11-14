@@ -33,6 +33,7 @@ function getStoreStock(query) {
   while(true) {
     console.log("Running " + i + " times");
     setTimeout(function() {
+      i++;
       if (query.length !== 0) {
         enableSelectAll(query);
         populateTable(query);
@@ -43,9 +44,6 @@ function getStoreStock(query) {
         }
         hideAnimation();
         break;
-      }
-      else {
-        i++;  
       }
     }, i);
   }
