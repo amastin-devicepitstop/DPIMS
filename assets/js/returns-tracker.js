@@ -19,8 +19,7 @@ function checkSearch() {
   if (urlContains("search")) {
     let query = parseSearch("returns");
     getReturns(query);
-    console.log($(".font-xl").val());
-    console.log($(".font-xl").eq(0).val());
+    console.log($(".font-xl"));
     $(".font-xl").val("Results for " + getSearch() + " in Returns Tracker");
   }
   else {
