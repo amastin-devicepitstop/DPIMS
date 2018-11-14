@@ -31,7 +31,7 @@ function checkSearch() {
 function getStoreStock(query) {
   let i = 0;
   while(true) {
-    console.log("Running " + i + " times"
+    console.log("Running " + i + " times");
     setTimeout(function() {
       if (query.length !== 0) {
         enableSelectAll(query);
