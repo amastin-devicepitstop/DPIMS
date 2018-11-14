@@ -29,11 +29,11 @@ function checkSearch() {
 }
 
 function getStoreStock(query) {
-  let i = 0;
+  let i = 1;
   while(true) {
     console.log("Running " + i + " times");
     setTimeout(function() {
-      i++;
+      i+=1;
       if (query.length !== 0) {
         enableSelectAll(query);
         populateTable(query);
