@@ -22,7 +22,8 @@ function checkSearch() {
   else {
     let date = new Date();
     let month = String(date.getMonth() + 1);
-    let query = getWhere("buysale", "month", "==", month);
+    let year = String(date.getFullYear());
+    let query = getWhereWhere("buysale", "month", "==", month, "year", "==", year);
     getBuySale(query);
   }
 }
