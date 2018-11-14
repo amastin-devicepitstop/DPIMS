@@ -215,8 +215,10 @@ function autocomplete() {
   });
 }
 
-function parseSearchSelection(selection) {
-  console.log(selection);
+function parseSearchSelection() {
+  if ($('.selected-option').length !== 0) {
+    console.log($('.selected-option')[0].innerText);
+  }
 }
 
 function initSearch() {
@@ -244,7 +246,7 @@ function initSearch() {
   
   $("#search").submit(function(e){
     e.preventDefault();
-    parseSearchSelection($('.selected-option')[0].innerText);
+    parseSearchSelection();
   });
 }
 
