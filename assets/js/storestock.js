@@ -364,7 +364,7 @@ function editProduct() {
   let sku = row[0].cells[5].innerText;
   
   // Redirect to edit page
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock-edit.html?model=" + model + "&sku=" + sku);
+  setURL(getHomePage() + "storestock-edit.html?model=" + model + "&sku=" + sku);
 }
 
 function deleteProduct() {
