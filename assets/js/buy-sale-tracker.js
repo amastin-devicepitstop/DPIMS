@@ -5,17 +5,27 @@ let sales = "<span id='title-sales' class='font-md text-normal font-regular'>Sal
 
 window.onload = function(){
   initDatabase();
-  getBuySale();
+  checkSearch();
 }
  
 // =========================
 // = buy-sale-tracker.html =
 // =========================
 
-function getBuySale() {
-  let date = new Date();
-  let month = String(date.getMonth() + 1);
-  let query = getWhere("buysale", "month", "==", month);
+function checkSearch() {
+  if (urlContains("search")) {
+    let query = parseSearch("buysale");
+    getBuySale(query);
+  }
+  else {
+    let date = new Date();
+    let month = String(date.getMonth() + 1);
+    let query = getWhere("buysale", "month", "==", month);
+    getBuySale(query);
+  }
+}
+
+function getBuySale(query) {
     
   setTimeout(function(){ // works
     populateColumns(query);
