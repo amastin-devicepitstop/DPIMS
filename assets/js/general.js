@@ -289,7 +289,7 @@ function parseSearch(collection) {
   
   // If user searched for m/yyyy...
   else if (search.match(/([1-9]|10|11|12)\/20[0-9]{2}$/)) {
-    let m = search.match(/([1-9]|10|11|12)/)[0];
+    let m = search.match(/(\d\d{1}|\d)/)[0];
     let yyyy = search.match(/20[0-9]{2}/)[0];
     return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
   }
