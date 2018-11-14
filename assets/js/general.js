@@ -4,6 +4,7 @@ window.onload = function(){
   initDatabase();
   hideAnimation();
   initSearch();
+  setActiveTab();
 } 
 
 // ===============
@@ -13,6 +14,18 @@ window.onload = function(){
 function setActiveTab() {
   if (getPage().indexOf("storestock") !== -1) {
     $("a[href='storestock.html']").find("li").attr('class', 'tab active');  
+  }
+  else if (getPage().indexOf("buy-sale-tracker") !== -1) {
+    $("a[href='buy-sale-tracker.html']").find("li").attr('class', 'tab active');  
+  }
+  else if (getPage().indexOf("returns") !== -1) {
+    $("a[href='returns-tracker.html']").find("li").attr('class', 'tab active');  
+  }
+  else if (getPage().indexOf("sign") !== -1 || getPage().indexOf("print-queue") !== -1) {
+    $("a[href='sign-maker.html']").find("li").attr('class', 'tab active');
+  }
+  else if (getPage().indexOf("reports") !== -1) {
+    $("a[href='reports.html']").find("li").attr('class', 'tab active');  
   }
 }
 
