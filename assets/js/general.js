@@ -313,27 +313,19 @@ function getSearch() {
 }
 
 function getBuySaleToday() {
-  let today = new Date();
-  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-  setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + date);
+  setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + new Date().toLocaleDateString());
 }
 
 function getReturnsToday() {
-  let today = new Date();
-  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-  setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html?search=" + date);
+  setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html?search=" + new Date().toLocaleDateString());
 }
 
 function getStoreStockToday() {
-  let today = new Date();
-  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date);
+  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + new Date().toLocaleDateString());
 }
 
 function getReady() {
-  let today = new Date();
-  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date + "&ready=true");
+  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + new Date().toLocaleDateString() + "&ready=true");
 }
     
 // ====================
