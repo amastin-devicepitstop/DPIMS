@@ -270,7 +270,22 @@ function getSelectedOption() {
   return $(".selected-option");  
 }
 
+function parseSearch(collection) {
+  let search = getSearch();
+  let skuRegex = new RegExp("/(\d\d\d\d\d\d\d\d\d\d\d\w)/i");
+  
+  if (skuRegex.test(search)){
+    console.log(search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i));
+  }
 
+}
+
+function getSearch() {
+  let search = window.location.search.replace("?search=", "");
+  search = search.split("%20").join(" ");
+  return search;
+}
+    
 // ====================
 // ===== FIREBASE =====
 // ====================
