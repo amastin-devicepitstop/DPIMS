@@ -11,6 +11,10 @@ window.onload = function(){
 // === GENERAL ===
 // ===============
 
+function getHomePage() {
+  return "https://amastin-devicepitstop.github.io/IMS/";  
+}
+
 function setActiveTab() {
   if (getPage().indexOf("storestock") !== -1) {
     $("a[href='storestock.html']").find("li").attr('class', 'tab active');  
