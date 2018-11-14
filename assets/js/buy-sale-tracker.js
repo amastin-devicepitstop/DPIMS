@@ -48,7 +48,6 @@ function populateColumns(query) {
       }
   // If the query doesn't return results, prompt to add a new product
       else {
-        console.log("no results");
         break;
       }
   }
