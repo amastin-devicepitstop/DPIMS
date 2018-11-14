@@ -8,18 +8,27 @@ let soldIcon = "<div id='sold-icon' class='tooltip'><span class='no-display'>Sol
 
 window.onload = function(){
   initDatabase();
-  getReturns();
+  checkSearch();
 }
  
 // ===================
 // = returns-tracker.html =
 // ===================
 
-function getReturns() {
-  let date = new Date();
-  let year = String(date.getFullYear());
-  let query = getWhere("returns", "year", "==", year);
-    
+function checkSearch() {
+  if (urlContains("search")) {
+    let query = parseSearch("returns");
+    getReturns(query);
+  }
+  else {
+    let date = new Date();
+    let year = String(date.getFullYear());
+    let query = getWhere("returns", "year", "==", year);
+    getReturns(query);
+  }
+}
+
+function getReturns(query) {
   setTimeout(function(){ // works
     
     enableSelectAll(query);
