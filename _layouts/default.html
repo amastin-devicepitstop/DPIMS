@@ -98,7 +98,7 @@
           <div id="activity">
             <label class="bottom-space font-lg font-light">Activity</label>
             <div>
-              <div class="activity-panel text-center" onclick="getStoreStockToday()">
+              <div class="activity-panel text-center" onclick="getBuysToday()">
                 <p class="legend overflow font-light blue">
                   <span id="buys-count">0</span>
                 </p>
@@ -109,7 +109,7 @@
                   <label class="font-light uppercase">Buys Today</label>
                 </div>
               </div>
-              <div class="activity-panel text-center">
+              <div class="activity-panel text-center" onclick="getSalesToday()">
                 <p class="legend overflow font-light red">
                   <span id="sales-count">0</span>
                 </p>
@@ -120,7 +120,7 @@
                   <label class="font-light uppercase">Sales Today</label>
                 </div>
               </div>
-              <div class="activity-panel text-center">
+              <div class="activity-panel text-center" onclick="getReturnsToday()">
                 <p class="legend overflow font-light green">
                   <span id="returns-count">0</span>
                 </p>
@@ -131,7 +131,7 @@
                   <label class="font-light uppercase">Returns Today</label>
                 </div>
               </div>
-              <div class="activity-panel text-center">
+              <div class="activity-panel text-center" onclick="setURL('https://amastin-devicepitstop.github.io/IMS/print-queue.html')">
                 <p class="legend overflow font-light yellow">
                   <span id="signs-count">0</span>
                 </p>
