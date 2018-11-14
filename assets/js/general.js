@@ -397,6 +397,7 @@ function getWhereWhere(collection, field1, operator1, expected1, field2, operato
           array.push(doc.data())
         });
     })
+  console.log(array.toString());
   return array;
 }
 
