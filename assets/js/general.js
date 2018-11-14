@@ -223,13 +223,10 @@ function parseSearchSelection() {
     if (selected == "Store Stock") {
       setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + search)
     }
-    else if (selected == "Buy") {
+    else if (selected == "Big Buys/Sales") {
       setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + search)
     }
-    else if (selected == "Sale") {
-      setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + search)
-    }
-    else if (selected == "Return") {
+    else if (selected == "Returns") {
       setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html?search=" + search)
     }
   }
