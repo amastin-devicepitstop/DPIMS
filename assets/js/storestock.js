@@ -38,15 +38,15 @@ function getStoreStock(query) {
   // 1000
   setTimeout(function() {
     console.log('1000: ' + query.length);
-  }, 500);
+  }, 1000);
   // 2000
   setTimeout(function() {
     console.log('2000: ' + query.length);
-  }, 1000);
+  }, 2000);
   // 3000
   setTimeout(function() {
     console.log('3000: ' + query.length);
-  }, 1000);
+  }, 3000);
 //   while(true) {
 //     setTimeout(function() {
 //       if (query.length !== 0) {
