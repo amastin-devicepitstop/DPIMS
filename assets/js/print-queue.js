@@ -1,6 +1,7 @@
 let signs;
 
 window.onload = function(){
+  setActiveTab();
   initDatabase();
   loadSigns();
 }
