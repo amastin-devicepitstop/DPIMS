@@ -1,8 +1,9 @@
 window.onload = function(){
-  hideAnimation();
+  setActiveTab();
   preventFormSubmit();
   initDatabase();
   autocomplete();
+  hideAnimation();
 }
 
 function preventFormSubmit() {
