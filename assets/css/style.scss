@@ -1741,4 +1741,19 @@ th.headerSortDown {
   margin-right: 100px;
 }
 
+.search-divider {
+  margin: 9.5px 0;
+  border-top: 1px solid #e5e5e5; 
+}
+
+.advanced-search {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.advanced-search svg {
+  position: relative;
+  top: 2px;
+  left: 4px; 
+}
 
