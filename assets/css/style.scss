@@ -441,6 +441,10 @@ a {
   width: 30%;
 }
 
+.width-33 {
+  width: 33%; 
+}
+
 .width-50 {
   width: 50%; 
 }
@@ -1702,10 +1706,17 @@ th.headerSortDown {
 
 .reports-nav .reports-nav-item a {
   border-bottom: 1px dashed #E9E9E9;
+  width: 100%;
+  padding: 10px 0;
+  float: left;
 }
 
 .row-content-text {
   margin: 0 0 20px!important; 
+ 
+  svg {
+    margin-right: 0; 
+  }
 }
 
 .svg-link {
