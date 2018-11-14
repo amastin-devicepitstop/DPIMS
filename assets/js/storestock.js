@@ -24,7 +24,9 @@ function checkSearch() {
     let date = new Date();
     let month = String(date.getMonth() + 1);
     let query = getWhere("devices", "month", "==", month);
-    getStoreStock(query);
+    if (query) {
+      getStoreStock(query);
+    }
   }
 }
 
