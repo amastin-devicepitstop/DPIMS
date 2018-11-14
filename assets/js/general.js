@@ -219,7 +219,6 @@ function parseSearchSelection() {
   if ($('.selected-option').length !== 0) {
     let selected = $(".selected-option")[0].innerText
     let search = $("#search-right-half").val();
-    console.log(search);
     
     if (selected == "Store Stock") {
       setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + search)
@@ -292,6 +291,14 @@ function parseSearch(collection) {
     let m = search.match(/(\d\d{1}|\d)/)[0];
     let yyyy = search.match(/(\d\d\d\d{1})/)[0];
     return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
+  }
+  
+  // If user searched for m/d/yyyy
+  else if (search.match(/(\d\d{1}|\d)\/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
+    let m = search.match(/(\d\d{1}|\d)/)[0];
+    let d = search.match(/(\d\d{1}|\d)/g)[1];
+    let yyyy = search.match(/(\d\d\d\d{1})/)[0];
+    return getWhereWhereWhere(collection, "month", "==", m, "day", "==", d, "year", "==", yyyy);
   }
 
 }
@@ -394,6 +401,28 @@ function getWhereWhere(collection, field1, operator1, expected1, field2, operato
   console.log(expected2);
   let array = [];
   database.collection(collection).where(field1, operator1, expected1).where(field2, operator2, expected2).get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
+          array.push(doc.data())
+        });
+    })
+  console.log(array.toString());
+  return array;
+}
+
+function getWhereWhereWhere(collection, field1, operator1, expected1, field2, operator2, expected2, field3, operator3, expected3) {
+  console.log(field1);
+  console.log(expected1);
+  console.log(field2);
+  console.log(expected2);
+  console.log(field3);
+  console.log(expected3);
+  let array = [];
+  database.collection(collection).where(field1, operator1, expected1)
+                                 .where(field2, operator2, expected2)
+                                 .where(field3, operator3, expected3).get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
