@@ -279,6 +279,7 @@ function getSelectedOption() {
 function parseSearch(collection) {
   // Get search keyword
   let search = getSearch();
+  console.log(search.match(/\//).length);
     
   // If user searched for a SKU...
   if (search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)){
@@ -287,12 +288,10 @@ function parseSearch(collection) {
   }
   
   // If user searched for m/yyyy...
-  else if (search.match(/\//).length === 1) {
-    if (search.match(/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
-      let m = search.match(/(\d\d{1}|\d)/)[0];
-      let yyyy = search.match(/(\d\d\d\d{1})/)[0];
-      return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
-    }
+  else if (search.match(/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
+    let m = search.match(/(\d\d{1}|\d)/)[0];
+    let yyyy = search.match(/(\d\d\d\d{1})/)[0];
+    return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
   }
   
   // If user searched for m/d/yyyy
