@@ -1677,11 +1677,43 @@ th.headerSortDown {
   border-bottom: 1px solid #ededed;
   height: 65px;
   padding: 0 20px;
+  
 }
 
 #reports-content {
   padding: 30px 20px 50px 20px; 
 }
 
+.height-inherit {
+  height: inherit; 
+}
+
+.header-text {
+  position: relative;
+  top: 25%;
+  margin-left: 15px;
+}
+
+.reports-nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none; 
+}
+
+.reports-nav .reports-nav-item a {
+  border-bottom: 1px dashed #E9E9E9;
+}
+
+.row-content-text {
+  margin: 0 0 20px!important; 
+}
+
+.svg-link {
+  fill: #206ec5;
+}
+
+.svg-link:hover {
+  fill: #154983; 
+}
 
 
