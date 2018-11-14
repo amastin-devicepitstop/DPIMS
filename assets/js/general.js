@@ -239,10 +239,8 @@ function initSearch() {
       $(e.target).prepend("<svg id='selected-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='icon icon-xs tick-mark'><path d='M497.8 51.5l-.4-.4c-9.2-9.2-21.4-14.2-34.4-14.2s-25.2 5.1-34.4 14.2L154.3 325.5 83 254.2C73.8 245 61.6 240 48.6 240s-25.2 5.1-34.4 14.2C5 263.4 0 275.6 0 288.6s5 25.2 14.2 34.4l106 106c9.2 9.2 21.4 14.2 34.4 14.2s25.2-5.1 34.4-14.2l308.8-308.8c18.9-18.9 18.9-49.8 0-68.7z'></path></svg>");
       parseSearchSelection(e.target.innerText);
       container.hide();
-      // For some reason it makes you click twice to get it to make the div appear after selecting an option.
-      // Doing this should simulate 1 mouse click and therefore make it only take 1 mouse click from the user to open the div. 
-      // That's the idea at least -- it doesn't actually work. Figure it out later I guess.
-      $("#search-options").click();
+      // Modify search-options CSS so that it shows properly the next time the div opens
+      $("#search-options").attr("class", "no-display width-100");
     }
   });   
 }
