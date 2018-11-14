@@ -203,7 +203,7 @@ function fillColumns() {
 
 function editBuySale(element) {  
   let id = element.closest(".transaction-list-item").find(".transaction-id").children("label")[0].innerText;
-  setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker-edit.html?id=" + id)
+  setURL(getHomePage() + "buy-sale-tracker-edit.html?id=" + id)
 }
 
 function checkAll(element) {
