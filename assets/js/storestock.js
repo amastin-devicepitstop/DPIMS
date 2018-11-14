@@ -9,6 +9,7 @@ let soldIcon = "<div id='sold-icon' class='tooltip'><span class='no-display'>Sol
 window.onload = function(){
   initDatabase();
   checkSearch();
+  setActiveTab();
 }
  
 // ===================
