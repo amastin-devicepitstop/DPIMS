@@ -279,7 +279,6 @@ function getSelectedOption() {
 function parseSearch(collection) {
   // Get search keyword
   let search = getSearch();
-  console.log(search.match(/\//g).length);
     
   // If user searched for a SKU...
   if (search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)){
@@ -288,20 +287,23 @@ function parseSearch(collection) {
   }
   
   // If user searched for m/yyyy...
-  else if (search.match(/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
-    let m = search.match(/(\d\d{1}|\d)/)[0];
-    let yyyy = search.match(/(\d\d\d\d{1})/)[0];
-    return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
+  else if (search.match(/\//g).length === 1) {
+    if (search.match(/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
+      let m = search.match(/(\d\d{1}|\d)/)[0];
+      let yyyy = search.match(/(\d\d\d\d{1})/)[0];
+      return getWhereWhere(collection, "month", "==", m, "year", "==", yyyy);
+    }
   }
   
   // If user searched for m/d/yyyy
-  else if (search.match(/(\d\d{1}|\d)\/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
-    let m = search.match(/(\d\d{1}|\d)/)[0];
-    let d = search.match(/(\d\d{1}|\d)/g)[1];
-    let yyyy = search.match(/(\d\d\d\d{1})/)[0];
-    return getWhereWhereWhere(collection, "month", "==", m, "day", "==", d, "year", "==", yyyy);
+  else if (search.match(/\//g).length === 2) {
+    if (search.match(/(\d\d{1}|\d)\/(\d\d{1}|\d)\/(\d\d\d\d{1})/)) {
+      let m = search.match(/(\d\d{1}|\d)/)[0];
+      let d = search.match(/(\d\d{1}|\d)/g)[1];
+      let yyyy = search.match(/(\d\d\d\d{1})/)[0];
+      return getWhereWhereWhere(collection, "month", "==", m, "day", "==", d, "year", "==", yyyy);
+    }
   }
-
 }
 
 function getSearch() {
