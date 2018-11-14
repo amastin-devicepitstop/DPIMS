@@ -294,7 +294,8 @@ a {
 }
 
 .activity-panel:hover, .inventory-panel:hover {
-  border: 1px solid #41A0D9!important;  
+  border: 1px solid #41A0D9!important;
+  cursor: pointer;
 }
 
 .inventory-panel {
@@ -1667,7 +1668,6 @@ th.headerSortDown {
   height: 12px;
   fill: #333;
 }
-
 
 
 
