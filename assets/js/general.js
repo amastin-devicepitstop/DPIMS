@@ -277,7 +277,7 @@ function parseSearch(collection) {
   console.log(search);
   console.log(collection);
   
-  if (skuRegex.test(search)){
+  if (search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)){
     console.log(search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i));
   }
 
