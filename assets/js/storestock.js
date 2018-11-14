@@ -29,39 +29,26 @@ function checkSearch() {
 }
 
 function getStoreStock(query) {
-  // 0
-  console.log('0: ' + query.length);
-  // 500
-  setTimeout(function() {
-    console.log('500: ' + query.length);
-  }, 500);
-  // 1000
-  setTimeout(function() {
-    console.log('1000: ' + query.length);
-  }, 1000);
-  // 2000
-  setTimeout(function() {
-    console.log('2000: ' + query.length);
-  }, 2000);
-  // 3000
-  setTimeout(function() {
-    console.log('3000: ' + query.length);
-  }, 3000);
-//   while(true) {
-//     setTimeout(function() {
-//       if (query.length !== 0) {
-//         enableSelectAll(query);
-//         populateTable(query);
-//         initCheckboxes();
-//         enableTooltips();
-//         if (query.length > 0) {
-//           sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
-//         }
-//         hideAnimation();
-//         break;
-//       }
-//     }, 100);
-//   }
+  let i = 0;
+  while(true) {
+    setTimeout(function() {
+      if (query.length !== 0) {
+        enableSelectAll(query);
+        populateTable(query);
+        initCheckboxes();
+        enableTooltips();
+        if (query.length > 0) {
+          sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+        }
+        hideAnimation();
+        break;
+      }
+      else {
+        console.log(i);
+        i++;  
+      }
+    }, i);
+  }
 //   setTimeout(function(){ // works
 //     enableSelectAll(query);
 //     populateTable(query);
