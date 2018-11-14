@@ -238,7 +238,7 @@ function initSearch() {
     if (!container.is(e.target) && container.has(e.target).length === 0){
       container.hide();
       // Modify search-options CSS so that it shows properly the next time the div opens
-      $("#search-options").attr("class", "no-display width-100");
+      $("#search-options").attr("class", "no-display width-109");
     }
     
     if ($(e.target).hasClass("search-option")) {
@@ -264,11 +264,11 @@ function initSearch() {
 function showSearch() {
   if ($("#search-options").hasClass("no-display")) {
     $("#search-options").show();
-    $("#search-options").attr("class", "width-100");
+    $("#search-options").attr("class", "width-109");
   }
   else if ($("#search-options").hasClass("no-display") === false) {
     $("#search-options").hide();
-    $("#search-options").attr("class", "no-display width-100");
+    $("#search-options").attr("class", "no-display width-109");
   } 
 }
 
