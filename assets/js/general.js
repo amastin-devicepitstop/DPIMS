@@ -31,6 +31,9 @@ function setActiveTab() {
   else if (getPage().indexOf("reports") !== -1) {
     $("a[href='reports.html']").find("li").attr('class', 'tab active');  
   }
+  else {
+    $("a[href=" + getHomePage() + "]").find("li").attr('class', 'tab active');
+  }
 }
 
 function showConfirmDialog(message) {
