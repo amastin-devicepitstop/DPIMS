@@ -19,6 +19,7 @@ function checkSearch() {
   if (urlContains("search")) {
     let query = parseSearch("returns");
     getReturns(query);
+    $(".font-xl").val("Results for " + getSearch() + " in Returns Tracker");
   }
   else {
     let date = new Date();
