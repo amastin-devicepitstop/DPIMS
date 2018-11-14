@@ -279,7 +279,7 @@ function getSelectedOption() {
 function parseSearch(collection) {
   // Get search keyword
   let search = getSearch();
-  console.log(search.match(/\//).length);
+  console.log(search.match(/\//g).length);
     
   // If user searched for a SKU...
   if (search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)){
