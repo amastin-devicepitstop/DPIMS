@@ -32,7 +32,7 @@ function setActiveTab() {
     $("a[href='reports.html']").find("li").attr('class', 'tab active');  
   }
   else {
-    $("a[href=" + getHomePage() + "]").find("li").attr('class', 'tab active');
+    $("a[href=" + "'" + getHomePage() + "'" + "]").find("li").attr('class', 'tab active');
   }
 }
 
