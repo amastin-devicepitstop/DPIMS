@@ -29,16 +29,32 @@ function checkSearch() {
 }
 
 function getStoreStock(query) {
-  setTimeout(function(){ // works
-    enableSelectAll(query);
-    populateTable(query);
-    initCheckboxes();
-    enableTooltips();
-    if (query.length > 0) {
-      sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+  while(true) {
+    if (query.length !== 0) {
+      enableSelectAll(query);
+      populateTable(query);
+      initCheckboxes();
+      enableTooltips();
+      if (query.length > 0) {
+        sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+      hideAnimation();
+      break;
     }
-    hideAnimation();
-  }, 2500);  
+    else {
+      setTimeout(function(){}, 10);  
+    }
+    
+  }
+//   setTimeout(function(){ // works
+//     enableSelectAll(query);
+//     populateTable(query);
+//     initCheckboxes();
+//     enableTooltips();
+//     if (query.length > 0) {
+//       sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
+//     }
+//     hideAnimation();
+//   }, 2500);  
 }
 
 function enableSelectAll(query) {
