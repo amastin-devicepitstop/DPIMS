@@ -16,6 +16,7 @@ function checkSearch() {
   if (urlContains("search")) {
     let query = parseSearch("buysale");
     getBuySale(query);
+    $(".font-xl").html("Results for '" + getSearch() + "' in Buy & Sale Tracker");
   }
   else {
     let date = new Date();
