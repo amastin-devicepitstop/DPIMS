@@ -271,14 +271,13 @@ function getSelectedOption() {
 }
 
 function parseSearch(collection) {
+  // Get search keyword
   let search = getSearch();
-  let skuRegex = new RegExp("/(\d\d\d\d\d\d\d\d\d\d\d\w)/i");
-  
-  console.log(search);
-  console.log(collection);
-  
+    
+  // If user searched for a SKU...
   if (search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)){
-    console.log(search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)[0]);
+    let sku = search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i)[0];
+    return getWhere(collection, "sku", "==", sku);
   }
 
 }
