@@ -17,31 +17,47 @@ window.onload = function(){
 // ===================
 
 function checkSearch() {
+  // If the word "search" is present in the URL, the page will attempt to query the database for the search keyword.
+  // If the URL does not contain the word "search", it will query the database for devices added in the current month.
+  
   if (urlContains("search")) {
+    // Query the database
     let query = parseSearch("devices");
     getStoreStock(query);
+    // Edit page title to accomodate search keyword
     $(".font-xl").html("Results for '" + getSearch() + "' in Store Stock Tracker");
   }
   else {
     let date = new Date();
     let month = String(date.getMonth() + 1);
-    let query = getWhere("devices", "month", "==", month);
+    let year = String(date.getFullYear());
+    // Query the database
+    let query = getWhereWhere("devices", "month", "==", month, "year", "==", year);
+    // Check if result is defined
     if (query) {
       getStoreStock(query);
+    }
+    else {
+      alert("An error has occurred. Please refresh the page.");  
     }
   }
 }
 
 function getStoreStock(query) {
-  setTimeout(function(){ // works
-    enableSelectAll(query);
-    populateTable(query);
-    initCheckboxes();
-    enableTooltips();
+  // Prepares the page with data from the database query while the loading animation plays
+  
+  // Set timeout is necessary to make sure the query has time to return before attempting to work with the results.
+  setTimeout(function(){
+    enableSelectAll(query); // Switches .selectAll from disabled to enabled
+    populateTable(query); // Adds products to the table
+    initCheckboxes(); // Makes the checkbox in each row function as expected
+    enableTooltips(); // Adds tooltips to any status icons on the page
+    
+    // Sort the table
     if (query.length > 0) {
       sortTable("store-stock-tracker", {sortList: [[6,1]], headers: {0: {sorter: false}}, cssAsc: 'headerSortUp', cssDesc: 'headerSortDown'});
     }
-    hideAnimation();
+    hideAnimation(); // Hide the loading animation
   }, 2500);  
 }
 
@@ -91,22 +107,23 @@ function addStoreStockRow(product) {
   let statusCellStart = "<td class='overflow no-padding'>";
   let statusCellEnd = "</td>";
   let rowEnd = "</tr>";
-     
-  if (product.ready) {
+  
+  // Add corresponding svg icon to the row if a product is ready or sold
+  if (product.ready) { // only ready
     statusCellStart += readyIcon
     
-    if (product.sold) {
+    if (product.sold) { // ready AND sold
       statusCellStart += soldIcon;
     }
   }
   
-  else if (product.sold) {
+  else if (product.sold) { // only sold
     statusCellStart += soldIcon
   }
   
   let row = rowStart + checkboxCell + techCell + manufacturerCell + modelCell + actionsCell + skuCell + dateCell + statusCellStart + statusCellEnd + rowEnd;
   
-  $("#store-stock-tracker > tbody").append(row);
+  $("#store-stock-tracker > tbody").append(row); // add row to table
 }
 
 function initCheckboxes() {
@@ -115,6 +132,7 @@ function initCheckboxes() {
       $(this).closest("table").find("td input:checkbox").prop("checked", this.checked);
     });
   
+  // Each time a checkbox is changed...
   $(":checkbox").change(function() {
     shadeSelected();
     
@@ -147,6 +165,7 @@ function initCheckboxes() {
     
     // If multiple checkboxes are selected, do not allow editing
     else if ($("input:checkbox:checked").length > 1) {
+      
       // If selectAll and one other checkbox are checked, treat it as though only one checkbox is checked.
       if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked")){
         newToX();
@@ -154,7 +173,8 @@ function initCheckboxes() {
         $(".font-xl").attr('class', 'modifyProduct');
         $(".modifyProduct").html(singleCheckBoxHTML)
       }
-          
+      
+      // Otherwise, remove "Edit" from "More Actions" because multiple checkboxes are selected.
       else{
         newToX();
         $(".font-xl").html(multiCheckBoxHTML);
@@ -176,14 +196,17 @@ function newToX() {
 function xToNew() {
   // Converts the 'X' button to '+ New'
   let checked = $("input:checkbox:checked");
+  
+  // If any checkboxes are checked...
   if (checked.length >= 1) {
     // Unchecks any checked checkboxes
     for (let i = 0; i < checked.length; i++){
       $(checked[i]).prop('checked', false);  
     }
+    // Revert "More Options" to "Store Stock Tracker"
     $(".modifyProduct").html("Store Stock Tracker");
     $(".modifyProduct").attr("class", "font-xl"); 
-    shadeSelected();
+    shadeSelected(); // Update which rows are shaded
   }
   
   $("#deselect").closest('form').attr('action', 'storestock-new.html');
@@ -193,6 +216,8 @@ function xToNew() {
 }
 
 function shadeSelected() {
+  // Shades any rows with a selected checkbox.
+  
   // Any <tr> elements should have a white background if it's checkbox is not checked
   $("input:checkbox:not(:checked)").closest('tr').attr('class', '');
   
@@ -202,7 +227,7 @@ function shadeSelected() {
 }
 
 function markAsSold(sold) {
-  // Iterates through all selected checkboxes and merges a json with value {sold: true} into each matching document.
+  // Iterates through all selected checkboxes and merges a json with value {sold: boolean} into each matching document.
   let row;
   let product;
   let sku;
@@ -220,9 +245,11 @@ function markAsSold(sold) {
     update("devices", sku, {sold: sold});
   }
   
+  // Add a sold icon if product is sold and it doesn't already have an icon
   if (sold && status.length == 0) {
     $(statusCell).append(soldIcon);
   }
+  // Remove the icon if it has one and is not sold
   else if (!(sold) && status.length == 1) {
     $(status).remove();
   }
@@ -276,14 +303,16 @@ function markAsReady(ready) {
 }
 
 function parseOption() {
-  let int;
+  // Calls appropriate function depending on which option in "More Actions" was selected
+  
+  let int; // Used as a way of determining whether or not to use singleCheckboxHTML or multiCheckboxHTML. Basically option A or option B.
   
   if ($("input[type='checkbox']:checked").length == 1) {
-    int = 0;
+    int = 0; // use singleCheckboxHTML
   }
   
   else if ($("input[type='checkbox']:checked").length > 1){
-    int = 1;
+    int = 1; // use multiCheckboxHTML
   }
   
   if ($("#modifyOptions").val() == "Edit") {
@@ -311,11 +340,12 @@ function parseOption() {
     showConfirmDialog("Do you want to delete the selected product(s)?");
   }
   
-  enableTooltips();
+  enableTooltips(); // This is necessary to fix a bug where newly modified status tooltips would not appear unless the page was reloaded.
 }
 
 function resetSelect(int) {
-  // Resets 'modifyProduct' to not change option when clicking on an option. Still runs the command though.
+  // Resets 'modifyProduct' to not change option when clicking on an option.
+  // Basically when you click on an option in "More Actions", it will not change the <select> to that option, but it will perform the action.
   if (int == 0) {
     $(".modifyProduct").html(singleCheckBoxHTML);
   }
@@ -326,29 +356,43 @@ function resetSelect(int) {
 }
 
 function editProduct() {
+  // Edit a product in the table
+  
   // Get the nearest row and then grabs the sku from it, queries the database and edits the product
   let row = $("input:checkbox:checked").closest('tr');
   let model = row[0].cells[3].innerText;
   let sku = row[0].cells[5].innerText;
+  
+  // Redirect to edit page
   setURL("https://amastin-devicepitstop.github.io/IMS/storestock-edit.html?model=" + model + "&sku=" + sku);
 }
 
 function deleteProduct() {
+  // Deletes a product from the database
+  
+  // Get rows which contain a checked checkbox
   let row = $("input:checkbox:checked").closest('tr');
   let sku;
+  
+  // Close "Are you sure you want to delete these products" modal
   closeModal();
+  
+  // Gets the SKU in each row and deletes it from the database.
   for (let i = 0; i < row.length; i++) {
     sku = row[i].cells[5].innerText;
     sku = sku.replace(/\s+/g, '');
-    // If SKU matches ###########A...
+    // If SKU matches ###########X...
     if (/(\d\d\d\d\d\d\d\d\d\d\d\w)/i.test(sku)) {
       remove("devices", sku);
       row[i].remove();
-      setTimeout(function() {
-        showSuccessDialog("Product(s) successfully deleted.");
-      }, 1000);
     }
   }
+  
+  // Display success message
+  setTimeout(function() {
+    showSuccessDialog("Product(s) successfully deleted.");
+  }, 1000);
+  
   // Display 'No Records Found' if the last row is removed from the table. 
   if ($("#store-stock-tracker tr").length == 1) { 
     row = "<tr><td colspan='8' class='no-results'><p class='text-muted'>No Records Found</p></td></tr>"
@@ -357,12 +401,15 @@ function deleteProduct() {
     xToNew();
   }
   
+  // If there are no checkboxes checked, revert the "X" to the "New" button.
   if ($("input:checkbox:checked").length == 0) {
     xToNew();  
   }
 }
 
 function enableTooltips() {
+  // Initialize tooltips
+  
   $("[title='Ready for Floor']").tooltip({
     position: {
       my: "center top",
