@@ -15,6 +15,12 @@ window.onload = function(){
 // = storestock.html =
 // ===================
 
+function checkSearch() {
+  if (urlContains("search")) {
+    console.log(true);
+  }
+}
+
 function getStoreStock() {
   let date = new Date();
   let month = String(date.getMonth() + 1);
