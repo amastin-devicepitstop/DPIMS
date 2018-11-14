@@ -312,10 +312,28 @@ function getSearch() {
   return search;
 }
 
+function getBuySaleToday() {
+  let today = new Date();
+  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+  setURL("https://amastin-devicepitstop.github.io/IMS/buy-sale-tracker.html?search=" + date);
+}
+
+function getReturnsToday() {
+  let today = new Date();
+  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+  setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker.html?search=" + date);
+}
+
 function getStoreStockToday() {
   let today = new Date();
   let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date)
+  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date);
+}
+
+function getReady() {
+  let today = new Date();
+  let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date + "&ready=true");
 }
     
 // ====================
