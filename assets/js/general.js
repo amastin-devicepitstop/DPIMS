@@ -274,6 +274,9 @@ function parseSearch(collection) {
   let search = getSearch();
   let skuRegex = new RegExp("/(\d\d\d\d\d\d\d\d\d\d\d\w)/i");
   
+  console.log(search);
+  console.log(collection);
+  
   if (skuRegex.test(search)){
     console.log(search.match(/(\d\d\d\d\d\d\d\d\d\d\d\w)/i));
   }
