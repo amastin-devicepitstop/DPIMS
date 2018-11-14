@@ -220,7 +220,7 @@ function editProduct() {
   // Get the nearest row and then grabs the sku from it, queries the database and edits the product
   let row = $("input:checkbox:checked").closest('tr');
   let sku = row[0].cells[3].innerText;
-  setURL("https://amastin-devicepitstop.github.io/IMS/returns-tracker-edit.html?sku=" + sku);
+  setURL(getHomePage() + "returns-tracker-edit.html?sku=" + sku);
 }
 
 function deleteProduct() {
