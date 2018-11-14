@@ -1,4 +1,5 @@
 window.onload = function(){
+  setActiveTab();
   preventFormSubmit();
   initDatabase();
   autocomplete();
