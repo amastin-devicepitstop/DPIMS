@@ -311,6 +311,12 @@ function getSearch() {
   search = search.split("%20").join(" ");
   return search;
 }
+
+function getStoreStockToday() {
+  let today = new Date();
+  let date = today.getDate() + "/" + today.getMonth() + 1 + "/" + today.getFullYear();
+  setURL("https://amastin-devicepitstop.github.io/IMS/storestock.html?search=" + date)
+}
     
 // ====================
 // ===== FIREBASE =====
