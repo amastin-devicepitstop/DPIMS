@@ -12,7 +12,7 @@ window.onload = function(){
 
 function setActiveTab() {
   if (getPage().indexOf("storestock") !== -1) {
-    $("a[href='storestock.html']").attr('class', 'tab active');  
+    $("a[href='storestock.html']").find("li").attr('class', 'tab active');  
   }
 }
 
