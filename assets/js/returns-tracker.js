@@ -130,7 +130,7 @@ function initCheckboxes() {
     // If multiple checkboxes are selected, do not allow editing
     else if ($("input:checkbox:checked").length > 1) {
       // If selectAll and one other checkbox are checked, treat it as though only one checkbox is checked.
-      if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked")){
+      if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked").length !== 0){
         newToX();
         $(".font-xl").html(singleCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
@@ -163,11 +163,11 @@ function xToNew() {
     for (let i = 0; i < checked.length; i++){
       $(checked[i]).prop('checked', false);  
     }
-    $(".modifyProduct").html("Returns Tracker");
-    $(".modifyProduct").attr("class", "font-xl"); 
-    shadeSelected();
   }
-  
+  $(".modifyProduct").html("Returns Tracker");
+  $(".modifyProduct").attr("class", "font-xl"); 
+  shadeSelected();
+
   $("#deselect").closest('form').attr('action', 'returns-tracker-new.html');
   $("#deselect").attr('class', 'btn btn-primary btn-small');
   $("#deselect").html("<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512' class='sub-white'><path d='M511.5 227.5h-227V.5h-57v227H-.5v57h228v228h57v-228h227z'></path></svg>" + '                  New                ');
