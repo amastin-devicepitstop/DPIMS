@@ -167,7 +167,7 @@ function initCheckboxes() {
     else if ($("input:checkbox:checked").length > 1) {
       console.log($("input:checkbox:checked"));
       // If selectAll and one other checkbox are checked, treat it as though only one checkbox is checked.
-      if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked")){
+      if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked").length !== 0){
         console.log($(".selectAll:checked"));
         newToX();
         $(".font-xl").html(singleCheckBoxHTML);
