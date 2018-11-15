@@ -547,6 +547,13 @@ function updateReadyForFloorCount() {
 function updateReturnCount() {
   let returnCount = getWhere("returns", "date", "==", new Date().toLocaleDateString());
     setTimeout(function() {
-    $("#returns-count").text(returnCount.length);
+      $("#returns-count").text(returnCount.length);
   }, 1000);
+}
+
+function updateSignCount() {
+  let signCount = getAll("signs");
+  setTimeout(function() {
+    $("#signs-count").text(signCount.length);
+  }
 }
