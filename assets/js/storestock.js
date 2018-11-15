@@ -171,7 +171,7 @@ function initCheckboxes() {
         newToX();
         $(".font-xl").html(singleCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
-        $(".modifyProduct").html(singleCheckBoxHTML)
+        $(".modifyProduct").html(singleCheckBoxHTML);
       }
       
       // Otherwise, remove "Edit" from "More Actions" because multiple checkboxes are selected.
@@ -179,7 +179,8 @@ function initCheckboxes() {
         newToX();
         $(".font-xl").html(multiCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
-        $(".modifyProduct").html(multiCheckBoxHTML)
+        console.log("changing");
+        $(".modifyProduct").html(multiCheckBoxHTML);
       }
     }
   }); 
