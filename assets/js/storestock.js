@@ -202,11 +202,11 @@ function xToNew() {
     for (let i = 0; i < checked.length; i++){
       $(checked[i]).prop('checked', false);  
     }
-    // Revert "More Options" to "Store Stock Tracker"
-    $(".modifyProduct").html("Store Stock Tracker");
-    $(".modifyProduct").attr("class", "font-xl"); 
-    shadeSelected(); // Update which rows are shaded
   }
+  // Revert "More Options" to "Store Stock Tracker"
+  $(".modifyProduct").html("Store Stock Tracker");
+  $(".modifyProduct").attr("class", "font-xl"); 
+  shadeSelected(); // Update which rows are shaded
   
   $("#deselect").closest('form').attr('action', 'storestock-new.html');
   $("#deselect").attr('class', 'btn btn-primary btn-small');
