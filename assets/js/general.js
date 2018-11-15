@@ -555,5 +555,5 @@ function updateSignCount() {
   let signCount = getAll("signs");
   setTimeout(function() {
     $("#signs-count").text(signCount.length);
-  }
+  }, 1000);
 }
