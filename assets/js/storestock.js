@@ -165,7 +165,7 @@ function initCheckboxes() {
     
     // If multiple checkboxes are selected, do not allow editing
     else if ($("input:checkbox:checked").length > 1) {
-      
+      console.log($("input:checkbox:checked"));
       // If selectAll and one other checkbox are checked, treat it as though only one checkbox is checked.
       if ($("input:checkbox:checked").length == 2 && $(".selectAll:checked")){
         newToX();
@@ -179,7 +179,6 @@ function initCheckboxes() {
         newToX();
         $(".font-xl").html(multiCheckBoxHTML);
         $(".font-xl").attr('class', 'modifyProduct');
-        console.log("changing");
         $(".modifyProduct").html(multiCheckBoxHTML);
       }
     }
