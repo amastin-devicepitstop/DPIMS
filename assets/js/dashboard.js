@@ -3,6 +3,7 @@ window.onload = function(){
   initDatabase();
   updateBuySaleCount()
   updateReturnCount();
+  updateSignCount();
   updateStoreStockCount();
   updateReadyForFloorCount();
   initSearch();
