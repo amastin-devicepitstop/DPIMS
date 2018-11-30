@@ -18,5 +18,6 @@ function editMSRP() {
   for (let i = 0; i < span.length; i++) {
     value = span[i].innerText;
     span[i] = "<input></input>"
+    console.log(value);
   }
 }
