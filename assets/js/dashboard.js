@@ -14,10 +14,10 @@ window.onload = function(){
 
 function editMSRP() {
   let span = $("#msrp-table").find("span");
-  let value = "";
+  let val = "";
   for (let i = 0; i < span.length; i++) {
-    value = span[i].innerText;
-    span[i] = "<input></input>"
-    console.log(value);
+    val = span[i].innerText;
+    span[i].replaceWith("<input type='text' value=val></input">)
+    console.log(val);
   }
 }
