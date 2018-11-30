@@ -13,7 +13,10 @@ window.onload = function(){
 }
 
 function editMSRP() {
-  console.log($("#msrp-table"));  
-  console.log($("#msrp-table").find("tbody").find("tr span"));
-  console.log($("#msrp-table").find("span"));
+  let span = $("#msrp-table").find("span");
+  let value = "";
+  for (let i = 0; i < span.length; i++) {
+    value = span[i].innerText;
+    span[i] = "<input></input>"
+  }
 }
