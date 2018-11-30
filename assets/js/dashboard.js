@@ -13,5 +13,6 @@ window.onload = function(){
 }
 
 function editMSRP() {
-  console.log($("#msrp").find("span"));  
+  console.log($("#msrp"));  
+  console.log($("#msrp").find("tbody").find("tr span"));
 }
