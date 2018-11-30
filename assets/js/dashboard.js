@@ -11,3 +11,7 @@ window.onload = function(){
     hideAnimation();
   }, 1000);
 }
+
+function editMSRP() {
+  console.log($("#msrp").find("span"));  
+}
